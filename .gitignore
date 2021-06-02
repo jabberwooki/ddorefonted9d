@@ -1,0 +1,73 @@
+# Exports
+*.gz
+*.sql
+*.zip
+*.tar
+# Allow committing a database to start an environment, corresponding with the current codebase (include commit hash in the filename)
+!/install/*.sql.*
+!/install/*.sql
+
+#NPM
+npm-debug.log
+
+# File backups
+*.orig
+*.bak
+*.tmp
+
+# IDE related directories and files
+.idea/
+.editorconfig
+
+# Common macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Ignore dependencies that are managed with Composer.
+# Generally you should only ignore the root vendor directory. It's important
+# that core/assets/vendor and any other vendor directories within contrib or
+# custom module, theme, etc., are not ignored unless you purposely do so.
+vendor/
+drush/contrib/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# Sensitive information
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/development.services.yml
+/web/sites/*/development.services.yml
+
+# Ignore paths that contain user-generated content.
+/web/sites/*/files/
+/web/sites/*/private
+
+# Certain Docker files
+docker/
+docker-compose.yml
+
+# Environment files
+.env*
+
+# Gulp dependencies and generated files
+/web/node_modules/
+
+# Ignore SimpleTest multi-site environment
+/web/sites/simpletest/
+
+# Drush alias files
+/drush/sites/*.site.yml
+
+# Drupal console generated files.
+/console/
+
+# Common Windows files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
