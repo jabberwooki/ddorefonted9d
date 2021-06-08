@@ -1,0 +1,10 @@
+uuid: b5751a9d-abd1-46d5-bec0-bd3f03f272ae
+langcode: fr
+status: true
+dependencies:
+  module:
+    - eu_cookie_compliance
+id: cookie_category.token
+label: 'Jeton (token)'
+targetEntityType: cookie_category
+cache: true

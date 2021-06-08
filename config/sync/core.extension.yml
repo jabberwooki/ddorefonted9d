@@ -14,6 +14,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -45,18 +46,21 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   search: 0
   shortcut: 0
   system: 0
   taxonomy: 0
   term_reference_tree: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
   views_templates: 0
   views_ui: 0
   ds: 1
+  pathauto: 1
   ds_extras: 2
   views: 10
   standard: 1000
