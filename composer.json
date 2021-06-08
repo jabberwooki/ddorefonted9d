@@ -12,11 +12,24 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "furf/jquery-ui-touch-punch",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/calendar": "^1.0@alpha",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
@@ -29,6 +42,7 @@
         "drupal/field_group": "^3.1",
         "drupal/geofield": "^1.31",
         "drupal/geofield_map": "^2.68",
+        "drupal/google_analytics": "^3.1",
         "drupal/imce": "^2.4",
         "drupal/libraries": "^3.0@beta",
         "drupal/metatag": "^1.16",
@@ -37,7 +51,8 @@
         "drupal/redirect": "^1.6",
         "drupal/sharethis": "^2.0@beta",
         "drupal/term_reference_tree": "^1.0",
-        "drush/drush": "^10.5"
+        "drush/drush": "^10.5",
+        "furf/jquery-ui-touch-punch": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"

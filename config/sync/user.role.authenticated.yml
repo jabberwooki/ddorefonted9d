@@ -14,6 +14,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'display eu cookie compliance popup'
+  - 'opt-in or out of google analytics tracking'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
