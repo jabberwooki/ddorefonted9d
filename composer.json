@@ -31,8 +31,11 @@
         "drupal/geofield_map": "^2.68",
         "drupal/imce": "^2.4",
         "drupal/libraries": "^3.0@beta",
+        "drupal/metatag": "^1.16",
+        "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
+        "drupal/sharethis": "^2.0@beta",
         "drupal/term_reference_tree": "^1.0",
         "drush/drush": "^10.5"
     },

@@ -185,7 +185,7 @@ display:
     display_options:
       display_description: 'Une liste des nouveaux utilisateurs'
       block_description: 'Nouveaux membres'
-      block_category: Utilisateur
+      block_category: User
       display_extenders: {  }
     cache_metadata:
       contexts:
