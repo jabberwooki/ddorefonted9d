@@ -26,11 +26,14 @@ module:
   file: 0
   filter: 0
   geofield: 0
+  geofield_map: 0
   help: 0
   history: 0
   image: 0
+  imce: 0
   language: 0
   layout_discovery: 0
+  libraries: 0
   link: 0
   locale: 0
   menu_link_content: 0
@@ -57,6 +60,7 @@ module:
   ds_extras: 2
   views: 10
   standard: 1000
+  eu_cookie_compliance: 1001
 theme:
   bartik: 0
   seven: 0
