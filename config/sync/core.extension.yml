@@ -20,6 +20,7 @@ module:
   dblog: 0
   devel: 0
   devel_php: 0
+  draggableviews: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -68,8 +69,10 @@ module:
   user: 0
   views_templates: 0
   views_ui: 0
+  webform: 0
   ds: 1
   pathauto: 1
+  xmlsitemap: 1
   ds_extras: 2
   views: 10
   paragraphs: 11
