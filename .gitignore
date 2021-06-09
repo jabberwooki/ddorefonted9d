@@ -71,3 +71,6 @@ Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
 [Dd]esktop.ini
+
+# Fichiers history des commandes passées dans le terminal
+/history/
