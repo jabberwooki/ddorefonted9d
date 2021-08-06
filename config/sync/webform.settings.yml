@@ -33,7 +33,7 @@ settings:
   button_classes: ''
   default_wizard_prev_button_label: '< Previous'
   default_wizard_next_button_label: 'Next >'
-  default_wizard_start_label: Start
+  default_wizard_start_label: Début
   default_wizard_confirmation_label: Complete
   default_wizard_toggle_show_label: 'Show all'
   default_wizard_toggle_hide_label: 'Hide all'
