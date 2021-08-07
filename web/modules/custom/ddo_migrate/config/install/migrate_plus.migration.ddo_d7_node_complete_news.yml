@@ -1,0 +1,191 @@
+uuid: 8bad4950-cdfd-4b53-a869-7e5c8eb081ce
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_node_complete_news
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: ddo_migrate
+label: 'Node complete (Evénement)'
+source:
+  plugin: d7_node_complete
+  node_type: news
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_news/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_date:
+    -
+      plugin: sub_process
+      source: field_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_new_window:
+    -
+      plugin: get
+      source: field_new_window
+  field_news_publication_date:
+    -
+      plugin: sub_process
+      source: field_news_publication_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_news_url_target:
+    -
+      plugin: get
+      source: field_news_url_target
+  field_promoted:
+    -
+      plugin: get
+      source: field_promoted
+  field_scald_file:
+    -
+      plugin: get
+      source: field_scald_file
+  field_scald_gallery:
+    -
+      plugin: get
+      source: field_scald_gallery
+  field_scald_image:
+    -
+      plugin: get
+      source: field_scald_image
+  field_scald_sound:
+    -
+      plugin: get
+      source: field_scald_sound
+  field_scald_video:
+    -
+      plugin: get
+      source: field_scald_video
+  field_zoom:
+    -
+      plugin: get
+      source: field_zoom
+  field_visible_bas_accueil:
+    -
+      plugin: get
+      source: field_visible_bas_accueil
+  field_news_only_video:
+    -
+      plugin: get
+      source: field_news_only_video
+  field_texte_zoom:
+    -
+      plugin: get
+      source: field_texte_zoom
+  field_image_colonne_droite:
+    -
+      plugin: get
+      source: field_image_colonne_droite
+  field_link_more_infos:
+    -
+      plugin: get
+      source: field_link_more_infos
+  field_send_notification:
+    -
+      plugin: get
+      source: field_send_notification
+  field_topic_mode:
+    -
+      plugin: get
+      source: field_topic_mode
+  field_topics:
+    -
+      plugin: sub_process
+      source: field_topics
+      process:
+        target_id: tid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: news
+migration_dependencies:
+  required:
+    - ddo_d7_user
+    - ddo_d7_node_type
+    - ddo_language
+  optional:
+    - ddo_d7_field_instance
+    - ddo_d7_comment_field_instance
+    - ddo_d7_metatag_field_node
+    - ddo_d7_metatag_field_instance_node_news
+    - ddo_d7_metatag_field_instance_widget_settings_node_news

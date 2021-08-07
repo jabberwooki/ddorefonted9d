@@ -1,0 +1,73 @@
+uuid: 82157977-b3f0-43de-af2d-a30405e71fa4
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3myVQkrcLHi5tbsFZEhU1Wx4TbeTdQuU58RkFOfsXGU
+id: ddo_d7_node_type
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Node type configuration'
+source:
+  plugin: d7_node_type
+  constants:
+    preview: 1
+process:
+  type:
+    -
+      plugin: get
+      source: type
+  name:
+    -
+      plugin: get
+      source: name
+  description:
+    -
+      plugin: get
+      source: description
+  help:
+    -
+      plugin: get
+      source: help
+  title_label:
+    -
+      plugin: get
+      source: title_label
+  preview_mode:
+    -
+      plugin: get
+      source: constants/preview
+  display_submitted:
+    -
+      plugin: get
+      source: display_submitted
+  new_revision:
+    -
+      plugin: get
+      source: options/revision
+  create_body:
+    -
+      plugin: get
+      source: create_body
+  create_body_label:
+    -
+      plugin: get
+      source: body_label
+  third_party_settings/menu_ui/available_menus:
+    -
+      plugin: get
+      source: available_menus
+  third_party_settings/menu_ui/parent:
+    -
+      plugin: get
+      source: parent
+destination:
+  plugin: 'entity:node_type'
+migration_dependencies:
+  required: {  }
+  optional: {  }

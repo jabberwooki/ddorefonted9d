@@ -1,0 +1,60 @@
+uuid: ca10af0f-0937-443b-9b64-e034d906c2b1
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BVM1zLDAzngqoO6CgEp-MWgDXFePmkVYXNb6HptIvo4
+id: ddo_block_content_body_field
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Block content body field configuration'
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      entity_type: block_content
+      bundle: basic
+      field_name: body
+      label: Body
+      display_summary: false
+  ids:
+    entity_type:
+      type: string
+    bundle:
+      type: string
+    field_name:
+      type: string
+  source_module: block
+process:
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  field_name:
+    -
+      plugin: get
+      source: field_name
+  label:
+    -
+      plugin: get
+      source: label
+  settings/display_summary:
+    -
+      plugin: get
+      source: display_summary
+destination:
+  plugin: 'entity:field_config'
+migration_dependencies:
+  required:
+    - ddo_block_content_type
+  optional: {  }

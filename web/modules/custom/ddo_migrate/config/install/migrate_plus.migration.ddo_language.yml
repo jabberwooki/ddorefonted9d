@@ -1,0 +1,41 @@
+uuid: 0194a349-1454-4b10-a1e3-a3c5a5bdd49d
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_language
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: Languages
+source:
+  plugin: language
+process:
+  id:
+    -
+      plugin: get
+      source: language
+  label:
+    -
+      plugin: get
+      source: name
+  direction:
+    -
+      plugin: static_map
+      source: direction
+      map:
+        - ltr
+        - rtl
+  weight:
+    -
+      plugin: get
+      source: weight
+destination:
+  plugin: 'entity:configurable_language'
+migration_dependencies:
+  required: {  }
+  optional: {  }

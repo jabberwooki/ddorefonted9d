@@ -1,0 +1,29 @@
+uuid: 26a4bf33-13a7-4242-bb0e-ab0b610105d7
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_dblog_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Database logging configuration'
+source:
+  plugin: variable
+  variables:
+    - dblog_row_limit
+  source_module: dblog
+process:
+  row_limit:
+    -
+      plugin: get
+      source: dblog_row_limit
+destination:
+  plugin: config
+  config_name: dblog.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

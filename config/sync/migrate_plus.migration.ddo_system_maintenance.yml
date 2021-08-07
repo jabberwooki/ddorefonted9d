@@ -1,0 +1,39 @@
+uuid: dafe223b-bbb0-40d1-bafb-db88b891883f
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xnCpww3TxeKqAT_d7TtLEbSJTUTBFdeoqc5gkak1N1A
+id: ddo_system_maintenance
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Maintenance page configuration'
+source:
+  plugin: variable
+  variables:
+    - maintenance_mode_message
+    - site_offline_message
+  source_module: system
+process:
+  message:
+    -
+      plugin: callback
+      callable: array_filter
+      source:
+        - maintenance_mode_message
+        - site_offline_message
+    -
+      plugin: callback
+      callable: current
+destination:
+  plugin: config
+  config_name: system.maintenance
+migration_dependencies:
+  required: {  }
+  optional: {  }

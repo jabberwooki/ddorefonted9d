@@ -1,0 +1,35 @@
+uuid: 0552219a-1ed0-4cd3-b95c-2576edbb6b0a
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XjW6gEirvQ_a5GZvNrpRx9SKYlq9x4mw2vOIn1IWrSs
+id: ddo_d7_paragraphs_type
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: ddo_migrate
+label: 'Paragraphs type configuration'
+source:
+  plugin: d7_paragraphs_type
+  add_description: true
+process:
+  id:
+    -
+      plugin: get
+      source: bundle
+  label:
+    -
+      plugin: get
+      source: name
+  description:
+    -
+      plugin: get
+      source: description
+destination:
+  plugin: 'entity:paragraphs_type'
+migration_dependencies:
+  required: {  }
+  optional: {  }

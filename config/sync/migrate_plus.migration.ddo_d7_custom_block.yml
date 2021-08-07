@@ -1,0 +1,45 @@
+uuid: 4f3d332e-c546-4fb0-a589-d1b25cdde0ac
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-fhaU31O0sEMJ7WHxAbMDGjgQA2UuwlHMLYMu1SLQQ0'
+id: ddo_d7_custom_block
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: ddo_migrate
+label: 'Custom blocks'
+source:
+  plugin: d7_block_custom
+process:
+  id:
+    -
+      plugin: get
+      source: bid
+  info:
+    -
+      plugin: get
+      source: info
+  body/format:
+    -
+      plugin: migration_lookup
+      migration: ddo_d7_filter_format
+      source: format
+  body/value:
+    -
+      plugin: get
+      source: body
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+  no_stub: true
+migration_dependencies:
+  required:
+    - ddo_d7_filter_format
+    - ddo_block_content_body_field
+  optional:
+    - ddo_d7_filter_format

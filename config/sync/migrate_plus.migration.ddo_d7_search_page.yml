@@ -1,0 +1,67 @@
+uuid: 07bf13e6-57f5-4d6e-96f3-95b5677183cf
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-kme7QmfSttPxzwx5DlNyExai_3A89vVo-txTVAtP8w'
+id: ddo_d7_search_page
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Search page configuration'
+source:
+  plugin: d7_search_page
+  variables:
+    - node_rank_comments
+    - node_rank_promote
+    - node_rank_relevance
+    - node_rank_sticky
+    - node_rank_views
+  constants:
+    suffix: _search
+process:
+  module:
+    -
+      plugin: get
+      source: module
+  module_exists:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: module_exists
+  status:
+    -
+      plugin: static_map
+      source: status
+      map:
+        node: true
+        user: true
+      default_value: false
+  id:
+    -
+      plugin: concat
+      source:
+        - module
+        - constants/suffix
+  plugin:
+    -
+      plugin: concat
+      source:
+        - module
+        - constants/suffix
+  path:
+    -
+      plugin: get
+      source: module
+  configuration/rankings:
+    -
+      plugin: search_configuration_rankings
+destination:
+  plugin: 'entity:search_page'
+migration_dependencies:
+  required: {  }
+  optional: {  }

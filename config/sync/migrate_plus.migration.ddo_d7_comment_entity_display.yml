@@ -1,0 +1,56 @@
+uuid: e21f04c8-3fce-4d91-a9b5-0a730c73a1fb
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jhHdK0_7nj40A10kQPiKB3VIueaEAbekdAjMlIn2p0Q
+id: ddo_d7_comment_entity_display
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Comment display configuration'
+source:
+  plugin: comment_type
+  constants:
+    entity_type: node
+    view_mode: default
+    options:
+      label: hidden
+      type: comment_default
+      weight: 20
+process:
+  entity_type:
+    -
+      plugin: get
+      source: constants/entity_type
+  field_name:
+    -
+      plugin: migration_lookup
+      source: type
+      migration: ddo_d7_comment_type
+    -
+      plugin: skip_on_empty
+      method: row
+  view_mode:
+    -
+      plugin: get
+      source: constants/view_mode
+  options:
+    -
+      plugin: get
+      source: constants/options
+  bundle:
+    -
+      plugin: get
+      source: type
+destination:
+  plugin: component_entity_display
+migration_dependencies:
+  required:
+    - ddo_d7_comment_field_instance
+  optional:
+    - ddo_d7_comment_type

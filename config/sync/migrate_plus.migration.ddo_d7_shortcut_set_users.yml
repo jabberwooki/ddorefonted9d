@@ -1,0 +1,40 @@
+uuid: 39490ad3-8944-4c9d-b020-abccc1e1e7e1
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JDEkB_qBFzPsWgVDkL1Id2hrwtAknQ5hepfiuFuZ8IY
+id: ddo_d7_shortcut_set_users
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Shortcut set user mapping'
+source:
+  plugin: d7_shortcut_set_users
+process:
+  uid:
+    -
+      plugin: migration_lookup
+      migration: ddo_d7_user
+      source: uid
+    -
+      plugin: skip_on_empty
+      method: row
+  set_name:
+    -
+      plugin: migration_lookup
+      migration: ddo_d7_shortcut_set
+      source: set_name
+destination:
+  plugin: shortcut_set_users
+migration_dependencies:
+  required:
+    - ddo_d7_shortcut_set
+    - ddo_d7_user
+  optional:
+    - ddo_d7_user
+    - ddo_d7_shortcut_set
