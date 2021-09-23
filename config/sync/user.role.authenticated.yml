@@ -5,17 +5,20 @@ dependencies: {  }
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
-label: 'Utilisateur authentifié'
-weight: 1
+label: 'authenticated user'
+weight: 5
 is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access shortcuts'
-  - 'access site-wide contact form'
-  - 'display eu cookie compliance popup'
-  - 'opt-in or out of google analytics tracking'
+  - 'change own username'
+  - 'diff view changes'
   - 'post comments'
+  - 'register webpush'
   - 'search content'
   - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'use advanced search'
+  - 'use exclude node title'
+  - 'use manualcrop'
+  - 'use text format filtered_html'
+  - 'view any atom'

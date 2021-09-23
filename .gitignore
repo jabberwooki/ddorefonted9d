@@ -74,3 +74,7 @@ ehthumbs_vista.db
 
 # Fichiers history des commandes passées dans le terminal
 /history/
+
+# Fichiers d'enregistrement des statuts de migration
+migrate-status-*
+
