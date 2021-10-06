@@ -107,7 +107,7 @@ process:
     #~ -
       #~ plugin: get
       #~ source: field_scald_video
-  field_thematique_article:
+  field_themes:
     -
       plugin: sub_process
       source: field_thematique_article
@@ -117,7 +117,7 @@ process:
     #~ -
       #~ plugin: get
       #~ source: field_image_colonne_droite
-  field_link_more_infos:
+  field_more_infos_link:
     -
       plugin: get
       source: field_link_more_infos
@@ -135,11 +135,11 @@ process:
           from_format: 'Y-m-d\TH:i:s'
           to_format: 'Y-m-d\TH:i:s'
           source: value
-  field_news_url_target:
+  field_target_url:
     -
       plugin: get
       source: field_news_url_target
-  field_visible_bas_accueil:
+  field_frontpage_zoom:
     -
       plugin: get
       source: field_visible_bas_accueil
@@ -159,7 +159,7 @@ destination:
 migration_dependencies:
   required:
     - ddo_d7_user
-    - ddo_d7_node_type
+    #~ - ddo_d7_node_type
     - ddo_language
   optional:
     - ddo_d7_field_instance
