@@ -1,0 +1,8 @@
+uuid: 5f9a9de8-d4ea-4fce-a200-d1f7641bbf44
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Espace Pro'
+vid: espace_pro
+description: ''
+weight: 0

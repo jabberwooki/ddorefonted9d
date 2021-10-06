@@ -1,0 +1,8 @@
+uuid: 4d9a7256-1855-4ee4-854b-23fe573464a3
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Types de structure'
+vid: structure_types
+description: ''
+weight: 0

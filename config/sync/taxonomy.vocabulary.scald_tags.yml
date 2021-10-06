@@ -1,0 +1,8 @@
+uuid: 8afd9048-d364-46e8-ba28-bbc23801bf51
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Scald tags'
+vid: scald_tags
+description: 'Scald tags vocabulary'
+weight: -5

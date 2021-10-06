@@ -1,0 +1,8 @@
+uuid: 28e644c0-dd80-4167-a690-4cee41db08a2
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Lieux de spectacle'
+vid: show_locations
+description: ''
+weight: 0
