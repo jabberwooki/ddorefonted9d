@@ -1,0 +1,23 @@
+uuid: 7f59c867-0ee2-409c-9e87-3884e82e89f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_new_window
+    - node.type.article
+id: node.article.field_new_window
+field_name: field_new_window
+entity_type: node
+bundle: article
+label: 'Lien vers nouvelle fenêtre'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

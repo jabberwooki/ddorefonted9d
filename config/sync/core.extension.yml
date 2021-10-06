@@ -17,6 +17,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   ddo_migrate: 0
   devel: 0

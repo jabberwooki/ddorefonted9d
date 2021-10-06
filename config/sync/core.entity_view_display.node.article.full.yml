@@ -1,9 +1,9 @@
-uuid: 2f55b381-1099-4ea5-a609-d07e3e05fee3
+uuid: 8314c921-669c-454f-8873-5258a05189eb
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_edition_date
@@ -16,39 +16,59 @@ dependencies:
     - field.field.node.article.field_themes
     - node.type.article
   module:
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked
+      library: ds/ds_2col_stacked
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      header:
+        - sharethis
+        - links
+      left:
+        - body
 _core:
-  default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
-id: node.article.teaser
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.full
 targetEntityType: node
 bundle: article
-mode: teaser
+mode: full
 content:
   body:
-    type: text_summary_or_trimmed
-    weight: 0
-    region: content
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    label: hidden
-  field_tags:
-    type: entity_reference_label
-    weight: 10
-    region: content
-    settings:
-      link: true
-    third_party_settings: {  }
-    label: above
-  links:
-    weight: 100
-    region: content
-  sharethis:
-    weight: 10
+    type: text_default
+    weight: 2
+    region: left
     settings: {  }
     third_party_settings: {  }
-    region: content
+    label: hidden
+  links:
+    weight: 1
+    region: header
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 0
+    region: header
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   comment: true
   field_edition_date: true

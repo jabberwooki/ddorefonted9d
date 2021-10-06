@@ -12,7 +12,7 @@ id: node.article.field_tags
 field_name: field_tags
 entity_type: node
 bundle: article
-label: Étiquettes
+label: Tags
 description: 'Saisir une liste en séparant les termes par une virgule. Par exemple : Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
 translatable: true
