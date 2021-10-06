@@ -2,8 +2,6 @@ uuid: 2a7f312f-8ab7-4d08-9537-c4725ef3c9cb
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: SapAeRmDCFzrYIvUJvMitBZwu4Vajooc85Fu8UZFmsE
 id: ddo_d7_field
 class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
 field_plugin_method: alterFieldMigration

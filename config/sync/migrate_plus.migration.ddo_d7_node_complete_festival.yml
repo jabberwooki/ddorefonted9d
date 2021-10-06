@@ -2,8 +2,6 @@ uuid: bf475370-481c-469e-b524-e47c9a098573
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 5yh31MnvPfpKsSnpwMxPHvyyTDH2frPXqyuxfOjne7g
 id: ddo_d7_node_complete_festival
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null

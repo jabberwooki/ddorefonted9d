@@ -2,8 +2,6 @@ uuid: d610fc69-6fbf-455b-ab92-7c19cb95db87
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: up5Bp3s3VPsl8dLw_WPkI46V4x-_bUGoGwQsvlnP4hM
 id: ddo_d7_system_mail
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

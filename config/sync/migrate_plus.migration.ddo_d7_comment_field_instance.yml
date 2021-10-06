@@ -2,8 +2,6 @@ uuid: 061da8a5-acce-4513-a6b0-89d724527287
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: HnDYMAXGnL-jJ8e0c8ZPKvgFUu_hUStHrao5L6nYc0Q
 id: ddo_d7_comment_field_instance
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

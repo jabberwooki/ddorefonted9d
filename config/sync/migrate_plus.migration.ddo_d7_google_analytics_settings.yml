@@ -2,8 +2,6 @@ uuid: b9d7718f-8620-494c-9905-df40bdf8ad12
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 68pliG3L8l7QNET1OJ_eIO9raG-5_9XTFiV_srASOss
 id: ddo_d7_google_analytics_settings
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

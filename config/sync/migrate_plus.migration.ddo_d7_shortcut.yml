@@ -2,8 +2,6 @@ uuid: fcf9d4fe-4a2c-4061-8ee6-89c71a14e4e5
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: AkYbmDlJv2pkZurmz7YRKqTY6mkbAVlLLxMjGW-WY-o
 id: ddo_d7_shortcut
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

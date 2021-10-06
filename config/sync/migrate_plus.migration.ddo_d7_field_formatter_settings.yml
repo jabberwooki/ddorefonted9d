@@ -2,8 +2,6 @@ uuid: 81b3b34a-e782-42c8-b93a-75ec04282288
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: KJ06fuQbKfoZpUHQezpxuDvklwQyQZvom0uVAOFHy3s
 id: ddo_d7_field_formatter_settings
 class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
 field_plugin_method: alterFieldFormatterMigration

@@ -2,8 +2,6 @@ uuid: 59b5db58-e6ab-4419-bf7a-d1e3df24f15b
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: cZvTeP2a7Ml_rC_j_im4f2UxaiCnbcP5_I61cZx0W4Q
 id: ddo_d7_comment_entity_form_display_subject
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

@@ -2,8 +2,6 @@ uuid: 18c60b42-c08a-43a3-885e-d0a281f2d1e3
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: fpm3pUCiUEqvQRzUbXMTMXX-lx9JONvXsZdql5Y93TY
 id: ddo_user_picture_field
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

@@ -2,8 +2,6 @@ uuid: 70ca61c7-fe9a-44d1-a75b-71e3090041dc
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 4x8jltns45EnpeOKPGUuzDus5HtAFIeeXQWwxxg7an4
 id: ddo_d7_field_instance_widget_settings
 class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
 field_plugin_method: alterFieldWidgetMigration

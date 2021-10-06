@@ -2,8 +2,6 @@ uuid: c6bf5f12-e226-479e-a1cc-62da909de129
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: QsCDqiGV_y54qfZ1eEqSE2bPHE7SOazbbWawf7FCN7Y
 id: ddo_migrate
 label: DDOWebSite
 description: 'Import DDO web site from Drupal 7'

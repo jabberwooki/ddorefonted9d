@@ -2,8 +2,6 @@ uuid: 3df59479-144e-4572-9543-00cf39a433fa
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 6eXpfLzfrdkoHzWi94DPgyOL8BOdvgvnL1VVuJNeV7s
 id: ddo_d7_taxonomy_term_webpush_topics
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

@@ -2,15 +2,11 @@ uuid: 43441f7b-733f-4d14-97c0-4780670bede6
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 1EL7LzFuTshgCUvcEcT-inqizGDbyZl_3X6wOPKYbfM
 id: ddo_d7_user_role
-class: Drupal\migrate\Plugin\Migration
+class: null
 field_plugin_method: null
 cck_plugin_method: null
-migration_tags:
-  - 'Drupal 7'
-  - Configuration
+migration_tags: null
 migration_group: ddo_migrate
 label: 'User roles'
 source:
@@ -22,10 +18,7 @@ process:
       source: name
     -
       plugin: user_update_8002
-  label:
-    -
-      plugin: get
-      source: name
+  label: name
   permissions:
     -
       plugin: static_map
@@ -46,13 +39,9 @@ process:
         'edit own forum topics': 'edit own forum content'
     -
       plugin: flatten
-  weight:
-    -
-      plugin: get
-      source: weight
+  weight: weight
 destination:
   plugin: 'entity:user_role'
 migration_dependencies:
-  optional:
-    - ddo_d7_filter_format
+  optional: {  }
   required: {  }

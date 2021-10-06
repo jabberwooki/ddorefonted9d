@@ -2,8 +2,6 @@ uuid: 2d029611-823d-4f51-93e6-0d3098e08053
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: LpDHoewEHJPs5WG_38525VujeqRIZOlXN06v5Ea2A64
 id: ddo_d7_node_complete_tech_document
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null

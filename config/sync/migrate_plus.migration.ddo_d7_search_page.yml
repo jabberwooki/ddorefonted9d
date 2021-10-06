@@ -2,8 +2,6 @@ uuid: 07bf13e6-57f5-4d6e-96f3-95b5677183cf
 langcode: fr
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: '-kme7QmfSttPxzwx5DlNyExai_3A89vVo-txTVAtP8w'
 id: ddo_d7_search_page
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
