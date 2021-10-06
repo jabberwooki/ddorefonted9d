@@ -1,0 +1,21 @@
+uuid: a491a0b4-1893-4372-8381-fc48ffb901ec
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ls_practical
+    - taxonomy.vocabulary.show_locations
+  module:
+    - text
+id: taxonomy_term.show_locations.field_ls_practical
+field_name: field_ls_practical
+entity_type: taxonomy_term
+bundle: show_locations
+label: Pratique
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
