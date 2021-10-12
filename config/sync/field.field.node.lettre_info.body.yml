@@ -1,0 +1,23 @@
+uuid: f9c02aab-f16d-4f5c-af07-5a676a510fda
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lettre_info
+  module:
+    - text
+id: node.lettre_info.body
+field_name: body
+entity_type: node
+bundle: lettre_info
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

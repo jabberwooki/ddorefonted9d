@@ -1,0 +1,34 @@
+uuid: c141279f-6a3c-4694-88a2-d906f0c6c897
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.presentation_location_salles.body
+    - node.type.presentation_location_salles
+  module:
+    - text
+    - user
+id: node.presentation_location_salles.default
+targetEntityType: node
+bundle: presentation_location_salles
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

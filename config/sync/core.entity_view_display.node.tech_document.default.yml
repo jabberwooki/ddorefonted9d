@@ -1,0 +1,34 @@
+uuid: 1cb75de5-8d3b-4f14-bba3-812c29d38831
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.tech_document.body
+    - node.type.tech_document
+  module:
+    - text
+    - user
+id: node.tech_document.default
+targetEntityType: node
+bundle: tech_document
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

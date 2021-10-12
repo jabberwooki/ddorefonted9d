@@ -1,0 +1,11 @@
+uuid: 0f85a622-51c6-40b1-9727-a9f1ccd41d4e
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Document technique'
+type: tech_document
+description: 'Fiches techniques, plans de salle, description du matériel pour les différentes zones de spectacles du domaine (Parc, théatre, amphithéâtre, château).'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

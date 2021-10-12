@@ -1,0 +1,36 @@
+uuid: ba4a9242-0ec3-48e8-9f66-0da801c528e3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lettre_info.body
+    - node.type.lettre_info
+  module:
+    - text
+    - user
+id: node.lettre_info.teaser
+targetEntityType: node
+bundle: lettre_info
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

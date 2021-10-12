@@ -1,0 +1,36 @@
+uuid: 4db90257-026d-4199-a2b0-9dac120354c7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.presentation_location_salles.body
+    - node.type.presentation_location_salles
+  module:
+    - text
+    - user
+id: node.presentation_location_salles.teaser
+targetEntityType: node
+bundle: presentation_location_salles
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

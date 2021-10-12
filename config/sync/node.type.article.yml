@@ -1,13 +1,20 @@
 uuid: fdf1da29-cf8c-44c5-a97b-4dcc155bf11b
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
 _core:
   default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
 name: Article
 type: article
-description: 'Utilisez les <em>articles</em> pour des contenus possédant une temporalité tels que des actualités, des communiqués de presse ou des billets de blog.'
+description: 'Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: true

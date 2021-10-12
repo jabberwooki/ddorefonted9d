@@ -1,0 +1,16 @@
+uuid: 77f1f02e-9021-43f2-9dc5-ba6eb6b4dd08
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: Spectacle
+type: show
+description: ''
+help: '<h3 style="color:#FF2400, font-size:2em;" target="_blank">ATTENTION RÉFÉRENCEMENT : Merci de vous référer à la page <a href="https://www.domainedo.fr/optimisation-referencement">https://www.domainedo.fr/optimisation-referencement</a> pour mettre en valeur chaque spectacles sur les moteurs de recherche.  '
+new_revision: false
+preview_mode: 1
+display_submitted: false

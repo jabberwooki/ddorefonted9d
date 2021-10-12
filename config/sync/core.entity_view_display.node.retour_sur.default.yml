@@ -1,0 +1,34 @@
+uuid: dcf430cc-820d-4ba0-82a4-317d29afb4f2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.retour_sur.body
+    - node.type.retour_sur
+  module:
+    - text
+    - user
+id: node.retour_sur.default
+targetEntityType: node
+bundle: retour_sur
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,34 @@
+uuid: f6536a5e-4bec-4385-b16e-7ba8f0c21c22
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.press_document.body
+    - node.type.press_document
+  module:
+    - text
+    - user
+id: node.press_document.default
+targetEntityType: node
+bundle: press_document
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,36 @@
+uuid: 1ec41b50-4032-4959-9e7b-ae56ad7ebcb6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tech_document.body
+    - node.type.tech_document
+  module:
+    - text
+    - user
+id: node.tech_document.teaser
+targetEntityType: node
+bundle: tech_document
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

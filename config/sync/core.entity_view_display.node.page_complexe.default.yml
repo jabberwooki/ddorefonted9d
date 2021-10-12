@@ -1,0 +1,34 @@
+uuid: 4cbb25e8-4212-4fbc-a8aa-df0432603635
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.page_complexe.body
+    - node.type.page_complexe
+  module:
+    - text
+    - user
+id: node.page_complexe.default
+targetEntityType: node
+bundle: page_complexe
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

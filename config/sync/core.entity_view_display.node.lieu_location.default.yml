@@ -1,0 +1,34 @@
+uuid: ecccda99-5ab1-4f30-8abe-50cb3b6e007e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.lieu_location.body
+    - node.type.lieu_location
+  module:
+    - text
+    - user
+id: node.lieu_location.default
+targetEntityType: node
+bundle: lieu_location
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

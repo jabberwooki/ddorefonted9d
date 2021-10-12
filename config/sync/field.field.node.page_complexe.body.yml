@@ -1,0 +1,23 @@
+uuid: fb484826-cbda-4978-96af-ff6ac80c8603
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_complexe
+  module:
+    - text
+id: node.page_complexe.body
+field_name: body
+entity_type: node
+bundle: page_complexe
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

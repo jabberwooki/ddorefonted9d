@@ -1,0 +1,36 @@
+uuid: 349716bb-abb7-4bd7-9179-f37b7c6d3324
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.press_document.body
+    - node.type.press_document
+  module:
+    - text
+    - user
+id: node.press_document.teaser
+targetEntityType: node
+bundle: press_document
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
