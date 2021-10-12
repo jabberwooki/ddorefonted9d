@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: 'Par défaut'
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -323,7 +323,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Auteur
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -452,7 +452,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Mis à jour'
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -1276,7 +1276,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Auteur
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -1405,7 +1405,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Mis à jour'
+          label: Updated
           exclude: false
           alter:
             alter_text: false

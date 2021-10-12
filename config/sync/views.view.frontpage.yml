@@ -184,8 +184,8 @@ display:
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« First'
             last: 'Last »'
           quantity: 9
@@ -246,7 +246,7 @@ display:
       arguments: {  }
       display_extenders: {  }
     display_plugin: default
-    display_title: 'Par défaut'
+    display_title: Default
     id: default
     position: 0
     cache_metadata:

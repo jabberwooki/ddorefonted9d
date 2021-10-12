@@ -19,7 +19,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: 'Par défaut'
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
@@ -123,7 +123,7 @@ display:
           id: name
           table: users_field_data
           field: name
-          label: Auteur
+          label: Author
           relationship: uid
           plugin_id: field
           type: user_name

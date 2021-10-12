@@ -40,8 +40,8 @@ display:
         options:
           items_per_page: 50
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« First'
             last: 'Last »'
       style:
@@ -246,7 +246,7 @@ display:
           table: users_field_data
           field: name
           relationship: uid
-          label: Auteur
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -264,7 +264,7 @@ display:
           id: status
           table: node_field_data
           field: status
-          label: État
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -277,8 +277,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Publié
-            format_custom_false: 'Non publié'
+            format_custom_true: Published
+            format_custom_false: Unpublished
           plugin_id: field
           entity_type: node
           entity_field: status
@@ -286,7 +286,7 @@ display:
           id: changed
           table: node_field_data
           field: changed
-          label: 'Mis à jour'
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -453,7 +453,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: État
+            label: Status
             description: ''
             use_operator: false
             operator: status_op
@@ -467,7 +467,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: 'Statut de publication'
+            label: 'Published status'
             description: ''
             identifier: status
             optional: true
@@ -478,11 +478,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Publié
+                title: Published
                 operator: '='
                 value: '1'
               2:
-                title: 'Non publié'
+                title: Unpublished
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -569,7 +569,7 @@ display:
           1: AND
       display_extenders: {  }
     display_plugin: default
-    display_title: 'Par défaut'
+    display_title: Default
     id: default
     position: 0
     cache_metadata:

@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: 'Par défaut'
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -54,8 +54,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -251,7 +251,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Mis à jour'
+          label: Updated
           exclude: false
           alter:
             alter_text: false
