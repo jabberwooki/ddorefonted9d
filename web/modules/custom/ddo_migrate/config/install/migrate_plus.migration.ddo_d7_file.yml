@@ -15,7 +15,8 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: /home/ubuntu/dev/domainedo-refonte/d9d/web/sites/default/files/
+    #~ source_base_path: https://www.domainedo.fr/sites/default/files
+    source_base_path: https://www.domainedo.fr
 process:
   fid:
     -
