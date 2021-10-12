@@ -1,0 +1,29 @@
+uuid: e9927c37-8b15-4284-b981-0a64423f1295
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.image
+    - taxonomy.vocabulary.scald_tags
+id: media.image.field_tags
+field_name: field_tags
+entity_type: media
+bundle: image
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scald_tags: scald_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

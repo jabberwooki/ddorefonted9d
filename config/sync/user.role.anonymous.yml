@@ -27,3 +27,4 @@ permissions:
   - 'view any basic_block bean'
   - 'view any social_comment bean'
   - 'view disqus comments'
+  - 'view media'
