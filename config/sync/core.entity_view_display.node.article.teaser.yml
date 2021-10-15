@@ -6,14 +6,17 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_frontpage_zoom
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
+    - field.field.node.article.field_sidebar_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_target_url
     - field.field.node.article.field_themes
+    - field.field.node.article.field_videos
     - node.type.article
   module:
     - text
@@ -51,12 +54,15 @@ content:
     region: content
 hidden:
   comment: true
+  field_banner_image: true
   field_edition_date: true
   field_frontpage_zoom: true
   field_more_infos_link: true
   field_new_window: true
   field_publication_date: true
+  field_sidebar_image: true
   field_tags: true
   field_target_url: true
   field_themes: true
+  field_videos: true
   langcode: true

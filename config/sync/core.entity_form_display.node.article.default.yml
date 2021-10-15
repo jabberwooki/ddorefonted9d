@@ -5,19 +5,23 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_frontpage_zoom
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
+    - field.field.node.article.field_sidebar_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_target_url
     - field.field.node.article.field_themes
+    - field.field.node.article.field_videos
     - node.type.article
   module:
     - comment
     - datetime
     - datetime_range
+    - media_library
     - path
     - text
 _core:
@@ -49,6 +53,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_banner_image:
+    type: media_library_widget
+    weight: 26
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_edition_date:
     weight: 4
     settings: {  }
@@ -83,6 +94,13 @@ content:
     third_party_settings: {  }
     type: daterange_default
     region: content
+  field_sidebar_image:
+    type: media_library_widget
+    weight: 27
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 5
@@ -110,6 +128,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_videos:
+    type: media_library_widget
+    weight: 28
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   langcode:
     type: language_select

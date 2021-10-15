@@ -6,14 +6,17 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_frontpage_zoom
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
+    - field.field.node.article.field_sidebar_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_target_url
     - field.field.node.article.field_themes
+    - field.field.node.article.field_videos
     - node.type.article
   module:
     - comment
@@ -44,6 +47,15 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
+  field_banner_image:
+    type: entity_reference_entity_view
+    weight: 118
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_edition_date:
     weight: 111
     label: above
@@ -90,6 +102,15 @@ content:
     third_party_settings: {  }
     type: daterange_default
     region: content
+  field_sidebar_image:
+    type: entity_reference_entity_view
+    weight: 119
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_tags:
     type: entity_reference_label
     weight: 10
@@ -113,6 +134,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_videos:
+    type: entity_reference_entity_view
+    weight: 120
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   links:
     weight: 100
