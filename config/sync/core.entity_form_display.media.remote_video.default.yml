@@ -3,7 +3,9 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.media.remote_video.field_authors
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
     - media
@@ -21,6 +23,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_authors:
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_media_oembed_video:
     type: oembed_textfield
     weight: 0
@@ -28,6 +40,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 102
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
