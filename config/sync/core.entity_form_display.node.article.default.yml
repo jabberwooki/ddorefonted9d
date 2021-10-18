@@ -23,6 +23,7 @@ dependencies:
     - datetime_range
     - media_library
     - path
+    - term_reference_tree
     - text
 _core:
   default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
@@ -122,12 +123,13 @@ content:
   field_themes:
     weight: 2
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: term_reference_tree
     region: content
   field_videos:
     type: media_library_widget
