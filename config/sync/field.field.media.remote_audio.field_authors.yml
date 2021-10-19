@@ -1,0 +1,29 @@
+uuid: b59dff96-6778-4b83-b6b9-a7b7a4c9c634
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_authors
+    - media.type.remote_audio
+    - taxonomy.vocabulary.scald_authors
+id: media.remote_audio.field_authors
+field_name: field_authors
+entity_type: media
+bundle: remote_audio
+label: Auteurs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scald_authors: scald_authors
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

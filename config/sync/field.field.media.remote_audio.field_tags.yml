@@ -1,0 +1,29 @@
+uuid: 267e0ab1-9879-4dc8-aaf7-5f857e73a9f9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.remote_audio
+    - taxonomy.vocabulary.scald_tags
+id: media.remote_audio.field_tags
+field_name: field_tags
+entity_type: media
+bundle: remote_audio
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scald_tags: scald_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

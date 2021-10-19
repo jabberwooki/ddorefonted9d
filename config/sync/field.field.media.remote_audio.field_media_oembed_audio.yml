@@ -1,0 +1,21 @@
+uuid: 955bebf7-fccd-4a45-a83f-6fc72204c8ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_audio
+    - media.type.remote_audio
+_core:
+  default_config_hash: pQOqR_Bpi6aYNSpgT39FaNGS6ZN_tKUbH9IZMi_5bKk
+id: media.remote_audio.field_media_oembed_audio
+field_name: field_media_oembed_audio
+entity_type: media
+bundle: remote_audio
+label: 'Audio URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
