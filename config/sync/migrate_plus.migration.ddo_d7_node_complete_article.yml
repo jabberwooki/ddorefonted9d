@@ -32,8 +32,9 @@ process:
       source: title
   uid:
     -
-      plugin: get
-      source: node_uid
+      plugin: migration_lookup
+      migration: ddo_d7_user
+      source: uid
   status:
     -
       plugin: get
@@ -58,36 +59,14 @@ process:
     -
       plugin: get
       source: body
-  field_tags:
-    -
-      plugin: sub_process
-      source: field_tags
-      process:
-        target_id: tid
-  field_edition_date:
-    -
-      plugin: sub_process
-      source: field_date_de_modification
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: 'Y-m-d H:i:s'
-          source: value
   field_themes:
-    -
-      plugin: sub_process
-      source: field_thematique_article
-      process:
-        target_id: tid
-  field_more_infos_link:
-    -
-      plugin: get
-      source: field_link_more_infos
-  field_new_window:
-    -
-      plugin: get
-      source: field_new_window
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_thematique_article
+    source: field_thematique_article
+  field_tags:
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_tags
+    source: field_tags
   field_publication_date:
     -
       plugin: sub_process
@@ -98,6 +77,53 @@ process:
           from_format: 'Y-m-d\TH:i:s'
           to_format: 'Y-m-d\TH:i:s'
           source: value
+        end_value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value2
+  field_edition_date:
+    -
+      plugin: sub_process
+      source: field_date_de_modification
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_banner_image:
+    plugin: sub_process
+    source: field_scald_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_sidebar_image:
+    plugin: sub_process
+    source: field_image_colonne_droite
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_videos:
+    plugin: sub_process
+    source: field_scald_video
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_video
+        source: sid
+  field_more_infos_link:
+    -
+      plugin: get
+      source: field_link_more_infos
+  field_new_window:
+    -
+      plugin: get
+      source: field_new_window
   field_target_url:
     -
       plugin: get
@@ -117,6 +143,10 @@ destination:
 migration_dependencies:
   required:
     - ddo_d7_user
+    - ddo_d7_taxonomy_term_thematique_article
+    - ddo_d7_taxonomy_term_tags
+    - ddo_d7_scald_image
+    - ddo_d7_scald_video
     - ddo_language
   optional:
     - ddo_d7_field_instance
