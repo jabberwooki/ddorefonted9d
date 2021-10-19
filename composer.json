@@ -46,6 +46,7 @@
         "drupal/google_analytics": "^3.1",
         "drupal/imce": "^2.4",
         "drupal/libraries": "^3.0@beta",
+        "drupal/media_remote_audio": "^1.0",
         "drupal/metatag": "^1.16",
         "drupal/migrate_source_scald": "^1.0@RC",
         "drupal/migrate_tools": "^5.0",
