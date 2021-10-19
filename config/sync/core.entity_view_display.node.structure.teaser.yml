@@ -5,6 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.structure.body
+    - field.field.node.structure.field_associate_artist
+    - field.field.node.structure.field_logo
+    - field.field.node.structure.field_media_image
+    - field.field.node.structure.field_shows
+    - field.field.node.structure.field_sounds
+    - field.field.node.structure.field_structure_type
+    - field.field.node.structure.field_videos
+    - field.field.node.structure.field_website
     - node.type.structure
   module:
     - text
@@ -33,4 +41,12 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_associate_artist: true
+  field_logo: true
+  field_media_image: true
+  field_shows: true
+  field_sounds: true
+  field_structure_type: true
+  field_videos: true
+  field_website: true
   langcode: true

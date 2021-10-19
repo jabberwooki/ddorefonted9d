@@ -4,8 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.structure.body
+    - field.field.node.structure.field_associate_artist
+    - field.field.node.structure.field_logo
+    - field.field.node.structure.field_media_image
+    - field.field.node.structure.field_shows
+    - field.field.node.structure.field_sounds
+    - field.field.node.structure.field_structure_type
+    - field.field.node.structure.field_videos
+    - field.field.node.structure.field_website
+    - image.style.thumbnail
     - node.type.structure
   module:
+    - image
+    - link
+    - media_library
     - path
     - text
 id: node.structure.default
@@ -29,6 +41,73 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_associate_artist:
+    weight: 124
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_logo:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_media_image:
+    type: media_library_widget
+    weight: 126
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_shows:
+    weight: 129
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_sounds:
+    type: media_library_widget
+    weight: 128
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_structure_type:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_videos:
+    weight: 127
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_website:
+    weight: 125
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   langcode:
     type: language_select
     weight: 2

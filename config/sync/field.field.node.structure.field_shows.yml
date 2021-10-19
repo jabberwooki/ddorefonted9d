@@ -1,0 +1,29 @@
+uuid: 8a55651e-5751-430f-b422-a46fef200469
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shows
+    - node.type.show
+    - node.type.structure
+id: node.structure.field_shows
+field_name: field_shows
+entity_type: node
+bundle: structure
+label: Spectacles
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      show: show
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

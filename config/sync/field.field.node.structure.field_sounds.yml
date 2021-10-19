@@ -1,0 +1,29 @@
+uuid: 3099dea7-c536-4c6e-8196-6426f769a011
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sounds
+    - media.type.remote_audio
+    - node.type.structure
+id: node.structure.field_sounds
+field_name: field_sounds
+entity_type: node
+bundle: structure
+label: Sons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_audio: remote_audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
