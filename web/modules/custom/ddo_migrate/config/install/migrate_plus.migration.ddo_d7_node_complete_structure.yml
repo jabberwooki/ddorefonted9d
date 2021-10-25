@@ -3,16 +3,16 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ddo_d7_node_complete_structure
-class: Drupal\node\Plugin\migrate\D7NodeTranslation
-field_plugin_method: null
-cck_plugin_method: null
-migration_tags:
-  - 'Drupal 7'
-  - Content
+#~ class: Drupal\node\Plugin\migrate\D7NodeTranslation
+#~ field_plugin_method: null
+#~ cck_plugin_method: null
+#~ migration_tags:
+  #~ - 'Drupal 7'
+  #~ - Content
 migration_group: ddo_migrate
 label: 'Node complete (Structure)'
 source:
-  plugin: d7_node_complete
+  plugin: d7_node
   node_type: structure
 process:
   nid:

@@ -6,7 +6,8 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    parent: 'main-menu:0:'
+    parent: ''
+    available_menus: {  }
 name: Structure
 type: structure
 description: 'Une structure est une association de professionnels du spectacle. Cela peut être une compagnie, un groupe, un ensemble, un artiste seul.'
