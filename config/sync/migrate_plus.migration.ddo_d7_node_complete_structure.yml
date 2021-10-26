@@ -62,6 +62,15 @@ process:
     -
       plugin: get
       source: field_associate_artist
+  field_logo:
+    -
+      plugin: sub_process
+      source: field_logo
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: ddo_d7_scald_image
+          source: sid
   field_media_image:
     -
       plugin: sub_process

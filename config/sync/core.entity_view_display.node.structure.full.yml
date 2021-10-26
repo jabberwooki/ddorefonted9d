@@ -16,7 +16,6 @@ dependencies:
     - node.type.structure
   module:
     - ds
-    - image
     - link
     - text
     - user
@@ -50,14 +49,14 @@ content:
     third_party_settings: {  }
     region: content
   field_logo:
+    type: entity_reference_entity_view
     weight: 0
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
     region: content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
   field_media_image:
     type: entity_reference_entity_view
     weight: 1

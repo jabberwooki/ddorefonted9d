@@ -11,7 +11,7 @@ id: node.presentation_location_salles.body
 field_name: body
 entity_type: node
 bundle: presentation_location_salles
-label: Body
+label: Description
 description: ''
 required: false
 translatable: true
