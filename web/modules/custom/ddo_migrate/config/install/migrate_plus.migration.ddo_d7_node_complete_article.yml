@@ -207,9 +207,10 @@ process:
       source: pseudo_metatag_entities
       
 destination:
-  plugin: 'entity_complete:node'
+  plugin: 'entity:node'
   translations: true
   default_bundle: article
+  
 migration_dependencies:
   required:
     - ddo_d7_user

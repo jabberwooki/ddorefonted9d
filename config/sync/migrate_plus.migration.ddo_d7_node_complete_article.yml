@@ -137,7 +137,7 @@ process:
       plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
-  plugin: 'entity_complete:node'
+  plugin: 'entity:node'
   translations: true
   default_bundle: article
 migration_dependencies:
