@@ -1,8 +1,9 @@
-uuid: 7f2cb8f4-df31-4f26-b7d4-f657c0d1c39c
+uuid: ec3d4866-da70-48db-a6be-7cf15be0695c
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.full
     - field.field.media.document.field_authors
     - field.field.media.document.field_media_document
     - field.field.media.document.field_tags
@@ -11,10 +12,10 @@ dependencies:
     - file
 _core:
   default_config_hash: DXitcriWmE5QHvGvk2OzWouaSnXD5uipkRdAG6_pnkg
-id: media.document.default
+id: media.document.full
 targetEntityType: media
 bundle: document
-mode: default
+mode: full
 content:
   field_authors:
     weight: 3
@@ -40,9 +41,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
-  name: true
   thumbnail: true
   uid: true
