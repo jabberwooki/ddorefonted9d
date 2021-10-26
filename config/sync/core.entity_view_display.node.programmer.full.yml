@@ -1,8 +1,9 @@
-uuid: b4d860d3-709f-4719-afca-c0831d49b7e4
+uuid: 63a7e00c-754b-4989-a703-c5f29b6379be
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.programmer.body
     - field.field.node.programmer.field_logo
     - node.type.programmer
@@ -21,48 +22,37 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - langcode
-        - sharethis
-        - links
-        - body
         - field_logo
-id: node.programmer.default
+        - node_title
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.programmer.full
 targetEntityType: node
 bundle: programmer
-mode: default
+mode: full
 content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_logo:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
-  langcode:
-    type: language
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  sharethis:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true
+  links: true
+  sharethis: true

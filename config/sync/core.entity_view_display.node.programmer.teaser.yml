@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.programmer.body
+    - field.field.node.programmer.field_logo
     - node.type.programmer
   module:
     - text
@@ -33,4 +34,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_logo: true
   langcode: true
