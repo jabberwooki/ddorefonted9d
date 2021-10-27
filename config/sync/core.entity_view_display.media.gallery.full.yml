@@ -1,0 +1,74 @@
+uuid: b62a08b4-ad69-4d2e-b872-e48661f0a958
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.gallery.field_authors
+    - field.field.media.gallery.field_media_slideshow
+    - field.field.media.gallery.field_tags
+    - media.type.gallery
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - media_name
+        - field_media_slideshow
+        - field_authors
+        - field_tags
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: 0
+id: media.gallery.full
+targetEntityType: media
+bundle: gallery
+mode: full
+content:
+  field_authors:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_media_slideshow:
+    label: visually_hidden
+    weight: 1
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_tags:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

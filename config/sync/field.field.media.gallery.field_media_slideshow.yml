@@ -1,0 +1,31 @@
+uuid: b975b4c5-4c91-4232-8f1c-cfb2a9f0a28d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_slideshow
+    - media.type.gallery
+    - media.type.image
+    - media.type.remote_video
+id: media.gallery.field_media_slideshow
+field_name: field_media_slideshow
+entity_type: media
+bundle: gallery
+label: Diaporama
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: image
+field_type: entity_reference

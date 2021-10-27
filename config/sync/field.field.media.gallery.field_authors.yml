@@ -1,0 +1,29 @@
+uuid: 588bad1d-2757-476d-9978-2953dab2b182
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_authors
+    - media.type.gallery
+    - taxonomy.vocabulary.scald_authors
+id: media.gallery.field_authors
+field_name: field_authors
+entity_type: media
+bundle: gallery
+label: Auteurs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scald_authors: scald_authors
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
