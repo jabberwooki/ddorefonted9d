@@ -4,10 +4,53 @@ status: true
 dependencies:
   config:
     - field.field.node.festival.body
+    - field.field.node.festival.field_archives
+    - field.field.node.festival.field_calendar_archive
+    - field.field.node.festival.field_facebook
+    - field.field.node.festival.field_festival_name
+    - field.field.node.festival.field_files
+    - field.field.node.festival.field_logo
+    - field.field.node.festival.field_no_result
+    - field.field.node.festival.field_online_flipthrough
+    - field.field.node.festival.field_pdf_programme
+    - field.field.node.festival.field_plain_date
+    - field.field.node.festival.field_poster
+    - field.field.node.festival.field_season
+    - field.field.node.festival.field_shows
+    - field.field.node.festival.field_sidebar_image
+    - field.field.node.festival.field_sounds
+    - field.field.node.festival.field_useful_links
+    - field.field.node.festival.field_videos
     - node.type.festival
   module:
+    - field_group
+    - link
+    - media_library
     - path
     - text
+third_party_settings:
+  field_group:
+    group_technical_fields:
+      children:
+        - field_online_flipthrough
+        - field_facebook
+        - field_pdf_programme
+        - field_calendar_archive
+        - field_archives
+        - field_no_result
+      parent_name: ''
+      weight: 13
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: links-and-results
+        classes: ''
+        open: false
+        weight: 0
+      label: 'Liens et résultats'
 id: node.festival.default
 targetEntityType: node
 bundle: festival
@@ -15,7 +58,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -25,47 +68,176 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_archives:
+    weight: 18
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_calendar_archive:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_facebook:
+    weight: 15
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_festival_name:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_files:
+    type: media_library_widget
+    weight: 8
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_logo:
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_no_result:
+    weight: 19
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_online_flipthrough:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_pdf_programme:
+    type: media_library_widget
+    weight: 16
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_plain_date:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_poster:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_season:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_shows:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_sidebar_image:
+    weight: 10
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_sounds:
+    weight: 11
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_useful_links:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_videos:
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 15
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
+    weight: 18
+    region: content
     settings:
       display_label: true
-    weight: 15
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
+    weight: 22
+    region: content
     settings:
       display_label: true
-    weight: 120
-    region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
+    weight: 19
+    region: content
     settings:
       display_label: true
-    weight: 16
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -73,17 +245,17 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 16
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 21
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

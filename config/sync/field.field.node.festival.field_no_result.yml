@@ -1,0 +1,21 @@
+uuid: ef8fcf0c-28d3-4f17-9021-b7d1085edce4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_no_result
+    - node.type.festival
+  module:
+    - text
+id: node.festival.field_no_result
+field_name: field_no_result
+entity_type: node
+bundle: festival
+label: 'Pas de resultat'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

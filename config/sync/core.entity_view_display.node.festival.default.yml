@@ -4,8 +4,27 @@ status: true
 dependencies:
   config:
     - field.field.node.festival.body
+    - field.field.node.festival.field_archives
+    - field.field.node.festival.field_calendar_archive
+    - field.field.node.festival.field_facebook
+    - field.field.node.festival.field_festival_name
+    - field.field.node.festival.field_files
+    - field.field.node.festival.field_logo
+    - field.field.node.festival.field_no_result
+    - field.field.node.festival.field_online_flipthrough
+    - field.field.node.festival.field_pdf_programme
+    - field.field.node.festival.field_plain_date
+    - field.field.node.festival.field_poster
+    - field.field.node.festival.field_season
+    - field.field.node.festival.field_shows
+    - field.field.node.festival.field_sidebar_image
+    - field.field.node.festival.field_sounds
+    - field.field.node.festival.field_useful_links
+    - field.field.node.festival.field_videos
     - node.type.festival
   module:
+    - link
+    - options
     - text
     - user
 id: node.festival.default
@@ -19,6 +38,158 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_archives:
+    weight: 117
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_calendar_archive:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_facebook:
+    weight: 114
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_festival_name:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_files:
+    type: entity_reference_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_logo:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_no_result:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_online_flipthrough:
+    weight: 113
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_pdf_programme:
+    type: entity_reference_entity_view
+    weight: 115
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_plain_date:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_poster:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_season:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_shows:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sidebar_image:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sounds:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_useful_links:
+    weight: 107
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_videos:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

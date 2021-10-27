@@ -1,0 +1,19 @@
+uuid: 10a05df6-dc4c-4bdf-8b9b-7d625e2cac5c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_plain_date
+    - node.type.festival
+id: node.festival.field_plain_date
+field_name: field_plain_date
+entity_type: node
+bundle: festival
+label: 'Date en clair'
+description: 'Date à écrire en suivant la forme de l''exemple suivant : "Du 12 au 13 mai 2018". Elle s''affichera sur l''image de présentation du festival. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

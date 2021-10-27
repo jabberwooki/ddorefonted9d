@@ -5,6 +5,23 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.festival.body
+    - field.field.node.festival.field_archives
+    - field.field.node.festival.field_calendar_archive
+    - field.field.node.festival.field_facebook
+    - field.field.node.festival.field_festival_name
+    - field.field.node.festival.field_files
+    - field.field.node.festival.field_logo
+    - field.field.node.festival.field_no_result
+    - field.field.node.festival.field_online_flipthrough
+    - field.field.node.festival.field_pdf_programme
+    - field.field.node.festival.field_plain_date
+    - field.field.node.festival.field_poster
+    - field.field.node.festival.field_season
+    - field.field.node.festival.field_shows
+    - field.field.node.festival.field_sidebar_image
+    - field.field.node.festival.field_sounds
+    - field.field.node.festival.field_useful_links
+    - field.field.node.festival.field_videos
     - node.type.festival
   module:
     - text
@@ -33,4 +50,21 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_archives: true
+  field_calendar_archive: true
+  field_facebook: true
+  field_festival_name: true
+  field_files: true
+  field_logo: true
+  field_no_result: true
+  field_online_flipthrough: true
+  field_pdf_programme: true
+  field_plain_date: true
+  field_poster: true
+  field_season: true
+  field_shows: true
+  field_sidebar_image: true
+  field_sounds: true
+  field_useful_links: true
+  field_videos: true
   langcode: true

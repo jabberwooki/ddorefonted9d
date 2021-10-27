@@ -1,0 +1,29 @@
+uuid: 76c5012d-53d4-4191-a796-a9d53ad4d8ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_videos
+    - media.type.remote_video
+    - node.type.festival
+id: node.festival.field_videos
+field_name: field_videos
+entity_type: node
+bundle: festival
+label: Vidéos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 25a48c71-92f4-4a33-abdd-ccc80a4e944c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_online_flipthrough
+    - node.type.festival
+  module:
+    - link
+id: node.festival.field_online_flipthrough
+field_name: field_online_flipthrough
+entity_type: node
+bundle: festival
+label: 'Feuilleter en ligne'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

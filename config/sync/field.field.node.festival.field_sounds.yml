@@ -1,0 +1,29 @@
+uuid: 48208702-4fa7-4653-9482-851faf341028
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sounds
+    - media.type.remote_audio
+    - node.type.festival
+id: node.festival.field_sounds
+field_name: field_sounds
+entity_type: node
+bundle: festival
+label: Sons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_audio: remote_audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
