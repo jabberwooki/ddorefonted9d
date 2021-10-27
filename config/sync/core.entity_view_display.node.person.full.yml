@@ -1,8 +1,9 @@
-uuid: f5642821-83e8-425c-8da8-b1f468a9f58d
+uuid: df243779-5a85-4795-ba83-c66a8832af3e
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.person.field_person_img1
     - field.field.node.person.field_person_img2
     - field.field.node.person.field_person_txt1
@@ -21,32 +22,30 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        classes: {  }
-        wrappers:
-          content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
+        label: ''
     regions:
       content:
-        - langcode
-        - sharethis
-        - links
+        - node_title
         - field_person_img1
         - field_person_img2
         - field_person_txt1
         - field_person_txt2
         - field_person_txt3
         - field_poles
-id: node.person.default
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.person.full
 targetEntityType: node
 bundle: person
-mode: default
+mode: full
 content:
   field_person_img1:
     type: entity_reference_entity_view
-    weight: 102
+    weight: 1
     label: above
     settings:
       view_mode: default
@@ -55,7 +54,7 @@ content:
     region: content
   field_person_img2:
     type: entity_reference_entity_view
-    weight: 103
+    weight: 2
     label: above
     settings:
       view_mode: default
@@ -63,7 +62,7 @@ content:
     third_party_settings: {  }
     region: content
   field_person_txt1:
-    weight: 104
+    weight: 3
     label: inline
     settings:
       link_to_entity: false
@@ -71,7 +70,7 @@ content:
     type: string
     region: content
   field_person_txt2:
-    weight: 105
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -79,7 +78,7 @@ content:
     type: string
     region: content
   field_person_txt3:
-    weight: 106
+    weight: 5
     label: inline
     settings:
       link_to_entity: false
@@ -87,22 +86,14 @@ content:
     type: string
     region: content
   field_poles:
-    weight: 107
+    weight: 6
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  sharethis:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true
+  links: true
+  sharethis: true
