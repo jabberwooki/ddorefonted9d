@@ -1,0 +1,29 @@
+uuid: 1411fe13-ac38-41f5-b262-0131cfe56d34
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poles
+    - node.type.person
+    - taxonomy.vocabulary.poles
+id: node.person.field_poles
+field_name: field_poles
+entity_type: node
+bundle: person
+label: Pôle(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      poles: poles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: ac53bf89-4f75-428f-b002-c90d88616469
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_txt1
+    - node.type.person
+id: node.person.field_person_txt1
+field_name: field_person_txt1
+entity_type: node
+bundle: person
+label: 'Texte 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

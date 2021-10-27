@@ -1,4 +1,4 @@
-uuid: 5a0b7552-ec94-43bf-82a6-c7ae07e960d8
+uuid: 52847fb1-500a-42c0-aaa7-d16472ac93ab
 langcode: fr
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main-menu
-    parent: 'main-menu:0:'
+      - main
+    parent: 'main:'
 name: Personne
-type: personne
+type: person
 description: ''
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 1
-display_submitted: false
+display_submitted: true
