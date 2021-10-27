@@ -1,8 +1,9 @@
-uuid: 13662be1-19b5-4670-8f2f-aa1a149cd996
+uuid: dc0ee8b7-325d-4066-b27d-f6a1747c7df9
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.festival.body
     - field.field.node.festival.field_archives
     - field.field.node.festival.field_calendar_archive
@@ -63,10 +64,10 @@ third_party_settings:
         weight: 4
         label: hidden
         formatter: default
-id: node.festival.default
+id: node.festival.full
 targetEntityType: node
 bundle: festival
-mode: default
+mode: full
 content:
   body:
     label: hidden
@@ -121,9 +122,10 @@ content:
     weight: 3
     label: hidden
     settings:
-      link: true
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_no_result:
     weight: 18
@@ -149,7 +151,7 @@ content:
     weight: 15
     label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
     third_party_settings: {  }
     region: content
@@ -166,7 +168,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
     third_party_settings: {  }
     region: content
@@ -175,24 +177,29 @@ content:
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_sidebar_image:
     weight: 7
     label: hidden
     settings:
-      link: true
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_sounds:
     weight: 9
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
     region: content
   field_useful_links:
     weight: 11
@@ -210,9 +217,12 @@ content:
     weight: 8
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
     region: content
   links:
     weight: 1
