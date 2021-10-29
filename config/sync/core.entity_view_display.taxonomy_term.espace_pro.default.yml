@@ -1,0 +1,55 @@
+uuid: a544c0e9-a67c-4954-9841-71173104612c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.espace_pro.field_image
+    - taxonomy.vocabulary.espace_pro
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - langcode
+        - field_image
+        - description
+id: taxonomy_term.espace_pro.default
+targetEntityType: taxonomy_term
+bundle: espace_pro
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  langcode:
+    type: language
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+hidden: {  }
