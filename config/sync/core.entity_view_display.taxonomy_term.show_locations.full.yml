@@ -1,8 +1,9 @@
-uuid: 275804dc-f61a-4978-8211-af3e753e54a3
+uuid: 75ad281e-f710-4f9e-9665-59ed3d838cd1
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.show_locations.field_galleries
     - field.field.taxonomy_term.show_locations.field_geolocalisation
     - field.field.taxonomy_term.show_locations.field_image
@@ -27,40 +28,52 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - langcode
+        - field_ls_practical
         - description
         - field_seating
-        - field_public_address
-        - field_geolocalisation
-        - field_ls_practical
-        - field_videos
-        - field_image
+        - taxonomy_term_title
         - field_galleries
+        - field_videos
         - field_sounds
-id: taxonomy_term.show_locations.default
+        - field_image
+        - field_geolocalisation
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h2
+          class: ''
+          link: false
+id: taxonomy_term.show_locations.full
 targetEntityType: taxonomy_term
 bundle: show_locations
-mode: default
+mode: full
 content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_galleries:
     type: entity_reference_entity_view
-    weight: 8
-    label: above
+    weight: 4
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
     region: content
   field_geolocalisation:
-    weight: 3
-    label: above
+    weight: 8
+    label: hidden
     settings:
       map_dimensions:
         width: 100%
@@ -152,30 +165,22 @@ content:
   field_image:
     type: entity_reference_entity_view
     weight: 7
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
     third_party_settings: {  }
     region: content
   field_ls_practical:
-    weight: 4
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_public_address:
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_seating:
-    weight: 1
-    label: above
+    weight: 2
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -184,29 +189,26 @@ content:
     region: content
   field_sounds:
     type: entity_reference_entity_view
-    weight: 9
-    label: above
+    weight: 6
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
     region: content
   field_videos:
     type: entity_reference_entity_view
-    weight: 6
-    label: above
+    weight: 5
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
     region: content
-  langcode:
-    type: language
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_public_address: true
+  langcode: true
