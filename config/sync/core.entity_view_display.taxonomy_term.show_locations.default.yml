@@ -3,10 +3,14 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.show_locations.field_galleries
     - field.field.taxonomy_term.show_locations.field_geolocalisation
+    - field.field.taxonomy_term.show_locations.field_image
     - field.field.taxonomy_term.show_locations.field_ls_practical
     - field.field.taxonomy_term.show_locations.field_public_address
     - field.field.taxonomy_term.show_locations.field_seating
+    - field.field.taxonomy_term.show_locations.field_sounds
+    - field.field.taxonomy_term.show_locations.field_videos
     - taxonomy.vocabulary.show_locations
   module:
     - geofield_map
@@ -23,6 +27,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_galleries:
+    type: entity_reference_entity_view
+    weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_geolocalisation:
     weight: 3
     label: above
@@ -114,6 +127,15 @@ content:
     third_party_settings: {  }
     type: geofield_google_map
     region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_ls_practical:
     weight: 4
     label: above
@@ -137,6 +159,24 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_sounds:
+    type: entity_reference_entity_view
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_videos:
+    type: entity_reference_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
 hidden:
   langcode: true
