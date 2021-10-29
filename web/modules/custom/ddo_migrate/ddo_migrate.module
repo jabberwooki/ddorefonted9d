@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Le module de migrations custom D7 -> D9 pour le domaine d'O.
+ */
+ 
+use Drupal\migrate\Row;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+
+/**
+ * Implements hook_migrate_prepare_row().
+ *
+ * This function will be called once for every row in every migration. Which
+ * makes it quite powerful.
+ *
+ * It's also important to use some smart logic in this function to ensure you're
+ * only performing your extra logic when it's really needed. Not doing so has
+ * the potential to really slow things down.
+ *
+ * We recommend at a minimum always checking the $migration->id() value to see
+ * which migration is currently being executed.
+ */
+function ddo_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  if ($migration->id() == 'ddo_d7_scald_gallery') {
+    $data = $row->getSourceProperty('data');
+    $data = unserialize($data);
+    
+    //$message = serialize($data);
+    //\Drupal::logger('ddo_migrate')->notice($message);
+    
+    $items = [];
+    foreach ($data['items'] as $key => $item) {
+      $items[] = ['sid' => $key];
+    }
+    
+    $row->setSourceProperty('items', $items);
+  }
+}
