@@ -7,11 +7,9 @@ migration_tags:
   - Content
 migration_group: ddo_migrate
 label: 'Scald files'
-
 source:
   plugin: migrate_source_scald_atom
   atom_type: file
-
 process:
   name: title
   created: created
@@ -31,16 +29,12 @@ process:
     plugin: migration_lookup
     migration: ddo_d7_taxonomy_term_scald_tags
     source: scald_tags
-
   field_media_document/target_id: base_id
-
 destination:
   plugin: 'entity:media'
   default_bundle: document
-
 migration_dependencies:
   required: 
-    #~ - ddo_d7_file
     - ddo_d7_user
     - ddo_d7_taxonomy_term_scald_authors
     - ddo_d7_taxonomy_term_scald_tags

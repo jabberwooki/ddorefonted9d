@@ -3,12 +3,9 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ddo_d7_node_complete_personne
-#~ class: Drupal\node\Plugin\migrate\D7NodeTranslation
-#~ field_plugin_method: null
-#~ cck_plugin_method: null
-#~ migration_tags:
-  #~ - 'Drupal 7'
-  #~ - Content
+migration_tags:
+  - 'Drupal 7'
+  - Content
 migration_group: ddo_migrate
 label: 'Node (Personne)'
 source:
@@ -55,42 +52,14 @@ process:
   sticky:
     -
       plugin: get
-      source: sticky
-  #~ revision_uid:
-    #~ -
-      #~ plugin: get
-      #~ source: revision_uid
-  #~ revision_log:
-    #~ -
-      #~ plugin: get
-      #~ source: log
-  #~ revision_timestamp:
-    #~ -
-      #~ plugin: get
-      #~ source: timestamp
-  #~ content_translation_source:
-    #~ -
-      #~ plugin: get
-      #~ source: source_langcode
-  #~ comment_node_personne/0/status:
-    #~ -
-      #~ plugin: get
-      #~ source: comment
-      
+      source: sticky      
   field_poles:
     -
-      #~ plugin: sub_process
-      #~ source: field_person_dpt
-      #~ process:
-        #~ target_id: tid
       plugin: migration_lookup
       migration: ddo_d7_taxonomy_term_poles
       source: field_person_dpt
-      
   field_person_img1:
     -
-      #~ plugin: get
-      #~ source: field_person_img_1
       plugin: sub_process
       source: field_person_img_1
       process:
@@ -98,11 +67,8 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_image
           source: sid
-          
   field_person_img2:
     -
-      #~ plugin: get
-      #~ source: field_person_img_2
       plugin: sub_process
       source: field_person_img_2
       process:
@@ -110,36 +76,29 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_image
           source: sid
-          
   field_person_txt1:
     -
       plugin: get
       source: field_person_txt_1
-      
   field_person_txt2:
     -
       plugin: get
       source: field_person_txt_2
-      
   field_person_txt3:
     -
       plugin: get
       source: field_person_txt_3
-      
   field_metatag:
     -
       plugin: d7_metatag_entities
       source: pseudo_metatag_entities
-      
 destination:
   plugin: 'entity:node'
   translations: true
   default_bundle: person
-  
 migration_dependencies:
   required:
     - ddo_d7_user
-    #~ - ddo_d7_node_type
     - ddo_d7_taxonomy_term_poles
     - ddo_d7_scald_image
     - ddo_language

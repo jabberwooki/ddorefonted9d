@@ -20,10 +20,6 @@ process:
       source: name
     -
       plugin: user_update_8002
-  #label:
-    #-
-      #plugin: get
-      #source: name
   label: name    
   permissions:
     -
@@ -45,14 +41,9 @@ process:
         'edit own forum topics': 'edit own forum content'
     -
       plugin: flatten
-  #weight:
-    #-
-      #plugin: get
-      #source: weight
   weight: weight    
 destination:
   plugin: 'entity:user_role'
 migration_dependencies:
   optional: {  }
-    #- ddo_d7_filter_format
   required: {  }

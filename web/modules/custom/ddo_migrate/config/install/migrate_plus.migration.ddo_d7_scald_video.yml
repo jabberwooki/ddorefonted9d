@@ -17,37 +17,30 @@ process:
   name: title
   created: created
   changed: timestamp
-  
   uid:
     plugin: migration_lookup
     migration: ddo_d7_user
     source: publisher
-    
   status:
     plugin: default_value
     default_value: 1
-    
   field_authors: 
       plugin: migration_lookup
       migration: ddo_d7_taxonomy_term_scald_authors
       source: scald_authors
-      
   field_tags: 
     plugin: migration_lookup
     migration: ddo_d7_taxonomy_term_scald_tags
     source: scald_tags
-    
   field_media_oembed_video:
     plugin: concat
     delimiter: /
     source:
       - constants/youtube_base_path
       - base_id
-
 destination:
   plugin: 'entity:media'
   default_bundle: remote_video
-
 migration_dependencies:
   required:
     - ddo_d7_user

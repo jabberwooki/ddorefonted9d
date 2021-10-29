@@ -3,12 +3,9 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ddo_d7_taxonomy_term_show_locations
-#~ class: Drupal\migrate\Plugin\Migration
-#~ field_plugin_method: null
-#~ cck_plugin_method: null
-#~ migration_tags:
-  #~ - 'Drupal 7'
-  #~ - Content
+migration_tags:
+  - 'Drupal 7'
+  - Content
 migration_group: ddo_migrate
 label: 'Taxonomy terms (Lieux de spectacle)'
 source:
@@ -76,26 +73,10 @@ process:
     -
       plugin: get
       source: language
-  #~ field_scald_gallery:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_gallery
-  #~ field_scald_sound:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_sound
-  #~ field_scald_video:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_video
   field_seating:
     -
       plugin: get
       source: field_seating
-  #~ field_scald_image:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_image
   field_geolocalisation:
     -
       plugin: geofield_d7d8

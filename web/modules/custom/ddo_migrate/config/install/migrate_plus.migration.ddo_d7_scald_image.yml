@@ -10,7 +10,6 @@ label: 'Scald images'
 source:
   plugin: migrate_source_scald_atom
   atom_type: image
-
 process:
   name: title
   created: created
@@ -32,11 +31,9 @@ process:
     source: scald_tags
   field_media_image/target_id: base_id
   field_media_image/alt: title
-
 destination:
   plugin: 'entity:media'
   default_bundle: image
-
 migration_dependencies:
   required: 
     - ddo_d7_file

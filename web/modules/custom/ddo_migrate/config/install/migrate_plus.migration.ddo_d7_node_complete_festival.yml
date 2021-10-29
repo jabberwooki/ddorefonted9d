@@ -3,12 +3,9 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ddo_d7_node_complete_festival
-#~ class: Drupal\node\Plugin\migrate\D7NodeTranslation
-#~ field_plugin_method: null
-#~ cck_plugin_method: null
-#~ migration_tags:
-  #~ - 'Drupal 7'
-  #~ - Content
+migration_tags:
+  - 'Drupal 7'
+  - Content
 migration_group: ddo_migrate
 label: 'Node (Festival)'
 source:
@@ -56,45 +53,20 @@ process:
     -
       plugin: get
       source: sticky
-  #~ revision_uid:
-    #~ -
-      #~ plugin: get
-      #~ source: revision_uid
-  #~ revision_log:
-    #~ -
-      #~ plugin: get
-      #~ source: log
-  #~ revision_timestamp:
-    #~ -
-      #~ plugin: get
-      #~ source: timestamp
-  #~ content_translation_source:
-    #~ -
-      #~ plugin: get
-      #~ source: source_langcode
-  #~ comment_node_festival/0/status:
-    #~ -
-      #~ plugin: get
-      #~ source: comment
   body:
     -
       plugin: get
       source: body
-      
   field_calendar_archive:
     -
       plugin: get
       source: field_calendar_archive
-      
   field_festival_name:
     -
       plugin: get
       source: field_festival_name
-      
   field_poster:
     -
-      #~ plugin: get
-      #~ source: field_festival_poster
       plugin: sub_process
       source: field_festival_poster
       process:
@@ -102,28 +74,20 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_image
           source: sid
-      
   #~ field_festival_shows:
-    #~ -
       #~ plugin: get
       #~ source: field_festival_shows
-      
   field_logo:
     -
-      #~ plugin: get
-      #~ source: field_logo
-    plugin: sub_process
-    source: field_logo
-    process:
-      target_id:
-        plugin: migration_lookup
-        migration: ddo_d7_scald_image
-        source: sid
-        
+      plugin: sub_process
+      source: field_logo
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: ddo_d7_scald_image
+          source: sid
   field_files:
     -
-      #~ plugin: get
-      #~ source: field_scald_file
       plugin: sub_process
       source: field_scald_file
       process:
@@ -131,16 +95,8 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_file
           source: sid
-          
-  #~ field_scald_gallery:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_gallery
-      
   field_sidebar_image:
     -
-      #~ plugin: get
-      #~ source: field_scald_image
       plugin: sub_process
       source: field_scald_image
       process:
@@ -148,16 +104,8 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_image
           source: sid
-      
-  #~ field_scald_sound:
-    #~ -
-      #~ plugin: get
-      #~ source: field_scald_sound
-      
   field_videos:
     -
-      #~ plugin: get
-      #~ source: field_scald_video
       plugin: sub_process
       source: field_scald_video
       process:
@@ -165,31 +113,24 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_video
           source: sid
-      
   field_season:
     -
       plugin: get
       source: field_season
-      
   field_useful_links:
     -
       plugin: field_link
       source: field_useful_links
-      
   field_no_result:
     -
       plugin: get
       source: field_no_result
-      
   field_online_flipthrough:
     -
       plugin: field_link
       source: field_feuilleter_en_ligne
-      
   field_programme_pdf:
     -
-      #~ plugin: get
-      #~ source: field_programme_pdf
       plugin: sub_process
       source: field_scald_file
       process:
@@ -197,36 +138,29 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_file
           source: sid
-      
   field_archives:
     -
       plugin: field_link
       source: field_view_archives
-      
   field_facebook:
     -
       plugin: field_link
       source: field_facebook
-      
   field_plain_date:
     -
       plugin: get
       source: field_date_en_clair
-      
   field_metatag:
     -
       plugin: d7_metatag_entities
       source: pseudo_metatag_entities
-      
 destination:
   plugin: 'entity:node'
   translations: true
   default_bundle: festival
-  
 migration_dependencies:
   required:
     - ddo_d7_user
-    #~ - ddo_d7_node_type
     - ddo_d7_scald_file
     - ddo_d7_scald_image
     - ddo_d7_scald_video
