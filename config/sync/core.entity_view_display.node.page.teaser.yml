@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_gallery
+    - field.field.node.page.field_media_image
     - node.type.page
   module:
     - text
@@ -27,5 +29,12 @@ content:
   links:
     weight: 101
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
+  field_gallery: true
+  field_media_image: true
   langcode: true

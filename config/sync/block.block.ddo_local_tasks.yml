@@ -1,0 +1,22 @@
+uuid: c96afd90-0692-429b-8d3e-06afa66fd660
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ddo
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: ddo_local_tasks
+theme: ddo
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Onglets
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

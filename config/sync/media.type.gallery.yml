@@ -1,0 +1,15 @@
+uuid: 5d96dc58-909d-4481-8f80-9f6dbfb1f7a4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media_entity_slideshow
+id: gallery
+label: Galerie
+description: 'Use local images and remote videos for reusable media.'
+source: slideshow
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_slideshow
+field_map: {  }

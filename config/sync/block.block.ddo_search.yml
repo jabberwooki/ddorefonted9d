@@ -1,0 +1,23 @@
+uuid: 2a023dd7-f8b1-4e47-8648-62ae0f5a1cbc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - ddo
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: ddo_search
+theme: ddo
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Rechercher
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 374c43b6-ceac-43b6-a8d4-de96bd1cf4fa
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ddo
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: ddo_local_actions
+theme: ddo
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Actions d''administration principales'
+  provider: core
+  label_display: '0'
+visibility: {  }
