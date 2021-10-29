@@ -1,8 +1,9 @@
-uuid: 402ff09f-c117-41ed-a80a-3aee1840c2f1
+uuid: fc30def7-f828-4a5e-a36c-b5badd9dd0dc
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.page.body
     - field.field.node.page.field_gallery
     - field.field.node.page.field_media_image
@@ -22,60 +23,59 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - langcode
-        - sharethis
-        - body
-        - links
-        - field_gallery
+        - node_title
         - field_media_image
+        - sharethis
+        - links
+        - body
+        - field_gallery
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.default
+id: node.page.full
 targetEntityType: node
 bundle: page
-mode: default
+mode: full
 content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_gallery:
     type: entity_reference_entity_view
-    weight: 103
-    label: above
+    weight: 5
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
   field_media_image:
-    weight: 104
-    label: above
+    weight: 1
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
-  langcode:
-    type: language
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
   links:
-    weight: 101
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true
