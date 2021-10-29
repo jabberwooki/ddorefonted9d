@@ -76,10 +76,14 @@ process:
     -
       plugin: get
       source: language
-  field_section_image:
-    -
-      plugin: get
-      source: field_section_image
+  field_image:
+    plugin: sub_process
+    source: field_section_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
   field_metatag:
     -
       plugin: d7_metatag_entities
