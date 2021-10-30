@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_frontpage_zoom
+    - field.field.node.article.field_galeries
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
@@ -74,6 +75,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_galeries:
+    type: entity_reference_entity_view
+    weight: 121
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_more_infos_link:
     weight: 115

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_frontpage_zoom
+    - field.field.node.article.field_galeries
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
@@ -57,6 +58,7 @@ hidden:
   field_banner_image: true
   field_edition_date: true
   field_frontpage_zoom: true
+  field_galeries: true
   field_more_infos_link: true
   field_new_window: true
   field_publication_date: true

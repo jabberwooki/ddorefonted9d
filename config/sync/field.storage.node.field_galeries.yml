@@ -1,12 +1,12 @@
-uuid: 7e271b23-e06c-4dcd-b08c-59e157768a57
+uuid: 1cf4f954-0da3-4609-9a05-7acd64a05e73
 langcode: fr
 status: true
 dependencies:
   module:
     - media
     - node
-id: node.field_gallery
-field_name: field_gallery
+id: node.field_galeries
+field_name: field_galeries
 entity_type: node
 type: entity_reference
 settings:
