@@ -115,6 +115,14 @@ process:
         plugin: migration_lookup
         migration: ddo_d7_scald_video
         source: sid
+  field_galeries:
+    plugin: sub_process
+    source: gallery_items
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_gallery
+        source: sid
   field_more_infos_link:
     -
       plugin: get
