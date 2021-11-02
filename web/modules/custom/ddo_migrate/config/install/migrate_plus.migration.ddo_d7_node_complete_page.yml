@@ -66,7 +66,6 @@ process:
           plugin: migration_lookup
           migration: ddo_d7_scald_gallery
           source: sid
-
   field_media_image:
     -
       plugin: sub_process
@@ -89,6 +88,7 @@ migration_dependencies:
     - ddo_d7_user
     - ddo_d7_scald_image
     - ddo_d7_scald_video
+    - ddo_d7_scald_gallery
     - ddo_language
   optional:
     - ddo_d7_field_instance

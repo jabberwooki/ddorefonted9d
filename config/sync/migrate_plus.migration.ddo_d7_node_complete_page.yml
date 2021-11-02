@@ -91,6 +91,7 @@ migration_dependencies:
     - ddo_d7_user
     - ddo_d7_scald_image
     - ddo_d7_scald_video
+    - ddo_d7_scald_gallery
     - ddo_language
   optional:
     - ddo_d7_field_instance
