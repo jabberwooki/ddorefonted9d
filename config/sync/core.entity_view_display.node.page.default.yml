@@ -19,7 +19,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ""
+        label: ''
     regions:
       content:
         - langcode
@@ -40,8 +40,8 @@ content:
     type: text_default
     weight: 100
     region: content
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   field_gallery:
     type: entity_reference_entity_view
     weight: 103
@@ -49,14 +49,14 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {}
+    third_party_settings: {  }
     region: content
   field_media_image:
     weight: 104
     label: above
     settings:
       link: true
-    third_party_settings: {}
+    third_party_settings: {  }
     type: entity_reference_label
     region: content
   langcode:
@@ -67,15 +67,15 @@ content:
     settings:
       link_to_entity: false
       native_language: false
-    third_party_settings: {}
+    third_party_settings: {  }
   links:
     weight: 101
     region: content
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   sharethis:
     weight: 10
     region: content
-    settings: {}
-    third_party_settings: {}
-hidden: {}
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
