@@ -1,0 +1,22 @@
+uuid: 9c2e1841-493c-4148-b3f3-05dc5886900c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ddo
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: ddo_messages
+theme: ddo
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  provider: system
+  label_display: '0'
+visibility: {  }

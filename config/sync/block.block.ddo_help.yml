@@ -1,0 +1,22 @@
+uuid: 9efb1dff-5efe-4196-8a15-f7ec48e87c9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - ddo
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: ddo_help
+theme: ddo
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aide
+  provider: help
+  label_display: '0'
+visibility: {  }
