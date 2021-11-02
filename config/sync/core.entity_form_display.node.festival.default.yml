@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.festival.field_facebook
     - field.field.node.festival.field_festival_name
     - field.field.node.festival.field_files
+    - field.field.node.festival.field_galeries
     - field.field.node.festival.field_logo
     - field.field.node.festival.field_no_result
     - field.field.node.festival.field_online_flipthrough
@@ -39,7 +40,7 @@ third_party_settings:
         - field_archives
         - field_no_result
       parent_name: ''
-      weight: 13
+      weight: 14
       format_type: details_sidebar
       region: content
       format_settings:
@@ -58,7 +59,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 7
     settings:
       rows: 9
       summary_rows: 3
@@ -104,10 +105,17 @@ content:
     region: content
   field_files:
     type: media_library_widget
+    weight: 11
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_galeries:
     weight: 8
     settings:
       media_types: {  }
     third_party_settings: {  }
+    type: media_library_widget
     region: content
   field_logo:
     weight: 4
@@ -163,7 +171,7 @@ content:
     type: string_textfield
     region: content
   field_shows:
-    weight: 12
+    weight: 13
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -173,21 +181,21 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_sidebar_image:
-    weight: 10
+    weight: 6
     settings:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
     region: content
   field_sounds:
-    weight: 11
+    weight: 10
     settings:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
     region: content
   field_useful_links:
-    weight: 7
+    weight: 12
     settings:
       placeholder_url: ''
       placeholder_title: ''

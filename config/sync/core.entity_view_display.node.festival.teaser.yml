@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.festival.field_facebook
     - field.field.node.festival.field_festival_name
     - field.field.node.festival.field_files
+    - field.field.node.festival.field_galeries
     - field.field.node.festival.field_logo
     - field.field.node.festival.field_no_result
     - field.field.node.festival.field_online_flipthrough
@@ -55,6 +56,7 @@ hidden:
   field_facebook: true
   field_festival_name: true
   field_files: true
+  field_galeries: true
   field_logo: true
   field_no_result: true
   field_online_flipthrough: true
