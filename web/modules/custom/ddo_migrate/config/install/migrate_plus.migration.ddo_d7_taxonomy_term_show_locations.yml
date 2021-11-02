@@ -95,7 +95,7 @@ process:
         source: sid
   field_galleries:
     plugin: sub_process
-    source: field_scald_image
+    source: field_scald_gallery
     process:
       target_id:
         plugin: migration_lookup
