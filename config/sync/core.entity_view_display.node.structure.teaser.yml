@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.structure.body
     - field.field.node.structure.field_associate_artist
+    - field.field.node.structure.field_galeries
     - field.field.node.structure.field_logo
     - field.field.node.structure.field_media_image
     - field.field.node.structure.field_shows
@@ -42,6 +43,7 @@ content:
     region: content
 hidden:
   field_associate_artist: true
+  field_galeries: true
   field_logo: true
   field_media_image: true
   field_shows: true
