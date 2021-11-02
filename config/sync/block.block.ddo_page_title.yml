@@ -1,0 +1,20 @@
+uuid: 0f4f1f85-3895-4c3c-bffb-56f76f8e3f98
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ddo
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: ddo_page_title
+theme: ddo
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titre de page'
+  provider: core
+  label_display: '0'
+visibility: {  }

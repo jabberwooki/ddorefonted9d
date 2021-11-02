@@ -1,16 +1,16 @@
 uuid: c5bdb2ea-6252-465c-a4f5-4f55c2a4ced2
 langcode: fr
 status: true
-dependencies: {  }
+dependencies: {}
 id: ddo_d7_scald_gallery
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
-  - 'Drupal 7'
+  - "Drupal 7"
   - Content
 migration_group: ddo_migrate
-label: 'Scald galleries'
+label: "Scald galleries"
 source:
   plugin: migrate_source_scald_atom
   atom_type: gallery
@@ -44,11 +44,11 @@ process:
           - ddo_d7_scald_video
         source: sid
 destination:
-  plugin: 'entity:media'
+  plugin: "entity:media"
   default_bundle: gallery
 migration_dependencies:
   required:
     - ddo_d7_user
     - ddo_d7_taxonomy_term_scald_authors
     - ddo_d7_taxonomy_term_scald_tags
-  optional: {  }
+  optional: {}
