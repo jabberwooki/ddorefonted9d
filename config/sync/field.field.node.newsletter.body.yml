@@ -1,16 +1,16 @@
-uuid: f9c02aab-f16d-4f5c-af07-5a676a510fda
+uuid: 2a41e7a4-1f7e-4493-8189-c54be48b98ee
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.lettre_info
+    - node.type.newsletter
   module:
     - text
-id: node.lettre_info.body
+id: node.newsletter.body
 field_name: body
 entity_type: node
-bundle: lettre_info
+bundle: newsletter
 label: Body
 description: ''
 required: false

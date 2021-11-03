@@ -1,17 +1,20 @@
-uuid: ba4a9242-0ec3-48e8-9f66-0da801c528e3
+uuid: d996f002-f20e-4763-aa26-b4db12eb9b7d
 langcode: fr
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.lettre_info.body
-    - node.type.lettre_info
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_mailchimp_url
+    - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_sending_date
+    - node.type.newsletter
   module:
     - text
     - user
-id: node.lettre_info.teaser
+id: node.newsletter.teaser
 targetEntityType: node
-bundle: lettre_info
+bundle: newsletter
 mode: teaser
 content:
   body:
@@ -33,4 +36,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_mailchimp_url: true
+  field_media_image: true
+  field_sending_date: true
   langcode: true

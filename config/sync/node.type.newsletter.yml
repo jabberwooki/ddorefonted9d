@@ -1,4 +1,4 @@
-uuid: bf416a4e-e08d-4fdf-b01a-c929020d4de8
+uuid: 2538ac96-e0b2-4421-9af6-30bb6b95ec08
 langcode: fr
 status: true
 dependencies:
@@ -6,12 +6,10 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main-menu
-      - menu-top-courtesy-nav
-    parent: 'main-menu:0:'
-name: 'Lettre info'
-type: lettre_info
+    available_menus: {  }
+    parent: ''
+name: 'Lettre d''info'
+type: newsletter
 description: ''
 help: ''
 new_revision: false

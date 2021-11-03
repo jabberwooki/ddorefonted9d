@@ -1,0 +1,95 @@
+uuid: 46b48569-d827-464a-be4f-bd96195b1005
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_mailchimp_url
+    - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_sending_date
+    - node.type.newsletter
+  module:
+    - datetime
+    - ds
+    - link
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - sharethis
+        - node_title
+        - field_sending_date
+        - field_mailchimp_url
+        - field_media_image
+        - body
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.newsletter.full
+targetEntityType: node
+bundle: newsletter
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_mailchimp_url:
+    weight: 3
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_media_image:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_sending_date:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

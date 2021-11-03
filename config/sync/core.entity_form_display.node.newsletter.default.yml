@@ -1,21 +1,27 @@
-uuid: 05bcb1eb-8884-4aba-bd82-2494609a46fb
+uuid: cc47fbd6-8ae3-432a-a614-900b1eca4c97
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.lettre_info.body
-    - node.type.lettre_info
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_mailchimp_url
+    - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_sending_date
+    - node.type.newsletter
   module:
+    - datetime
+    - link
+    - media_library
     - path
     - text
-id: node.lettre_info.default
+id: node.newsletter.default
 targetEntityType: node
-bundle: lettre_info
+bundle: newsletter
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 5
     settings:
       rows: 9
       summary_rows: 3
@@ -25,20 +31,41 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_mailchimp_url:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_media_image:
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_sending_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -46,26 +73,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 8
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 9
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -73,7 +100,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -82,8 +109,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

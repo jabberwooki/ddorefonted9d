@@ -1,0 +1,68 @@
+uuid: 1d9e942d-e70c-4bd7-96a6-259e04dc49a7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_mailchimp_url
+    - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_sending_date
+    - node.type.newsletter
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.newsletter.default
+targetEntityType: node
+bundle: newsletter
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_mailchimp_url:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_media_image:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sending_date:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
