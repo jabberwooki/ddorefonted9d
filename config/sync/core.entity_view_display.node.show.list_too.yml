@@ -1,0 +1,142 @@
+uuid: a2bae8ec-ef84-4131-82d4-7d76367f30d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list_too
+    - field.field.node.show.body
+    - field.field.node.show.field_additional_info
+    - field.field.node.show.field_by
+    - field.field.node.show.field_casting
+    - field.field.node.show.field_casting_link
+    - field.field.node.show.field_coming_soon
+    - field.field.node.show.field_coproduction
+    - field.field.node.show.field_dates
+    - field.field.node.show.field_display_age
+    - field.field.node.show.field_duration
+    - field.field.node.show.field_entrance
+    - field.field.node.show.field_festival
+    - field.field.node.show.field_from
+    - field.field.node.show.field_full
+    - field.field.node.show.field_galeries
+    - field.field.node.show.field_galleries_link
+    - field.field.node.show.field_generic_location
+    - field.field.node.show.field_location
+    - field.field.node.show.field_mapado_apislug
+    - field.field.node.show.field_mapado_dates_ids
+    - field.field.node.show.field_mapado_ticketing
+    - field.field.node.show.field_media_image
+    - field.field.node.show.field_media_thumbnail
+    - field.field.node.show.field_minimum_age
+    - field.field.node.show.field_offline
+    - field.field.node.show.field_partnerships
+    - field.field.node.show.field_price
+    - field.field.node.show.field_production
+    - field.field.node.show.field_proposed_by
+    - field.field.node.show.field_reimbursement
+    - field.field.node.show.field_reservation
+    - field.field.node.show.field_restauration
+    - field.field.node.show.field_show_type
+    - field.field.node.show.field_shows
+    - field.field.node.show.field_sounds
+    - field.field.node.show.field_sounds_link
+    - field.field.node.show.field_subtitle
+    - field.field.node.show.field_ticketing_url
+    - field.field.node.show.field_top_link
+    - field.field.node.show.field_videos
+    - field.field.node.show.field_videos_link
+    - field.field.node.show.field_zoom
+    - node.type.show
+  module:
+    - datetime
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - node_title
+        - field_media_thumbnail
+        - field_dates
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.show.list_too
+targetEntityType: node
+bundle: show
+mode: list_too
+content:
+  field_dates:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: show_date
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: datetime_default
+    region: content
+  field_media_thumbnail:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_additional_info: true
+  field_by: true
+  field_casting: true
+  field_casting_link: true
+  field_coming_soon: true
+  field_coproduction: true
+  field_display_age: true
+  field_duration: true
+  field_entrance: true
+  field_festival: true
+  field_from: true
+  field_full: true
+  field_galeries: true
+  field_galleries_link: true
+  field_generic_location: true
+  field_location: true
+  field_mapado_apislug: true
+  field_mapado_dates_ids: true
+  field_mapado_ticketing: true
+  field_media_image: true
+  field_minimum_age: true
+  field_offline: true
+  field_partnerships: true
+  field_price: true
+  field_production: true
+  field_proposed_by: true
+  field_reimbursement: true
+  field_reservation: true
+  field_restauration: true
+  field_show_type: true
+  field_shows: true
+  field_sounds: true
+  field_sounds_link: true
+  field_subtitle: true
+  field_ticketing_url: true
+  field_top_link: true
+  field_videos: true
+  field_videos_link: true
+  field_zoom: true
+  langcode: true
+  links: true
+  sharethis: true

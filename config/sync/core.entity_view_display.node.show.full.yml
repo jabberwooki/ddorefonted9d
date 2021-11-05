@@ -146,12 +146,12 @@ content:
     type: text_default
     region: content
   field_casting_link:
+    type: text_default
     weight: 35
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_coming_soon:
     weight: 27
     label: above
@@ -235,12 +235,12 @@ content:
     type: entity_reference_entity_view
     region: content
   field_galleries_link:
+    type: text_default
     weight: 36
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_generic_location:
     weight: 5
     label: inline
@@ -261,8 +261,8 @@ content:
     weight: 11
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
@@ -271,7 +271,7 @@ content:
     weight: 12
     label: hidden
     settings:
-      view_mode: default
+      view_mode: node_content
       link: false
     third_party_settings: {  }
     region: content
@@ -347,9 +347,11 @@ content:
     weight: 34
     label: above
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
+      view_mode: list_too
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     type: entity_reference_entity_view
     region: content
   field_sounds:
@@ -362,12 +364,12 @@ content:
     type: entity_reference_entity_view
     region: content
   field_sounds_link:
+    type: text_default
     weight: 38
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_subtitle:
     weight: 3
     label: hidden
@@ -389,12 +391,12 @@ content:
     type: link
     region: content
   field_top_link:
+    type: text_default
     weight: 39
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_videos:
     weight: 32
     label: hidden
@@ -405,12 +407,12 @@ content:
     type: entity_reference_entity_view
     region: content
   field_videos_link:
+    type: text_default
     weight: 37
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   links:
     weight: 1
     region: content
