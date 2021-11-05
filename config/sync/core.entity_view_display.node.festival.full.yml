@@ -189,9 +189,11 @@ content:
     weight: 11
     label: above
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
+      view_mode: list_too
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     type: entity_reference_entity_view
     region: content
   field_sidebar_image:
