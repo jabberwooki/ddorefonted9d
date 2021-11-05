@@ -3,285 +3,215 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ddo_d7_node_complete_show
-class: Drupal\node\Plugin\migrate\D7NodeTranslation
+class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: ddo_migrate
-label: 'Node complete (Spectacle)'
+label: 'Node (Spectacle)'
 source:
-  plugin: d7_node_complete
+  plugin: d7_node
   node_type: show
 process:
-  nid:
-    -
-      plugin: get
-      source: tnid
-  vid:
-    -
-      plugin: get
-      source: vid
+  nid: tnid
+  vid: vid
   langcode:
-    -
-      plugin: default_value
-      source: language
-      default_value: und
-  title:
-    -
-      plugin: get
-      source: title
-  uid:
-    -
-      plugin: get
-      source: node_uid
-  status:
-    -
-      plugin: get
-      source: status
-  created:
-    -
-      plugin: get
-      source: created
-  changed:
-    -
-      plugin: get
-      source: timestamp
-  promote:
-    -
-      plugin: get
-      source: promote
-  sticky:
-    -
-      plugin: get
-      source: sticky
-  revision_uid:
-    -
-      plugin: get
-      source: revision_uid
-  revision_log:
-    -
-      plugin: get
-      source: log
-  revision_timestamp:
-    -
-      plugin: get
-      source: timestamp
-  content_translation_source:
-    -
-      plugin: get
-      source: source_langcode
-  comment_node_show/0/status:
-    -
-      plugin: get
-      source: comment
-  body:
-    -
-      plugin: get
-      source: body
-  field_additional_infos:
-    -
-      plugin: get
-      source: field_additional_infos
-  field_back_to_top_link:
-    -
-      plugin: get
-      source: field_back_to_top_link
-  field_boxoffice_url:
-    -
-      plugin: field_link
-      source: field_boxoffice_url
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: timestamp
+  promote: promote
+  sticky: sticky
+  body: body
+  field_additional_info: field_additional_infos
+  field_ticketing_url:
+    plugin: sub_process
+    source: field_boxoffice_url
+    process:
+      uri: url
+      title:
+        plugin: default_value
+        default_value: Réserver
+      options: attributes
+  field_ticketing_url/options: field_boxoffice_url/attributes
   field_by:
-    -
-      plugin: get
-      source: field_by
-  field_casting:
-    -
-      plugin: get
-      source: field_casting
-  field_casting_link:
-    -
-      plugin: get
-      source: field_casting_link
-  field_coming_soon:
-    -
-      plugin: get
-      source: field_coming_soon
-  field_comments_link:
-    -
-      plugin: get
-      source: field_comments_link
-  field_coproduction:
-    -
-      plugin: get
-      source: field_coproduction
-  field_duration:
-    -
-      plugin: get
-      source: field_duration
-  field_entrance:
-    -
-      plugin: get
-      source: field_entrance
+    plugin: sub_process
+    source: field_by
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: ddo_d7_node_complete_structure
+          source: target_id
+        -
+          plugin: callback
+          callable: array_shift
+  field_casting: field_casting
+  field_coming_soon: field_coming_soon
+  field_coproduction: field_coproduction
+  field_duration: field_duration
+  field_entrance: field_entrance
   field_festival:
-    -
-      plugin: get
-      source: field_festival
-  field_from:
-    -
-      plugin: get
-      source: field_from
-  field_full:
-    -
-      plugin: get
-      source: field_full
+    plugin: sub_process
+    source: field_festival
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: ddo_d7_node_complete_festival
+          source: target_id
+        -
+          plugin: callback
+          callable: array_shift
+  field_from: field_from
+  field_full: field_full
   field_location:
-    -
-      plugin: sub_process
-      source: field_location
-      process:
-        target_id: tid
-  field_photos_link:
-    -
-      plugin: get
-      source: field_photos_link
-  field_price:
-    -
-      plugin: get
-      source: field_price
-  field_production:
-    -
-      plugin: get
-      source: field_production
-  field_promoted:
-    -
-      plugin: get
-      source: field_promoted
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_show_locations
+    source: field_location
+  field_price: field_price
+  field_production: field_production
   field_proposed_by:
-    -
-      plugin: get
-      source: field_proposed_by
-  field_reimbursement:
-    -
-      plugin: get
-      source: field_reimbursement
-  field_reservation:
-    -
-      plugin: get
-      source: field_reservation
-  field_scald_gallery:
-    -
-      plugin: get
-      source: field_scald_gallery
-  field_scald_image:
-    -
-      plugin: get
-      source: field_scald_image
-  field_scald_sound:
-    -
-      plugin: get
-      source: field_scald_sound
-  field_scald_video:
-    -
-      plugin: get
-      source: field_scald_video
-  field_show_dates:
-    -
-      plugin: sub_process
-      source: field_show_dates
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d\TH:i:s'
-          to_format: 'Y-m-d\TH:i:s'
-          source: value
+    plugin: sub_process
+    source: field_proposed_by
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - ddo_d7_node_complete_festival
+            - ddo_d7_node_complete_programmer
+            - ddo_d7_node_complete_structure
+          source: target_id
+        -
+          plugin: callback
+          callable: array_shift
+  field_reimbursement: field_reimbursement
+  field_reservation: field_reservation
+  field_galeries:
+    plugin: sub_process
+    source: field_scald_gallery
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_gallery
+        source: sid
+  field_media_image:
+    plugin: sub_process
+    source: field_scald_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_videos:
+    plugin: sub_process
+    source: field_scald_video
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_video
+        source: sid
+  field_dates:
+    plugin: sub_process
+    source: field_show_dates
+    process:
+      value:
+        plugin: format_date
+        from_format: 'Y-m-d\TH:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+        source: value
   field_show_type:
-    -
-      plugin: sub_process
-      source: field_show_type
-      process:
-        target_id: tid
-  field_sound_link:
-    -
-      plugin: get
-      source: field_sound_link
-  field_subtitle:
-    -
-      plugin: get
-      source: field_subtitle
-  field_thumbnail:
-    -
-      plugin: get
-      source: field_thumbnail
-  field_video_link:
-    -
-      plugin: get
-      source: field_video_link
-  field_zoom:
-    -
-      plugin: get
-      source: field_zoom
-  field_partenariats:
-    -
-      plugin: get
-      source: field_partenariats
-  field_restauration:
-    -
-      plugin: get
-      source: field_restauration
-  field_lieu_generique:
-    -
-      plugin: get
-      source: field_lieu_generique
-  field_linked_shows:
-    -
-      plugin: get
-      source: field_linked_shows
-  field_offline:
-    -
-      plugin: get
-      source: field_offline
-  field_rsi_id:
-    -
-      plugin: get
-      source: field_rsi_id
-  field_mapado_apislug:
-    -
-      plugin: get
-      source: field_mapado_apislug
-  field_formulaire:
-    -
-      plugin: get
-      source: field_formulaire
-  field_mapado_dates_ids:
-    -
-      plugin: get
-      source: field_mapado_dates_ids
-  field_mapado_ticketing:
-    -
-      plugin: get
-      source: field_mapado_ticketing
-  field_show_dump_age:
-    -
-      plugin: get
-      source: field_show_dump_age
-  field_minimum_age:
-    -
-      plugin: get
-      source: field_minimum_age
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_show_types
+    source: field_show_type
+  field_subtitle: field_subtitle
+  field_media_thumbnail:
+    plugin: sub_process
+    source: field_thumbnail
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_zoom: field_zoom
+  field_partnerships: field_partenariats
+  field_restauration: field_restauration
+  field_generic_location: field_lieu_generique
+  field_shows:
+    plugin: sub_process
+    source: field_linked_shows
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: ddo_d7_node_complete_show
+          source: target_id
+        -
+          plugin: callback
+          callable: array_shift
+  field_offline: field_offline
+  field_mapado_apislug: field_mapado_apislug
+  field_mapado_dates_ids: field_mapado_dates_ids
+  field_mapado_ticketing: field_mapado_ticketing
+  field_display_age: field_show_dump_age
+  field_minimum_age: field_minimum_age
+  field_galleries_link:
+    plugin: sub_process
+    source: field_photos_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#galleries">Photos</a>'
+      format:
+        plugin: default_value
+        default_value: full_html
+  field_videos_link:
+    plugin: sub_process
+    source: field_video_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#videos">Vidéos</a>'
+      format:
+        plugin: default_value
+        default_value: full_html
+  field_sounds_link:
+    plugin: sub_process
+    source: field_sound_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#sounds">Sons</a>'
+      format:
+        plugin: default_value
+        default_value: full_html
+  field_casting_link: field_casting_link
+  field_top_link: field_back_to_top_link
   field_metatag:
-    -
-      plugin: d7_metatag_entities
-      source: pseudo_metatag_entities
+    plugin: d7_metatag_entities
+    source: pseudo_metatag_entities
 destination:
-  plugin: 'entity_complete:node'
+  plugin: 'entity:node'
   translations: true
   default_bundle: show
 migration_dependencies:
   required:
     - ddo_d7_user
-    - ddo_d7_node_type
+    - ddo_d7_node_complete_structure
+    - ddo_d7_node_complete_festival
+    - ddo_d7_node_complete_programmer
+    - ddo_d7_taxonomy_term_show_locations
+    - ddo_d7_taxonomy_term_show_types
+    - ddo_d7_scald_gallery
+    - ddo_d7_scald_image
+    - ddo_d7_scald_video
     - ddo_language
   optional:
     - ddo_d7_field_instance

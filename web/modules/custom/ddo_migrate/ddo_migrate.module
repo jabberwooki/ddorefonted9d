@@ -4,10 +4,11 @@
  * @file
  * Le module de migrations custom D7 -> D9 pour le domaine d'O.
  */
- 
+
 use Drupal\migrate\Row;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
+use Drush\Drush;
 
 /**
  * Implements hook_migrate_prepare_row().
@@ -23,18 +24,26 @@ use Drupal\migrate\Plugin\MigrationInterface;
  * which migration is currently being executed.
  */
 function ddo_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+//  Drush::output()->writeln(var_dump($row));
   if ($migration->id() == 'ddo_d7_scald_gallery') {
     $data = $row->getSourceProperty('data');
     $data = unserialize($data);
-    
+
     //$message = serialize($data);
     //\Drupal::logger('ddo_migrate')->notice($message);
-    
+
     $items = [];
     foreach ($data['items'] as $key => $item) {
       $items[] = ['sid' => $key];
     }
-    
+
     $row->setSourceProperty('items', $items);
+  }
+  elseif ($migration->id() == 'ddo_d7_node_complete_show') {
+    $boxoffice_url_data = $row->getSourceProperty('field_boxoffice_url');
+    $attributes = unserialize($boxoffice_url_data[0]['attributes']);
+    $boxoffice_url_data[0]['attributes'] = $attributes;
+
+    $row->setSourceProperty('field_boxoffice_url', $boxoffice_url_data);
   }
 }
