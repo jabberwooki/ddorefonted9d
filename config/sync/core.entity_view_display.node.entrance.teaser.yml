@@ -1,23 +1,26 @@
-uuid: 68f8a6c8-8cb1-4b38-a2f0-7546a525dac7
+uuid: abddf0b4-b2fa-4ebb-916c-c18338731a53
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.entree.body
-    - node.type.entree
+    - core.entity_view_mode.node.teaser
+    - field.field.node.entrance.body
+    - field.field.node.entrance.field_geolocation
+    - node.type.entrance
   module:
     - text
     - user
-id: node.entree.default
+id: node.entrance.teaser
 targetEntityType: node
-bundle: entree
-mode: default
+bundle: entrance
+mode: teaser
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 101
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     region: content
   links:
@@ -31,4 +34,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_geolocation: true
   langcode: true

@@ -1,0 +1,21 @@
+uuid: 14c0a956-76f0-4035-80ae-1c79b5d71d87
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geolocation
+    - node.type.entrance
+  module:
+    - geofield
+id: node.entrance.field_geolocation
+field_name: field_geolocation
+entity_type: node
+bundle: entrance
+label: Géolocation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield
