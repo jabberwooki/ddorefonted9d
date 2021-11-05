@@ -9,6 +9,7 @@ module:
   breakpoint: 0
   calendar: 0
   calendar_datetime: 0
+  cer: 0
   ckeditor: 0
   color: 0
   comment: 0
