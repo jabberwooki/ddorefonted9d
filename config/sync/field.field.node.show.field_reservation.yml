@@ -13,7 +13,7 @@ entity_type: node
 bundle: show
 label: Réservation
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
