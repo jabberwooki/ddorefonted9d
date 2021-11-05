@@ -1,0 +1,12 @@
+uuid: bf2cac01-1867-4aa4-886b-4b31aa078537
+langcode: fr
+status: true
+dependencies: {  }
+id: shows_shows
+label: 'Spectacles - Spectacles (Vous aimerez aussi)'
+enabled: false
+first_field: field_shows
+second_field: field_shows
+bundles:
+  node:
+    - show
