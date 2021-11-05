@@ -27,3 +27,4 @@ bootstrap_barrio_table_hover: 1
 bootstrap_barrio_table_style: table-striped
 _core:
   default_config_hash: ahxFa6bznpmozceV98auEO5JZSz4Rmii3jY85jjProI
+langcode: fr
