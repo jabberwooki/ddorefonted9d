@@ -87,7 +87,6 @@ third_party_settings:
         - field_price
         - field_entrance
         - field_minimum_age
-        - field_display_age
         - field_restauration
         - field_additional_info
         - field_reservation
@@ -124,7 +123,7 @@ content:
     third_party_settings: {  }
     region: content
   field_additional_info:
-    weight: 24
+    weight: 23
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -147,13 +146,13 @@ content:
     region: content
   field_casting_link:
     type: text_default
-    weight: 35
+    weight: 34
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_coming_soon:
-    weight: 27
+    weight: 26
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -176,16 +175,6 @@ content:
       ds:
         ds_limit: ''
     type: datetime_default
-    region: content
-  field_display_age:
-    weight: 22
-    label: inline
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_duration:
     weight: 18
@@ -219,14 +208,14 @@ content:
     type: string
     region: content
   field_full:
-    weight: 28
+    weight: 27
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_galeries:
-    weight: 31
+    weight: 30
     label: hidden
     settings:
       link: true
@@ -236,7 +225,7 @@ content:
     region: content
   field_galleries_link:
     type: text_default
-    weight: 36
+    weight: 35
     region: content
     label: hidden
     settings: {  }
@@ -287,7 +276,7 @@ content:
     type: number_decimal
     region: content
   field_offline:
-    weight: 30
+    weight: 29
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -323,28 +312,28 @@ content:
     type: entity_reference_label
     region: content
   field_reimbursement:
-    weight: 29
+    weight: 28
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_reservation:
-    weight: 25
+    weight: 24
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_restauration:
-    weight: 23
+    weight: 22
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_shows:
-    weight: 34
+    weight: 33
     label: above
     settings:
       view_mode: list_too
@@ -355,7 +344,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_sounds:
-    weight: 33
+    weight: 32
     label: hidden
     settings:
       link: true
@@ -365,7 +354,7 @@ content:
     region: content
   field_sounds_link:
     type: text_default
-    weight: 38
+    weight: 37
     region: content
     label: hidden
     settings: {  }
@@ -379,7 +368,7 @@ content:
     type: string
     region: content
   field_ticketing_url:
-    weight: 26
+    weight: 25
     label: hidden
     settings:
       trim_length: 80
@@ -392,13 +381,13 @@ content:
     region: content
   field_top_link:
     type: text_default
-    weight: 39
+    weight: 38
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_videos:
-    weight: 32
+    weight: 31
     label: hidden
     settings:
       link: true
@@ -408,7 +397,7 @@ content:
     region: content
   field_videos_link:
     type: text_default
-    weight: 37
+    weight: 36
     region: content
     label: hidden
     settings: {  }
@@ -424,6 +413,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_display_age: true
   field_mapado_apislug: true
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
