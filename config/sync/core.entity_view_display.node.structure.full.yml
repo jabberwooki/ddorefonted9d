@@ -38,6 +38,7 @@ third_party_settings:
         - field_galeries
         - field_videos
         - field_sounds
+        - field_shows
 id: node.structure.full
 targetEntityType: node
 bundle: structure
@@ -79,6 +80,17 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_shows:
+    type: entity_reference_entity_view
+    weight: 7
+    region: content
+    label: above
+    settings:
+      view_mode: list_too
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
   field_sounds:
     type: entity_reference_entity_view
     weight: 6
@@ -115,7 +127,6 @@ content:
     region: content
 hidden:
   field_associate_artist: true
-  field_shows: true
   field_structure_type: true
   langcode: true
   links: true
