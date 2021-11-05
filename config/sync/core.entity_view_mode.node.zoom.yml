@@ -1,0 +1,10 @@
+uuid: 3145ec51-b5ea-470c-b2b0-c9594a7c0ac5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.zoom
+label: Zoom
+targetEntityType: node
+cache: true

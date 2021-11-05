@@ -1,0 +1,10 @@
+uuid: 7b9aee3e-ffab-4926-b31a-e780585d6cbe
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.front_block
+label: 'Bloc accueil'
+targetEntityType: node
+cache: true

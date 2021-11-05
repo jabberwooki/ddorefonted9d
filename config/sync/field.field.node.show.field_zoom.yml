@@ -1,0 +1,23 @@
+uuid: 1785aeed-4f38-4e89-b23c-9695a3fc99f0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zoom
+    - node.type.show
+id: node.show.field_zoom
+field_name: field_zoom
+entity_type: node
+bundle: show
+label: 'Zoom sur'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

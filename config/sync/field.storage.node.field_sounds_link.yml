@@ -1,0 +1,20 @@
+uuid: e6788be2-cbcc-4215-8f84-1298a5e5960e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_sounds_link
+field_name: field_sounds_link
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

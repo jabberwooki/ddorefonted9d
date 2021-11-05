@@ -1,0 +1,19 @@
+uuid: 30fb9439-1af5-4db9-a2c8-9e5bf01b0caa
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_reimbursement
+field_name: field_reimbursement
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

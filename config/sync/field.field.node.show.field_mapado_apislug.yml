@@ -1,0 +1,19 @@
+uuid: 9dd5b332-c3d3-433f-a8ac-8ea1c63a526d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mapado_apislug
+    - node.type.show
+id: node.show.field_mapado_apislug
+field_name: field_mapado_apislug
+entity_type: node
+bundle: show
+label: 'Slug Mapado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

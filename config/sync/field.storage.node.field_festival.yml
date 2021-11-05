@@ -1,0 +1,19 @@
+uuid: 80c6793e-e0ba-444d-9a0e-f207a2bd6802
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_festival
+field_name: field_festival
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 5fe4f1f9-350a-43a1-8dc2-7ce7de733911
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mapado_dates_ids
+    - node.type.show
+id: node.show.field_mapado_dates_ids
+field_name: field_mapado_dates_ids
+entity_type: node
+bundle: show
+label: 'Identifiants des dates Mapado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

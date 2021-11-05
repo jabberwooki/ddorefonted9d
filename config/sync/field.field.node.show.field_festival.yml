@@ -1,0 +1,29 @@
+uuid: a240a4bc-a8d6-4ead-8563-cc100e2d82ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_festival
+    - node.type.festival
+    - node.type.show
+id: node.show.field_festival
+field_name: field_festival
+entity_type: node
+bundle: show
+label: Festival
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      festival: festival
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

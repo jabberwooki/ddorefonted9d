@@ -1,0 +1,21 @@
+uuid: 8d9b7b6e-687e-4a10-964d-94d7a1f05da8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restauration
+    - node.type.show
+  module:
+    - text
+id: node.show.field_restauration
+field_name: field_restauration
+entity_type: node
+bundle: show
+label: Restauration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

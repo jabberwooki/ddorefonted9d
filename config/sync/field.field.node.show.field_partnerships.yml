@@ -1,0 +1,21 @@
+uuid: f7f627e4-ae1b-46f5-a3de-76b18b7c43a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partnerships
+    - node.type.show
+  module:
+    - text
+id: node.show.field_partnerships
+field_name: field_partnerships
+entity_type: node
+bundle: show
+label: Partenariats
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

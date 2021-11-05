@@ -1,0 +1,24 @@
+uuid: c606ec9a-e01f-4fb9-bf05-c4d1e013e24b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_videos_link
+    - node.type.show
+  module:
+    - text
+id: node.show.field_videos_link
+field_name: field_videos_link
+entity_type: node
+bundle: show
+label: 'Lien vidéos'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<a href="#videos">Vidéos</a>'
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text

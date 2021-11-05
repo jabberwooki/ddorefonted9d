@@ -1,0 +1,19 @@
+uuid: e8b90adb-77b5-479d-93e3-40ee76e0e8aa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mapado_ticketing
+    - node.type.show
+id: node.show.field_mapado_ticketing
+field_name: field_mapado_ticketing
+entity_type: node
+bundle: show
+label: 'Identifiant Ticketing API'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

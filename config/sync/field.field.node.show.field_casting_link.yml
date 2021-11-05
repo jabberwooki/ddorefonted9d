@@ -1,0 +1,24 @@
+uuid: 1e91cae9-3d1b-4e14-9eb6-cea0bda836fa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_casting_link
+    - node.type.show
+  module:
+    - text
+id: node.show.field_casting_link
+field_name: field_casting_link
+entity_type: node
+bundle: show
+label: 'Lien distribution'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<a href="#casting">Distribution</a>'
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text

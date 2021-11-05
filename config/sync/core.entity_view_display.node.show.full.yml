@@ -1,8 +1,9 @@
-uuid: 2d559769-2bee-46c6-9fb5-36d6b6b6c25a
+uuid: b78a5505-5c3b-403b-8b5a-1cfb1a6fff1e
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.show.body
     - field.field.node.show.field_additional_info
     - field.field.node.show.field_by
@@ -110,10 +111,10 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
-id: node.show.default
+id: node.show.full
 targetEntityType: node
 bundle: show
-mode: default
+mode: full
 content:
   body:
     label: hidden

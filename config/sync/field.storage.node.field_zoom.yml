@@ -1,0 +1,18 @@
+uuid: f7b6d47a-68af-4ac2-9322-82961d61a7cd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_zoom
+field_name: field_zoom
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

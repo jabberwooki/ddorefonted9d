@@ -1,0 +1,19 @@
+uuid: abd82add-f6e7-4617-b6d8-19fc70694987
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_from
+    - node.type.show
+id: node.show.field_from
+field_name: field_from
+entity_type: node
+bundle: show
+label: De
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
