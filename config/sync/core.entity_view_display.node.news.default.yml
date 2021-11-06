@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_currently
     - field.field.node.news.field_dates
+    - field.field.node.news.field_files
     - field.field.node.news.field_galeries
     - field.field.node.news.field_new_window
     - field.field.node.news.field_newsflash
@@ -87,6 +88,14 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_files:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_galeries:
     weight: 7

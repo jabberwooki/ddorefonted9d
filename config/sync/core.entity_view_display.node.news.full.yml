@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_currently
     - field.field.node.news.field_dates
+    - field.field.node.news.field_files
     - field.field.node.news.field_galeries
     - field.field.node.news.field_new_window
     - field.field.node.news.field_newsflash
@@ -50,6 +51,7 @@ third_party_settings:
         - field_galeries
         - field_videos
         - field_sounds
+        - field_files
         - field_target_url
     fields:
       node_title:
@@ -86,6 +88,15 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_files:
+    type: entity_reference_entity_view
+    weight: 11
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
   field_galeries:
     weight: 8
     label: above
@@ -117,7 +128,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_target_url:
-    weight: 11
+    weight: 12
     label: inline
     settings:
       link_to_entity: false

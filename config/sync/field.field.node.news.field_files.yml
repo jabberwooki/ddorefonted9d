@@ -1,0 +1,29 @@
+uuid: be8f86dc-fdbf-4a0b-949b-e85bab822909
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files
+    - media.type.document
+    - node.type.news
+id: node.news.field_files
+field_name: field_files
+entity_type: node
+bundle: news
+label: Téléchargements
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

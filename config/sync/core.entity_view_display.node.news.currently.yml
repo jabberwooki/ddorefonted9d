@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_currently
     - field.field.node.news.field_dates
+    - field.field.node.news.field_files
     - field.field.node.news.field_galeries
     - field.field.node.news.field_new_window
     - field.field.node.news.field_newsflash
@@ -88,6 +89,7 @@ hidden:
   body: true
   field_currently: true
   field_dates: true
+  field_files: true
   field_galeries: true
   field_new_window: true
   field_newsflash: true
