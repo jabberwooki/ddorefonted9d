@@ -1,9 +1,9 @@
-uuid: 8d5feda3-3ed6-4c3c-a593-e397e68ff442
+uuid: 6449f846-d9b5-404e-b381-6228f0551a19
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.currently
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_currently
@@ -24,33 +24,68 @@ dependencies:
     - field.field.node.news.field_zoom_text
     - node.type.news
   module:
-    - text
+    - ds
     - user
-id: node.news.teaser
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_banner_image
+        - node_title
+        - field_target_url
+        - node_link
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
+      node_link:
+        plugin_id: node_link
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'Plus d''infos'
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.news.currently
 targetEntityType: node
 bundle: news
-mode: teaser
+mode: currently
 content:
-  body:
+  field_banner_image:
+    weight: 0
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
-  links:
-    weight: 100
-    settings: {  }
+  field_target_url:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
-  field_banner_image: true
+  body: true
   field_currently: true
   field_dates: true
   field_galeries: true
@@ -61,10 +96,11 @@ hidden:
   field_sidebar_image: true
   field_slideshow: true
   field_sounds: true
-  field_target_url: true
   field_topic_mode: true
   field_video_only: true
   field_videos: true
   field_webpush_topics: true
   field_zoom_text: true
   langcode: true
+  links: true
+  sharethis: true

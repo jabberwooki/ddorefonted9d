@@ -1,0 +1,21 @@
+uuid: 3ca52a64-2e84-4887-b662-5b5e7378904e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.news
+  module:
+    - datetime
+id: node.news.field_dates
+field_name: field_dates
+entity_type: node
+bundle: news
+label: 'Date(s) de l''événement'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -4,10 +4,64 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_banner_image
+    - field.field.node.news.field_currently
+    - field.field.node.news.field_dates
+    - field.field.node.news.field_galeries
+    - field.field.node.news.field_new_window
+    - field.field.node.news.field_newsflash
+    - field.field.node.news.field_publication_date
+    - field.field.node.news.field_send_notification
+    - field.field.node.news.field_sidebar_image
+    - field.field.node.news.field_slideshow
+    - field.field.node.news.field_sounds
+    - field.field.node.news.field_target_url
+    - field.field.node.news.field_topic_mode
+    - field.field.node.news.field_video_only
+    - field.field.node.news.field_videos
+    - field.field.node.news.field_webpush_topics
+    - field.field.node.news.field_zoom_text
     - node.type.news
   module:
+    - datetime
+    - datetime_range
+    - field_group
+    - media_library
     - path
+    - term_reference_tree
     - text
+third_party_settings:
+  field_group:
+    group_webpush_topics:
+      children:
+        - field_topic_mode
+        - field_webpush_topics
+        - field_send_notification
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Thématiques
+    group_visibility:
+      children:
+        - field_newsflash
+        - field_currently
+        - field_slideshow
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Visibilité
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -15,7 +69,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 11
     settings:
       rows: 9
       summary_rows: 3
@@ -25,47 +79,178 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_banner_image:
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_currently:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_dates:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_galeries:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_new_window:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_newsflash:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_publication_date:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_send_notification:
+    weight: 20
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sidebar_image:
+    weight: 10
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_slideshow:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sounds:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_target_url:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_topic_mode:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_video_only:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_videos:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_webpush_topics:
+    weight: 19
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
+    third_party_settings: {  }
+    type: term_reference_tree
+    region: content
+  field_zoom_text:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
+    weight: 21
+    region: content
     settings:
       display_label: true
-    weight: 15
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
+    weight: 25
+    region: content
     settings:
       display_label: true
-    weight: 120
-    region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
+    weight: 22
+    region: content
     settings:
       display_label: true
-    weight: 16
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -73,7 +258,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 19
     settings:
       match_operator: CONTAINS
       size: 60
@@ -82,8 +267,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 24
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

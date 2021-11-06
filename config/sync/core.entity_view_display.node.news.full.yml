@@ -1,8 +1,9 @@
-uuid: 77b25fe5-4a51-4795-b0b8-43036cccf80e
+uuid: 51f04908-5137-48c0-867a-ae4b0f7f89c3
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_currently
@@ -41,46 +42,43 @@ third_party_settings:
         - sharethis
         - links
         - node_title
+        - field_webpush_topics
+        - field_dates
         - field_banner_image
         - field_sidebar_image
-        - field_dates
         - body
         - field_galeries
         - field_videos
         - field_sounds
+        - field_target_url
     fields:
       node_title:
         plugin_id: node_title
         weight: 2
         label: hidden
         formatter: default
-        settings:
-          'link class': ''
-          wrapper: h3
-          class: ''
-          link: false
-id: node.news.default
+id: node.news.full
 targetEntityType: node
 bundle: news
-mode: default
+mode: full
 content:
   body:
     label: hidden
     type: text_default
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     region: content
   field_banner_image:
-    weight: 3
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_dates:
-    weight: 5
+    weight: 4
     label: above
     settings:
       format_type: medium
@@ -89,32 +87,57 @@ content:
     type: datetime_default
     region: content
   field_galeries:
-    weight: 7
+    weight: 8
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
     region: content
   field_sidebar_image:
-    weight: 4
-    label: above
+    weight: 6
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_sounds:
+    weight: 10
+    label: above
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
+    region: content
+  field_target_url:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_videos:
     weight: 9
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_entity_view
     region: content
-  field_videos:
-    weight: 8
-    label: above
+  field_webpush_topics:
+    weight: 3
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -137,9 +160,7 @@ hidden:
   field_publication_date: true
   field_send_notification: true
   field_slideshow: true
-  field_target_url: true
   field_topic_mode: true
   field_video_only: true
-  field_webpush_topics: true
   field_zoom_text: true
   langcode: true
