@@ -1,17 +1,20 @@
-uuid: d92bcaab-6edc-43cc-bf1e-ef0c61fa6ab8
+uuid: fac6a571-c864-4256-977d-94c3291a5154
 langcode: fr
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.lieu_location.body
-    - node.type.lieu_location
+    - field.field.node.rentable_place.body
+    - field.field.node.rentable_place.field_contact
+    - field.field.node.rentable_place.field_gallery
+    - field.field.node.rentable_place.field_media_image
+    - node.type.rentable_place
   module:
     - text
     - user
-id: node.lieu_location.teaser
+id: node.rentable_place.teaser
 targetEntityType: node
-bundle: lieu_location
+bundle: rentable_place
 mode: teaser
 content:
   body:
@@ -33,4 +36,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_contact: true
+  field_gallery: true
+  field_media_image: true
   langcode: true

@@ -1,0 +1,29 @@
+uuid: 4698c110-443b-4885-9015-e9471e251296
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.rentable_place
+id: node.rentable_place.field_contact
+field_name: field_contact
+entity_type: node
+bundle: rentable_place
+label: 'Contact location'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

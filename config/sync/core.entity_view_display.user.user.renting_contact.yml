@@ -37,6 +37,11 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.renting_contact

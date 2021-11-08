@@ -52,9 +52,11 @@ content:
     label: visually_hidden
     weight: 0
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     type: entity_reference_entity_view
     region: content
 hidden:

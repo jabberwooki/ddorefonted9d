@@ -1,17 +1,17 @@
-uuid: 4e79ed79-7a0c-4a06-a7dd-f1bc5967a03a
+uuid: f9b27164-1621-4424-9f3f-e897978270ff
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.lieu_location
+    - node.type.rentable_place
   module:
     - text
-id: node.lieu_location.body
+id: node.rentable_place.body
 field_name: body
 entity_type: node
-bundle: lieu_location
-label: Body
+bundle: rentable_place
+label: Description
 description: ''
 required: false
 translatable: true

@@ -1,0 +1,29 @@
+uuid: f313a4cb-8ead-4e33-9524-39b3c483707a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery
+    - media.type.gallery
+    - node.type.rentable_place
+id: node.rentable_place.field_gallery
+field_name: field_gallery
+entity_type: node
+bundle: rentable_place
+label: Galerie
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,4 +1,4 @@
-uuid: 348962e4-2efb-4a68-8bd4-11fd9fd12c0d
+uuid: ed30effd-8b64-43d2-87ee-86a949b4fd5a
 langcode: fr
 status: true
 dependencies:
@@ -6,11 +6,10 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main-menu
-    parent: 'main-menu:0:'
+    available_menus: {  }
+    parent: ''
 name: 'Lieu à la location'
-type: lieu_location
+type: rentable_place
 description: ''
 help: ''
 new_revision: false
