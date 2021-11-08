@@ -1,9 +1,9 @@
-uuid: 74caa2ee-f3ce-4ea6-a993-e0bd2692e426
+uuid: f0b27811-af08-48c7-9d63-7a88f868e873
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.user.compact
+    - core.entity_view_mode.user.renting_contact
     - field.field.user.user.field_phones
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -19,24 +19,39 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        classes: {  }
-        wrappers:
-          content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
+        label: ''
     regions:
       content:
         - user_picture
-        - langcode
+        - username
+        - field_phones
+        - usermail
+    fields:
+      usermail:
+        plugin_id: usermail
+        weight: 3
+        label: hidden
+        formatter: default
+      username:
+        plugin_id: username
+        weight: 1
+        label: hidden
+        formatter: default
 _core:
-  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
-id: user.user.compact
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.renting_contact
 targetEntityType: user
 bundle: user
-mode: compact
+mode: renting_contact
 content:
+  field_phones:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
@@ -47,6 +62,5 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
-  field_phones: true
   langcode: true
   member_for: true

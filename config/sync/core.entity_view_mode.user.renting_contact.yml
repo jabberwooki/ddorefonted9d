@@ -1,0 +1,10 @@
+uuid: 581dd894-88af-4836-8b29-c4a10b27fec0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.renting_contact
+label: 'Contact location'
+targetEntityType: user
+cache: true

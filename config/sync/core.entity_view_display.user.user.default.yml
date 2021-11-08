@@ -3,11 +3,33 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_phones
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - ds
     - image
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      content:
+        - user_picture
+        - langcode
+        - member_for
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -15,9 +37,18 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_phones:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   member_for:
     weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
