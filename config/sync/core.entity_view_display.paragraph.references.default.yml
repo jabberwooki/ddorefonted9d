@@ -1,0 +1,37 @@
+uuid: 483f97fc-b975-4080-956d-156a3729752c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.references.field_references
+    - paragraphs.paragraphs_type.references
+  module:
+    - ds
+    - entity_reference_revisions
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_references
+id: paragraph.references.default
+targetEntityType: paragraph
+bundle: references
+mode: default
+content:
+  field_references:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

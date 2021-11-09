@@ -1,0 +1,19 @@
+uuid: a1fe926e-2266-489b-a4c1-52a7ed26436f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.documents
+id: paragraph.documents.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: documents
+label: 'Titre du groupe de documents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

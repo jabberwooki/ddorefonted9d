@@ -1,0 +1,38 @@
+uuid: 0b997596-5b5a-4594-94d3-f01f0742245d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.binder.field_document_sets
+    - field.field.paragraph.binder.field_title
+    - paragraphs.paragraphs_type.binder
+  module:
+    - paragraphs
+id: paragraph.binder.default
+targetEntityType: paragraph
+bundle: binder
+mode: default
+content:
+  field_document_sets:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: documents
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

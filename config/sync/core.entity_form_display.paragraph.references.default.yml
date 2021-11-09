@@ -1,0 +1,29 @@
+uuid: 0e105694-cddd-4c45-98fc-2a91c93956f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.references.field_references
+    - paragraphs.paragraphs_type.references
+  module:
+    - paragraphs
+id: paragraph.references.default
+targetEntityType: paragraph
+bundle: references
+mode: default
+content:
+  field_references:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

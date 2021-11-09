@@ -1,0 +1,41 @@
+uuid: cf1b785b-9418-4676-862f-07310af01811
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reference.field_image
+    - field.field.paragraph.reference.field_summary
+    - field.field.paragraph.reference.field_title
+    - paragraphs.paragraphs_type.reference
+  module:
+    - text
+id: paragraph.reference.default
+targetEntityType: paragraph
+bundle: reference
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_summary:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
