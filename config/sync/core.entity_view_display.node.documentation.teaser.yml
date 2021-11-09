@@ -1,0 +1,40 @@
+uuid: 2bf8eab1-120f-40c6-b266-e35a2b363add
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.documentation.body
+    - field.field.node.documentation.field_paragraphs
+    - field.field.node.documentation.field_section
+    - node.type.documentation
+  module:
+    - text
+    - user
+id: node.documentation.teaser
+targetEntityType: node
+bundle: documentation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraphs: true
+  field_section: true
+  langcode: true

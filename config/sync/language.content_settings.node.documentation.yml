@@ -1,0 +1,11 @@
+uuid: a645ef8e-4a8f-43bf-a0e7-987a1d477133
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.documentation
+id: node.documentation
+target_entity_type_id: node
+target_bundle: documentation
+default_langcode: site_default
+language_alterable: false
