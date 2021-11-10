@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.show.field_casting_link
     - field.field.node.show.field_coming_soon
     - field.field.node.show.field_coproduction
+    - field.field.node.show.field_currently
     - field.field.node.show.field_dates
     - field.field.node.show.field_display_age
     - field.field.node.show.field_duration
@@ -44,7 +45,6 @@ dependencies:
     - field.field.node.show.field_top_link
     - field.field.node.show.field_videos
     - field.field.node.show.field_videos_link
-    - field.field.node.show.field_zoom
     - node.type.show
   module:
     - datetime
@@ -164,6 +164,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_currently:
+    weight: 40
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_dates:
     weight: 4
@@ -425,5 +435,4 @@ hidden:
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
   field_show_type: true
-  field_zoom: true
   langcode: true

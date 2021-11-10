@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.show.field_casting_link
     - field.field.node.show.field_coming_soon
     - field.field.node.show.field_coproduction
+    - field.field.node.show.field_currently
     - field.field.node.show.field_dates
     - field.field.node.show.field_display_age
     - field.field.node.show.field_duration
@@ -44,7 +45,6 @@ dependencies:
     - field.field.node.show.field_top_link
     - field.field.node.show.field_videos
     - field.field.node.show.field_videos_link
-    - field.field.node.show.field_zoom
     - node.type.show
   module:
     - datetime
@@ -162,6 +162,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_currently:
+    weight: 48
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_dates:
     weight: 4
@@ -428,13 +435,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textfield
-    region: content
-  field_zoom:
-    weight: 16
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
   langcode:
     type: language_select

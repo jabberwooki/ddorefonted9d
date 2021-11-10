@@ -1,18 +1,18 @@
-uuid: 1785aeed-4f38-4e89-b23c-9695a3fc99f0
+uuid: fa7189f3-02ce-4795-9572-0d6a6adf2617
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_zoom
+    - field.storage.node.field_currently
     - node.type.show
-id: node.show.field_zoom
-field_name: field_zoom
+id: node.show.field_currently
+field_name: field_currently
 entity_type: node
 bundle: show
-label: 'Zoom sur'
+label: 'Visible en ce moment'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

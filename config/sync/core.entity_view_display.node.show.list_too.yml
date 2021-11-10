@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.show.field_casting_link
     - field.field.node.show.field_coming_soon
     - field.field.node.show.field_coproduction
+    - field.field.node.show.field_currently
     - field.field.node.show.field_dates
     - field.field.node.show.field_display_age
     - field.field.node.show.field_duration
@@ -45,7 +46,6 @@ dependencies:
     - field.field.node.show.field_top_link
     - field.field.node.show.field_videos
     - field.field.node.show.field_videos_link
-    - field.field.node.show.field_zoom
     - node.type.show
   module:
     - datetime
@@ -109,6 +109,7 @@ hidden:
   field_casting_link: true
   field_coming_soon: true
   field_coproduction: true
+  field_currently: true
   field_display_age: true
   field_duration: true
   field_entrance: true
@@ -141,7 +142,6 @@ hidden:
   field_top_link: true
   field_videos: true
   field_videos_link: true
-  field_zoom: true
   langcode: true
   links: true
   sharethis: true
