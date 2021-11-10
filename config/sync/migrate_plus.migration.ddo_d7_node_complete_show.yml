@@ -26,7 +26,7 @@ process:
   status: status
   created: created
   changed: timestamp
-  promote: promote
+  promote: field_promoted
   sticky: sticky
   body: body
   field_additional_info: field_additional_infos
@@ -140,7 +140,7 @@ process:
         plugin: migration_lookup
         migration: ddo_d7_scald_image
         source: sid
-  field_zoom: field_zoom
+  field_currently: field_zoom
   field_partnerships: field_partenariats
   field_restauration: field_restauration
   field_generic_location: field_lieu_generique
