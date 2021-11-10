@@ -1,0 +1,22 @@
+uuid: 40ed2d2f-9cbf-43af-aec7-16a889501565
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.festival
+id: node.festival.promote
+field_name: promote
+entity_type: node
+bundle: festival
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean
