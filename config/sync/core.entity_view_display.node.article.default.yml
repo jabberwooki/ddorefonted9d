@@ -8,12 +8,12 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
-    - field.field.node.article.field_frontpage_zoom
     - field.field.node.article.field_galeries
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_sidebar_image
+    - field.field.node.article.field_slideshow
     - field.field.node.article.field_tags
     - field.field.node.article.field_target_url
     - field.field.node.article.field_themes
@@ -66,16 +66,6 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_frontpage_zoom:
-    weight: 116
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_galeries:
     type: entity_reference_entity_view
     weight: 121
@@ -120,6 +110,16 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_slideshow:
+    weight: 122
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_tags:
     type: entity_reference_label

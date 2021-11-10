@@ -7,12 +7,12 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
-    - field.field.node.article.field_frontpage_zoom
     - field.field.node.article.field_galeries
     - field.field.node.article.field_more_infos_link
     - field.field.node.article.field_new_window
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_sidebar_image
+    - field.field.node.article.field_slideshow
     - field.field.node.article.field_tags
     - field.field.node.article.field_target_url
     - field.field.node.article.field_themes
@@ -68,13 +68,6 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_frontpage_zoom:
-    weight: 12
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_galeries:
     type: media_library_widget
     weight: 7
@@ -109,6 +102,13 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_slideshow:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_tags:
     type: entity_reference_autocomplete_tags

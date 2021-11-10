@@ -1,18 +1,18 @@
-uuid: 93d907b8-0fcf-49a4-b634-07abdcc0da59
+uuid: 5903d700-9ea0-4efd-bdb0-e24cfc7d7076
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_frontpage_zoom
+    - field.storage.node.field_slideshow
     - node.type.article
-id: node.article.field_frontpage_zoom
-field_name: field_frontpage_zoom
+id: node.article.field_slideshow
+field_name: field_slideshow
 entity_type: node
 bundle: article
-label: 'Visible zoom diaporama'
+label: 'Visibile dans le diaporama'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0
