@@ -9,7 +9,7 @@ id: node.news.field_currently
 field_name: field_currently
 entity_type: node
 bundle: news
-label: 'En ce moment'
+label: 'Visible en ce moment'
 description: ''
 required: false
 translatable: false
