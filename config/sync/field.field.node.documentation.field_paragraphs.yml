@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.documentation
     - paragraphs.paragraphs_type.binder
+    - paragraphs.paragraphs_type.documents
     - paragraphs.paragraphs_type.galleries
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.references
@@ -29,14 +30,15 @@ settings:
       image: image
       galleries: galleries
       binder: binder
+      documents: documents
       references: references
     target_bundles_drag_drop:
       binder:
         enabled: true
         weight: -9
       documents:
+        enabled: true
         weight: -8
-        enabled: false
       galleries:
         enabled: true
         weight: -10
@@ -44,8 +46,8 @@ settings:
         enabled: true
         weight: -11
       reference:
-        enabled: false
         weight: 11
+        enabled: false
       references:
         enabled: true
         weight: -7
