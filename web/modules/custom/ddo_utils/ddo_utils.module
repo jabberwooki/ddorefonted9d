@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+
+function ddo_utils_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'frontpage' && $view->current_display == 'festival_names') {
+    // Le bloc de vue frontpage/festival_names est placé dans la région 'quick_access'.
+    // Il est conçu pour lister le nom des festivals ayant au moins un spectacle à venir.
+    // Mais si un festival a par exemples 7 spectacles, son nom est listé 7 fois
+    $festival_ids = [];
+    foreach ($view->result as $key=>$row) {
+      if (!in_array($row->_entity->get('field_festival')->target_id, $festival_ids)) {
+        $festival_ids[] = $row->_entity->get('field_festival')->target_id;
+      }
+      else {
+        unset($view->result[$key]);
+      }
+    }
+
+    dpm($festival_ids);
+  }
+}

@@ -21,6 +21,7 @@ module:
   datetime_range: 0
   dblog: 0
   ddo_migrate: 0
+  ddo_utils: 0
   devel: 0
   devel_php: 0
   draggableviews: 0
