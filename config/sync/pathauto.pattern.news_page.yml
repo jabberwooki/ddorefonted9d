@@ -1,0 +1,33 @@
+uuid: 1843373d-481d-4420-8111-2992bf44a4c0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: news_page
+label: 'Page Événement'
+type: 'canonical_entities:node'
+pattern: 'zoom/[node:title]'
+selection_criteria:
+  65b121c8-5d16-4222-9f07-b0415c05debf:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 65b121c8-5d16-4222-9f07-b0415c05debf
+  50877980-1025-409c-9d07-fcf8799e5da1:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 50877980-1025-409c-9d07-fcf8799e5da1
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
