@@ -695,7 +695,7 @@ display:
   page:
     display_plugin: page
     id: page
-    display_title: Page
+    display_title: 'Page originale'
     position: 1
     display_options:
       display_extenders: {  }
