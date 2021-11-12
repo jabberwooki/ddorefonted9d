@@ -1,4 +1,4 @@
-uuid: 0d1592c1-5020-4cc9-b97b-7706e0196d4a
+uuid: a9c4fc7f-87e3-4a36-b41a-2409edcf11ff
 langcode: fr
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - ddo
-id: views_block__frontpage_shows
+id: views_block__frontpage_festival_names
 theme: ddo
 region: content
-weight: -1
+weight: -2
 provider: null
-plugin: 'views_block:frontpage-shows'
+plugin: 'views_block:frontpage-festival_names'
 settings:
-  id: 'views_block:frontpage-shows'
+  id: 'views_block:frontpage-festival_names'
   label: ''
   provider: views
   label_display: visible
