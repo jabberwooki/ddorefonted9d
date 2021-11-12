@@ -1,9 +1,9 @@
-uuid: a4ee79d9-74e4-43a1-aa45-1b47e7bae68e
+uuid: 79d67483-421a-4e87-9c71-9979518a90ee
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.list
     - field.field.node.festival.body
     - field.field.node.festival.field_archives
     - field.field.node.festival.field_calendar_archive
@@ -26,7 +26,6 @@ dependencies:
     - node.type.festival
   module:
     - ds
-    - term_reference_tree
     - user
 third_party_settings:
   ds:
@@ -39,44 +38,23 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - field_poster
         - node_title
-        - field_season
-        - field_plain_date
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 0
         label: hidden
         formatter: default
-id: node.festival.teaser
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
+id: node.festival.list
 targetEntityType: node
 bundle: festival
-mode: teaser
-content:
-  field_plain_date:
-    type: string
-    weight: 3
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_poster:
-    type: term_reference_tree
-    weight: 0
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_season:
-    type: string
-    weight: 2
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
+mode: list
+content: {  }
 hidden:
   body: true
   field_archives: true
@@ -89,6 +67,9 @@ hidden:
   field_no_result: true
   field_online_flipthrough: true
   field_pdf_programme: true
+  field_plain_date: true
+  field_poster: true
+  field_season: true
   field_shows: true
   field_sidebar_image: true
   field_sounds: true
