@@ -98,13 +98,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_more_infos_link:
-    weight: 10
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_sidebar_image:
     weight: 4
     label: above
@@ -142,6 +135,7 @@ content:
 hidden:
   field_currently: true
   field_files: true
+  field_more_infos_link: true
   field_new_window: true
   field_newsflash: true
   field_publication_date: true
