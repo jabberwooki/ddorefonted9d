@@ -1,0 +1,12 @@
+uuid: 225f8fb4-5f9f-4214-bea7-be90ba1e97ff
+langcode: fr
+status: true
+dependencies: {  }
+id: teaser
+label: Accroche
+description: ''
+aspect_ratio: '1388:1000'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 500
+hard_limit_height: 694

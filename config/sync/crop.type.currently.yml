@@ -1,0 +1,12 @@
+uuid: adb37c97-cc43-48b5-9286-3f830d7f3a18
+langcode: fr
+status: true
+dependencies: {  }
+id: currently
+label: 'En ce moment'
+description: ''
+aspect_ratio: '1386:1000'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 765
+hard_limit_height: 552
