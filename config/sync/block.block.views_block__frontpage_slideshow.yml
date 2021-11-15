@@ -1,4 +1,4 @@
-uuid: 0d1592c1-5020-4cc9-b97b-7706e0196d4a
+uuid: b5c762dc-5502-4372-83d2-bc4ddf324428
 langcode: fr
 status: true
 dependencies:
@@ -9,17 +9,17 @@ dependencies:
     - views
   theme:
     - ddo
-id: views_block__frontpage_shows
+id: views_block__frontpage_slideshow
 theme: ddo
 region: content
-weight: -1
+weight: -3
 provider: null
-plugin: 'views_block:frontpage-shows'
+plugin: 'views_block:frontpage-slideshow'
 settings:
-  id: 'views_block:frontpage-shows'
+  id: 'views_block:frontpage-slideshow'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:
