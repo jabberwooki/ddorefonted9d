@@ -47,6 +47,7 @@
         "drupal/geofield": "^1.31",
         "drupal/geofield_map": "^2.68",
         "drupal/google_analytics": "^3.1",
+        "drupal/image_widget_crop": "^2.3",
         "drupal/imce": "^2.4",
         "drupal/libraries": "^3.0@beta",
         "drupal/media_entity_slideshow": "^2.4",
