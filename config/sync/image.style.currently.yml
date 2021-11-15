@@ -1,0 +1,25 @@
+uuid: 15e74013-053d-48da-8bee-acd31bf9bc41
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.currently
+  module:
+    - crop
+name: currently
+label: 'En ce moment'
+effects:
+  d259d6f0-4c25-480d-a5c5-d5d3ab6a4450:
+    uuid: d259d6f0-4c25-480d-a5c5-d5d3ab6a4450
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: currently
+  a42f4448-220e-458f-9ae5-aabbbf786260:
+    uuid: a42f4448-220e-458f-9ae5-aabbbf786260
+    id: image_scale
+    weight: 2
+    data:
+      width: 768
+      height: null
+      upscale: false

@@ -1,0 +1,25 @@
+uuid: 6f36193d-fb6f-49c5-bbd9-775b8757458b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.banner
+  module:
+    - crop
+name: banner
+label: Bandeau
+effects:
+  4fc87231-a3d4-4674-8447-11d603d9be6c:
+    uuid: 4fc87231-a3d4-4674-8447-11d603d9be6c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner
+  da04f5db-6b52-4bc3-b212-d210e89d314e:
+    uuid: da04f5db-6b52-4bc3-b212-d210e89d314e
+    id: image_scale
+    weight: 2
+    data:
+      width: 1920
+      height: null
+      upscale: false

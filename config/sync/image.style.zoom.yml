@@ -1,0 +1,25 @@
+uuid: 047fe3b1-b1a5-4049-b4d2-400b5f863403
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.zoom
+  module:
+    - crop
+name: zoom
+label: 'Zoom sur'
+effects:
+  2e65d7f2-671e-456e-af21-8135aaf9a654:
+    uuid: 2e65d7f2-671e-456e-af21-8135aaf9a654
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: zoom
+  3c687959-8c2c-43d0-a5e6-464304bba393:
+    uuid: 3c687959-8c2c-43d0-a5e6-464304bba393
+    id: image_scale
+    weight: 2
+    data:
+      width: 380
+      height: null
+      upscale: false
