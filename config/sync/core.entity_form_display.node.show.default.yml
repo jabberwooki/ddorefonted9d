@@ -285,7 +285,9 @@ content:
     weight: 18
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     type: media_library_widget
     region: content
   field_media_thumbnail:
@@ -293,7 +295,9 @@ content:
     weight: 17
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_minimum_age:
     weight: 13

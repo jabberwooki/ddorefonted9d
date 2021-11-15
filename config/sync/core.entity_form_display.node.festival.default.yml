@@ -160,7 +160,9 @@ content:
     weight: 5
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_season:
     weight: 3
@@ -184,7 +186,9 @@ content:
     weight: 6
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     type: media_library_widget
     region: content
   field_sounds:
