@@ -1818,9 +1818,8 @@ display:
         context: '0'
         menu_name: main
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 10
           offset: 0
       empty: {  }
       sorts:
@@ -3485,9 +3484,8 @@ display:
         groups:
           1: AND
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 20
           offset: 0
       empty: {  }
     cache_metadata:
