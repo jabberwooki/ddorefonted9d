@@ -1,0 +1,29 @@
+uuid: c451e3e7-a361-4047-9388-a1f4f42610c5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - system
+    - views
+  theme:
+    - ddo
+id: views_block__frontpage_flashnews
+theme: ddo
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:frontpage-flashnews'
+settings:
+  id: 'views_block:frontpage-flashnews'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

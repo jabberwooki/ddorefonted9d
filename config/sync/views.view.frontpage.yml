@@ -106,7 +106,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 10
+          items_per_page: 1
           offset: 0
           id: 0
           total_pages: 0
@@ -117,7 +117,7 @@ display:
             last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Nombre d''éléments par page'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -187,7 +187,7 @@ display:
     display_plugin: block
     id: currently
     display_title: 'En ce moment'
-    position: 2
+    position: 4
     display_options:
       display_extenders: {  }
       display_description: ''
@@ -365,7 +365,7 @@ display:
     display_plugin: feed
     id: feed_1
     display_title: Flux
-    position: 8
+    position: 10
     display_options:
       sitename_title: true
       path: rss.xml
@@ -400,7 +400,7 @@ display:
     display_plugin: block
     id: festival_names
     display_title: 'Accès par festival'
-    position: 6
+    position: 8
     display_options:
       display_extenders: {  }
       filters:
@@ -634,11 +634,355 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  flashnews:
+    display_plugin: block
+    id: flashnews
+    display_title: 'Info flash'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          field: status
+          group: 1
+          id: status
+          table: node_field_data
+          value: '1'
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            news: news
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_newsflash_value:
+          id: field_newsflash_value
+          table: node__field_newsflash
+          field: field_newsflash_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      defaults:
+        filters: false
+        filter_groups: false
+        style: false
+        row: false
+        title: false
+        fields: false
+        sorts: false
+        empty: false
+        pager: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      display_description: ''
+      title: 'Info Flash'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_summary_or_trimmed
+          settings:
+            trim_length: 300
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Plus d''infos'
+          output_url_as_text: false
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          draggable_views_reference: 'frontpage:newsflashes_sorting'
+          draggable_views_null_order: after
+          draggable_views_pass_arguments: false
+          plugin_id: draggable_views_sort_default
+      empty: {  }
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
   news_sorting:
     display_plugin: page
     id: news_sorting
     display_title: 'Tri En ce moment'
-    position: 3
+    position: 5
     display_options:
       display_extenders: {  }
       display_description: ''
@@ -1134,6 +1478,283 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_banner_image'
         - 'config:field.storage.node.field_dates'
+  newsflashes_sorting:
+    display_plugin: page
+    id: newsflashes_sorting
+    display_title: 'Tri Infos flash'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+            body: body
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            body:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
+      defaults:
+        style: false
+        row: false
+        fields: false
+        pager: false
+        empty: false
+        sorts: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Titre
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_summary_or_trimmed
+          settings:
+            trim_length: 300
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        draggableviews:
+          id: draggableviews
+          table: node_field_data
+          field: draggableviews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          action_title: Action
+          include_exclude: exclude
+          selected_actions: null
+          entity_type: node
+          entity_field: nid
+          plugin_id: draggable_views_field
+      path: admin/content/newsflash-sorting
+      menu:
+        type: tab
+        title: 'Tri du bloc Flash info'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 102
+        context: '0'
+        menu_name: main
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      empty: {  }
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          draggable_views_reference: this
+          draggable_views_null_order: after
+          draggable_views_pass_arguments: false
+          plugin_id: draggable_views_sort_default
+      display_description: ''
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
   page_1:
     display_options:
       path: node
@@ -1200,7 +1821,7 @@ display:
       display_description: ''
       title: 'Domaine d''O'
     display_plugin: page
-    display_title: 'Page initiale'
+    display_title: Page
     id: page_1
     position: 1
     cache_metadata:
@@ -1215,7 +1836,7 @@ display:
     display_plugin: block
     id: shows
     display_title: 'Spectacles Accueil'
-    position: 7
+    position: 9
     display_options:
       display_extenders: {  }
       display_description: ''
@@ -1458,7 +2079,7 @@ display:
     display_plugin: block
     id: slideshow
     display_title: Diaporama
-    position: 4
+    position: 6
     display_options:
       display_extenders: {  }
       display_description: ''
@@ -2007,7 +2628,7 @@ display:
     display_plugin: page
     id: slideshow_sorting
     display_title: 'Tri Diaporama'
-    position: 5
+    position: 7
     display_options:
       display_extenders: {  }
       display_description: ''
