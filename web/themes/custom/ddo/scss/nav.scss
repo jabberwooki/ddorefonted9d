@@ -1,0 +1,14 @@
+.nav-social {
+  a.icon-facebook {
+    @include social-icon("\e801");
+  }
+  a.icon-twitter {
+    @include social-icon("\e800");
+  }
+  a.icon-youtube {
+    @include social-icon("\e802");
+  }
+  a.icon-tripadvisor {
+    @include social-icon("\f262");
+  }
+}

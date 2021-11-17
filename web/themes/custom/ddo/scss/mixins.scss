@@ -1,0 +1,13 @@
+@mixin social-icon($charcode) {
+  &:before {
+    @extend %icon-fontello;
+    content: $charcode;
+    font-size: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    &:before {
+      color: map-get($theme-colors,"secondary");
+    }
+  }
+}
