@@ -28,6 +28,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/bootstrap_barrio": "^5.5",
@@ -134,6 +135,13 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches" : {
+            "drupal/core": {
+            },
+            "drupal/contrib-module-name": {
+            }
         }
     }
 }
