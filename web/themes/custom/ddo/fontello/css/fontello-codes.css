@@ -73,6 +73,7 @@
 .icon-desktop-1:before { content: '\e847'; } /* '' */
 .icon-target:before { content: '\e848'; } /* '' */
 .icon-chat-1:before { content: '\e849'; } /* '' */
+.icon-bell:before { content: '\e84a'; } /* '' */
 .icon-search-1:before { content: '\e84f'; } /* '' */
 .icon-ok:before { content: '\e850'; } /* '' */
 .icon-twitter-squared:before { content: '\e851'; } /* '' */
@@ -93,7 +94,7 @@
 .icon-th-large:before { content: '\e864'; } /* '' */
 .icon-th:before { content: '\e865'; } /* '' */
 .icon-th-list:before { content: '\e866'; } /* '' */
-.icon-list:before { content: '\e867'; } /* '' */
+.icon-list-2:before { content: '\e867'; } /* '' */
 .icon-layout:before { content: '\e868'; } /* '' */
 .icon-menu:before { content: '\e869'; } /* '' */
 .icon-menu-outline:before { content: '\e86a'; } /* '' */

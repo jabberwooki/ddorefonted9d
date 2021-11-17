@@ -2,14 +2,14 @@
   font-family: 'fontello';
   font-style: normal;
   font-weight: normal;
- 
+
   /* fix buttons height */
   line-height: 1em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
 }
- 
+
 .icon-twitter { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
 .icon-facebook { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
 .icon-youtube { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
@@ -84,6 +84,7 @@
 .icon-desktop-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe847;&nbsp;'); }
 .icon-target { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe848;&nbsp;'); }
 .icon-chat-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe849;&nbsp;'); }
+.icon-bell { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe84a;&nbsp;'); }
 .icon-search-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe84f;&nbsp;'); }
 .icon-ok { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe850;&nbsp;'); }
 .icon-twitter-squared { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe851;&nbsp;'); }
@@ -104,7 +105,7 @@
 .icon-th-large { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe864;&nbsp;'); }
 .icon-th { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe865;&nbsp;'); }
 .icon-th-list { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe866;&nbsp;'); }
-.icon-list { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe867;&nbsp;'); }
+.icon-list-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe867;&nbsp;'); }
 .icon-layout { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe868;&nbsp;'); }
 .icon-menu { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe869;&nbsp;'); }
 .icon-menu-outline { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe86a;&nbsp;'); }

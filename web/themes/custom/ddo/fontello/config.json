@@ -506,7 +506,7 @@
     },
     {
       "uid": "48b87105bd38c20315f1b705b8c7b38c",
-      "css": "list",
+      "css": "list-2",
       "code": 59495,
       "src": "fontawesome"
     },
@@ -797,6 +797,12 @@
       "css": "chat-1",
       "code": 59465,
       "src": "modernpics"
+    },
+    {
+      "uid": "cd21cbfb28ad4d903cede582157f65dc",
+      "css": "bell",
+      "code": 59466,
+      "src": "fontawesome"
     },
     {
       "uid": "63d1b79b9f75b8aeaa48c79b6184c536",
