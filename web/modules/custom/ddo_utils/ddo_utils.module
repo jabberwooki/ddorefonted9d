@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldConfig;
 use Drupal\views\ViewExecutable;
 
 function ddo_utils_views_pre_render(ViewExecutable $view) {
@@ -18,3 +20,98 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
 //  }
 
 }
+
+
+function ddo_utils_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Filtre exposé de la page Spectacles.
+  if ($form['#id'] == 'views-exposed-form-shows-all-shows') {
+    // 1 - Champ Festival
+    // Nettoyage du champ pour ne garder que la dernière édition de chaque festival.
+    $latest_festivals_ids = ddo_utils_get_latest_festivals();
+    foreach ($form['field_festival_target_id']['#options'] as $key => $option) {
+      if ($key != 'All' && !in_array($key, $latest_festivals_ids)) {
+        unset($form['field_festival_target_id']['#options'][$key]);
+      }
+    }
+    // 2 - Champ Type de spectacle
+    // Transformé en cases à cocher dans BEF.
+
+    // 3 - Champ Age minimum
+    // On le passe de champ Texte à champ Select.
+    // 3.1 Construction du tableau des âges.
+    $age_options = [
+      '0.25' => '3 mois',
+      '0.50' => '6 mois',
+      '0.75' => '9 mois',
+      '1' => '1 an'
+    ];
+    for ($a=2; $a<18; $a++) {
+      $age_options[$a] = $a . ' ans';
+    }
+    $age_options['18'] = '18 ans et plus';
+
+    // 3.2 Construction d'un champ de formulaire de type Select
+    $age_select = array(
+      '#type' => 'select',
+      '#title' => $form['field_minimum_age_value']['#title'],
+      '#options' => $age_options,
+      '#empty_option' => 'Sélectionnez un âge'
+    );
+
+    // 3.3 - Le champ Age minimum devient un champ Select.
+    $form['field_minimum_age_value'] = $age_select;
+  }
+}
+
+function ddo_utils_get_festival_names() {
+  $field_info = FieldConfig::loadByName('node', 'festival', 'field_festival_name');
+  return $field_info->getSettings()['allowed_values'];
+}
+
+function ddo_utils_get_latest_festivals($ids_only=true) {
+  // Festivals de l'année courante et de l'année précédente seulement.
+  $season_condition = date('Y') - 2;
+
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'festival')
+    ->condition('field_season', $season_condition, '>');
+  $nids = $query->execute();
+  $festivals = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+  $latest_festivals_ids = [];
+  $latest_festivals_data = [];
+  foreach ($festivals as $festival) {
+    $festival_name = str_replace(
+      ['cine-metropole', 'cirque-metropole', 'festival-hiver'],
+      ['metropole-cinema', 'metropole-cirque', 'saison-hiver'],
+      $festival->get('field_festival_name')->value
+    );
+
+    if ($ids_only) {
+      // On ne garde que le dernier festival d'un type de festival donné.
+      if (isset($latest_festivals_ids[$festival_name])) {
+        unset($latest_festivals_ids[$festival_name]);
+      }
+      $latest_festivals_ids[$festival_name] = $festival->id();
+    }
+    else {
+      $season = $festival->get('field_season')->value;
+      // On ne garde que le dernier festival d'un type de festival donné.
+      if (isset($latest_festivals_data[$festival_name])) {
+        unset($latest_festivals_data[$festival_name]);
+      }
+      $latest_festivals_data[$festival_name]['nid'] = $festival->id();
+      $latest_festivals_data[$festival_name]['season'] = $season;
+      $latest_festivals_data[$festival_name]['label'] = $festival->label();
+    }
+  }
+
+  if ($ids_only) {
+    ksort($latest_festivals_ids);
+    return $latest_festivals_ids;
+  }
+  ksort($latest_festivals_data);
+  return $latest_festivals_data;
+}
+
+
