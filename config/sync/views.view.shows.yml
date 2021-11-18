@@ -461,7 +461,7 @@ display:
       group_by: false
       menu:
         type: normal
-        title: 'Tous les spectacles'
+        title: Spectacles
         description: ''
         expanded: false
         parent: ''
