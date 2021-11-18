@@ -139,8 +139,7 @@
         "enable-patching": true,
         "patches" : {
             "drupal/core": {
-            },
-            "drupal/contrib-module-name": {
+                "Add Views EntityReference filter": "https://www.drupal.org/files/issues/2021-11-09/2429699-446.patch"
             }
         }
     }
