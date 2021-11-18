@@ -1,0 +1,126 @@
+.nav-social {
+  margin-top: 3px;
+  a.icon-facebook {
+    @include social-icon("\e801");
+  }
+  a.icon-twitter {
+    @include social-icon("\e800");
+  }
+  a.icon-youtube {
+    @include social-icon("\e802");
+  }
+  a.icon-tripadvisor {
+    @include social-icon("\f262");
+  }
+}
+#link-subscription{
+  margin-top: 3px;
+  @include secondary-icon-link("\e840");
+}
+#webpush {
+  margin-top: 3px;
+  margin-right: 10px;
+  @include secondary-icon-link("\e84a");
+}
+/* Boutton navigation principale */
+#custom-mega-menu-button {
+  position: relative;
+  color: map-get($theme-colors,"secondary");
+  text-transform: uppercase;
+  width: 40px;
+  height: 40px;
+  span {
+    position: absolute;
+    bottom: -3px;
+    left: 15px;
+    font-size: 0.53125rem;
+  }
+  &:before {
+    @extend %icon-fontello;
+    content: "\e869";
+    font-size: 2.4rem;
+    color: map-get($theme-colors,"secondary");
+  }
+  &:hover {
+    cursor: pointer;
+    color: black;
+    &:before {
+      color: black;
+    }
+  }
+}
+/* Navigation principale */
+#block-ddo-main-menu {
+   ul.nav {
+    display: flex;
+     flex-direction: row;
+     li {
+       a {
+         font-style: normal;
+         font-weight: 700;
+         font-size: 1.125rem !important;
+         text-transform: uppercase;
+         color: black;
+         display: block;
+         padding: 10px 36px;
+         &:hover {
+           color: map-get($theme-colors,"secondary");
+         }
+       }
+     }
+  }
+}
+/* Fin de la navigation principale */
+/* Bouton de recherche */
+#custom-search-button {
+  &:before {
+    @extend %icon-fontello;
+    content: "\e84f";
+    font-size: 1.875rem;
+    color: black;
+  }
+  &:hover {
+    cursor: pointer;
+    &:before {
+      color: map-get($theme-colors,"secondary");
+    }
+  }
+}
+/* Formulaire de recherche */
+#edit-keys {
+  width: 300px;
+  border: 0;
+  border-bottom: 1px solid map-get($theme-colors,"secondary");
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  &:focus {
+    border: 0;
+    border-bottom: 1px solid map-get($theme-colors,"secondary");
+    box-shadow: unset!important;
+  }
+}
+#edit-submit {
+  border: 1px solid map-get($theme-colors,"secondary");;
+  background-color: white;
+  width: 150px;
+  text-transform: uppercase;
+  color: map-get($theme-colors,"secondary");
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#close-search-form {
+  &:before {
+    @extend %icon-fontello;
+    content: "\e832";
+    font-size: 1.875rem;
+    color: map-get($theme-colors,"secondary");
+  }
+  &:hover {
+    cursor: pointer;
+    &:before {
+      color: black;
+    }
+  }
+}
+

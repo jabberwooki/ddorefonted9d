@@ -1,0 +1,43 @@
+@mixin social-icon($charcode) {
+  &:before {
+    @extend %icon-fontello;
+    content: $charcode;
+    font-size: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    &:before {
+      color: map-get($theme-colors,"secondary");
+    }
+  }
+}
+@mixin secondary-icon-link($charcode) {
+  font-size: 0.75rem;
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  border: 1px solid map-get($theme-colors,"secondary");
+  padding: 6px  ;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: map-get($theme-colors,"secondary");
+  &:before {
+    @extend %icon-fontello;
+    position: relative;
+    top: 3px;
+    content: $charcode;
+    font-size: 1rem;
+  }
+  &:before {
+    color: map-get($theme-colors,"secondary");
+  }
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: map-get($theme-colors,"secondary");
+    color: white;
+    &:before {
+      color: white;
+    }
+  }
+}
