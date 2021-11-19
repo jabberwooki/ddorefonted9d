@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ * List all fields: {{ dump(_context|keys) }} ou {{ dump(_context["content"]|keys) }}
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'layout',
+  'layout--onecol',
+] %}
+{% if content %}
+  <article class="teaser-show">
+    <a class="link-img-teaser-show" href="{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}">
+      {{ field_media_image }}
+    </a>
+    <div class="top-info-teaser-show">
+      {{ content.field_festival }}
+    </div>
+    <div class="bottom-info-teaser-show">
+      {{ content.field_dates }}
+      {{ content.node_title }}
+      {{ content.body }}
+      <div class="bottom-buttons-teaser-show">
+        <a class="link-details-teaser-show btn btn-light"
+           href="{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}">
+          Détails
+        </a>
+        <a class="link-book-teaser-show btn btn-secondary" href="{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}">
+          Réserver
+        </a>
+      </div>
+    </div>
+  </article>
+{% endif %}
