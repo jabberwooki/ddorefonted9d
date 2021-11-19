@@ -1,16 +1,14 @@
 /* Teaser de spectacles */
 .teaser-show {
-  border: 3px solid blue;
   position: relative;
+  margin-bottom: 30px;
   .link-img-teaser-show {
     display: block;
-    border: 3px solid brown;
     .field--type-entity-reference {
       margin: 0;
     }
     img {
       margin: 0;
-      border: 3px solid green;
     }
   }
 
@@ -36,8 +34,28 @@
     }
   }
   .bottom-info-teaser-show {
+    padding: 0 15px 10px 15px;
     position: absolute;
     bottom: 0;
     left: 0;
+    background: linear-gradient(transparent, black);
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    a {
+      color: white;
+    }
+    .bottom-buttons-teaser-show {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &:hover {
+    transform: translate3d(0, -4px, 0);
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    box-shadow: 1px 1px 12px #555;
   }
 }
