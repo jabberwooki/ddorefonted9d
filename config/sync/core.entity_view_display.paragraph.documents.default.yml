@@ -8,13 +8,48 @@ dependencies:
     - field.field.paragraph.documents.field_text
     - field.field.paragraph.documents.field_title
     - paragraphs.paragraphs_type.documents
+  module:
+    - link
 id: paragraph.documents.default
 targetEntityType: paragraph
 bundle: documents
 mode: default
-content: {  }
-hidden:
-  field_documents: true
-  field_lien: true
-  field_text: true
-  field_title: true
+content:
+  field_documents:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_lien:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_text:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

@@ -43,10 +43,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: true
           'link class': ''
           wrapper: h3
           class: ''
-          link: false
       node_link:
         plugin_id: node_link
         weight: 3
