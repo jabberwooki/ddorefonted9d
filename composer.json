@@ -68,7 +68,8 @@
         "drupal/webform": "^6.0",
         "drupal/xmlsitemap": "^1.0",
         "drush/drush": "^10.5",
-        "furf/jquery-ui-touch-punch": "dev-master"
+        "furf/jquery-ui-touch-punch": "dev-master",
+        "kint-php/kint": "^3.3"
     },
     "conflict": {
         "drupal/drupal": "*"
