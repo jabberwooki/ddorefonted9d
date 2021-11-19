@@ -30,3 +30,21 @@ function ddo_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
     'bg-transparent' => t('Transparent'),
   );
 }
+
+
+/**
+ * Implements hook_preprocess_image()
+ *
+ * Permet de supprimer les attributs with et height des balises img
+ */
+function ddo_preprocess_image(&$variables) {
+  if (isset($variables['attributes']['width'])) {
+    unset($variables['attributes']['width']);
+  }
+  if (isset($variables['attributes']['height'])) {
+    unset($variables['attributes']['height']);
+  }
+  /*if (isset($variables['attributes']['typeof'])) {
+    unset($variables['attributes']['typeof']);
+  }*/
+}
