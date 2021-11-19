@@ -17,14 +17,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - node_title
         - field_person_img1
         - field_person_img2
@@ -51,7 +53,7 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_person_img2:
     type: entity_reference_entity_view
     weight: 2
@@ -60,7 +62,7 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_person_txt1:
     weight: 3
     label: inline
@@ -68,7 +70,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_person_txt2:
     weight: 4
     label: inline
@@ -76,7 +78,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_person_txt3:
     weight: 5
     label: inline
@@ -84,7 +86,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_poles:
     weight: 6
     label: above
@@ -92,7 +94,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
 hidden:
   langcode: true
   links: true

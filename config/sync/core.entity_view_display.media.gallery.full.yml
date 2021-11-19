@@ -13,14 +13,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - media_name
         - field_media_slideshow
         - field_authors
@@ -48,7 +50,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_media_slideshow:
     label: visually_hidden
     weight: 1
@@ -57,7 +59,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_tags:
     weight: 3
     label: above
@@ -65,7 +67,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
 hidden:
   created: true
   langcode: true

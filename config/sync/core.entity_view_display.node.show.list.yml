@@ -56,14 +56,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - node_title
         - field_subtitle
         - field_media_thumbnail
@@ -89,7 +91,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_dates:
     weight: 5
     label: hidden
@@ -100,11 +102,11 @@ content:
       ds:
         ds_limit: ''
     type: datetime_default
-    region: content
+    region: ds_content
   field_festival:
     type: entity_reference_entity_id
     weight: 3
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -116,18 +118,18 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_reservation:
     type: list_default
     weight: 4
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_subtitle:
     type: string
     weight: 1
-    region: content
+    region: ds_content
     label: hidden
     settings:
       link_to_entity: false

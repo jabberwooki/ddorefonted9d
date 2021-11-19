@@ -57,14 +57,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - sharethis
         - links
         - node_title
@@ -121,14 +123,14 @@ content:
     weight: 13
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_additional_info:
     weight: 23
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_by:
     weight: 10
     label: inline
@@ -136,18 +138,18 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_casting:
     weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_casting_link:
     type: text_default
     weight: 34
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -157,14 +159,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_coproduction:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_dates:
     weight: 4
     label: above
@@ -175,7 +177,7 @@ content:
       ds:
         ds_limit: ''
     type: datetime_default
-    region: content
+    region: ds_content
   field_duration:
     weight: 18
     label: inline
@@ -183,14 +185,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_entrance:
     weight: 20
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
   field_festival:
     weight: 7
     label: hidden
@@ -198,7 +200,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_from:
     weight: 9
     label: inline
@@ -206,14 +208,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_full:
     weight: 27
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_galeries:
     weight: 30
     label: hidden
@@ -222,11 +224,11 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_galleries_link:
     type: text_default
     weight: 35
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -237,7 +239,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_location:
     weight: 6
     label: hidden
@@ -245,7 +247,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_media_image:
     weight: 11
     label: hidden
@@ -254,7 +256,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_media_thumbnail:
     type: entity_reference_entity_view
     weight: 12
@@ -263,7 +265,7 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_minimum_age:
     weight: 21
     label: inline
@@ -274,35 +276,35 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: content
+    region: ds_content
   field_offline:
     weight: 29
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_partnerships:
     weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_price:
     weight: 19
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_production:
     weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_proposed_by:
     weight: 8
     label: inline
@@ -310,28 +312,28 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_reimbursement:
     weight: 28
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_reservation:
     weight: 24
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
   field_restauration:
     weight: 22
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_shows:
     weight: 33
     label: above
@@ -342,7 +344,7 @@ content:
       ds:
         ds_limit: ''
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_sounds:
     weight: 32
     label: hidden
@@ -351,11 +353,11 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_sounds_link:
     type: text_default
     weight: 37
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -366,7 +368,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_ticketing_url:
     weight: 25
     label: hidden
@@ -378,11 +380,11 @@ content:
       rel: '0'
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
   field_top_link:
     type: text_default
     weight: 38
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -394,22 +396,22 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_videos_link:
     type: text_default
     weight: 36
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   links:
     weight: 1
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   sharethis:
     weight: 0
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:

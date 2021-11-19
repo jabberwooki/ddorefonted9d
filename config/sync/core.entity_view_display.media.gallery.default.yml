@@ -9,8 +9,6 @@ dependencies:
     - media.type.gallery
   module:
     - ds
-    - image
-    - term_reference_tree
 third_party_settings:
   ds:
     layout:
@@ -22,11 +20,7 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - langcode
-        - uid
         - name
-        - thumbnail
-        - created
         - field_media_slideshow
         - field_authors
         - field_tags
@@ -35,19 +29,9 @@ targetEntityType: media
 bundle: gallery
 mode: default
 content:
-  created:
-    type: timestamp
-    weight: 0
-    region: content
-    label: above
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
   field_authors:
-    weight: 1
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -55,50 +39,31 @@ content:
     region: content
   field_media_slideshow:
     label: visually_hidden
-    weight: 0
+    weight: 1
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_tags:
-    weight: 2
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  langcode:
-    type: language
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
   name:
     type: string
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  thumbnail:
-    type: image_url
-    weight: 0
-    region: content
-    label: above
-    settings:
-      image_style: ''
-    third_party_settings: {  }
-  uid:
-    type: term_reference_tree
-    weight: 0
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  langcode: true
+  thumbnail: true
+  uid: true

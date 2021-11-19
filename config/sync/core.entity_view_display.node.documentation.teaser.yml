@@ -9,8 +9,43 @@ dependencies:
     - field.field.node.documentation.field_section
     - node.type.documentation
   module:
+    - ds
+    - entity_reference_revisions
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_paragraphs
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.documentation.teaser
 targetEntityType: node
 bundle: documentation
@@ -19,22 +54,22 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 2
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
+    region: ds_content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
-  field_paragraphs: true
   field_section: true
   langcode: true
+  links: true
+  sharethis: true
