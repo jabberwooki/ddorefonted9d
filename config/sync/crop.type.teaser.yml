@@ -5,7 +5,7 @@ dependencies: {  }
 id: teaser
 label: Accroche
 description: ''
-aspect_ratio: '1388:1000'
+aspect_ratio: '1000:1388'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: 500

@@ -80,11 +80,6 @@ third_party_settings:
         - node_link
         - field_ticketing_url
     fields:
-      node_title:
-        plugin_id: node_title
-        weight: 3
-        label: hidden
-        formatter: default
       node_link:
         plugin_id: node_link
         weight: 5
@@ -95,6 +90,11 @@ third_party_settings:
           'link class': ''
           wrapper: ''
           class: ''
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
 id: node.show.teaser
 targetEntityType: node
 bundle: show
@@ -133,7 +133,7 @@ content:
     region: ds_content
     label: hidden
     settings:
-      view_mode: node_content
+      view_mode: teaser
       link: false
     third_party_settings: {  }
   field_ticketing_url:
