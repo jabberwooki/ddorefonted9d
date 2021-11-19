@@ -35,6 +35,7 @@ third_party_settings:
         - node_title
         - field_paragraphs
         - body
+        - node_link
     fields:
       node_title:
         plugin_id: node_title
@@ -46,6 +47,11 @@ third_party_settings:
           wrapper: h3
           class: ''
           link: false
+      node_link:
+        plugin_id: node_link
+        weight: 3
+        label: hidden
+        formatter: default
 id: node.documentation.teaser
 targetEntityType: node
 bundle: documentation
@@ -65,9 +71,11 @@ content:
     region: ds_content
     label: hidden
     settings:
-      view_mode: default
+      view_mode: taxo_term_page
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
 hidden:
   field_section: true
   langcode: true
