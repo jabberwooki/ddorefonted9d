@@ -7,10 +7,44 @@ dependencies:
     - field.field.media.image.field_authors
     - field.field.media.image.field_media_image
     - field.field.media.image.field_tags
-    - image.style.large
     - media.type.image
   module:
+    - ds
     - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - media_name
+        - field_media_image
+        - field_authors
+        - field_tags
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h2
+          class: ''
+          link: 0
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
 id: media.image.full
@@ -25,16 +59,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_media_image:
     label: visually_hidden
     settings:
-      image_style: large
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
     weight: 1
-    region: content
+    region: ds_content
   field_tags:
     weight: 3
     label: above
@@ -42,7 +76,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
 hidden:
   created: true
   langcode: true

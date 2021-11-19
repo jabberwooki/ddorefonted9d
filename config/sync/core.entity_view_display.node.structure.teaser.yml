@@ -16,8 +16,44 @@ dependencies:
     - field.field.node.structure.field_website
     - node.type.structure
   module:
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_logo
+        - field_media_image
+        - field_structure_type
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.structure.teaser
 targetEntityType: node
 bundle: structure
@@ -26,29 +62,44 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 4
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
+    region: ds_content
+  field_logo:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 2
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    region: content
+  field_structure_type:
+    type: entity_reference_label
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
   field_associate_artist: true
   field_galeries: true
-  field_logo: true
-  field_media_image: true
   field_shows: true
   field_sounds: true
-  field_structure_type: true
   field_videos: true
   field_website: true
   langcode: true
+  links: true
+  sharethis: true

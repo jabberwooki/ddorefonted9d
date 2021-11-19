@@ -18,27 +18,40 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      content:
-        - sharethis
+      ds_content:
         - node_title
         - field_sending_date
         - field_mailchimp_url
         - field_media_image
         - body
+        - sharethis
         - links
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 0
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.newsletter.full
 targetEntityType: node
 bundle: newsletter
@@ -47,12 +60,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_mailchimp_url:
-    weight: 3
+    weight: 2
     label: inline
     settings:
       trim_length: 80
@@ -62,33 +75,33 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
   field_media_image:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_sending_date:
-    weight: 2
+    weight: 1
     label: inline
     settings:
       timezone_override: ''
       format_type: long
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: ds_content
   links:
     weight: 6
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 0
-    region: content
+    weight: 5
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:

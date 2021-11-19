@@ -15,20 +15,28 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      content:
+      ds_content:
         - node_title
         - field_media_image
-        - sharethis
-        - links
         - body
         - field_gallery
+        - sharethis
+        - links
     fields:
       node_title:
         plugin_id: node_title
@@ -45,19 +53,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
-    region: content
+    weight: 2
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   field_gallery:
     type: entity_reference_entity_view
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_media_image:
     weight: 1
     label: hidden
@@ -66,15 +74,15 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   links:
-    weight: 3
-    region: content
+    weight: 5
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 2
-    region: content
+    weight: 4
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:

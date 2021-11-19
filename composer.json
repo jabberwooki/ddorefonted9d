@@ -64,10 +64,12 @@
         "drupal/redirect": "^1.6",
         "drupal/sharethis": "^2.0@beta",
         "drupal/term_reference_tree": "^1.0",
+        "drupal/twig_tweak": "^3.1",
         "drupal/webform": "^6.0",
         "drupal/xmlsitemap": "^1.0",
         "drush/drush": "^10.5",
-        "furf/jquery-ui-touch-punch": "dev-master"
+        "furf/jquery-ui-touch-punch": "dev-master",
+        "kint-php/kint": "^3.3"
     },
     "conflict": {
         "drupal/drupal": "*"

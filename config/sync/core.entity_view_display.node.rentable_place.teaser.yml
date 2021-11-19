@@ -10,8 +10,42 @@ dependencies:
     - field.field.node.rentable_place.field_media_image
     - node.type.rentable_place
   module:
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_media_image
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.rentable_place.teaser
 targetEntityType: node
 bundle: rentable_place
@@ -20,23 +54,23 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 2
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
+    region: ds_content
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   field_contact: true
   field_gallery: true
-  field_media_image: true
   langcode: true
+  links: true
+  sharethis: true

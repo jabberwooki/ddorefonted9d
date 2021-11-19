@@ -10,33 +10,81 @@ dependencies:
     - field.field.node.newsletter.field_sending_date
     - node.type.newsletter
   module:
-    - text
+    - datetime
+    - ds
+    - link
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_media_image
+        - field_mailchimp_url
+        - field_sending_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.newsletter.teaser
 targetEntityType: node
 bundle: newsletter
 mode: teaser
 content:
-  body:
+  field_mailchimp_url:
+    type: link_separate
+    weight: 2
+    region: ds_content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: above
+    settings:
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
+  field_sending_date:
+    type: datetime_custom
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      date_format: 'Y-m-d\TH:i:s'
+      timezone_override: ''
     third_party_settings: {  }
-    region: content
 hidden:
-  field_mailchimp_url: true
-  field_media_image: true
-  field_sending_date: true
+  body: true
   langcode: true
+  links: true
+  sharethis: true

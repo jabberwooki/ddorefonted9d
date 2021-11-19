@@ -10,7 +10,41 @@ dependencies:
     - image.style.large
     - media.type.image
   module:
+    - ds
     - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - media_name
+        - field_media_image
+        - field_authors
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: 0
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
 id: media.image.node_content
@@ -19,13 +53,15 @@ bundle: image
 mode: node_content
 content:
   field_authors:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_media_image:
     label: visually_hidden
     settings:
@@ -33,8 +69,8 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-    weight: 0
-    region: content
+    weight: 1
+    region: ds_content
 hidden:
   created: true
   field_tags: true

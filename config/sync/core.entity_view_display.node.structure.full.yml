@@ -23,14 +23,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - field_logo
         - field_media_image
         - body
@@ -50,11 +52,11 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_galeries:
     type: entity_reference_entity_view
     weight: 4
-    region: content
+    region: ds_content
     label: hidden
     settings:
       view_mode: node_content
@@ -65,7 +67,7 @@ content:
   field_logo:
     type: entity_reference_entity_view
     weight: 0
-    region: content
+    region: ds_content
     label: above
     settings:
       view_mode: default
@@ -79,11 +81,11 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_shows:
     type: entity_reference_entity_view
     weight: 7
-    region: content
+    region: ds_content
     label: above
     settings:
       view_mode: list_too
@@ -101,7 +103,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    region: content
+    region: ds_content
   field_videos:
     weight: 5
     label: hidden
@@ -112,7 +114,7 @@ content:
       ds:
         ds_limit: ''
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_website:
     weight: 3
     label: inline
@@ -124,7 +126,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
 hidden:
   field_associate_artist: true
   field_structure_type: true

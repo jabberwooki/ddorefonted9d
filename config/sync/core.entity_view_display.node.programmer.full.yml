@@ -14,14 +14,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - field_logo
         - node_title
         - body
@@ -42,7 +44,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_logo:
     weight: 0
     label: hidden
@@ -51,7 +53,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
 hidden:
   langcode: true
   links: true

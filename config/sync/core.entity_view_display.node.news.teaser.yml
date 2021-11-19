@@ -26,8 +26,45 @@ dependencies:
     - field.field.node.news.field_zoom_text
     - node.type.news
   module:
+    - ds
+    - term_reference_tree
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_banner_image
+        - body
+        - field_target_url
+        - field_new_window
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 id: node.news.teaser
 targetEntityType: node
 bundle: news
@@ -36,39 +73,53 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 2
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
+    region: ds_content
+  field_banner_image:
+    type: term_reference_tree
+    weight: 1
+    region: ds_content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
+  field_new_window:
+    type: boolean
+    weight: 4
+    region: ds_content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    region: content
+  field_target_url:
+    type: string
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
-  field_banner_image: true
   field_currently: true
   field_dates: true
   field_files: true
   field_galeries: true
   field_more_infos_link: true
-  field_new_window: true
   field_newsflash: true
   field_publication_date: true
   field_send_notification: true
   field_sidebar_image: true
   field_slideshow: true
   field_sounds: true
-  field_target_url: true
   field_topic_mode: true
   field_video_only: true
   field_videos: true
   field_webpush_topics: true
   field_zoom_text: true
   langcode: true
+  links: true
+  sharethis: true

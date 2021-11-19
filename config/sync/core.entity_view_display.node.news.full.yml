@@ -33,14 +33,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - sharethis
         - links
         - node_title
@@ -71,7 +73,7 @@ content:
     weight: 7
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_banner_image:
     weight: 5
     label: hidden
@@ -80,7 +82,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_dates:
     weight: 4
     label: above
@@ -89,11 +91,11 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
-    region: content
+    region: ds_content
   field_files:
     type: entity_reference_entity_view
     weight: 11
-    region: content
+    region: ds_content
     label: above
     settings:
       view_mode: default
@@ -109,7 +111,7 @@ content:
       ds:
         ds_limit: ''
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_sidebar_image:
     weight: 6
     label: hidden
@@ -118,7 +120,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_sounds:
     weight: 10
     label: above
@@ -129,7 +131,7 @@ content:
       ds:
         ds_limit: ''
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_target_url:
     weight: 12
     label: inline
@@ -137,7 +139,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_videos:
     weight: 9
     label: above
@@ -148,7 +150,7 @@ content:
       ds:
         ds_limit: ''
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_webpush_topics:
     weight: 3
     label: hidden
@@ -156,15 +158,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   links:
     weight: 1
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   sharethis:
     weight: 0
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:

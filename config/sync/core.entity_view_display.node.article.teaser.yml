@@ -20,8 +20,44 @@ dependencies:
     - field.field.node.article.field_videos
     - node.type.article
   module:
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_banner_image
+        - body
+        - field_target_url
+        - field_new_window
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h3
+          class: ''
+          link: false
 _core:
   default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
 id: node.article.teaser
@@ -31,40 +67,50 @@ mode: teaser
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 0
-    region: content
+    weight: 2
+    region: ds_content
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
     label: hidden
-  field_tags:
-    type: entity_reference_label
-    weight: 10
-    region: content
+  field_banner_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
     settings:
-      link: true
+      view_mode: node_content
+      link: false
     third_party_settings: {  }
-    label: above
-  links:
-    weight: 100
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
+  field_new_window:
+    type: boolean
+    weight: 4
+    region: ds_content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    region: content
+  field_target_url:
+    type: string
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   comment: true
-  field_banner_image: true
   field_edition_date: true
   field_galeries: true
   field_more_infos_link: true
-  field_new_window: true
   field_publication_date: true
   field_sidebar_image: true
   field_slideshow: true
   field_tags: true
-  field_target_url: true
   field_themes: true
   field_videos: true
   langcode: true
+  links: true
+  sharethis: true
