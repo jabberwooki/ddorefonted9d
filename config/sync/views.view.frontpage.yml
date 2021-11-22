@@ -114,8 +114,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Début'
+            last: 'Dernier »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
