@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.zoom
     - field.storage.node.body
     - field.storage.node.field_banner_image
     - field.storage.node.field_new_window
@@ -14,6 +15,7 @@ dependencies:
   module:
     - datetime
     - draggableviews
+    - ds
     - media
     - node
     - text
@@ -606,6 +608,8 @@ display:
       defaults:
         pager: false
         sorts: false
+        style: false
+        row: false
       sorts:
         weight:
           id: weight
@@ -631,6 +635,31 @@ display:
         weight: 10
         context: '0'
         menu_name: main
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: zoom
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+            item_2: teaser
+            item_3: teaser
+            item_4: teaser
+            item_5: teaser
+          grouping_fieldset:
+            group: false
+            group_field: draggableviews_structure|weight
+            group_field_function: ''
+          delta_fieldset:
+            delta_fields: {  }
+          advanced_fieldset:
+            advanced: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1059,8 +1088,31 @@ display:
           plugin_id: draggable_views_sort_default
       defaults:
         sorts: false
+        style: false
+        row: false
       displays:
         zoom: zoom
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: zoom
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+          grouping_fieldset:
+            group: false
+            group_field: draggableviews_structure|weight
+            group_field_function: ''
+          delta_fieldset:
+            delta_fields: {  }
+          advanced_fieldset:
+            advanced: false
     cache_metadata:
       max-age: -1
       contexts:
