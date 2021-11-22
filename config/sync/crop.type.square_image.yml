@@ -1,12 +1,12 @@
-uuid: adb37c97-cc43-48b5-9286-3f830d7f3a18
+uuid: c7707a1b-a741-4758-a1b5-921704adbde8
 langcode: fr
 status: true
 dependencies: {  }
-id: currently
-label: 'En ce moment'
+id: square_image
+label: 'Image carrée'
 description: ''
-aspect_ratio: '384:277'
+aspect_ratio: '1:1'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: 768
-hard_limit_height: 554
+hard_limit_height: 768

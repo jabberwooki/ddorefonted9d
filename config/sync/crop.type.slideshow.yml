@@ -5,7 +5,7 @@ dependencies: {  }
 id: slideshow
 label: Diaporama
 description: ''
-aspect_ratio: '144:100'
+aspect_ratio: '317:220'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: 634
