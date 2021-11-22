@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.currently
     - core.entity_view_mode.node.rss
+    - core.entity_view_mode.node.slideshow
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_banner_image
@@ -2571,12 +2572,28 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: fields
+        type: 'ds_entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: slideshow
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+            item_2: teaser
+            item_3: teaser
+            item_4: teaser
+            item_5: teaser
+            item_6: teaser
+          grouping_fieldset:
+            group: false
+            group_field: draggableviews_structure|weight
+            group_field_function: ''
+          delta_fieldset:
+            delta_fields: {  }
+          advanced_fieldset:
+            advanced: false
       pager:
         type: some
         options:
