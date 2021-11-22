@@ -1,6 +1,6 @@
 uuid: 394950b4-4492-43ec-a805-58f1fa711b12
 langcode: fr
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.slideshow
@@ -71,7 +71,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: media_library
+      view_mode: slideshow
       link: false
     third_party_settings: {  }
     region: content
@@ -86,9 +86,9 @@ content:
     weight: 3
     label: hidden
     settings:
-      format: default
-      format_custom_false: ''
+      format: boolean
       format_custom_true: ''
+      format_custom_false: ''
     third_party_settings: {  }
     type: boolean
     region: content
