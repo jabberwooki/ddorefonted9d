@@ -95,6 +95,11 @@ third_party_settings:
         weight: 3
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 id: node.show.teaser
 targetEntityType: node
 bundle: show
