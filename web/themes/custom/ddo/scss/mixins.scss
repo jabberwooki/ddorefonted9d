@@ -1,3 +1,4 @@
+/* Icônes sociales*/
 @mixin social-icon($charcode) {
   &:before {
     @extend %icon-fontello;
@@ -11,6 +12,7 @@
     }
   }
 }
+/* Liens oranges */
 @mixin secondary-icon-link($charcode) {
   font-size: 0.75rem;
   display: block;
@@ -39,5 +41,39 @@
     &:before {
       color: white;
     }
+  }
+}
+/* liens avec soulignement customisé */
+@mixin special_underline($color,$bg_color) {
+  font-weight: 600;
+  display: inline;
+  max-width: 66%;
+  background-image: linear-gradient(transparent 60%, $bg_color);
+  color: $color;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 1.5s;
+  background-size: 100% 100%;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+/* Cartouche noir */
+@mixin black_sidebar() {
+  display: block;
+  background-color: #000000;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.3125rem;
+  font-size: 0.6875rem;
+  border: 1px solid black;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  a {
+    color: white;
+  }
+  .field--type-entity-reference {
+    margin: 0;
   }
 }
