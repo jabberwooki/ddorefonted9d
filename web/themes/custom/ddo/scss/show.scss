@@ -46,9 +46,47 @@
     a {
       color: white;
     }
+    .h3-teaser-show {
+      text-transform: uppercase;
+      font-weight: bold!important;
+      font-size: 1.25em;
+      padding-bottom: 9px;
+      display: block;
+      font-style: normal;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .field--name-body {
+      font-size: 0.875em;
+    }
     .bottom-buttons-teaser-show {
       display: flex;
       justify-content: space-between;
+      .link-details-teaser-show {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.813em;
+        border-radius: 0;
+        border: 1px solid map-get($theme-colors,"secondary");
+        text-transform: uppercase;
+          &:hover {
+            background-color: map-get($theme-colors,"secondary");
+            color: white!important;
+          }
+      }
+      .link-book-teaser-show {
+        font-style: normal;
+        font-weight: 700 !important;
+        font-size: 0.813em;
+        border-radius: 0;
+        background-color: map-get($theme-colors,"secondary");
+        border: 1px solid map-get($theme-colors,"secondary");
+        text-transform: uppercase;
+        &:hover {
+          background-color: white;
+          color: map-get($theme-colors,"secondary")!important;
+        }
+      }
     }
   }
   &:hover {
