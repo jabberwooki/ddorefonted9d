@@ -48,7 +48,7 @@ dependencies:
     - field.field.node.show.field_videos_link
     - node.type.show
   module:
-    - datetime
+    - ddo_utils
     - ds
     - link
     - text
@@ -80,6 +80,11 @@ third_party_settings:
         - node_link
         - field_ticketing_url
     fields:
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
       node_link:
         plugin_id: node_link
         weight: 5
@@ -90,11 +95,6 @@ third_party_settings:
           'link class': ''
           wrapper: ''
           class: ''
-      node_title:
-        plugin_id: node_title
-        weight: 3
-        label: hidden
-        formatter: default
 id: node.show.teaser
 targetEntityType: node
 bundle: show
@@ -109,13 +109,14 @@ content:
     third_party_settings: {  }
     region: ds_content
   field_dates:
-    type: datetime_default
+    type: datetime_ddo
     weight: 2
     region: ds_content
     label: hidden
     settings:
       timezone_override: ''
-      format_type: show_date
+      single_date_format: show_date
+      range_date_format: show_date_short
     third_party_settings:
       ds:
         ds_limit: ''
