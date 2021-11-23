@@ -1,4 +1,4 @@
-/* Teaser de spectacles */
+/* Teaser de spectacle */
 .teaser-show {
   position: relative;
   margin-bottom: 30px;
@@ -13,25 +13,11 @@
   }
 
   .top-info-teaser-show {
+    @include black_sidebar();
     position: absolute;
     top: 10px;
     left: 10px;
     display: block;
-
-    background-color: #000000;
-    text-decoration: none;
-    padding: 5px;
-    font-size: 0.6875rem;
-    border: 1px solid black;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 500;
-    .field--type-entity-reference {
-      margin: 0;
-    }
-    a {
-      color: #FFF;
-    }
   }
   .bottom-info-teaser-show {
     padding: 0 15px 10px 15px;
@@ -45,6 +31,9 @@
     justify-content: flex-end;
     a {
       color: white;
+      &:hover {
+        text-decoration: none;
+      }
     }
     .h3-teaser-show {
       text-transform: uppercase;
@@ -56,9 +45,19 @@
       font-weight: 800;
       text-decoration: none;
     }
+    .field--name-field-dates {
+      margin-top: 50px;
+      time {
+        @include special_underline(white,map-get($theme-colors,"secondary"));
+      }
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
     .field--name-body {
       font-size: 0.875em;
     }
+
     .bottom-buttons-teaser-show {
       display: flex;
       justify-content: space-between;
@@ -96,4 +95,41 @@
     -webkit-transition: all 0.25s ease-in-out;
     box-shadow: 1px 1px 12px #555;
   }
+}
+/* Contenu complet de spectacle*/
+.node--type-show {
+  #wrap-full-show {
+
+    .div-image-style-banner {
+      position: relative;
+      display: block;
+      &:after {
+        content: "";
+        display: block;
+        height: 50%;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+        visibility: visible;
+        width: 100%;
+      }
+    }
+    .wrapper-over-img-abs {
+      position: relative;
+      .group-text-over-img-abs {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+        .field--name-field-festival {
+          @include black_sidebar();
+          display: inline-block;
+        }
+      }
+
+    }
+    #body-show {
+    }
+  }
+
 }
