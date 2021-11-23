@@ -48,7 +48,7 @@ dependencies:
     - field.field.node.show.field_videos_link
     - node.type.show
   module:
-    - datetime
+    - ddo_utils
     - ds
     - link
     - options
@@ -65,6 +65,12 @@ third_party_settings:
         label: ''
         wrappers:
           ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
       ds_content:
         - sharethis
@@ -169,14 +175,15 @@ content:
     region: ds_content
   field_dates:
     weight: 4
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: show_date
+      single_date_format: show_date
+      range_date_format: show_date_short
     third_party_settings:
       ds:
         ds_limit: ''
-    type: datetime_default
+    type: datetime_ddo
     region: ds_content
   field_duration:
     weight: 18
