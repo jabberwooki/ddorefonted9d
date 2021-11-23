@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: banner
-label: Bandeau
+label: 'Bandeau large'
 effects:
   4fc87231-a3d4-4674-8447-11d603d9be6c:
     uuid: 4fc87231-a3d4-4674-8447-11d603d9be6c
@@ -20,6 +20,6 @@ effects:
     id: image_scale
     weight: 2
     data:
-      width: 1920
-      height: null
+      width: null
+      height: 693
       upscale: false

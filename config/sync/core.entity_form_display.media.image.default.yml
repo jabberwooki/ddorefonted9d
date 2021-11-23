@@ -43,10 +43,11 @@ content:
       crop_preview_image_style: crop_thumbnail
       crop_list:
         - banner
+        - banner_narrow
         - currently
         - slideshow
+        - square_image
         - teaser
-        - zoom
       progress_indicator: throbber
       crop_types_required: {  }
       show_crop_area: false

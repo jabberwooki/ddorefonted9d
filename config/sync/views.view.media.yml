@@ -67,8 +67,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Début'
+            last: 'Dernier »'
           quantity: 9
       style:
         type: table
