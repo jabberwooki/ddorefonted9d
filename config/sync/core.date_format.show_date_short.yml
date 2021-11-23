@@ -1,0 +1,8 @@
+uuid: c7129949-785c-4086-a1c1-b08fd9b86792
+langcode: fr
+status: true
+dependencies: {  }
+id: show_date_short
+label: 'Date de spectacle courte'
+locked: false
+pattern: d/m/Y
