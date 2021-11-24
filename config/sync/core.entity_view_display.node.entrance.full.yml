@@ -23,6 +23,12 @@ third_party_settings:
         label: ''
         wrappers:
           ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
       ds_content:
         - node_title
@@ -36,6 +42,11 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 id: node.entrance.full
 targetEntityType: node
 bundle: entrance

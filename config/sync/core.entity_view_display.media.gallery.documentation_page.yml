@@ -1,0 +1,70 @@
+uuid: c802242b-b419-46df-b754-f76704bb5fc0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.documentation_page
+    - field.field.media.gallery.field_authors
+    - field.field.media.gallery.field_media_slideshow
+    - field.field.media.gallery.field_tags
+    - media.type.gallery
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - name
+        - field_media_slideshow
+        - field_authors
+        - field_tags
+id: media.gallery.documentation_page
+targetEntityType: media
+bundle: gallery
+mode: documentation_page
+content:
+  field_authors:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_media_slideshow:
+    label: visually_hidden
+    weight: 1
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_tags:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  thumbnail: true
+  uid: true

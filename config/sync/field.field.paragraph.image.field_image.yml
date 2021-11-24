@@ -10,7 +10,7 @@ id: paragraph.image.field_image
 field_name: field_image
 entity_type: paragraph
 bundle: image
-label: Image
+label: 'Image bandeau haut'
 description: ''
 required: false
 translatable: true

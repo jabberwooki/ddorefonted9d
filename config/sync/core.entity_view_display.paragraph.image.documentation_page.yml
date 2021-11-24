@@ -1,15 +1,15 @@
-uuid: 72521de9-94bd-4bfb-b34f-fe0a8a62b641
+uuid: 3f63d400-63ce-409f-bed1-707ba58ba039
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.taxo_term_page
+    - core.entity_view_mode.paragraph.documentation_page
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
-id: paragraph.image.taxo_term_page
+id: paragraph.image.documentation_page
 targetEntityType: paragraph
 bundle: image
-mode: taxo_term_page
+mode: documentation_page
 content:
   field_image:
     weight: 0

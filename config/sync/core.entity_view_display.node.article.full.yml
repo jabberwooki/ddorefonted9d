@@ -56,6 +56,11 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 _core:
   default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.full

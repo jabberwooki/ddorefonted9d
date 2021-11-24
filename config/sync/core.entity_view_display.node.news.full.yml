@@ -68,6 +68,11 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 id: node.news.full
 targetEntityType: node
 bundle: news

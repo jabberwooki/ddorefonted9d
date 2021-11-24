@@ -1,8 +1,9 @@
-uuid: 8e4e5c1c-81e5-43b3-b25f-16ed1ab37f53
+uuid: add22e16-aaaa-4e84-9739-ae24fe62d39d
 langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.documentation_page
     - field.field.media.image.field_authors
     - field.field.media.image.field_media_image
     - field.field.media.image.field_tags
@@ -13,10 +14,10 @@ dependencies:
     - image
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
-id: media.image.default
+id: media.image.documentation_page
 targetEntityType: media
 bundle: image
-mode: default
+mode: documentation_page
 content:
   field_authors:
     weight: 1

@@ -45,7 +45,7 @@ third_party_settings:
         formatter: default
         settings:
           'link class': ''
-          wrapper: h3
+          wrapper: ''
           class: ''
           link: false
 id: node.documentation.full
@@ -66,9 +66,11 @@ content:
     region: ds_content
     label: hidden
     settings:
-      view_mode: default
+      view_mode: documentation_page
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
   links:
     weight: 1
     region: ds_content
