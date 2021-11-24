@@ -34,7 +34,7 @@
       {% if not field_casting is empty or not field_production is empty or not field_coproduction is empty or not field_partnerships is empty %}
         <div class="row">
           <div class="col-md-4 offset-md-1 order-md-2">
-            <button class="btn btn-secondary">Réserver</button>
+            <button class="btn btn-secondary" id="book-show">Réserver</button>
           </div>
           <div class="col-md-7 order-md-1">
             {# Test si les champs sont présents #}
@@ -59,13 +59,34 @@
 
     <div class="row" >
       <div class="col-md-4 offset-md-1 order-md-2">
-        <ul>
-          {% for date in node.field_dates %}
-            <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
-          {% endfor %}
-        </ul>
+        <section class="section-all-show-dates">
+          <h3 class="title-all-show-dates">Toutes les dates</h3>
+          <ul class="list-unstyled">
+            {% for date in node.field_dates %}
+              <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
+            {% endfor %}
+          </ul>
+        </section>
       </div>
       <div class="col-md-7 order-md-1">
+        {# Par la compagnie (ou autre)#}
+        {% if not field_by is empty %}
+          <div class="field-by">
+            <div class="field-by-label">Par :&nbsp;</div>
+            <div class="field-by-title">{{ content.field_by.0['#title'] }} </div>
+          </div>
+        {% endif %}
+        {# Liens de partage ####################################################################}
+        <div class="share-social-buttons">
+          <a class="icon-twitter" target="_blank" title="Partager sur twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdomainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&amp;text=&amp;hashtags=spectacle,Montpellier">
+            <span class="visually-hidden-focusable">Twitter</span>
+          </a>
+          <a class="icon-facebook" title="Partager sur facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://www.domainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&t={{ node.label|replace({' ': '_'}) }}" target="_blank" class="share-popup">
+            <span class="visually-hidden-focusable">Facebook</span>
+          </a>
+
+        </div>
+        {# Body #################################################################################}
         {{ ds_content.body }}
         {% if not field_casting is empty %}
           <div id="casting">{{ field_casting }}</div>
