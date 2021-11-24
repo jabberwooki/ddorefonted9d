@@ -1,0 +1,10 @@
+uuid: 4d2785ff-4a85-44a8-9e2a-398d51327bc3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.sidebar
+label: 'Colonne latérale'
+targetEntityType: media
+cache: true
