@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: square
-label: Carré
+label: 'Image carrée'
 effects:
   da99a4d7-a346-4a17-bdc6-4cf6ac50b6ae:
     uuid: da99a4d7-a346-4a17-bdc6-4cf6ac50b6ae
