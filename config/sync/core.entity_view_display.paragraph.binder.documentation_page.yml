@@ -1,0 +1,50 @@
+uuid: 4330ed72-7f51-4541-9006-179361c14889
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.documentation_page
+    - field.field.paragraph.binder.field_document_sets
+    - field.field.paragraph.binder.field_title
+    - paragraphs.paragraphs_type.binder
+  module:
+    - ds
+    - entity_reference_revisions
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_title
+        - field_document_sets
+id: paragraph.binder.documentation_page
+targetEntityType: paragraph
+bundle: binder
+mode: documentation_page
+content:
+  field_document_sets:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: documentation_page
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

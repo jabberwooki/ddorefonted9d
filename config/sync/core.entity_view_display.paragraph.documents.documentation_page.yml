@@ -1,0 +1,56 @@
+uuid: c7554ea8-98f4-47a0-b550-f90f8e7c1a70
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.documentation_page
+    - field.field.paragraph.documents.field_documents
+    - field.field.paragraph.documents.field_lien
+    - field.field.paragraph.documents.field_text
+    - field.field.paragraph.documents.field_title
+    - paragraphs.paragraphs_type.documents
+  module:
+    - link
+id: paragraph.documents.documentation_page
+targetEntityType: paragraph
+bundle: documents
+mode: documentation_page
+content:
+  field_documents:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_lien:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_text:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

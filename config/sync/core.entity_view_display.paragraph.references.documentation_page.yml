@@ -1,0 +1,40 @@
+uuid: 7f4300de-0eee-491f-9909-f54a96d009c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.documentation_page
+    - field.field.paragraph.references.field_references
+    - paragraphs.paragraphs_type.references
+  module:
+    - ds
+    - entity_reference_revisions
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_references
+id: paragraph.references.documentation_page
+targetEntityType: paragraph
+bundle: references
+mode: documentation_page
+content:
+  field_references:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: documentation_page
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+hidden: {  }
