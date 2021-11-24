@@ -42,6 +42,94 @@
   revision_translation_affected:
     value: '1'
   metatag: false
+27:
+  id:
+    value: '27'
+  uuid:
+    value: 6539b1fa-b875-4de3-8312-289b9346c45e
+  revision_id:
+    value: '27'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637775977'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Crédits
+  description: false
+  menu_name:
+    value: ddofooter2
+  link:
+    uri: 'internal:/node/469'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1637775977'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+28:
+  id:
+    value: '28'
+  uuid:
+    value: 502c03db-116f-4eeb-83da-fc8802263a7f
+  revision_id:
+    value: '28'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637776007'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Mentions légales'
+  description: false
+  menu_name:
+    value: ddofooter2
+  link:
+    uri: 'internal:/node/470'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1637776007'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
 1:
   id:
     value: '1'
