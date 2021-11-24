@@ -40,6 +40,12 @@ third_party_settings:
         label: ''
         wrappers:
           ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
       ds_content:
         - sharethis
@@ -183,7 +189,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      view_mode: node_content
+      view_mode: festival_poster
       link: false
     third_party_settings: {  }
     region: ds_content
@@ -191,7 +197,7 @@ content:
     weight: 11
     label: above
     settings:
-      view_mode: list_too
+      view_mode: teaser
       link: false
     third_party_settings:
       ds:
@@ -202,7 +208,7 @@ content:
     weight: 7
     label: hidden
     settings:
-      view_mode: node_content
+      view_mode: sidebar
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
