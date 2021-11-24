@@ -7,6 +7,7 @@ dependencies:
     - taxonomy.vocabulary.espace_pro
   module:
     - media_library
+    - media_library_edit
     - path
     - text
 id: taxonomy_term.espace_pro.default
@@ -26,7 +27,9 @@ content:
     weight: 1
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     type: media_library_widget
     region: content
   langcode:
