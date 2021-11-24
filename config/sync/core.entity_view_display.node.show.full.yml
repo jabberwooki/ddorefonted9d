@@ -85,7 +85,6 @@ third_party_settings:
         - field_from
         - field_by
         - field_media_image
-        - field_media_thumbnail
         - body
         - field_casting
         - field_production
@@ -126,12 +125,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 13
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     region: ds_content
   field_additional_info:
-    weight: 23
+    weight: 22
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -146,7 +145,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_casting:
-    weight: 14
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -154,20 +153,20 @@ content:
     region: ds_content
   field_casting_link:
     type: text_default
-    weight: 34
+    weight: 33
     region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_coming_soon:
-    weight: 26
+    weight: 25
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_coproduction:
-    weight: 16
+    weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -186,7 +185,7 @@ content:
     type: datetime_ddo
     region: ds_content
   field_duration:
-    weight: 18
+    weight: 17
     label: inline
     settings:
       link_to_entity: false
@@ -194,7 +193,7 @@ content:
     type: string
     region: ds_content
   field_entrance:
-    weight: 20
+    weight: 19
     label: inline
     settings: {  }
     third_party_settings: {  }
@@ -217,14 +216,14 @@ content:
     type: string
     region: ds_content
   field_full:
-    weight: 27
+    weight: 26
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_galeries:
-    weight: 30
+    weight: 29
     label: hidden
     settings:
       link: true
@@ -234,7 +233,7 @@ content:
     region: ds_content
   field_galleries_link:
     type: text_default
-    weight: 35
+    weight: 34
     region: ds_content
     label: hidden
     settings: {  }
@@ -264,17 +263,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: ds_content
-  field_media_thumbnail:
-    type: entity_reference_entity_view
-    weight: 12
-    label: hidden
-    settings:
-      view_mode: node_content
-      link: false
-    third_party_settings: {  }
-    region: ds_content
   field_minimum_age:
-    weight: 21
+    weight: 20
     label: inline
     settings:
       thousand_separator: ''
@@ -285,28 +275,28 @@ content:
     type: number_decimal
     region: ds_content
   field_offline:
-    weight: 29
+    weight: 28
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_partnerships:
-    weight: 17
+    weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_price:
-    weight: 19
+    weight: 18
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_production:
-    weight: 15
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -321,31 +311,31 @@ content:
     type: entity_reference_label
     region: ds_content
   field_reimbursement:
-    weight: 28
+    weight: 27
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_reservation:
-    weight: 24
+    weight: 23
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: ds_content
   field_restauration:
-    weight: 22
+    weight: 21
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: ds_content
   field_shows:
-    weight: 33
+    weight: 32
     label: above
     settings:
-      view_mode: list_too
+      view_mode: teaser
       link: false
     third_party_settings:
       ds:
@@ -353,7 +343,7 @@ content:
     type: entity_reference_entity_view
     region: ds_content
   field_sounds:
-    weight: 32
+    weight: 31
     label: hidden
     settings:
       link: true
@@ -363,7 +353,7 @@ content:
     region: ds_content
   field_sounds_link:
     type: text_default
-    weight: 37
+    weight: 36
     region: ds_content
     label: hidden
     settings: {  }
@@ -377,7 +367,7 @@ content:
     type: string
     region: ds_content
   field_ticketing_url:
-    weight: 25
+    weight: 24
     label: hidden
     settings:
       trim_length: 80
@@ -390,13 +380,13 @@ content:
     region: ds_content
   field_top_link:
     type: text_default
-    weight: 38
+    weight: 37
     region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_videos:
-    weight: 31
+    weight: 30
     label: hidden
     settings:
       link: true
@@ -406,7 +396,7 @@ content:
     region: ds_content
   field_videos_link:
     type: text_default
-    weight: 36
+    weight: 35
     region: ds_content
     label: hidden
     settings: {  }
@@ -427,5 +417,6 @@ hidden:
   field_mapado_apislug: true
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
+  field_media_thumbnail: true
   field_show_type: true
   langcode: true
