@@ -1,0 +1,37 @@
+uuid: 24832347-9afa-47d9-b5af-db3f435b3ba0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.taxo_term_page
+    - field.field.media.image.field_authors
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_tags
+    - image.style.3_2_image
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.taxo_term_page
+targetEntityType: media
+bundle: image
+mode: taxo_term_page
+content:
+  field_media_image:
+    label: visually_hidden
+    settings:
+      image_style: 3_2_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_authors: true
+  field_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
