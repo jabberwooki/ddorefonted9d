@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies: {  }
 id: image
-label: Image
+label: 'Image bandeau haut'
 icon_uuid: null
 icon_default: null
 description: ''

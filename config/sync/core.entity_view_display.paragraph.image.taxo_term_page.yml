@@ -15,7 +15,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: taxo_term_page
+      view_mode: banner_narrow
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view

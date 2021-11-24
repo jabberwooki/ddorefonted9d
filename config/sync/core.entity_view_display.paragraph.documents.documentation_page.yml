@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.documents.field_title
     - paragraphs.paragraphs_type.documents
   module:
+    - ds
     - link
 id: paragraph.documents.documentation_page
 targetEntityType: paragraph
@@ -22,9 +23,11 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
+      view_mode: documentation_page
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
   field_lien:
     type: link
     weight: 2

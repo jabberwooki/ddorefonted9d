@@ -1,0 +1,27 @@
+uuid: aede6ff3-0cac-4aa2-a1a7-154dca5b2880
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.documentation_page
+    - field.field.paragraph.galleries.field_gallery
+    - paragraphs.paragraphs_type.galleries
+  module:
+    - ds
+id: paragraph.galleries.documentation_page
+targetEntityType: paragraph
+bundle: galleries
+mode: documentation_page
+content:
+  field_gallery:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: sidebar
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    region: content
+hidden: {  }

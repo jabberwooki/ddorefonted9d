@@ -31,7 +31,9 @@ content:
     region: content
     label: above
     settings:
-      view_mode: default
+      view_mode: documentation_page
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
 hidden: {  }
