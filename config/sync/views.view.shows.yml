@@ -464,11 +464,12 @@ display:
         type: normal
         title: Spectacles
         description: ''
-        expanded: false
+        expanded: true
         parent: ''
         weight: 0
         context: '0'
         menu_name: main
+        enabled: true
       exposed_form:
         type: bef
         options:
