@@ -1,0 +1,46 @@
+uuid: 9ae2cf73-fda3-49e0-b103-db0eb4dd56a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.sidebar
+    - field.field.media.remote_audio.field_authors
+    - field.field.media.remote_audio.field_media_oembed_audio
+    - field.field.media.remote_audio.field_tags
+    - media.type.remote_audio
+  module:
+    - ds
+    - media
+_core:
+  default_config_hash: xutQOAHcT8pQ9zK86II4rSxfYfLJhH53bpMeJuQ6nZw
+id: media.remote_audio.sidebar
+targetEntityType: media
+bundle: remote_audio
+mode: sidebar
+content:
+  field_authors:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: entity_reference_label
+    region: content
+  field_media_oembed_audio:
+    type: oembed
+    label: visually_hidden
+    weight: 0
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
