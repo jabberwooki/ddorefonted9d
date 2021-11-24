@@ -29,10 +29,57 @@
       </div>
     </div>
   </div>
+  <div class="row-anchor-full-show">
+    <div class="container">
+      {% if not field_casting is empty or not field_production is empty or not field_coproduction is empty or not field_partnerships is empty %}
+        <div class="row">
+          <div class="col-md-4 offset-md-1 order-md-2">
+            <button class="btn btn-secondary">Réserver</button>
+          </div>
+          <div class="col-md-7 order-md-1">
+            {# Test si les champs sont présents #}
+            {% if not field_casting is empty %}
+              <a href="#casting" class="anchor-show-full">Distribution</a>
+            {% endif %}
+            {% if not field_production is empty %}
+              <a href="#production" class="anchor-show-full">Production</a>
+            {% endif %}
+            {% if not field_coproduction is empty %}
+              <a href="#coproduction" class="anchor-show-full">Coproduction</a>
+            {% endif %}
+            {% if not field_partnerships is empty %}
+              <a href="#partnerships" class="anchor-show-full">Partenariats</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
   <div class="container">
-    <div class="row" id="body-show">
-      <div class="col">
+
+    <div class="row" >
+      <div class="col-md-4 offset-md-1 order-md-2">
+        <ul>
+          {% for date in node.field_dates %}
+            <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-7 order-md-1">
         {{ ds_content.body }}
+        {% if not field_casting is empty %}
+          <div id="casting">{{ field_casting }}</div>
+        {% endif %}
+        {% if not field_production is empty %}
+          <div id="production">{{ field_production }}</div>
+        {% endif %}
+        {% if not field_coproduction is empty %}
+          <div id="coproduction">{{ field_coproduction }}</div>
+        {% endif %}
+        {% if not field_partnerships is empty %}
+          <div id="partnerships">{{ field_partnerships }}</div>
+        {% endif %}
+
       </div>
     </div>
   </div>
