@@ -1,0 +1,1166 @@
+2:
+  id:
+    value: '2'
+  uuid:
+    value: e5db4e15-ed31-4739-8a41-e0bed10494b3
+  revision_id:
+    value: '2'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637751881'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'La technique'
+  description: false
+  menu_name:
+    value: ddofooter1
+  link:
+    uri: 'internal:/espace-pro/la-technique'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1637751881'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+1:
+  id:
+    value: '1'
+  uuid:
+    value: 69f709e4-4442-40bc-acdd-44b52f99d481
+  revision_id:
+    value: '1'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637161154'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Pratique
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'entity:node/366'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '0'
+  weight:
+    value: '40'
+  expanded:
+    value: '1'
+  parent: false
+  changed:
+    value: '1637772788'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+3:
+  id:
+    value: '3'
+  uuid:
+    value: eac9f083-d0f3-4022-b4f5-6d7041f74813
+  revision_id:
+    value: '3'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637771451'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Tous les spectacles'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/spectacles/tous-les-spectacles'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637771477'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+4:
+  id:
+    value: '4'
+  uuid:
+    value: 375d473c-78f5-4ecd-a977-e2fd86307992
+  revision_id:
+    value: '4'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637771951'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Printemps des comédiens'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2612'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637771951'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+5:
+  id:
+    value: '5'
+  uuid:
+    value: d0fa73b2-d070-49eb-84b5-50f018686280
+  revision_id:
+    value: '5'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772005'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Radio France'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2077'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '4'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772005'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+6:
+  id:
+    value: '6'
+  uuid:
+    value: 30989ae9-d223-429c-bc69-bdfd47a1dcc3
+  revision_id:
+    value: '6'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772044'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'La Métropole fait son cinéma'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2393'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '6'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772044'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+7:
+  id:
+    value: '7'
+  uuid:
+    value: 74f88df3-fd86-4a39-bff1-ea56b4e1d9a6
+  revision_id:
+    value: '7'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772091'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Les Nuits d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2378'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '8'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772091'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+8:
+  id:
+    value: '8'
+  uuid:
+    value: a3fac518-baf2-437a-b84f-a01de82b5c49
+  revision_id:
+    value: '8'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772134'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Arabesques
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2429'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '10'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772134'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+9:
+  id:
+    value: '9'
+  uuid:
+    value: f404aaf7-5afc-414c-af8d-048d3696ed96
+  revision_id:
+    value: '9'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772179'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Saperlipopette
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2317'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '12'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772179'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+10:
+  id:
+    value: '10'
+  uuid:
+    value: 4f8a3667-1ae3-41a7-97ab-525348e9f945
+  revision_id:
+    value: '10'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772226'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Cirque Métropole'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2620'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '14'
+  expanded:
+    value: '0'
+  parent:
+    value: 'views_view:views.shows.all_shows'
+  changed:
+    value: '1637772291'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+11:
+  id:
+    value: '11'
+  uuid:
+    value: 354bfc73-3fd4-446d-8aa9-ec4ce8f2cdb5
+  revision_id:
+    value: '11'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772379'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Tarifs
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/364'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:69f709e4-4442-40bc-acdd-44b52f99d481'
+  changed:
+    value: '1637772379'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+12:
+  id:
+    value: '12'
+  uuid:
+    value: 33c9fa88-6883-4345-adb6-3a850483460a
+  revision_id:
+    value: '12'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772432'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'La culture pour tous'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/2357'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:69f709e4-4442-40bc-acdd-44b52f99d481'
+  changed:
+    value: '1637772432'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+13:
+  id:
+    value: '13'
+  uuid:
+    value: dc58e668-ce7f-4a70-aa68-74a38e7d8619
+  revision_id:
+    value: '13'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772678'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Domaine d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/360'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '50'
+  expanded:
+    value: '1'
+  parent: false
+  changed:
+    value: '1637772678'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+14:
+  id:
+    value: '14'
+  uuid:
+    value: 9eb828c8-3356-416f-bbb4-84d8901ee263
+  revision_id:
+    value: '14'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637772874'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Présentation
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/360'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:dc58e668-ce7f-4a70-aa68-74a38e7d8619'
+  changed:
+    value: '1637773058'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+15:
+  id:
+    value: '15'
+  uuid:
+    value: e625222b-6625-4cae-897b-5eb1a920e743
+  revision_id:
+    value: '15'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773219'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Lieux
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/taxonomy/term/30'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '1'
+  parent:
+    value: 'menu_link_content:dc58e668-ce7f-4a70-aa68-74a38e7d8619'
+  changed:
+    value: '1637773390'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+16:
+  id:
+    value: '16'
+  uuid:
+    value: ebc99110-2a2d-4774-8c6d-b77645a7849c
+  revision_id:
+    value: '16'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773295'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Théâtre Jean-Claude Carrière'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/taxonomy/term/30'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773295'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+17:
+  id:
+    value: '17'
+  uuid:
+    value: 2b6349f5-3177-4cbb-8638-d427076db6b4
+  revision_id:
+    value: '17'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773363'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Amphithéâtre d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/taxonomy/term/8'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773363'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+18:
+  id:
+    value: '18'
+  uuid:
+    value: dfec8bcc-b9c7-4eae-a52e-c06c1cd0abfa
+  revision_id:
+    value: '18'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773468'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Parc
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/538'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '4'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773468'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+19:
+  id:
+    value: '19'
+  uuid:
+    value: 7c10d2d9-738d-42cd-9c5b-b399ae02a5cc
+  revision_id:
+    value: '19'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773536'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Château d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/537'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '6'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773536'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+20:
+  id:
+    value: '20'
+  uuid:
+    value: 3164e6b7-bafd-47c4-9b7a-3c6853f746aa
+  revision_id:
+    value: '20'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773589'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Théâtre d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/taxonomy/term/68'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '8'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773589'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+21:
+  id:
+    value: '21'
+  uuid:
+    value: 267d6867-6d1b-496c-bc85-f0ccab712153
+  revision_id:
+    value: '21'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773624'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Bistrot d''O'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/taxonomy/term/1716'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '10'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:e625222b-6625-4cae-897b-5eb1a920e743'
+  changed:
+    value: '1637773624'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+22:
+  id:
+    value: '22'
+  uuid:
+    value: b589a532-7688-4f10-ac89-4b60c3168750
+  revision_id:
+    value: '22'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773704'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Equipe
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/415'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '4'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:dc58e668-ce7f-4a70-aa68-74a38e7d8619'
+  changed:
+    value: '1637773704'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+23:
+  id:
+    value: '23'
+  uuid:
+    value: 85f8e653-9bce-4c10-93d4-f2c5e2f05bd8
+  revision_id:
+    value: '23'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773902'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Avec le public'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '30'
+  expanded:
+    value: '1'
+  parent: false
+  changed:
+    value: '1637773902'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+24:
+  id:
+    value: '24'
+  uuid:
+    value: 1553a569-6b89-478d-8580-105e517ca30f
+  revision_id:
+    value: '24'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637773969'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Avec le public'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/1859'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:85f8e653-9bce-4c10-93d4-f2c5e2f05bd8'
+  changed:
+    value: '1637773969'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+25:
+  id:
+    value: '25'
+  uuid:
+    value: 6139c376-7f40-4600-9065-1e5f177b7ecd
+  revision_id:
+    value: '25'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637774012'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Avec l''éducation'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/409'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '2'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:85f8e653-9bce-4c10-93d4-f2c5e2f05bd8'
+  changed:
+    value: '1637774012'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
+26:
+  id:
+    value: '26'
+  uuid:
+    value: 466ae3bf-3658-42d3-806e-2d712c0865f6
+  revision_id:
+    value: '26'
+  langcode:
+    value: fr
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1637774069'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Avec les artistes'
+  description: false
+  menu_name:
+    value: main
+  link:
+    uri: 'internal:/node/412'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '4'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:85f8e653-9bce-4c10-93d4-f2c5e2f05bd8'
+  changed:
+    value: '1637774069'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  metatag: false
