@@ -1,9 +1,10 @@
 /* Icônes sociales*/
-@mixin social-icon($charcode) {
+@mixin social-icon($charcode, $color: "black", $size: 1rem) {
   &:before {
     @extend %icon-fontello;
     content: $charcode;
-    font-size: 1rem;
+    font-size: $size;
+    color: $color;
   }
   &:hover {
     text-decoration: none;
@@ -73,7 +74,28 @@
   a {
     color: white;
   }
+  &:hover {
+    background-color: white;
+    a {
+      color: black;
+    }
+  }
   .field--type-entity-reference {
     margin: 0;
+  }
+}
+/* Bouton de réservation */
+@mixin button_book_show() {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 0.813em;
+  border-radius: 0;
+  background-color: map-get($theme-colors, "secondary");
+  border: 1px solid map-get($theme-colors, "secondary");
+  text-transform: uppercase;
+  color: white;
+  &:hover {
+    background-color: white;
+    color: map-get($theme-colors, "secondary") !important;
   }
 }

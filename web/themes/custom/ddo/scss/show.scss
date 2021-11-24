@@ -88,18 +88,7 @@
       }
 
       .link-book-teaser-show {
-        font-style: normal;
-        font-weight: 700 !important;
-        font-size: 0.813em;
-        border-radius: 0;
-        background-color: map-get($theme-colors, "secondary");
-        border: 1px solid map-get($theme-colors, "secondary");
-        text-transform: uppercase;
-
-        &:hover {
-          background-color: white;
-          color: map-get($theme-colors, "secondary") !important;
-        }
+        @include button_book_show();
       }
     }
   }
@@ -151,6 +140,7 @@
           .field__item {
             @include special_underline(white, darken(map-get($theme-colors, "secondary"), 20%), 40%);
           }
+          margin-top: 10px;
         }
         h2 {
           text-transform: uppercase;
@@ -170,7 +160,65 @@
     }
     .row-anchor-full-show {
       background-color: $gray-300;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      .row {
+        align-items: center;
+        .anchor-show-full {
+          text-transform: uppercase;
+          color: #000;
+          text-decoration: none;
+          display: inline-block;
+          padding-right: 30px;
+          font-style: normal;
+          font-weight: 800;
+          &:hover {
+            color: map-get($theme-colors, "secondary");
+          }
+        }
+        #book-show {
+          @include button_book_show();
+        }
+      }
     }
+    /* Colonne de gauche sur grand écran */
+    .field-by {
+      display: flex;
+      .field-by-label {
+        font-weight: bold;
+      }
+      margin-bottom: 20px;
+    }
+    .share-social-buttons {
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      padding: 10px 0;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      a.icon-twitter {
+        @include social-icon("\e800", #1C9BF0, 2rem);
+      }
+      a.icon-facebook {
+        @include social-icon("\e801", #4064AC, 2rem);
+      }
+    }
+
+    /* Colonne de droite  sur grand écran */
+    .title-all-show-dates {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 800;
+      margin-left: -5px;
+      &:before {
+        @extend %icon-fontello;
+        content: "\e807";
+        color: map-get($theme-colors, "secondary");
+      }
+    }
+
   }
 
 }
