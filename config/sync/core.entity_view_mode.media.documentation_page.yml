@@ -1,0 +1,10 @@
+uuid: e42b14d0-d5a0-4025-a966-77061548b413
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.documentation_page
+label: 'Page documentation'
+targetEntityType: media
+cache: true
