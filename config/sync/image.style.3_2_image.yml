@@ -1,0 +1,25 @@
+uuid: 839b6bd9-b3dc-409d-a1dc-302697f1c25f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.3_2_image
+  module:
+    - crop
+name: 3_2_image
+label: 'Image 3/2'
+effects:
+  90858bd4-870e-4f00-b347-ca147ef27be2:
+    uuid: 90858bd4-870e-4f00-b347-ca147ef27be2
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: 3_2_image
+  34bfd115-81b4-4719-b1f4-44d1d6da7a94:
+    uuid: 34bfd115-81b4-4719-b1f4-44d1d6da7a94
+    id: image_scale
+    weight: 2
+    data:
+      width: 780
+      height: null
+      upscale: false
