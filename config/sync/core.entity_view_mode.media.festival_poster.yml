@@ -1,0 +1,10 @@
+uuid: a13f8fa1-dc15-48d0-aab5-edb643771393
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.festival_poster
+label: 'Affiche festival'
+targetEntityType: media
+cache: true
