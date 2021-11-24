@@ -43,6 +43,11 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.full
