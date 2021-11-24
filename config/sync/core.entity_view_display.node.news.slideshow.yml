@@ -54,7 +54,7 @@ third_party_settings:
         formatter: default
         settings:
           'link class': ''
-          wrapper: h3
+          wrapper: ''
           class: ''
           link: false
 id: node.news.slideshow

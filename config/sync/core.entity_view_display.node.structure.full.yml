@@ -31,8 +31,15 @@ third_party_settings:
         label: ''
         wrappers:
           ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
       ds_content:
+        - node_title
         - field_logo
         - field_media_image
         - body
@@ -41,6 +48,12 @@ third_party_settings:
         - field_videos
         - field_sounds
         - field_shows
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.structure.full
 targetEntityType: node
 bundle: structure
@@ -49,13 +62,13 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: ds_content
   field_galeries:
     type: entity_reference_entity_view
-    weight: 4
+    weight: 5
     region: ds_content
     label: hidden
     settings:
@@ -66,7 +79,7 @@ content:
         ds_limit: ''
   field_logo:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     region: ds_content
     label: above
     settings:
@@ -75,7 +88,7 @@ content:
     third_party_settings: {  }
   field_media_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       view_mode: node_content
@@ -84,7 +97,7 @@ content:
     region: ds_content
   field_shows:
     type: entity_reference_entity_view
-    weight: 7
+    weight: 8
     region: ds_content
     label: above
     settings:
@@ -95,7 +108,7 @@ content:
         ds_limit: ''
   field_sounds:
     type: entity_reference_entity_view
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       view_mode: node_content
@@ -105,7 +118,7 @@ content:
         ds_limit: ''
     region: ds_content
   field_videos:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       view_mode: node_content
@@ -116,7 +129,7 @@ content:
     type: entity_reference_entity_view
     region: ds_content
   field_website:
-    weight: 3
+    weight: 4
     label: inline
     settings:
       trim_length: 80
