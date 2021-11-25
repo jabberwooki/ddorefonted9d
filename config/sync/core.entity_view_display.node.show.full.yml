@@ -111,6 +111,8 @@ third_party_settings:
         - field_videos_link
         - field_sounds_link
         - field_top_link
+        - langcode
+        - field_display_age
     fields:
       node_title:
         plugin_id: node_title
@@ -189,6 +191,16 @@ content:
         ds_limit: ''
     type: datetime_ddo
     region: ds_content
+  field_display_age:
+    type: boolean
+    weight: 39
+    region: ds_content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_duration:
     weight: 17
     label: inline
@@ -394,9 +406,11 @@ content:
     weight: 30
     label: hidden
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     type: entity_reference_entity_view
     region: ds_content
   field_videos_link:
@@ -405,6 +419,15 @@ content:
     region: ds_content
     label: hidden
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language
+    weight: 38
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
     third_party_settings: {  }
   links:
     weight: 1
@@ -418,10 +441,8 @@ content:
     third_party_settings: {  }
 hidden:
   field_currently: true
-  field_display_age: true
   field_mapado_apislug: true
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
   field_media_thumbnail: true
   field_show_type: true
-  langcode: true

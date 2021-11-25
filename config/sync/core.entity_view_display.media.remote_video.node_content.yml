@@ -30,20 +30,7 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - media_name
         - field_media_oembed_video
-        - field_authors
-    fields:
-      media_name:
-        plugin_id: media_name
-        weight: 0
-        label: hidden
-        formatter: default
-        settings:
-          'link class': ''
-          wrapper: ''
-          class: ''
-          link: 0
 _core:
   default_config_hash: gUaDZKMQD3lmLKWPn727X3JHVdKJ525g4EJCCcDVAqk
 id: media.remote_video.node_content
@@ -51,19 +38,9 @@ targetEntityType: media
 bundle: remote_video
 mode: node_content
 content:
-  field_authors:
-    type: entity_reference_label
-    weight: 2
-    region: ds_content
-    label: hidden
-    settings:
-      link: false
-    third_party_settings:
-      ds:
-        ds_limit: ''
   field_media_oembed_video:
     type: oembed
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       max_width: 937
@@ -72,6 +49,7 @@ content:
     region: ds_content
 hidden:
   created: true
+  field_authors: true
   field_tags: true
   langcode: true
   name: true
