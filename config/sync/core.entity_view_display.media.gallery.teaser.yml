@@ -1,0 +1,60 @@
+uuid: f6e1b276-e817-4e4f-9e23-c80ad2efa190
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.teaser
+    - field.field.media.gallery.field_authors
+    - field.field.media.gallery.field_media_slideshow
+    - field.field.media.gallery.field_tags
+    - image.style.polaroid
+    - media.type.gallery
+  module:
+    - ds
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - media_name
+        - thumbnail
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: 0
+id: media.gallery.teaser
+targetEntityType: media
+bundle: gallery
+mode: teaser
+content:
+  thumbnail:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: polaroid
+      image_link: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_authors: true
+  field_media_slideshow: true
+  field_tags: true
+  langcode: true
+  name: true
+  uid: true
