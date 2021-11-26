@@ -51,6 +51,7 @@ dependencies:
     - ddo_utils
     - ds
     - link
+    - term_reference_tree
     - text
     - user
 third_party_settings:
@@ -79,12 +80,8 @@ third_party_settings:
         - body
         - node_link
         - field_ticketing_url
+        - field_location
     fields:
-      node_title:
-        plugin_id: node_title
-        weight: 3
-        label: hidden
-        formatter: default
       node_link:
         plugin_id: node_link
         weight: 5
@@ -95,6 +92,11 @@ third_party_settings:
           'link class': ''
           wrapper: ''
           class: ''
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
 id: node.show.teaser
 targetEntityType: node
 bundle: show
@@ -128,6 +130,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_location:
+    type: term_reference_tree
+    weight: 7
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
   field_media_image:
     type: entity_reference_entity_view
     weight: 0
@@ -165,7 +176,6 @@ hidden:
   field_galeries: true
   field_galleries_link: true
   field_generic_location: true
-  field_location: true
   field_mapado_apislug: true
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
