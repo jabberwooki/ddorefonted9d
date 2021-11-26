@@ -122,6 +122,28 @@
     box-shadow: 1px 1px 12px #555;
   }
 }
+/* Spécifique à la page d'accueil */
+.more-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  a {
+    padding: 15px 15px 15px 20px;
+    border: 2px solid map-get($theme-colors, "secondary");
+    display: table;
+    margin: 0 auto;
+    color: map-get($theme-colors, "secondary");
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    &:hover {
+      background-color: map-get($theme-colors, "secondary");
+      color: white;
+    }
+  }
+}
 
 /* Contenu complet de spectacle*/
 .node--type-show {
