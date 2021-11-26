@@ -6,3 +6,23 @@ body {
 img {
   max-width: 100%;
 }
+/* Textes */
+p.txt-intro-grenadine {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem !important;
+  color: map-get($theme-colors, "secondary");
+  line-height: calc(22rem/16) !important;
+}
+p.txt-intro {
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 1em !important;
+  line-height: calc(22rem/16) !important;
+}
+p.txt-normal {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.375rem;
+}

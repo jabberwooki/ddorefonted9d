@@ -8,6 +8,7 @@
  * - attributes: content region attributes
  * - ds_content: content region
  * Pour débuger : {{ dump(_context["field_media_image"]|keys) }}
+ {{ constant('Twig_Environment::VERSION') }}
  */
 #}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
@@ -57,50 +58,92 @@
   </div>
   <div class="container">
 
-    <div class="row" >
+    <div class="row">
       <div class="col-md-4 offset-md-1 order-md-2">
-        <section class="section-all-show-dates">
-          <h3 class="title-all-show-dates">Toutes les dates</h3>
-          <ul class="list-unstyled">
-            {% for date in node.field_dates %}
-              <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
-            {% endfor %}
-          </ul>
-        </section>
+        {# Colonne de droite sur grand écran #}
+        <div class="show-aside-information">
+          <section class="section-all-show-dates">
+            <h3 class="title-all-show-dates">Toutes les dates</h3>
+            <ul class="list-unstyled">
+              {% for date in node.field_dates %}
+                <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section class="section-further-information">
+            {% if not field_display_age is empty and field_display_age %}
+              <div class="wrapper-field d-flex align-items-center">
+                <div class="field__label">À partir de :&nbsp;</div>
+                <div class="field__item">{{ field_minimum_age.0 }} ans</div>
+              </div>
+            {% endif %}
+            {% if not field_price is empty %}
+              <div class="wrapper-field d-flex align-items-center">
+                <div class="field__label">Tarif :&nbsp;</div>
+                <div class="field__item">{{ field_price.0 }}</div>
+              </div>
+            {% endif %}
+            {% if not field_generic_location is empty or not field_location is empty %}
+              <div class="wrapper-field d-flex align-items-start">
+                <div class="field__label">Lieu&nbsp;:&nbsp;</div>
+                <div class="d-flex flex-column">
+                  {% if not field_location is empty  %}
+                    <div class="field__item">{{ field_generic_location.0 }}</div>
+                  {% endif %}
+                  {% if not field_location is empty  %}
+                    <div class="field__item">{{ field_location.0 }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+            {{ field_entrance }}
+            {{ field_duration }}
+            {{ field_restauration }}
+          </section>
+        </div>
       </div>
       <div class="col-md-7 order-md-1">
-        {# Par la compagnie (ou autre)#}
-        {% if not field_by is empty %}
-          <div class="field-by">
-            <div class="field-by-label">Par :&nbsp;</div>
-            <div class="field-by-title">{{ content.field_by.0['#title'] }} </div>
+        {# Colonne de gauche sur grand écran #}
+        <div class="show-main-information">
+          {# Structure (compagnie ou autre) #}
+          {% if not field_by is empty %}
+            <div class="field-by">
+              <div class="field-by-label">Par :&nbsp;</div>
+              <div class="field-by-title">{{ content.field_by.0['#title'] }} </div>
+            </div>
+          {% endif %}
+          {# Liens de partage ################################################################### #}
+          {% set facebook_url = ['http://www.facebook.com/sharer/sharer.php?u=https://www.domainedo.fr', path('entity.node.canonical', {'node': content['#node'].id()  })  ]|join %}
+          <div class="share-social-buttons">
+            <a class="icon-twitter" target="_blank" title="Partager sur twitter"
+               href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdomainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&amp;text=&amp;hashtags=spectacle,Montpellier">
+              <span class="visually-hidden-focusable">Twitter</span>
+            </a>
+            <a class="icon-facebook" title="Partager sur facebook"
+               href="{{ facebook_url }}&t={{ node.label|replace({' ': '_'}) }}" target="_blank" class="share-popup">
+              <span class="visually-hidden-focusable">Facebook</span>
+            </a>
           </div>
-        {% endif %}
-        {# Liens de partage ####################################################################}
-        <div class="share-social-buttons">
-          <a class="icon-twitter" target="_blank" title="Partager sur twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdomainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&amp;text=&amp;hashtags=spectacle,Montpellier">
-            <span class="visually-hidden-focusable">Twitter</span>
-          </a>
-          <a class="icon-facebook" title="Partager sur facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://www.domainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&t={{ node.label|replace({' ': '_'}) }}" target="_blank" class="share-popup">
-            <span class="visually-hidden-focusable">Facebook</span>
-          </a>
+          {# Body ################################################################################ #}
+          {{ ds_content.body }}
+          {# Vidéo ############################################################################### #}
+          {{ field_videos }}
+          {% if not field_casting is empty %}
+            <div id="casting">{{ field_casting }}</div>
+          {% endif %}
+          {% if not field_production is empty %}
+            <div id="production">{{ field_production }}</div>
+          {% endif %}
+          {% if not field_coproduction is empty %}
+            <div id="coproduction">{{ field_coproduction }}</div>
+          {% endif %}
+          {% if not field_partnerships is empty %}
+            <div id="partnerships">{{ field_partnerships }}</div>
+          {% endif %}
+          {# Vous aimerez aussi ##################################################################### #}
+          {{ field_shows }}
 
         </div>
-        {# Body #################################################################################}
-        {{ ds_content.body }}
-        {% if not field_casting is empty %}
-          <div id="casting">{{ field_casting }}</div>
-        {% endif %}
-        {% if not field_production is empty %}
-          <div id="production">{{ field_production }}</div>
-        {% endif %}
-        {% if not field_coproduction is empty %}
-          <div id="coproduction">{{ field_coproduction }}</div>
-        {% endif %}
-        {% if not field_partnerships is empty %}
-          <div id="partnerships">{{ field_partnerships }}</div>
-        {% endif %}
-
       </div>
     </div>
   </div>

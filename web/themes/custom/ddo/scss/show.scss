@@ -2,7 +2,6 @@
 .teaser-show {
   position: relative;
   margin-bottom: 30px;
-
   .link-img-teaser-show {
     display: block;
 
@@ -22,7 +21,11 @@
     left: 10px;
     display: block;
   }
-
+  /* pour la mise en pages des spectacles "vous aimeres aussi" */
+  .field--type-image {
+    float: none!important;
+    margin: 0!important;
+  }
   .bottom-info-teaser-show {
     padding: 0 15px 10px 15px;
     position: absolute;
@@ -140,8 +143,10 @@
           .field__item {
             @include special_underline(white, darken(map-get($theme-colors, "secondary"), 20%), 40%);
           }
+
           margin-top: 10px;
         }
+
         h2 {
           text-transform: uppercase;
           font-size: 2.25rem;
@@ -151,6 +156,7 @@
           font-style: normal;
           font-weight: 800;
         }
+
         .field--name-field-subtitle {
           color: white;
           font-size: 1.2rem;
@@ -158,12 +164,15 @@
       }
 
     }
+
     .row-anchor-full-show {
       background-color: $gray-300;
       padding: 10px 0;
       margin-bottom: 20px;
+
       .row {
         align-items: center;
+
         .anchor-show-full {
           text-transform: uppercase;
           color: #000;
@@ -172,53 +181,124 @@
           padding-right: 30px;
           font-style: normal;
           font-weight: 800;
+
           &:hover {
             color: map-get($theme-colors, "secondary");
           }
         }
+
         #book-show {
           @include button_book_show();
         }
       }
     }
+
     /* Colonne de gauche sur grand écran */
-    .field-by {
-      display: flex;
-      .field-by-label {
-        font-weight: bold;
+    .show-main-information {
+      .field__label {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 800;
+        margin: 20px 0 10px 0;
       }
-      margin-bottom: 20px;
-    }
-    .share-social-buttons {
-      border-bottom: 1px solid black;
-      border-top: 1px solid black;
-      padding: 10px 0;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      a.icon-twitter {
-        @include social-icon("\e800", #1C9BF0, 2rem);
+
+      .field-by {
+        display: flex;
+
+        .field-by-label {
+          font-weight: bold;
+        }
+
+        margin-bottom: 20px;
       }
-      a.icon-facebook {
-        @include social-icon("\e801", #4064AC, 2rem);
+
+      .share-social-buttons {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        a.icon-twitter {
+          @include social-icon("\e800", #1C9BF0, 2rem);
+        }
+
+        a.icon-facebook {
+          @include social-icon("\e801", #4064AC, 2rem);
+        }
+      }
+
+      .field--name-field-shows {
+        border: 3px solid red;
+
+
       }
     }
 
     /* Colonne de droite  sur grand écran */
-    .title-all-show-dates {
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      font-size: 1.125rem;
-      font-style: normal;
-      font-weight: 800;
-      margin-left: -5px;
-      &:before {
-        @extend %icon-fontello;
-        content: "\e807";
-        color: map-get($theme-colors, "secondary");
+    .show-aside-information {
+      .wrapper-field {
+        margin-bottom: 15px;
+      }
+
+      .field__label {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 800;
+      }
+
+
+      .title-all-show-dates {
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 800;
+        margin-left: -5px;
+
+        &:before {
+          @extend %icon-fontello;
+          content: "\e807";
+          color: map-get($theme-colors, "secondary");
+        }
+      }
+
+      .section-further-information {
+        background-color: map-get($theme-colors, "secondary");
+        font-size: 0.876rem;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: white;
+
+        .field {
+          margin-bottom: 20px;
+          display: flex;
+
+          .field__label {
+            padding-right: 10px;
+
+            &:after {
+              position: relative;
+              right: -5px;
+              content: ":";
+              display: inline;
+            }
+          }
+
+          &.field--name-field-restauration {
+            flex-direction: column;
+          }
+        }
+
+        .field__item {
+          a {
+            color: white;
+            text-decoration: underline;
+          }
+        }
       }
     }
-
   }
 
 }
