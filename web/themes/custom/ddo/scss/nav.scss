@@ -1,3 +1,16 @@
+/* Mega menu */
+#mega-menu {
+  #block-main-menu-in-mega-menu {
+    border: 1px solid red;
+    > ul {
+
+    }
+  }
+  .dropdown-menu {
+    display: block !important;
+  }
+}
+/* Boutons réseaux sociaux */
 .nav-social {
   margin-top: 3px;
   a.icon-facebook {
