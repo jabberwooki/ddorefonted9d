@@ -111,6 +111,7 @@
             {{ field_duration }}
             {{ field_restauration }}
           </section>
+          {{ field_additional_info }}
         </div>
       </div>
       <div class="col-md-7 order-md-1">
@@ -126,6 +127,7 @@
           {% if not field_by is empty %}
             <div class="field-by-or-from">
               <div class="field-by-or-from-label">Par :&nbsp;</div>
+              <div class="field-by-or-from-title">{{ content.field_by.0['#title'] }} </div>
               <div class="field-by-or-from-title">{{ content.field_by.0['#title'] }} </div>
             </div>
           {% endif %}
