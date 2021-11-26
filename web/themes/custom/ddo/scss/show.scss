@@ -14,12 +14,30 @@
     }
   }
 
-  .top-info-teaser-show {
+  .festival-teaser-show {
     @include black_sidebar();
     position: absolute;
     top: 10px;
     left: 10px;
     display: block;
+  }
+  .teaser-location {
+    display: none;
+    &.extramuros {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      &:before {
+        @extend %icon-fontello;
+        content: "\e879";
+        color: map-get($theme-colors, "secondary");
+        font-size: 2.5rem;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   /* pour la mise en pages des spectacles "vous aimeres aussi" */
   .field--type-image {
@@ -296,6 +314,10 @@
             text-decoration: underline;
           }
         }
+      }
+      .field--name-field-additional-info {
+        border: 2px solid #F74E2D;
+        padding: 15px;
       }
     }
   }
