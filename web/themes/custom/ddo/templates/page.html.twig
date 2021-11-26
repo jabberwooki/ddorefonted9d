@@ -187,20 +187,21 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
+    <footer id="main-footer" >
       {% block footer %}
         <div class="{{ container }}">
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top clearfix">
-              {{ page.footer_first }}
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              {{ page.footer_fourth }}
-            </div>
-          {% endif %}
-          {% if page.footer_fifth %}
-            <div class="site-footer__bottom">
-              {{ page.footer_fifth }}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4 menu-footer-first">{{ page.footer_first }}</div>
+                  <div class="col-md-4 menu-footer-second">{{ page.footer_second }}</div>
+                  <div class="col-md-4 contact-details">{{ page.footer_third }}</div>
+                </div>
+              </div>
+              <div class="col-md-6 ddo-presentation">
+                {{ page.footer_fourth }}
+              </div>
             </div>
           {% endif %}
         </div>
