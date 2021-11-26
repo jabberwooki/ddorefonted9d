@@ -2133,6 +2133,11 @@ display:
         group_by: false
         empty: false
         pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
       filters:
         status:
           expose:
@@ -2350,6 +2355,11 @@ display:
         options:
           items_per_page: 9
           offset: 0
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Voir tous les spectacles'
+      link_display: custom_url
+      link_url: /spectacles/tous-les-spectacles
     cache_metadata:
       max-age: -1
       contexts:
