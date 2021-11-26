@@ -1,0 +1,25 @@
+uuid: 7a269046-a2a3-41d4-98c0-d6179e5086d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.ddofooter2
+  module:
+    - system
+  theme:
+    - ddo
+id: footer_menu_2_in_mega
+theme: ddo
+region: mega_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:ddofooter2'
+settings:
+  id: 'system_menu_block:ddofooter2'
+  label: 'Pied de page DDO 2'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: e4fc44df-6218-4cc9-8253-375738435d13
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - ddo
+id: main_menu_in_mega
+theme: ddo
+region: mega_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 4
+  expand_all_items: true
+visibility: {  }
