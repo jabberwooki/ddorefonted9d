@@ -1,0 +1,11 @@
+uuid: 64cb7db0-c245-43c9-9016-f1cd669323cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: ddo_text
+title: 'Texte bas de page'
+content:
+  value: "<p><img alt=\"Logo Montpellier Méditerranée Métropole\" data-align=\"right\" data-entity-type=\"file\" data-entity-uuid=\"74408c8e-0fa9-46a1-981b-9aee21d78dc1\" src=\"/sites/default/files/inline-images/mmm.gif\" /></p>\r\n\r\n<p>Le domaine d'O est un domaine d'art et de spectacles pluridisciplinaire :&nbsp;<strong>théâtre</strong>,&nbsp;<strong>musique</strong>,&nbsp;<strong>cirque</strong>,&nbsp;<strong>danse</strong>, spectacles&nbsp;<strong>jeune public</strong>.</p>\r\n\r\n<p>Il abrite un amphithéâtre de 1800 places, le théâtre Jean-Claude Carrière de 600 à 1200 places, un bistrot et une pinède de 3 hectares. Le domaine d'O produit une saison culturelle et quatre&nbsp;<strong>festivals</strong>&nbsp;et accueille quatre autres festivals</p>\r\n"
+  format: full_html

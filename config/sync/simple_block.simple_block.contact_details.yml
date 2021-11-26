@@ -1,0 +1,11 @@
+uuid: 46600887-9825-4acc-93e5-f7e8ae6727bf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: contact_details
+title: Coordonnées
+content:
+  value: "<p><strong>Domaine d'O</strong></p>\r\n\r\n<p>178, rue de la Carriérasse<br />\r\n34090 Montpellier</p>\r\n\r\n<p>Tél. : 0800 200 165<br />\r\nservice et appel gratuits</p>\r\n"
+  format: full_html

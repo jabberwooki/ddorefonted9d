@@ -1,0 +1,22 @@
+uuid: 2f262900-1ced-4598-8057-d1fa75bc4753
+langcode: fr
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.contact_details
+  module:
+    - simple_block
+  theme:
+    - ddo
+id: contact_details
+theme: ddo
+region: footer_third
+weight: 0
+provider: null
+plugin: 'simple_block:contact_details'
+settings:
+  id: 'simple_block:contact_details'
+  label: Coordonnées
+  provider: simple_block
+  label_display: '0'
+visibility: {  }
