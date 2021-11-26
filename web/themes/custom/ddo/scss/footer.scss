@@ -1,0 +1,23 @@
+#main-footer {
+  .container {
+    border-top: 1px solid black;
+    margin-top: 10px;
+    padding-top: 20px;
+    .menu-footer-first,
+    .menu-footer-second {
+      a {
+        color: black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .contact-details {
+      padding-top: 8px;
+    }
+    .ddo-presentation {
+      position: relative;
+      top: -8px;
+    }
+  }
+}
