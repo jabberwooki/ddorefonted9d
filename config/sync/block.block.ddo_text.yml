@@ -18,5 +18,5 @@ settings:
   id: 'simple_block:ddo_text'
   label: 'Texte bas de page'
   provider: simple_block
-  label_display: visible
+  label_display: '0'
 visibility: {  }

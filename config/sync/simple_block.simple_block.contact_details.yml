@@ -7,5 +7,5 @@ dependencies:
 id: contact_details
 title: Coordonnées
 content:
-  value: "<p><strong>Domaine d'O</strong></p>\r\n\r\n<p>178, rue de la Carriérasse<br />\r\n34090 Montpellier</p>\r\n\r\n<p>Tél. : 0800 200 165<br />\r\nservice et appel gratuits</p>\r\n"
+  value: "<p><strong>Domaine d'O</strong></p>\r\n\r\n<p>178, rue de la Carriérasse<br />\r\n34090 Montpellier</p>\r\n\r\n<p>Tél. : <strong>0800 200 165</strong><br />\r\nservice et appel <strong>gratuits</strong></p>\r\n"
   format: full_html
