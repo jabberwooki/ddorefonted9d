@@ -6,7 +6,7 @@
  * Available variables:
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
- * List all fields: {{ dump(_context|keys) }} ou {{ dump(_context["content"]|keys) }}
+ * List all fields: {{ dump(_context|keys) }} ou {{ dump(_context["content"]|keys) }} ou {{ dump(_context["field_media_image"]|keys) }}
  * @ingroup themeable
  */
 #}
@@ -14,14 +14,21 @@
   'layout',
   'layout--onecol',
 ] %}
+
 {% if content %}
   <article class="teaser-show">
     <a class="link-img-teaser-show" href="{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}">
       {{ field_media_image }}
     </a>
-    <div class="top-info-teaser-show">
+    <div class="festival-teaser-show">
       {{ content.field_festival }}
     </div>
+    {% if 'extra' in node.field_location.0.entity.parent.entity.label|lower %}
+      <div class="teaser-location extramuros" title="Hors les murs du domaine d'O">
+        <span class="visually-hidden-focusable">Hors les murs du domaine d'O</span>
+      </div>
+    {% endif %}
+
     <div class="bottom-info-teaser-show">
       <a class="link-txt-teaser-show" href="{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}">
       {{ content.field_dates }}
