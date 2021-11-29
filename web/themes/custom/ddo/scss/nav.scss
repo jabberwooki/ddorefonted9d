@@ -1,15 +1,4 @@
-/* Mega menu */
-#mega-menu {
-  #block-main-menu-in-mega-menu {
-    border: 1px solid red;
-    > ul {
 
-    }
-  }
-  .dropdown-menu {
-    display: block !important;
-  }
-}
 /* Boutons réseaux sociaux */
 .nav-social {
   margin-top: 3px;
@@ -35,25 +24,40 @@
   margin-right: 10px;
   @include secondary-icon-link("\e84a");
 }
-/* Boutton navigation principale */
+/* Bouton navigation principale */
 #custom-mega-menu-button {
   position: relative;
   color: map-get($theme-colors,"secondary");
   text-transform: uppercase;
   width: 40px;
   height: 40px;
-  span {
-    position: absolute;
-    bottom: -3px;
-    left: 15px;
-    font-size: 0.53125rem;
+  &.open-menu-button {
+    span {
+      position: absolute;
+      bottom: -3px;
+      left: 15px;
+      font-size: 0.53125rem;
+    }
+    &:before {
+      @extend %icon-fontello;
+      content: "\e869";
+      font-size: 2.4rem;
+      color: map-get($theme-colors,"secondary");
+    }
   }
-  &:before {
-    @extend %icon-fontello;
-    content: "\e869";
-    font-size: 2.4rem;
-    color: map-get($theme-colors,"secondary");
+  &.close-menu-button {
+    span {
+      display: none;
+    }
+    &:before {
+      @extend %icon-fontello;
+      content: "\e832";
+      font-size: 2.4rem;
+      color: map-get($theme-colors,"secondary");
+    }
   }
+
+
   &:hover {
     cursor: pointer;
     color: black;
@@ -62,7 +66,7 @@
     }
   }
 }
-/* Navigation principale */
+/* Navigation principale hors mega-menu */
 #block-ddo-main-menu {
    ul.nav {
     display: flex;
@@ -81,6 +85,74 @@
          }
        }
      }
+  }
+}
+/* Mega menu */
+#mega-menu {
+  background-color: $gray-300;
+  #block-main-menu-in-mega,
+  #block-footer-menu-1-in-mega,
+  #block-footer-menu-2-in-mega,
+  #col-2-mega-menu,
+  #col-3-mega-menu {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        a {
+          color: black;
+        }
+      }
+      .dropdown-toggle{
+        &:after {
+          display: none;
+        }
+      }
+      &.nav {
+        flex-direction: column;
+        > li {
+          padding: 0;
+          > a {
+            padding: 0;
+            margin-top: 20px;
+            display: block;
+            color: #F74E2D;
+            text-transform: uppercase;
+            font-family: Gotham Bold;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1em;
+          }
+          > ul {
+            padding: 0!important;
+            > li {
+              > a {
+                margin: 15px 0;
+                display: block;
+                font-weight: bold;
+                font-size: 0.875em;
+              }
+              > ul {
+                > li {
+                  > a {
+                    font-weight: 400;
+                    margin: 15px 0;
+                    padding-left: 20px;
+                    font-family: Gotham Book;
+                    font-size: 0.875em;
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .dropdown-menu {
+    display: block !important;
   }
 }
 /* Fin de la navigation principale */
