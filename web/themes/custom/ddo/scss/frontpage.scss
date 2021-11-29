@@ -25,3 +25,31 @@
     border-bottom: 0!important;
   }
 }
+#section-currently {
+  position: relative;
+  display: inline-table;
+  #over-currently {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: flex-end;
+    width: 100% !important;
+    background: linear-gradient(transparent, black);
+    .field--name-node-title {
+      font-size: 2rem;
+      color: #fff;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding-top: 50px;
+      display: inline!important;
+      margin-bottom: 20px;
+
+      @include special_underline(white, map-get($theme-colors,"secondary"), 70%, 100%);
+    }
+  }
+}
