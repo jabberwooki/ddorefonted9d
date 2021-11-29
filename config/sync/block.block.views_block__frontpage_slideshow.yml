@@ -12,7 +12,7 @@ dependencies:
 id: views_block__frontpage_slideshow
 theme: ddo
 region: content
-weight: -3
+weight: -7
 provider: null
 plugin: 'views_block:frontpage-slideshow'
 settings:

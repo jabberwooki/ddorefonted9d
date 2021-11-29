@@ -848,12 +848,22 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: fields
+        type: 'ds_entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+          grouping_fieldset:
+            group: false
+            group_field: draggableviews_structure|weight
+            group_field_function: ''
+          delta_fieldset:
+            delta_fields: {  }
+          advanced_fieldset:
+            advanced: false
       display_description: ''
       title: 'Info Flash'
       fields:
@@ -865,7 +875,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -930,7 +940,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -995,8 +1005,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div class=\"row\">\r\n  <div class=\"col-md-3\">{{ title }}</div>\r\n  <div class=\"col-md-6\">{{ body }}</div>\r\n  <div class=\"col-md-3\" id=\"home-flash-view-more\">{{ view_node }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
