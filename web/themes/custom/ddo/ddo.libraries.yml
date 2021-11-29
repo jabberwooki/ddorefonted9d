@@ -5,6 +5,7 @@ global-styling:
     js/barrio.js: {}
     js/custom.js: {}
     js/search.js: {}
+    js/mega_menu.js: {}
   css:
     component:
       css/style.css: {}
