@@ -30,20 +30,17 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('nav navbar-nav')|without('id') }}>
+      <ul class="nav">
     {% else %}
-      <ul class="dropdown-menu">
+      <ul >
     {% endif %}
     {% for item in items %}
       {%
         set classes = [
-          menu_level ? 'dropdown-item' : 'nav-item',
-          item.is_expanded ? 'menu-item--expanded',
-          item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'active',
-          item.below ? 'dropdown',
         ]
       %}
+
       <li{{ item.attributes.addClass(classes) }} id="li-mega-menu-{{ loop.index }}">
         {%
           set link_classes = [
