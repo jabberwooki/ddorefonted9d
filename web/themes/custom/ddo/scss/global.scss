@@ -26,3 +26,7 @@ p.txt-normal {
   font-size: 0.875rem !important;
   line-height: 1.375rem;
 }
+/* Boutons */
+.btn-more {
+  @include button_more(map-get($theme-colors, "secondary"),white, white, black,  map-get($theme-colors, "secondary"));
+}

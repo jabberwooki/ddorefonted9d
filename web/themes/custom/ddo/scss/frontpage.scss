@@ -1,0 +1,27 @@
+.highlighted {
+  padding-top: 20px;
+  background-color: map-get($theme-colors,"secondary");
+  margin-bottom: 10px;
+  h2 {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    h3,
+    p {
+      color: white;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .flash-info-body {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  .node--view-mode-teaser {
+    border-bottom: 0!important;
+  }
+}

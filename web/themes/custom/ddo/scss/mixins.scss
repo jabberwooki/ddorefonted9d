@@ -99,3 +99,18 @@
     color: map-get($theme-colors, "secondary") !important;
   }
 }
+/* Bouton en savoir plus ou plus d'info*/
+@mixin button_more( $font_color, $bg_color, $font_color_hover, $bg_color_hover, $border-color:transparent) {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813em;
+  border-radius: 0;
+  border: 1px solid $border-color !important;
+  text-transform: uppercase;
+  background-color: $bg_color !important;
+  color: $font_color;
+  &:hover {
+    background-color: $bg_color_hover !important;
+    color: $font_color_hover !important;
+  }
+}
