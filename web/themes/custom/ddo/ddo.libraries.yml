@@ -13,3 +13,10 @@ global-styling:
     - core/jquery
     - core/drupal
     - core/popperjs
+home-slideshow:
+  version: VERSION 1
+  js:
+    js/home_slideshow.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
