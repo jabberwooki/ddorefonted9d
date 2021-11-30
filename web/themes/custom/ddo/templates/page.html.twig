@@ -153,6 +153,7 @@
         </div>
       {% endif %}
     </div>
+    {# INFO FLASH ************************************************************************************* #}
     {% if page.highlighted %}
       <div class="highlighted">
         <aside class="{{ container }} section clearfix" role="complementary">
@@ -160,12 +161,13 @@
         </aside>
       </div>
     {% endif %}
+    {# INFO En ce moment + zoom sur ********************************************************************* #}
     {% if page.featured_top %}
       {% block featured %}
         <div class="featured-top">
-          <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
+          <section class="featured-top__inner" >
             {{ page.featured_top }}
-          </aside>
+          </section>
         </div>
       {% endblock %}
     {% endif %}
