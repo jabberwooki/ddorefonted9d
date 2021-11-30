@@ -29,7 +29,9 @@
  * @ingroup themeable
  */
 #}
-<div class="col-md-5 col-lg-4">
+{{ attach_library('ddo/home-slideshow') }}
+
+<div class="col-md-5 col-lg-4" id="custom-home-slideshow">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
