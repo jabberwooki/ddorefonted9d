@@ -1,0 +1,116 @@
+#custom-home-slideshow {
+  position: relative;
+
+  div.content {
+    --bs-gutter-x: 0 !important;
+    /* Un élément de la taille de l'image qui interdit que l'on affiche en dehors de sa taille*/
+    .view-display-id-slideshow {
+      overflow: hidden;
+
+      .row {
+        margin: 0 !important;
+        padding: 0 !important;
+        --bs-gutter-x: 0 !important;
+        /* Le grand élément dans lequel se trouvent tous les slides mais qu'on ne peut pas voir en entier*/
+        &.view-content {
+          position: relative;
+
+          .views-row {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            .node {
+              .field--type-image {
+                float: none;
+                margin: 0;
+
+                .field--type-image {
+                  img {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            .link-zoom {
+              display: block;
+              padding-bottom: 90px;
+              position: relative;
+              border: 1px solid red;
+              h3 {
+                position: absolute;
+                bottom: 80px;
+                text-transform: uppercase;
+                color: map-get($theme-colors, "secondary");
+
+                > span {
+                  display: inline-block;
+                  padding: 5px 5px 0 20px;
+                  color: white;
+                  font-weight: 800;
+                  background-color: rgba(0, 0, 0, .2);
+                }
+              }
+
+              .btn-more {
+                position: absolute;
+                bottom: 0px;
+                right: 0;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+  #slideshow-control {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+
+    .control-button {
+      height: 30px;
+      width: 30px;
+      background-color: map-get($theme-colors, "secondary");
+      border: 1px solid map-get($theme-colors, "secondary");
+
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+
+        &:before {
+          color: map-get($theme-colors, "secondary");
+        }
+      }
+
+      &:before {
+        @extend %icon-fontello;
+        font-size: 1rem;
+        color: white;
+        position: relative;
+        top: 3px;
+        left: 3px;
+      }
+
+    }
+
+    #ss-previous {
+      &:before {
+        content: "\e833";
+      }
+    }
+
+    #ss-next {
+      &:before {
+        content: "\e834";
+      }
+    }
+  }
+}
