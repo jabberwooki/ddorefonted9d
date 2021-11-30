@@ -12,7 +12,7 @@ dependencies:
 id: views_block__frontpage_currently
 theme: ddo
 region: featured_top
-weight: -13
+weight: -12
 provider: null
 plugin: 'views_block:frontpage-currently'
 settings:

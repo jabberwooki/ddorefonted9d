@@ -12,7 +12,7 @@ dependencies:
 id: views_block__frontpage_shows
 theme: ddo
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'views_block:frontpage-shows'
 settings:

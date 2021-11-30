@@ -11,8 +11,8 @@ dependencies:
     - ddo
 id: views_block__frontpage_slideshow
 theme: ddo
-region: content
-weight: -12
+region: featured_top
+weight: -11
 provider: null
 plugin: 'views_block:frontpage-slideshow'
 settings:
