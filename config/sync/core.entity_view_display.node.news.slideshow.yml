@@ -32,14 +32,16 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
     regions:
-      content:
+      ds_content:
         - node_title
         - field_banner_image
         - body
@@ -69,7 +71,7 @@ content:
     settings:
       trim_length: 300
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_banner_image:
     weight: 1
     label: hidden
@@ -78,18 +80,18 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: content
+    region: ds_content
   field_more_infos_link:
     type: text_default
     weight: 5
-    region: content
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_new_window:
     type: boolean
     weight: 3
-    region: content
+    region: ds_content
     label: hidden
     settings:
       format: boolean
@@ -99,7 +101,7 @@ content:
   field_target_url:
     type: string
     weight: 4
-    region: content
+    region: ds_content
     label: hidden
     settings:
       link_to_entity: false

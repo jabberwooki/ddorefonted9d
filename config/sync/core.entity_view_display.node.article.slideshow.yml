@@ -26,14 +26,22 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      content:
+      ds_content:
         - node_title
         - field_banner_image
         - body
@@ -61,7 +69,7 @@ content:
   body:
     type: text_trimmed
     weight: 2
-    region: content
+    region: ds_content
     settings:
       trim_length: 300
     third_party_settings: {  }
@@ -74,14 +82,14 @@ content:
       view_mode: slideshow
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_more_infos_link:
     weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_new_window:
     weight: 3
     label: hidden
@@ -91,7 +99,7 @@ content:
       format_custom_false: ''
     third_party_settings: {  }
     type: boolean
-    region: content
+    region: ds_content
   field_target_url:
     weight: 4
     label: hidden
@@ -99,7 +107,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
 hidden:
   comment: true
   field_edition_date: true
