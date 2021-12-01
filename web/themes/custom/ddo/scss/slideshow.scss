@@ -36,33 +36,33 @@
               display: block;
               padding-bottom: 90px;
               position: relative;
-              border: 1px solid red;
               h3 {
                 position: absolute;
-                bottom: 80px;
                 text-transform: uppercase;
                 color: map-get($theme-colors, "secondary");
-
+                font-weight: 700;
+                padding-right: 120px;
+                font-size: 1.5rem;
                 > span {
-                  display: inline-block;
+                  display: table;
                   padding: 5px 5px 0 20px;
                   color: white;
                   font-weight: 800;
-                  background-color: rgba(0, 0, 0, .2);
+                  background-color: rgba(0, 0, 0, 0.2);
+                  margin-bottom: 10px;
+                  font-size: 2.5rem;
                 }
               }
 
               .btn-more {
                 position: absolute;
-                bottom: 0px;
+                bottom: px;
                 right: 0;
               }
             }
           }
         }
-
       }
-
     }
   }
 
@@ -98,7 +98,6 @@
         top: 3px;
         left: 3px;
       }
-
     }
 
     #ss-previous {
