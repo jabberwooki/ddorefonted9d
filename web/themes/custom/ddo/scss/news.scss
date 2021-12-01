@@ -33,5 +33,20 @@ body.node--type-news {
       }
     }
   }
+  .image-style-_-2-image {
+    max-width: 45% !important;
+    float: right;
+    margin: 0 0 30px 5%;
+  }
+  .field--name-field-videos {
+    max-width: 45% !important;
+    float: right;
+    margin: 0 0 30px 5%;
+    /* padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+    iframe {
+      max-height: 200px!important;
+    }
+
+  }
 }
 
