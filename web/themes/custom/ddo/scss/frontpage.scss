@@ -1,8 +1,11 @@
 /* Info flash  ********************************************************************************/
 .highlighted {
-  padding-top: 20px;
+
   background-color: map-get($theme-colors,"secondary");
   margin-bottom: 10px;
+  > * > * {
+    padding-top: 20px;
+  }
   h2 {
     font-size: 1.5em;
     margin: 20px 0;
@@ -37,11 +40,9 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      align-items: flex-end;
+      padding: 48px 20px 30px 20px;
       width: 100% !important;
+      text-align: right;
       background: linear-gradient(transparent, black);
       .field--name-node-title {
         font-size: 2rem;
