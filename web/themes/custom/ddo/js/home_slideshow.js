@@ -7,16 +7,15 @@
 
   'use strict';
 
-  Drupal.behaviors.ddo = {
+  Drupal.behaviors.ddo_slideshow = {
     attach: function (context, settings) {
-      console.log(`Dans home_slideshow`);
+      console.log(`Dans home_slideshow !!!`);
       const nb_slides = $("#custom-home-slideshow .view-content > .views-row").length;
       if (nb_slides && nb_slides > 1) {
         let ss_width = parseInt($("#custom-home-slideshow").width() + 1);
         const all_slides = $("#custom-home-slideshow .view-content");
         // Je n'arrive pas à récupéer la hauteur, alors je joue avec les proportions pour l'avoir...
-        let img_height = parseInt(($("#custom-home-slideshow .field__item").first().width() / 1.439534884) + 1);
-
+        let img_height = parseInt((ss_width / 1.439534884) + 1);
         all_slides.width(ss_width * nb_slides);
         $("#custom-home-slideshow .view-content > .views-row").width(ss_width);
 
@@ -26,10 +25,10 @@
         const next_button = $(`<div id="ss-next" class="control-button"><span class="visually-hidden-focusable">Prédédent</span></div>`).appendTo(control_buttons);
         control_buttons.css("top", `${img_height + 8}px`);
         const slide_titles = $(".zoom-img-and-title h3");
+
         // Positionnement du titre
 
         slide_titles.each(function () {
-          console.log(`Positionnement du titre`);
           $(this).css("top", `${img_height - 53}px`);
         })
 
