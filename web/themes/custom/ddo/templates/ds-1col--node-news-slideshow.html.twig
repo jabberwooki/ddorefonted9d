@@ -22,8 +22,9 @@
 <section class="custom-slide">
   <a class="link-zoom" href="{{ url_destination }}">
     <div class="zoom-img-and-title">
-      <div>{{ content.field_banner_image }}</div>
-      <h3><span>Zoom sur</span> {{ content.node_title }}<h3>
+
+      <div>{{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, 'slideshow', {responsive: true}) }}</div>
+      <h3><span>Zoom sur</span> {{ node.label }}</h3>
     </div>
     <div><button class="btn btn-more">Plus d'infos</button></div>
   </a>
