@@ -114,7 +114,7 @@ content:
     third_party_settings: {  }
   field_galeries:
     weight: 8
-    label: above
+    label: hidden
     settings:
       view_mode: node_content
       link: false
@@ -134,7 +134,7 @@ content:
     region: ds_content
   field_sounds:
     weight: 10
-    label: above
+    label: hidden
     settings:
       view_mode: node_content
       link: false
@@ -153,7 +153,7 @@ content:
     region: ds_content
   field_videos:
     weight: 9
-    label: above
+    label: hidden
     settings:
       view_mode: node_content
       link: false
