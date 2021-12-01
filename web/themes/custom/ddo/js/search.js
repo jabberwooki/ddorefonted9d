@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.ddo = {
+  Drupal.behaviors.ddo_search = {
     attach: function (context, settings) {
 
       /* Ne fonctionne pas voir si on pourrait charger https://github.com/robloach/jquery-once
@@ -16,7 +16,7 @@
         // a single time.
         console.log(`ONCE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
       });*/
-      console.log(`Dans search.js`);
+      console.log(`Dans search.js !!!`);
       $("#close-search-form").on("click", function (event) {
         /*console.log(`Click sur la croix de suppression de la zone de recherche`);*/
         document.activeElement.blur();
