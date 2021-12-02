@@ -20,8 +20,39 @@ dependencies:
     - field.field.node.article.field_videos
     - node.type.article
   module:
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_banner_image
+        - node_title
+        - body
+        - field_target_url
+        - field_new_window
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
 _core:
   default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.zoom
@@ -31,8 +62,8 @@ mode: zoom
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 1
-    region: content
+    weight: 2
+    region: ds_content
     settings:
       trim_length: 300
     third_party_settings: {  }
@@ -40,41 +71,35 @@ content:
   field_banner_image:
     type: entity_reference_entity_view
     weight: 0
-    label: above
+    label: hidden
     settings:
       view_mode: zoom
       link: false
     third_party_settings: {  }
-    region: content
-  field_more_infos_link:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
+    region: ds_content
   field_new_window:
-    weight: 3
-    label: above
+    weight: 4
+    label: hidden
     settings:
       format: boolean
       format_custom_true: ''
       format_custom_false: ''
     third_party_settings: {  }
     type: boolean
-    region: content
+    region: ds_content
   field_target_url:
-    weight: 2
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
 hidden:
   comment: true
   field_edition_date: true
   field_galeries: true
+  field_more_infos_link: true
   field_publication_date: true
   field_sidebar_image: true
   field_slideshow: true
