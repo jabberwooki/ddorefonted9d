@@ -13,7 +13,7 @@
 {% if content.field_target_url.0 is empty or content.field_target_url.0 == "" %}
   {% set url_destination = path('entity.node.canonical', {'node': content['#node'].id()  }) %}
 {% else %}
-  {% set url_destination = field_target_url %}
+  {% set url_destination = content.field_target_url.0 %}
 {% endif %}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
