@@ -1,34 +1,42 @@
 /* Info flash  ********************************************************************************/
 .highlighted {
 
-  background-color: map-get($theme-colors,"secondary");
+  background-color: map-get($theme-colors, "secondary");
   margin-bottom: 10px;
+
   > * > * {
     padding-top: 20px;
   }
+
   h2 {
     font-size: 1.5em;
     margin: 20px 0;
     color: white;
   }
+
   a {
     text-decoration: none;
+
     h3,
     p {
       color: white;
     }
+
     &:hover {
       text-decoration: none;
     }
   }
+
   .flash-info-body {
     margin-top: 8px;
     font-weight: bold;
   }
+
   .node--view-mode-teaser {
-    border-bottom: 0!important;
+    border-bottom: 0 !important;
   }
 }
+
 /* En ce moment + diaporama *******************************************************************/
 .region-featured-top {
   /* En ce moment*/
@@ -36,6 +44,7 @@
   #section-currently {
     position: relative;
     display: inline-table;
+
     #over-currently {
       position: absolute;
       bottom: 0;
@@ -44,6 +53,7 @@
       width: 100% !important;
       text-align: right;
       background: linear-gradient(transparent, black);
+
       .field--name-node-title {
         font-size: 2rem;
         color: #fff;
@@ -52,13 +62,69 @@
         font-weight: 800;
         text-transform: uppercase;
         padding-top: 50px;
-        display: inline!important;
+        display: inline !important;
         margin-bottom: 20px;
 
-        @include special_underline(white, map-get($theme-colors,"secondary"), 70%, 100%);
+        @include special_underline(white, map-get($theme-colors, "secondary"), 70%, 100%);
       }
     }
   }
 
   /* Diaporama */
+}
+
+/* Accès par festivals */
+.featured-top-large {
+  margin: 20px 0;
+  background-color: $gray-300;
+
+  .block-views-blockfrontpage-festival-names {
+    padding: 20px 0 30px 0;
+    h2 {
+      font-size: 1em;
+      margin-bottom: 15px;
+      font-weight: normal;
+      padding-left: 15px;
+    }
+    .festival-access-calendar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+
+      .field-content {
+        a {
+          @include black_sidebar();
+          display: inline-block;
+          color: white;
+          font-size: 0.875em;
+          text-transform: uppercase;
+          margin: 0 20px 0 0;
+          padding: 3px 10px;
+          font-weight: 700;
+        }
+      }
+      a.btn-calendar {
+        @include custom_button(black, white, white, black, black);
+        display: inline-block;
+        padding: 5px 7px 5px 15px;
+        font-weight: 700;
+        &:before {
+          @extend %icon-fontello;
+          content: "\e807";
+          font-size: 1rem;
+          color: black;
+          position: relative;
+          left: -5px;
+        }
+        &:hover {
+          text-decoration: none;
+          &:before {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
 }

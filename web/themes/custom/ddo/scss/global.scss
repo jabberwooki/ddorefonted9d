@@ -28,5 +28,5 @@ p.txt-normal {
 }
 /* Boutons */
 .btn-more {
-  @include button_more(map-get($theme-colors, "secondary"),white, white, black,  map-get($theme-colors, "secondary"));
+  @include custom_button(map-get($theme-colors, "secondary"),white, white, black,  map-get($theme-colors, "secondary"));
 }

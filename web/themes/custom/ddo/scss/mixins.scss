@@ -71,11 +71,13 @@
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
+  color: white;
   a {
     color: white;
   }
   &:hover {
     background-color: white;
+    color: black;
     a {
       color: black;
     }
@@ -99,8 +101,9 @@
     color: map-get($theme-colors, "secondary") !important;
   }
 }
-/* Bouton en savoir plus ou plus d'info*/
-@mixin button_more( $font_color, $bg_color, $font_color_hover, $bg_color_hover, $border-color:transparent) {
+
+/* Bouton custom :  en savoir plus ou plus d'info ...*/
+@mixin custom_button( $font_color, $bg_color, $font_color_hover, $bg_color_hover, $border-color:transparent) {
   font-style: normal;
   font-weight: 500;
   font-size: 0.813em;
