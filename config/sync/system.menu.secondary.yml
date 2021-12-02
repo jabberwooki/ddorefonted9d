@@ -1,0 +1,8 @@
+uuid: 97558baf-76bf-42b6-93c5-04e8a8337aab
+langcode: fr
+status: true
+dependencies: {  }
+id: secondary
+label: 'Navigation secondaire'
+description: 'Liens vers pages d''info domaine d''O...'
+locked: false
