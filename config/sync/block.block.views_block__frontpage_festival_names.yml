@@ -11,8 +11,8 @@ dependencies:
     - ddo
 id: views_block__frontpage_festival_names
 theme: ddo
-region: content
-weight: -8
+region: featured_top_large
+weight: -12
 provider: null
 plugin: 'views_block:frontpage-festival_names'
 settings:
