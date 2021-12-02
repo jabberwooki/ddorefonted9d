@@ -71,9 +71,10 @@ mode: zoom
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 2
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     region: ds_content
   field_banner_image:
