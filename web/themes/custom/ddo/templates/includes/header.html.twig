@@ -1,0 +1,37 @@
+{# Header dont icônes sociales logo et abonnement et notifications #}
+<header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 ">
+        <nav class="nav-social">
+          <ul id="ul-social" class="list-unstyled d-flex">
+            <li><a class="icon-facebook" href="http://www.facebook.com/domaine.do"
+                   onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'facebook',1,true]);"
+                   target="_blank"><span class="visually-hidden visually-hidden-focusable">facebook</span></a>
+            </li>
+            <li><a class="icon-twitter" href="https://twitter.com/domainedo"
+                   onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'twitter',1,true]);"
+                   target="_blank"><span class="visually-hidden visually-hidden-focusable">Twitter</span></a>
+            </li>
+            <li><a class="icon-youtube" href="https://www.youtube.com/user/domainedO"
+                   onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'youtube',1,true]);"
+                   target="_blank"><span class="visually-hidden visually-hidden-focusable">youtube</span></a>
+            </li>
+            <li><a class="icon-tripadvisor"
+                   href="http://www.tripadvisor.fr/Attraction_Review-g187153-d2480803-Reviews-Domaine_d_O-Montpellier_Herault_Languedoc_Roussillon.html"
+                   onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'tripadvisor',1,true]);"
+                   target="_blank"><span class="visually-hidden visually-hidden-focusable">tripadvisor</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-5 d-flex align-items-center justify-content-center">
+        {{ page.header }}
+      </div>
+      <div class="col-md-4 d-flex justify-content-end align-items-start">
+        <div id="webpush">Notifications</div>
+        <a id="link-subscription" href="/abonnement">Abonnement</a>
+      </div>
+    </div>
+  </div>
+</header>

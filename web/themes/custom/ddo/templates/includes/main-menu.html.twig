@@ -1,0 +1,47 @@
+{# Menus et zone de recherche #}
+<div id="over-menus">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-between">
+        <div id="custom-mega-menu-button" class="open-menu-button">
+          <span>MENU</span>
+        </div>
+        {% if page.primary_menu %}
+          {{ page.primary_menu }}
+        {% endif %}
+        <div id="custom-search-button">
+          <span class="visually-hidden">Recherche</span>
+        </div>
+      </div>
+    </div>
+    <div class="row visually-hidden-focusable" id="search-row">
+      <div class="col d-flex justify-content-center">
+        {% if page.top_header_form %}
+          <div class="form-inline navbar-form ml-auto">
+            {{ page.top_header_form }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+  {# Mega menu #}
+  {% if page.mega_menu %}
+    <div id="mega-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" id="col-1-mega-menu">
+            {{ page.mega_menu }}
+          </div>
+          <div class="col-md-4" id="col-2-mega-menu">
+            <ul class="nav">
+
+            </ul>
+          </div>
+          <div class="col-md-4" id="col-3-mega-menu">
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

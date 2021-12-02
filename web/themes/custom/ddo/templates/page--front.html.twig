@@ -73,7 +73,7 @@
     {% include '@ddo/includes/header.html.twig' %}
     {# Menus et zone de recherche #}
     {% include '@ddo/includes/main-menu.html.twig' %}
-    {# ZONE D'INFO HAUTE (messages de drupal notament) ************************************************** #}
+    {# INFO FLASH ************************************************************************************* #}
     {% if page.highlighted %}
       <div class="highlighted">
         <aside class="{{ container }} section clearfix" role="complementary">
@@ -81,13 +81,25 @@
         </aside>
       </div>
     {% endif %}
-    {# Featured_top ********************************************************************* #}
+    {# INFO En ce moment + zoom sur ********************************************************************* #}
     {% if page.featured_top %}
       {% block featured %}
         <div class="featured-top">
-          <section class="featured-top__inner" >
+          <section class="featured-top__inner container-fluid" >
             {{ page.featured_top }}
           </section>
+        </div>
+      {% endblock %}
+    {% endif %}
+    {# Accès par festival ********************************************************************* #}
+    {% if page.featured_top_large %}
+      {% block featured_large %}
+        <div class="featured-top-large">
+          <div class="container">
+            <div class="col">
+            {{ page.featured_top_large }}
+            </div>
+          </div>
         </div>
       {% endblock %}
     {% endif %}
