@@ -80,6 +80,7 @@
           {{ page.highlighted }}
         </aside>
       </div>
+
     {% endif %}
     {# INFO En ce moment + zoom sur ********************************************************************* #}
     {% if page.featured_top %}
@@ -96,9 +97,7 @@
       {% block featured_large %}
         <div class="featured-top-large">
           <div class="container">
-            <div class="col">
             {{ page.featured_top_large }}
-            </div>
           </div>
         </div>
       {% endblock %}
