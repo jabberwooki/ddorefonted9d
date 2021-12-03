@@ -12,21 +12,40 @@
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
 {{ title_suffix.contextual_links }}
-<div class="div-image-style-banner">
-  {{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner_narrow', {responsive: true}) }}
-</div>
-<div class="container wrapper-over-img-abs">
-  <div class="row">
-    <div class="col-md-3">
-      {{ drupal_entity('block', 'ddo_main_menu') }}
-    </div>
-    <div class="col-md-8 offset-md-1">
+{% if not node.field_media_image.isempty  %}
+  <div class="div-image-style-banner">
+    {{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner_narrow', {responsive: true}) }}
+  </div>
+  <div class="container wrapper-over-img-abs">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
       <div class="group-text-over-img-abs">
         {{ content.node_title }}
       </div>
     </div>
   </div>
-</div>
-
-
+  <div class="container">
+    <div class="row">
+      <div class="d-sm-none d-md-block col-md-3 sub_main_menu">
+        {{ drupal_entity('block', 'ddo_sub_main_menu') }}
+      </div>
+      <div class="col-md-8 offset-md-1 content-page-with-img">
+        {{ body }}
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="container">
+    <div class="row">
+      <div class="d-sm-none d-md-block col-md-3">
+        {{ drupal_entity('block', 'ddo_sub_main_menu') }}
+      </div>
+      <div class="col-md-8 offset-md-1 content-page-without-img">
+        {{ content.node_title }}
+        {{ body }}
+      </div>
+    </div>
+  </div>
+{% endif %}
 </{{ ds_content_wrapper }}>
