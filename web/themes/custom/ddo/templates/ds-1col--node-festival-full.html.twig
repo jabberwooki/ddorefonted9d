@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+ {# {{ ds_content }} #}
+
+  <div class="top-festival row">
+    <div class="col-md-7">
+      {{ drupal_image(node.field_poster.entity.field_media_image.entity.uri.value, 'currently', {responsive: true}) }}
+    </div>
+    <aside class="col-md-5">
+      <div class="aside-insert">
+        {{ content.node_title }}
+        {% if not field_shows is empty %}
+          <a href="#shows">Voir les spectacles et réserver</a>
+        {% endif %}
+      </div>
+    </aside>
+  </div>
+<div class="row">
+  <div class="col">
+    {{ field_shows }}
+  </div>
+</div>
+
+
+
+
+</{{ ds_content_wrapper }}>
