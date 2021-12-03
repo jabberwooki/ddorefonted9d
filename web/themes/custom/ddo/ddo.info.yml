@@ -18,7 +18,9 @@ regions:
   header_form: 'Header form'
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
-  mega_menu: 'Mega menu'
+  mega_menu: 'Mega menu first'
+  mega_menu_second: 'Mega menu second'
+  mega_menu_third: 'Mega menu third'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
   highlighted: Highlighted
