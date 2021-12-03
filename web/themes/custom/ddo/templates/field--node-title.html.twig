@@ -68,7 +68,7 @@
   {% else %}
     {% for item in items %}
       {% if ds_view_mode == 'teaser' %}
-        <h3 class="h3-teaser-show">{{ item.content }}</h3>
+        <h3 class="h3-teaser">{{ item.content }}</h3>
       {% else %}
         <h2{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</h2>
       {% endif %}
