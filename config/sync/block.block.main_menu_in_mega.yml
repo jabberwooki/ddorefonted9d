@@ -11,7 +11,7 @@ dependencies:
 id: main_menu_in_mega
 theme: ddo
 region: mega_menu
-weight: 0
+weight: -14
 provider: null
 plugin: 'system_menu_block:main'
 settings:

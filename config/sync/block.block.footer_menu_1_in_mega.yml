@@ -10,8 +10,8 @@ dependencies:
     - ddo
 id: footer_menu_1_in_mega
 theme: ddo
-region: mega_menu
-weight: 0
+region: mega_menu_third
+weight: -13
 provider: null
 plugin: 'system_menu_block:ddofooter1'
 settings:
