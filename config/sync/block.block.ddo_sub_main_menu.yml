@@ -1,0 +1,33 @@
+uuid: 38c1496f-830c-43f4-9370-1e1327a6f362
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - ctools
+    - system
+  theme:
+    - ddo
+id: ddo_sub_main_menu
+theme: ddo
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Sous navigation principale'
+  provider: system
+  label_display: visible
+  level: 2
+  depth: 0
+  expand_all_items: true
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
