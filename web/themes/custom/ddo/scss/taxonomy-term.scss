@@ -1,0 +1,43 @@
+body.page-view-taxonomy-term {
+  .div-image-style-banner {
+    position: relative;
+    display: block;
+    &:after {
+      content: "";
+      display: block;
+      height: 50%;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+      visibility: visible;
+      width: 100%;
+    }
+  }
+  .wrapper-over-img-abs {
+    position: relative;
+    .group-text-over-img-abs {
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      .field--name-name{
+        text-transform: uppercase;
+        font-size: 2.25rem;
+        color: white;
+        margin-bottom: 0.625rem;
+        margin-top: 0;
+        font-style: normal;
+        font-weight: 800;
+      }
+    }
+  }
+  .content-page-without-img {
+    margin-bottom: 20px;
+    h2 {
+      @include special_underline(black, map-get($theme-colors, "secondary"));
+    }
+  }
+  .content-page-with-img {
+    padding-top: 20px;
+  }
+}
