@@ -15,6 +15,7 @@
     @include social-icon("\f262");
   }
 }
+/* Boutons d'abonnement et de notification*/
 #link-subscription{
   margin-top: 3px;
   @include secondary-icon-link("\e840");
@@ -205,6 +206,49 @@
     cursor: pointer;
     &:before {
       color: black;
+    }
+  }
+}
+
+/* Sous menu sur colonne de gauche */
+.sub_main_menu {
+  ul.nav {
+    /* Global */
+    li {
+      list-style: none;
+    }
+    a {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      display: block;
+      margin: 10px 0;
+      &:after {
+        content: "";
+        display: none;
+      }
+      &:hover {
+        text-decoration: none;
+        opacity: 0.5;
+      }
+    }
+    > li {
+      a {
+        color: black;
+        font-weight: bold;
+        &.is-active {
+          color: map-get($theme-colors, "secondary");
+        }
+      }
+      ul {
+        li {
+          a {
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
