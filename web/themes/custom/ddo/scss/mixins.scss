@@ -117,3 +117,28 @@
     color: $font_color_hover !important;
   }
 }
+
+/* Liens internes (ancre) à un spectacle */
+@mixin internal_show_link($charcode) {
+  color: white;
+  font-size: 0.688em;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  display: block;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  &:before {
+    @extend %icon-fontello;
+    content: $charcode;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    left: -5px;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}

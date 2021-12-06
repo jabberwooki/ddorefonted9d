@@ -1,7 +1,42 @@
 body.node--type-festival {
+  #main-wrapper {
+    background: url(../images/bg/bg_gray.gif) ;
+    padding-bottom: 20px;
+    background-repeat: repeat-x;
+  }
   .aside-insert {
     background-color: map-get($theme-colors,"secondary");
     padding: 30px;
     color: white;
+    h2.field--name-node-title {
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      margin: 0 25px 0 0;
+      margin-bottom: 0px;
+      font-style: normal;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+    .link-to-shows {
+      @include internal_show_link("\f291");
+    }
+    .link-to-programme {
+      @include internal_show_link("\e823");
+    }
+    .link-flipthrough {
+      @include internal_show_link("\e82f");
+    }
+    .link-archives {
+      @include internal_show_link("\f0ae");
+    }
+    .link-facebook {
+      @include internal_show_link("\e801");
+    }
+  }
+  .show-festival-title {
+    font-size: 1.5rem;
+    margin: 20px 20px 20px 0;
+    font-style: normal;
+    font-weight: 400;
   }
 }
