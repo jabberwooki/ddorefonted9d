@@ -20,14 +20,22 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: ds_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      content:
+      ds_content:
         - field_ls_practical
         - description
         - field_seating
@@ -57,7 +65,7 @@ content:
     label: hidden
     type: text_default
     weight: 1
-    region: content
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
   field_galleries:
@@ -70,7 +78,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    region: content
+    region: ds_content
   field_geolocalisation:
     weight: 8
     label: hidden
@@ -161,7 +169,7 @@ content:
           options: ''
     third_party_settings: {  }
     type: geofield_google_map
-    region: content
+    region: ds_content
   field_image:
     type: entity_reference_entity_view
     weight: 7
@@ -170,14 +178,14 @@ content:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_ls_practical:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_seating:
     weight: 2
     label: inline
@@ -186,7 +194,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-    region: content
+    region: ds_content
   field_sounds:
     type: entity_reference_entity_view
     weight: 6
@@ -197,7 +205,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    region: content
+    region: ds_content
   field_videos:
     type: entity_reference_entity_view
     weight: 5
@@ -208,7 +216,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    region: content
+    region: ds_content
 hidden:
   field_public_address: true
   langcode: true
