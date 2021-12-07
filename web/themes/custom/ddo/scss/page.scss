@@ -31,13 +31,13 @@ body.node--type-page {
       }
     }
   }
-  .content-page-without-img {
+  .content-without-banner-img {
     margin-bottom: 20px;
     h2 {
       @include special_underline(black, map-get($theme-colors, "secondary"));
     }
   }
-  .content-page-with-img {
+  .content-with-banner-img{
     padding-top: 20px;
   }
 }

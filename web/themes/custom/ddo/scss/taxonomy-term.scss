@@ -1,7 +1,9 @@
-body.page-view-taxonomy-term {
+body.page-view-taxonomy-term,
+body.page-view-taxonomy-term-copy {
   .div-image-style-banner {
     position: relative;
     display: block;
+
     &:after {
       content: "";
       display: block;
@@ -14,13 +16,16 @@ body.page-view-taxonomy-term {
       width: 100%;
     }
   }
+
   .wrapper-over-img-abs {
     position: relative;
+
     .group-text-over-img-abs {
       position: absolute;
       z-index: 2;
       bottom: 20px;
-      .field--name-name{
+
+      .field--name-name {
         text-transform: uppercase;
         font-size: 2.25rem;
         color: white;
@@ -31,13 +36,19 @@ body.page-view-taxonomy-term {
       }
     }
   }
-  .content-page-without-img {
+
+  .content-without-banner-img {
     margin-bottom: 20px;
-    h2 {
-      @include special_underline(black, map-get($theme-colors, "secondary"));
+    .wrapper-title-term {
+      margin-bottom: 30px;
+      h2 {
+        @include special_underline(black, map-get($theme-colors, "secondary"));
+
+      }
     }
   }
-  .content-page-with-img {
+
+  .content-with-banner-img {
     padding-top: 20px;
   }
 }
