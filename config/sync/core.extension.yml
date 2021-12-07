@@ -100,6 +100,7 @@ module:
   ds_extras: 2
   views: 10
   paragraphs: 11
+  tvi: 15
   standard: 1000
   eu_cookie_compliance: 1001
 theme:
