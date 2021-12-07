@@ -20,3 +20,10 @@ home-slideshow:
   dependencies:
     - core/jquery
     - core/drupal
+secondary-menu:
+  version: VERSION 1
+  js:
+    js/secondary_menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
