@@ -7,9 +7,12 @@ dependencies:
     - field.field.media.gallery.field_authors
     - field.field.media.gallery.field_media_slideshow
     - field.field.media.gallery.field_tags
+    - image.style.3_2_image
+    - image.style.slideshow
     - media.type.gallery
   module:
     - ds
+    - slick
 third_party_settings:
   ds:
     layout:
@@ -60,12 +63,69 @@ content:
     label: visually_hidden
     weight: 0
     settings:
-      view_mode: node_content
-      link: false
+      style: column
+      optionset: default
+      optionset_thumbnail: ''
+      skin: split
+      skin_thumbnail: ''
+      image_style: slideshow
+      thumbnail_effect: hover
+      thumbnail_position: ''
+      media_switch: slick_lightbox
+      box_style: ''
+      thumbnail_style: 3_2_image
+      box_media_style: ''
+      ratio: ''
+      box_caption: entity_title
+      view_mode: full
+      box_caption_custom: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      visible_items: null
+      image: ''
+      title: ''
+      link: ''
+      layout: ''
+      class: ''
+      caption:
+        field_authors: field_authors
+        field_tags: field_tags
+        title: title
+        alt: '0'
+      cache: 0
+      current_view_mode: node_content
+      vanilla: false
+      background: false
+      preserve_keys: false
+      use_theme_field: false
+      override: false
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      thumbnail: ''
+      thumbnail_caption: ''
+      skin_arrows: ''
+      skin_dots: ''
+      fx: ''
+      icon: ''
+      responsive_image_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      id: ''
+      overlay: ''
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    type: slick_media
     region: ds_content
 hidden:
   created: true
