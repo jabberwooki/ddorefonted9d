@@ -27,7 +27,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="d-sm-none d-md-block col-md-3 sub_main_menu" id="page-nav-left">
+      <div class="d-sm-none d-md-block col-md-3" id="page-nav-left">
         {{ drupal_entity('block', 'ddo_sub_main_menu') }}
         {{ drupal_entity('block', 'secondary_menu_in_mega') }}
       </div>
@@ -45,7 +45,9 @@
         {{ drupal_entity('block', 'secondary_menu_in_mega') }}
       </div>
       <div class="col-md-8 offset-md-1 content-without-banner-img">
-        {{ content.node_title }}
+        <div class="wrapper-title-term">
+          {{ content.node_title }}
+        </div>
         {{ body }}
         {{ field_gallery }}
       </div>
