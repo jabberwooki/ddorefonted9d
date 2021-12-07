@@ -30,13 +30,26 @@
       <div class="d-sm-none d-md-block col-md-3 sub_main_menu">
         {{ drupal_entity('block', 'ddofooter1') }}
       </div>
-      <div class="col-md-8 offset-md-1 content-page-with-img">
+      <div class="col-md-8 offset-md-1 content-with-banner-img">
         {{ description }}
       </div>
     </div>
   </div>
 {% else %}
-<h1>Pas d'image</h1>
+  <div class="container">
+    <div class="row">
+      <div class="d-sm-none d-md-block col-md-3 sub_main_menu">
+        {{ drupal_entity('block', 'ddo_sub_main_menu') }}
+        {{ drupal_entity('block', 'secondary_menu_in_mega') }}
+      </div>
+      <div class="col-md-8 offset-md-1 content-without-banner-img">
+        <div class="wrapper-title-term">
+          {{ name }}
+        </div>
+        {{ description }}
+      </div>
+    </div>
+  </div>
 {% endif %}
 
 </{{ ds_content_wrapper }}>
