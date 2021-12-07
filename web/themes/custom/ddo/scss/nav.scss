@@ -245,8 +245,13 @@
 
 /* Sous menu sur colonne de gauche */
 .sub_main_menu {
+  nav.nav-inactive {
+    display: none;
+  }
   ul.nav {
     /* Global */
+    display: flex;
+    flex-direction: column;
     li {
       list-style: none;
     }
