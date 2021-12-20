@@ -22,7 +22,7 @@
   <aside class="col-md-5">
     <div class="aside-insert">
       {{ content.node_title }}
-      {% if not field_shows is empty %}
+      {% if not field_shows is empty and field_shows[0] is not empty %}
         <a href="#shows" class="link-to-shows">Voir les spectacles et réserver</a>
       {% endif %}
       {% if not field_pdf_programme is empty and not node.field_pdf_programme.entity.name.value is empty %}
@@ -52,7 +52,7 @@
     </div>
   </aside>
 </div>
-<div class="row">
+<div class="row main-festival">
   <div class="col">
     {{ body }}
   </div>
