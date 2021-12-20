@@ -16,7 +16,8 @@
 {{ title_suffix.contextual_links }}
 <section id="wrap-full-show">
   <div class="div-image-style-banner">
-    {{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner', {responsive: true}) }}
+    {{ content.field_media_image }}
+    {#{{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner', {responsive: true}) }}#}
   </div>
   <div class="container wrapper-over-img-abs">
     <div class="row">
