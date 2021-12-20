@@ -16,10 +16,7 @@
 
   .festival-teaser-show {
     @include black_sidebar();
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: block;
+    display: none;
   }
   .teaser-location {
     display: none;
@@ -151,11 +148,9 @@
 /* Contenu complet de spectacle*/
 .node--type-show {
   #wrap-full-show {
-
     .div-image-style-banner {
       position: relative;
       display: block;
-
       &:after {
         content: "";
         display: block;
@@ -166,6 +161,25 @@
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
         visibility: visible;
         width: 100%;
+      }
+      .field--type-entity-reference {
+        float: none;
+        margin: 0!important;
+      }
+      .field--type-image {
+        float: none;
+        margin: 0!important;
+        img {
+          float: none;
+          margin: 0!important;
+          padding: 0!important;
+        }
+      }
+      .field--name-field-authors {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        @include black_sidebar();
       }
     }
 
