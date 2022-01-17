@@ -1,29 +1,28 @@
-uuid: 0d1592c1-5020-4cc9-b97b-7706e0196d4a
+uuid: 2b31221e-c1b0-4a2b-bbda-d80720dd40d1
 langcode: fr
 status: true
 dependencies:
   config:
-    - views.view.frontpage
+    - views.view.shows
   module:
     - system
     - views
   theme:
     - ddo
-id: views_block__frontpage_shows
+id: shows_all_shows
 theme: ddo
 region: content
-weight: -9
+weight: -11
 provider: null
-plugin: 'views_block:frontpage-shows'
+plugin: 'views_exposed_filter_block:shows-all_shows'
 settings:
-  id: 'views_block:frontpage-shows'
+  id: 'views_exposed_filter_block:shows-all_shows'
   label: ''
   label_display: visible
   provider: views
   views_label: ''
-  items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '<front>'
+    pages: /spectacles/tous-les-spectacles

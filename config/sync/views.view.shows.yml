@@ -189,7 +189,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Tous les spectacles au domaine d''O'
+      title: ''
       pager:
         type: full
         options:
