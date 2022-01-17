@@ -25,30 +25,30 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       image: image
       galleries: galleries
       binder: binder
       documents: documents
       references: references
+    negate: 0
     target_bundles_drag_drop:
       binder:
-        enabled: true
         weight: -9
+        enabled: true
       documents:
-        enabled: true
         weight: -8
+        enabled: true
       galleries:
-        enabled: true
         weight: -10
-      image:
         enabled: true
+      image:
         weight: -11
+        enabled: true
       reference:
         weight: 11
         enabled: false
       references:
-        enabled: true
         weight: -7
+        enabled: true
 field_type: entity_reference_revisions

@@ -25,15 +25,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - field_ls_practical
@@ -52,25 +52,24 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: h2
           class: ''
-          link: false
 id: taxonomy_term.show_locations.full
 targetEntityType: taxonomy_term
 bundle: show_locations
 mode: full
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 1
-    region: ds_content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
   field_galleries:
     type: entity_reference_entity_view
-    weight: 4
     label: hidden
     settings:
       view_mode: node_content
@@ -78,9 +77,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 4
     region: ds_content
   field_geolocalisation:
-    weight: 8
+    type: geofield_google_map
     label: hidden
     settings:
       map_dimensions:
@@ -168,36 +168,35 @@ content:
           infowindow: 0
           options: ''
     third_party_settings: {  }
-    type: geofield_google_map
+    weight: 8
     region: ds_content
   field_image:
     type: entity_reference_entity_view
-    weight: 7
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
+    weight: 7
     region: ds_content
   field_ls_practical:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: ds_content
   field_seating:
-    weight: 2
+    type: number_integer
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 2
     region: ds_content
   field_sounds:
     type: entity_reference_entity_view
-    weight: 6
     label: hidden
     settings:
       view_mode: node_content
@@ -205,10 +204,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 6
     region: ds_content
   field_videos:
     type: entity_reference_entity_view
-    weight: 5
     label: hidden
     settings:
       view_mode: node_content
@@ -216,6 +215,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 5
     region: ds_content
 hidden:
   field_public_address: true

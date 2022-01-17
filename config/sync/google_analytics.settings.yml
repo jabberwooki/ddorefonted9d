@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: HD-kJquDfx3JureBUmIIt_ADNReD_jLvKg4fwKISoJs
+langcode: fr
 account: ''
 premium: false
 domain_mode: 0
@@ -39,6 +42,3 @@ codesnippet:
 translation_set: false
 cache: false
 debug: false
-_core:
-  default_config_hash: HD-kJquDfx3JureBUmIIt_ADNReD_jLvKg4fwKISoJs
-langcode: fr

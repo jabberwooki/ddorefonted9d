@@ -1,53 +1,37 @@
 uuid: 7dd7ded5-88f6-4cef-adcd-dcb12b473131
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.news
+    - node.type.page
+  module:
+    - draggableviews
+    - filter
+    - node
+    - path
+    - system
 id: redacteur
 label: redacteur
 weight: 4
 is_admin: null
 permissions:
-  - 'access administration menu'
   - 'access administration pages'
   - 'access content'
   - 'access content overview'
   - 'access draggableviews'
-  - 'access overlay'
-  - 'access scald dnd library'
   - 'administer nodes'
-  - 'administer scald'
-  - 'administer scald atoms'
-  - 'bypass atom access restrictions'
   - 'change own username'
-  - 'create atom of any type'
-  - 'create atom of audio type'
-  - 'create atom of file type'
-  - 'create atom of gallery type'
-  - 'create atom of image type'
-  - 'create atom of twitter type'
-  - 'create atom of video type'
   - 'create news content'
   - 'create page content'
   - 'create url aliases'
-  - 'delete any atom'
-  - 'delete own atom'
   - 'delete own news content'
   - 'delete own page content'
-  - 'edit any atom'
   - 'edit any news content'
   - 'edit any page content'
-  - 'edit meta tags'
-  - 'edit own atom'
   - 'edit own news content'
   - 'edit own page content'
-  - 'fetch any atom'
-  - 'fetch own atom'
-  - 'flush caches'
-  - 'restrict atom access'
-  - 'set page title'
-  - 'use manualcrop'
   - 'use text format full_html'
-  - 'view any atom'
-  - 'view own atom'
   - 'view own unpublished content'
   - 'view the administration theme'

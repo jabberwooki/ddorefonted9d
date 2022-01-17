@@ -21,15 +21,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -58,17 +58,15 @@ bundle: documentation
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 2
+    label: hidden
     settings:
       trim_length: 300
     third_party_settings: {  }
+    weight: 2
     region: ds_content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    region: ds_content
     label: hidden
     settings:
       view_mode: taxo_term_page
@@ -76,6 +74,8 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 1
+    region: ds_content
 hidden:
   field_section: true
   langcode: true

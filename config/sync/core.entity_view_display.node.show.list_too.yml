@@ -59,9 +59,9 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
         wrappers:
           ds_content: div
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -84,7 +84,7 @@ bundle: show
 mode: list_too
 content:
   field_dates:
-    weight: 2
+    type: datetime_default
     label: above
     settings:
       timezone_override: ''
@@ -92,16 +92,16 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: datetime_default
+    weight: 2
     region: ds_content
   field_media_thumbnail:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
+    weight: 1
     region: ds_content
 hidden:
   body: true

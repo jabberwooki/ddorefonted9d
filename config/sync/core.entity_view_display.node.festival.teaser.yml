@@ -36,15 +36,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - field_poster
@@ -58,10 +58,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: h3
           class: ''
-          link: false
 id: node.festival.teaser
 targetEntityType: node
 bundle: festival
@@ -69,27 +69,27 @@ mode: teaser
 content:
   field_plain_date:
     type: string
-    weight: 3
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 3
+    region: ds_content
   field_poster:
     type: term_reference_tree
-    weight: 0
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: ds_content
   field_season:
     type: string
-    weight: 2
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: ds_content
 hidden:
   body: true
   field_archives: true

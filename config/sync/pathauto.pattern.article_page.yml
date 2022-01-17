@@ -12,20 +12,20 @@ pattern: 'zoom/[node:title]'
 selection_criteria:
   4f4d6817-109d-46a3-b952-37dbd82e5a6c:
     id: node_type
-    bundles:
-      article: article
     negate: false
+    uuid: 4f4d6817-109d-46a3-b952-37dbd82e5a6c
     context_mapping:
       node: node
-    uuid: 4f4d6817-109d-46a3-b952-37dbd82e5a6c
+    bundles:
+      article: article
   6c34d585-994f-4921-9107-4786df196c52:
     id: language
-    langcodes:
-      fr: fr
     negate: false
+    uuid: 6c34d585-994f-4921-9107-4786df196c52
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 6c34d585-994f-4921-9107-4786df196c52
+    langcodes:
+      fr: fr
 selection_logic: and
 weight: -10
 relationships:

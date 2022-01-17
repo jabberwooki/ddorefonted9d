@@ -1,42 +1,29 @@
 uuid: cad6f0a7-9e40-4b8b-8507-abef2d51212a
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - contextual
+    - draggableviews
+    - filter
+    - node
+    - path
+    - redirect
+    - system
 id: location
 label: location
 weight: 3
 is_admin: null
 permissions:
-  - 'access administration menu'
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
   - 'access draggableviews'
-  - 'access scald dnd library'
   - 'access site in maintenance mode'
   - 'administer menu'
   - 'administer redirects'
   - 'administer url aliases'
-  - 'bypass atom access restrictions'
-  - 'create atom of any type'
-  - 'create lieu_location content'
-  - 'create presentation_location_salles content'
   - 'create url aliases'
-  - 'delete any lieu_location content'
-  - 'delete any presentation_location_salles content'
-  - 'delete own lieu_location content'
-  - 'delete own presentation_location_salles content'
-  - 'edit any atom'
-  - 'edit any lieu_location content'
-  - 'edit any presentation_location_salles content'
-  - 'edit own atom'
-  - 'edit own lieu_location content'
-  - 'edit own presentation_location_salles content'
-  - 'fetch any atom'
-  - 'fetch own atom'
-  - 'flush caches'
-  - 'set page title'
-  - 'use manualcrop'
   - 'use text format full_html'
-  - 'view any atom'
-  - 'view own atom'

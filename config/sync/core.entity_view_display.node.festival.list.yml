@@ -35,9 +35,9 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
         wrappers:
           ds_content: div
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -48,10 +48,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.festival.list
 targetEntityType: node
 bundle: festival

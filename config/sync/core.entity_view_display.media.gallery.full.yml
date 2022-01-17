@@ -18,9 +18,9 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
         wrappers:
           ds_content: div
+        label: ''
     regions:
       ds_content:
         - media_name
@@ -44,29 +44,29 @@ bundle: gallery
 mode: full
 content:
   field_authors:
-    weight: 2
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 2
     region: ds_content
   field_media_slideshow:
-    label: visually_hidden
-    weight: 1
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
     type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: ds_content
   field_tags:
-    weight: 3
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 3
     region: ds_content
 hidden:
   created: true

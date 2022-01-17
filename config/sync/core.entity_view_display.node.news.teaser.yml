@@ -38,15 +38,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -61,48 +61,48 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: h3
           class: ''
-          link: false
 id: node.news.teaser
 targetEntityType: node
 bundle: news
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 2
+    label: hidden
     settings:
       trim_length: 300
     third_party_settings: {  }
+    weight: 2
     region: ds_content
   field_banner_image:
     type: term_reference_tree
-    weight: 1
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
   field_new_window:
     type: boolean
-    weight: 4
-    region: ds_content
     label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
+    weight: 4
+    region: ds_content
   field_target_url:
     type: string
-    weight: 3
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 3
+    region: ds_content
 hidden:
   field_currently: true
   field_dates: true

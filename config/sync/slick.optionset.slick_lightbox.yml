@@ -9,8 +9,8 @@ _core:
   default_config_hash: 76Ho2ldVOqCxagaGHYsEXFmHpCpIJmMFsNOWX7O5LTM
 id: slick_lightbox
 name: slick_lightbox
-label: 'Slick Lightbox'
 weight: 0
+label: 'Slick Lightbox'
 group: ''
 skin: ''
 breakpoints: 2

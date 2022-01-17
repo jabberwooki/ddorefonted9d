@@ -28,15 +28,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -55,26 +55,24 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.structure.full
 targetEntityType: node
 bundle: structure
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: ds_content
   field_galeries:
     type: entity_reference_entity_view
-    weight: 5
-    region: ds_content
     label: hidden
     settings:
       view_mode: node_content
@@ -82,28 +80,28 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 5
+    region: ds_content
   field_logo:
     type: entity_reference_entity_view
-    weight: 1
-    region: ds_content
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
   field_media_image:
     type: entity_reference_entity_view
-    weight: 2
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
+    weight: 2
     region: ds_content
   field_shows:
     type: entity_reference_entity_view
-    weight: 8
-    region: ds_content
     label: above
     settings:
       view_mode: list_too
@@ -111,9 +109,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 8
+    region: ds_content
   field_sounds:
     type: entity_reference_entity_view
-    weight: 7
     label: hidden
     settings:
       view_mode: node_content
@@ -121,9 +120,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 7
     region: ds_content
   field_videos:
-    weight: 6
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: node_content
@@ -131,10 +131,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    weight: 6
     region: ds_content
   field_website:
-    weight: 4
+    type: link
     label: inline
     settings:
       trim_length: 80
@@ -143,7 +143,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 4
     region: ds_content
 hidden:
   field_associate_artist: true

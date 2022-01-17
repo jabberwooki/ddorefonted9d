@@ -34,8 +34,7 @@ content:
     weight: 1
     region: content
     settings:
-      show_default_crop: true
-      warn_multiple_usages: true
+      progress_indicator: throbber
       preview_image_style: thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
@@ -44,9 +43,10 @@ content:
         - slideshow
         - teaser
         - zoom
-      progress_indicator: throbber
       crop_types_required: {  }
+      warn_multiple_usages: true
       show_crop_area: false
+      show_default_crop: true
     third_party_settings:
       imce:
         enabled: false

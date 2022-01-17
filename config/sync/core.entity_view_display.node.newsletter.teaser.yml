@@ -23,15 +23,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -46,10 +46,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.newsletter.teaser
 targetEntityType: node
 bundle: newsletter
@@ -57,42 +57,42 @@ mode: teaser
 content:
   body:
     type: text_trimmed
-    weight: 2
-    region: ds_content
     label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 2
+    region: ds_content
   field_mailchimp_url:
     type: link_separate
-    weight: 3
-    region: ds_content
     label: hidden
     settings:
       trim_length: 80
-      rel: ''
-      target: ''
       url_only: false
       url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
+    weight: 3
+    region: ds_content
   field_media_image:
     type: entity_reference_entity_view
-    weight: 1
-    region: ds_content
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
   field_sending_date:
     type: datetime_custom
-    weight: 4
-    region: ds_content
     label: hidden
     settings:
       timezone_override: ''
       date_format: d/m/Y
     third_party_settings: {  }
+    weight: 4
+    region: ds_content
 hidden:
   langcode: true
   links: true

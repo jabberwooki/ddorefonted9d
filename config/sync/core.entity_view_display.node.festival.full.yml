@@ -37,15 +37,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - sharethis
@@ -75,24 +75,24 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.festival.full
 targetEntityType: node
 bundle: festival
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 6
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 6
     region: ds_content
   field_archives:
-    weight: 18
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -101,17 +101,17 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 18
     region: ds_content
   field_calendar_archive:
-    weight: 17
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 17
     region: ds_content
   field_facebook:
-    weight: 15
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -120,11 +120,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 15
     region: ds_content
   field_files:
     type: entity_reference_entity_view
-    weight: 13
     label: hidden
     settings:
       view_mode: node_content
@@ -132,11 +131,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 13
     region: ds_content
   field_galeries:
     type: entity_reference_entity_view
-    weight: 9
-    region: ds_content
     label: above
     settings:
       view_mode: node_content
@@ -144,24 +142,26 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 9
+    region: ds_content
   field_logo:
-    weight: 3
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 3
     region: ds_content
   field_no_result:
-    weight: 19
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 19
     region: ds_content
   field_online_flipthrough:
-    weight: 14
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -170,36 +170,36 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 14
     region: ds_content
   field_pdf_programme:
     type: entity_reference_entity_view
-    weight: 16
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
+    weight: 16
     region: ds_content
   field_plain_date:
-    weight: 5
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 5
     region: ds_content
   field_poster:
     type: entity_reference_entity_view
-    weight: 2
     label: hidden
     settings:
       view_mode: festival_poster
       link: false
     third_party_settings: {  }
+    weight: 2
     region: ds_content
   field_shows:
-    weight: 11
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: teaser
@@ -207,19 +207,19 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    weight: 11
     region: ds_content
   field_sidebar_image:
-    weight: 7
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: sidebar
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 7
     region: ds_content
   field_sounds:
-    weight: 10
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: node_content
@@ -227,10 +227,10 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    weight: 10
     region: ds_content
   field_useful_links:
-    weight: 12
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -239,10 +239,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 12
     region: ds_content
   field_videos:
-    weight: 8
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: node_content
@@ -250,18 +250,18 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    weight: 8
     region: ds_content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: ds_content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 0
     region: ds_content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_festival_name: true
   field_season: true

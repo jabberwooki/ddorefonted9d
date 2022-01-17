@@ -2,8 +2,8 @@ uuid: db220818-771d-42aa-a855-ba95231a29cc
 langcode: fr
 status: true
 dependencies: {  }
-id: banner
 label: 'Bandeau large'
+id: banner
 description: ''
 aspect_ratio: '215:77'
 soft_limit_width: null

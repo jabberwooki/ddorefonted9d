@@ -1,7 +1,12 @@
 uuid: 0cd489a8-7a5b-4aa8-a7b6-007713b97cce
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - comment
+    - media
+    - search
+    - system
 _core:
   default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
 id: anonymous
@@ -11,20 +16,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access site map'
-  - 'diff view changes'
-  - 'display EU Cookie Compliance popup'
-  - 'display disqus comments on profile'
-  - 'edit any entityform'
-  - 'register webpush'
   - 'search content'
-  - 'toggle disqus comments'
   - 'use advanced search'
-  - 'use exclude node title'
-  - 'use manualcrop'
-  - 'use text format filtered_html'
-  - 'view any atom'
-  - 'view any basic_block bean'
-  - 'view any social_comment bean'
-  - 'view disqus comments'
   - 'view media'

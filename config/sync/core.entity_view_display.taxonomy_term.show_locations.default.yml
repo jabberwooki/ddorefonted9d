@@ -43,23 +43,23 @@ bundle: show_locations
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_galleries:
     type: entity_reference_entity_view
-    weight: 8
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 8
     region: content
   field_geolocalisation:
-    weight: 3
+    type: geofield_google_map
     label: above
     settings:
       map_dimensions:
@@ -147,66 +147,66 @@ content:
           infowindow: 0
           options: ''
     third_party_settings: {  }
-    type: geofield_google_map
+    weight: 3
     region: content
   field_image:
     type: entity_reference_entity_view
-    weight: 7
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 7
     region: content
   field_ls_practical:
-    weight: 4
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
   field_public_address:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_seating:
-    weight: 1
+    type: number_integer
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 1
     region: content
   field_sounds:
     type: entity_reference_entity_view
-    weight: 9
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 9
     region: content
   field_videos:
     type: entity_reference_entity_view
-    weight: 6
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 6
     region: content
   langcode:
     type: language
-    weight: 0
-    region: content
     label: above
     settings:
       link_to_entity: false
       native_language: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden: {  }

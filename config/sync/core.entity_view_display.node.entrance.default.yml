@@ -39,14 +39,14 @@ bundle: entrance
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_geolocation:
-    weight: 2
+    type: geofield_google_map
     label: hidden
     settings:
       map_dimensions:
@@ -134,17 +134,17 @@ content:
           infowindow: 0
           options: ''
     third_party_settings: {  }
-    type: geofield_google_map
+    weight: 2
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 3
     region: content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 4
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true

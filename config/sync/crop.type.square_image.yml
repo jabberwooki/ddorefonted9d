@@ -2,8 +2,8 @@ uuid: c7707a1b-a741-4758-a1b5-921704adbde8
 langcode: fr
 status: true
 dependencies: {  }
-id: square_image
 label: 'Image carrée'
+id: square_image
 description: ''
 aspect_ratio: '1:1'
 soft_limit_width: null
