@@ -16,8 +16,15 @@
 {{ title_suffix.contextual_links }}
 <section id="wrap-full-show">
   <div class="div-image-style-banner">
-    {{ content.field_media_image }}
-    {#{{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner', {responsive: true}) }}#}
+    {% set media_uri = node.field_media_image|file_uri %}
+    {% if media_uri is not null %}
+      <picture>
+        <source media="(max-width: 992px)" srcset="{{ media_uri|image_style('square') }}">
+        <source media="(min-width: 992px)" srcset="{{ media_uri|image_style('banner') }}">
+        <img src="{{ media_uri|image_style('square') }}" alt="">
+      </picture>
+    {% endif %}
+    {# {{ drupal_image(node.field_media_image.entity.field_media_image.entity.uri.value, 'banner', {responsive: true}) }} #}
   </div>
   <div class="container wrapper-over-img-abs">
     <div class="row">
@@ -84,7 +91,7 @@
                 {% elseif node.field_minimum_age.0.value == '1.00' %}
                   <div class="field__item">1 an</div>
                 {% else %}
-                    <div class="field__item">{{ node.field_minimum_age.0.value|integer }} ans</div>
+                  <div class="field__item">{{ node.field_minimum_age.0.value|integer }} ans</div>
                 {% endif %}
 
               </div>
