@@ -23,8 +23,11 @@ body.node--type-article {
       z-index: 2;
       bottom: 20px;
       .field--name-node-title {
-        text-transform: uppercase;
+        @include media-breakpoint-down(md) {
+          font-size: 1.4rem;
+        }
         font-size: 2.25rem;
+        text-transform: uppercase;
         color: white;
         margin-bottom: 0.625rem;
         margin-top: 0;

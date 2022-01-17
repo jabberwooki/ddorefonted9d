@@ -56,6 +56,9 @@
 
       .field--name-node-title {
         font-size: 2rem;
+        @include media-breakpoint-down(md) {
+          font-size: 1.4rem;
+        }
         color: #fff;
         text-decoration: none;
         font-style: normal;

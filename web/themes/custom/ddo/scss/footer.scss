@@ -26,5 +26,16 @@
       }
     }
   }
+  #block-contact-details {
+    @include media-breakpoint-down(md) {
+      border-top: 1px solid black;
+      padding-top: 20px;
+    }
+  }
+  #block-ddo-text {
+    img {
+      max-width: 33%;
+    }
+  }
 
 }
