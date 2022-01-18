@@ -402,3 +402,82 @@
   }
 
 }
+/* Page de vue de tous les spectacles */
+body.page-view-shows {
+  .under-featured-top-all-shows {
+    background: url(../images/bg/bg_all_shows.gif) repeat-y 50% 0;
+    .title-calendar {
+      color: #fff;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 800 !important;
+    }
+    .form-item-field-festival-target-id {
+      > label {
+        color: #000;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 40px 0 30px 0;
+        font-style: normal;
+        font-weight: 800;
+      }
+    }
+    .bef-links {
+      background-color: transparent;
+      background-image: none;
+      border: 0;
+      ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        margin: 0 0 0 -15px;
+        padding: 0;
+        li {
+          a {
+            @include black_sidebar();
+            display: inline-block;
+            color: white;
+            font-size: 0.875em;
+            text-transform: uppercase;
+            margin: 0 20px 0 0;
+            padding: 3px 10px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    #edit-field-show-type-target-id--2--wrapper {
+      legend {
+        display: none;
+      }
+      .form-radios {
+        display: flex;
+        label {
+          margin-right: 15px;
+        }
+      }
+    }
+    .js-form-item-field-minimum-age-value {
+      display: flex;
+      align-items: center;
+      select {
+        width: 150px;
+        margin-left: 5px;
+      }
+    }
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 45px;
+      button {
+        background-color: map-get($theme-colors, "secondary");
+        @include button_book_show();
+        margin: 0 5px;
+      }
+    }
+    margin-bottom: 40px;
+  }
+
+}

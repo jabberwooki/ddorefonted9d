@@ -30,3 +30,26 @@ p.txt-normal {
 .btn-more {
   @include custom_button(map-get($theme-colors, "secondary"),white, white, black,  map-get($theme-colors, "secondary"));
 }
+a.btn-calendar {
+  @include custom_button(black, white, white, black, black);
+  display: inline-block;
+  padding: 5px 7px 5px 15px;
+  font-weight: 700;
+  &:before {
+    @extend %icon-fontello;
+    content: "\e807";
+    font-size: 1.1rem;
+    color: black;
+    position: relative;
+    left: -5px;
+  }
+  &:hover {
+    text-decoration: none;
+    &:before {
+      color: white;
+    }
+  }
+}
+.festival-access-calendar {
+  @include festival_button();
+}
