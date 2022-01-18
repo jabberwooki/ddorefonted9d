@@ -2,9 +2,11 @@
 .teaser-show {
   position: relative;
   margin-bottom: 30px;
+
   .link-img-teaser-show {
     display: block;
     min-height: 425px;
+
     .field--type-entity-reference {
       margin: 0;
     }
@@ -18,29 +20,35 @@
     @include black_sidebar();
     display: none;
   }
+
   .teaser-location {
     display: none;
+
     &.extramuros {
       display: block;
       position: absolute;
       top: 10px;
       right: 10px;
+
       &:before {
         @extend %icon-fontello;
         content: "\e879";
         color: map-get($theme-colors, "secondary");
         font-size: 2.5rem;
       }
+
       &:hover {
         cursor: pointer;
       }
     }
   }
+
   /* pour la mise en pages des spectacles "vous aimeres aussi" */
   .field--type-image {
-    float: none!important;
-    margin: 0!important;
+    float: none !important;
+    margin: 0 !important;
   }
+
   .bottom-info-teaser-show {
     padding: 0 15px 10px 15px;
     position: absolute;
@@ -70,10 +78,12 @@
       font-weight: 800;
       text-decoration: none;
     }
+
     .field--name-body {
       max-height: 84px;
       overflow: hidden;
     }
+
     .field--name-field-dates {
       margin-top: 50px;
 
@@ -95,13 +105,14 @@
       justify-content: space-between;
 
       .link-details-teaser-show {
-        @include custom_button(map-get($theme-colors, "secondary"),white, white, map-get($theme-colors, "secondary"),  map-get($theme-colors, "secondary"));
+        @include custom_button(map-get($theme-colors, "secondary"), white, white, map-get($theme-colors, "secondary"), map-get($theme-colors, "secondary"));
         font-style: normal;
         font-weight: 500;
         font-size: 0.813em;
         border-radius: 0;
-        border: 1px solid ;
+        border: 1px solid;
         text-transform: uppercase;
+
         &:hover {
           background-color: map-get($theme-colors, "secondary");
           color: white !important;
@@ -122,11 +133,13 @@
     box-shadow: 1px 1px 12px #555;
   }
 }
+
 /* Spécifique à la page d'accueil */
 .more-link {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
   a {
     padding: 15px 15px 15px 20px;
     border: 2px solid map-get($theme-colors, "secondary");
@@ -138,6 +151,7 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.875rem;
+
     &:hover {
       background-color: map-get($theme-colors, "secondary");
       color: white;
@@ -151,6 +165,7 @@
     .div-image-style-banner {
       position: relative;
       display: block;
+
       &:after {
         content: "";
         display: block;
@@ -162,19 +177,23 @@
         visibility: visible;
         width: 100%;
       }
+
       .field--type-entity-reference {
         float: none;
-        margin: 0!important;
+        margin: 0 !important;
       }
+
       .field--type-image {
         float: none;
-        margin: 0!important;
+        margin: 0 !important;
+
         img {
           float: none;
-          margin: 0!important;
-          padding: 0!important;
+          margin: 0 !important;
+          padding: 0 !important;
         }
       }
+
       .field--name-field-authors {
         position: absolute;
         top: 5px;
@@ -224,7 +243,7 @@
 
     .row-anchor-full-show {
       background-color: $gray-300;
-      padding: 10px 0;
+      padding: 10px 0 0 0;
       margin-bottom: 20px;
 
       .row {
@@ -244,12 +263,31 @@
           }
         }
 
-        #book-show {
-          @include button_book_show();
+        #col-book-show {
+          @include media-breakpoint-down(md) {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 20px 0;
+          }
+          #book-show {
+            @include button_book_show();
+          }
+        }
+        #col-short-links-show {
+          @include media-breakpoint-down(md) {
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            a {
+              padding: 10px 0;
+              flex-basis: 50% !important;
+            }
+          }
         }
       }
     }
-
     /* Colonne de gauche sur grand écran */
     .show-main-information {
       .field__label {
@@ -261,6 +299,7 @@
 
       .field-by-or-from {
         display: flex;
+
         .field-by-or-from-label {
           font-weight: bold;
         }
@@ -354,6 +393,7 @@
           }
         }
       }
+
       .field--name-field-additional-info {
         border: 2px solid #F74E2D;
         padding: 15px;
