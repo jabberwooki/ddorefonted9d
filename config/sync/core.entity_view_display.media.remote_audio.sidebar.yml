@@ -19,23 +19,23 @@ bundle: remote_audio
 mode: sidebar
 content:
   field_authors:
-    weight: 1
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_label
+    weight: 1
     region: content
   field_media_oembed_audio:
     type: oembed
     label: visually_hidden
-    weight: 0
     settings:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true

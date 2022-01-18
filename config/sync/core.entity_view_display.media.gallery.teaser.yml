@@ -43,13 +43,13 @@ mode: teaser
 content:
   thumbnail:
     type: image
-    weight: 1
-    region: content
     label: hidden
     settings:
-      image_style: polaroid
       image_link: content
+      image_style: polaroid
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   created: true
   field_authors: true

@@ -61,9 +61,9 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
         wrappers:
           ds_content: div
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -85,15 +85,15 @@ bundle: show
 mode: list
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 6
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 6
     region: ds_content
   field_dates:
-    weight: 5
+    type: datetime_default
     label: hidden
     settings:
       timezone_override: ''
@@ -101,39 +101,39 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: datetime_default
+    weight: 5
     region: ds_content
   field_festival:
     type: entity_reference_entity_id
-    weight: 3
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: ds_content
   field_media_thumbnail:
     type: entity_reference_entity_view
-    weight: 2
     label: hidden
     settings:
       view_mode: node_content
       link: false
     third_party_settings: {  }
+    weight: 2
     region: ds_content
   field_reservation:
     type: list_default
-    weight: 4
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
+    region: ds_content
   field_subtitle:
     type: string
-    weight: 1
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
 hidden:
   field_additional_info: true
   field_by: true

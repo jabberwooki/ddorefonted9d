@@ -11,12 +11,12 @@ _core:
 id: ddo_content
 theme: ddo
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
   label: 'Contenu de la page principale'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

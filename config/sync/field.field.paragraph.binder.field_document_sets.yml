@@ -21,16 +21,16 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       documents: documents
+    negate: 0
     target_bundles_drag_drop:
       binder:
         weight: 3
         enabled: false
       documents:
-        enabled: true
         weight: 4
+        enabled: true
       galleries:
         weight: 8
         enabled: false

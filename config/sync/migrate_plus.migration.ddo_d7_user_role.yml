@@ -43,5 +43,5 @@ process:
 destination:
   plugin: 'entity:user_role'
 migration_dependencies:
-  optional: {  }
   required: {  }
+  optional: {  }

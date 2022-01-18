@@ -113,7 +113,7 @@ process:
 destination:
   plugin: 'entity:block'
 migration_dependencies:
+  required: {  }
   optional:
     - ddo_d7_custom_block
     - ddo_d7_user_role
-  required: {  }

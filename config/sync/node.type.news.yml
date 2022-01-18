@@ -6,8 +6,8 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    parent: ''
     available_menus: {  }
+    parent: ''
 name: Evénement
 type: news
 description: 'News pour le domaine d''o'

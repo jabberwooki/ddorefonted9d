@@ -147,7 +147,7 @@
         "enable-patching": true,
         "patches" : {
             "drupal/core": {
-                "Add Views EntityReference filter": "https://www.drupal.org/files/issues/2021-11-09/2429699-446.patch"
+                "Add Views EntityReference filter to be available for all entity reference fields": "https://www.drupal.org/files/issues/2021-12-02/2429699-453-9.3.x.patch"
             }
         }
     }

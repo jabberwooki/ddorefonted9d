@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: OUePCWmQ_tUOCD4VF7-AP0maPJi2Y18f0JvNTgThhRQ
+langcode: fr
 button_option: stbc_button
 comments: 0
 late_load: 0
@@ -11,6 +14,7 @@ option_extras:
 option_neworzero: 0
 option_onhover: 1
 option_shorten: 1
+publisherID: dr-b21184ca-4797-c5cd-3b6c-8bfe6431df19
 service_option: '"Facebook:facebook","Tweet:twitter","LinkedIn:linkedin","Email:email","ShareThis:sharethis","Pinterest:pinterest"'
 twitter_handle: ''
 twitter_recommends: ''
@@ -26,7 +30,3 @@ sharethisnodes:
     full: full
   page:
     full: full
-_core:
-  default_config_hash: OUePCWmQ_tUOCD4VF7-AP0maPJi2Y18f0JvNTgThhRQ
-publisherID: dr-b21184ca-4797-c5cd-3b6c-8bfe6431df19
-langcode: fr

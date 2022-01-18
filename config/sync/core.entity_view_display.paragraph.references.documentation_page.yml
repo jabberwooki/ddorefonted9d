@@ -28,8 +28,6 @@ mode: documentation_page
 content:
   field_references:
     type: entity_reference_revisions_entity_view
-    weight: 0
-    region: content
     label: above
     settings:
       view_mode: documentation_page
@@ -37,4 +35,6 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 0
+    region: content
 hidden: {  }

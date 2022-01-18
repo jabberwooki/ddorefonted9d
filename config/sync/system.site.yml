@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+langcode: fr
 uuid: 3b2b4094-018c-410f-902d-23ff9160bd34
 name: 'Domaine d''O'
 mail: christophe.espiau@gmail.com
@@ -8,7 +11,4 @@ page:
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
-langcode: fr
 default_langcode: fr
-_core:
-  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

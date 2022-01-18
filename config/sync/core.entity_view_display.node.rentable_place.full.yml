@@ -21,15 +21,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - sharethis
@@ -45,33 +45,33 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.rentable_place.full
 targetEntityType: node
 bundle: rentable_place
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: ds_content
   field_contact:
-    weight: 5
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: renting_contact
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 5
     region: ds_content
   field_gallery:
-    weight: 4
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: node_content
@@ -79,18 +79,18 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: entity_reference_entity_view
+    weight: 4
     region: ds_content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: ds_content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 0
     region: ds_content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_media_image: true
   langcode: true

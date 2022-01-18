@@ -50,8 +50,8 @@ process:
 destination:
   plugin: 'entity:rdf_mapping'
 migration_dependencies:
+  required: {  }
   optional:
     - ddo_d7_comment_type
     - ddo_d7_node_type
     - ddo_d7_taxonomy_vocabulary
-  required: {  }

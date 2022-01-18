@@ -20,15 +20,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - node_title
@@ -43,24 +43,24 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.entrance.full
 targetEntityType: node
 bundle: entrance
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: ds_content
   field_geolocation:
-    weight: 2
+    type: geofield_google_map
     label: hidden
     settings:
       map_dimensions:
@@ -148,17 +148,17 @@ content:
           infowindow: 0
           options: ''
     third_party_settings: {  }
-    type: geofield_google_map
+    weight: 2
     region: ds_content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 3
     region: ds_content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 4
     region: ds_content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true

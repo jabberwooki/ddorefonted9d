@@ -38,10 +38,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.renting_contact
@@ -51,21 +51,21 @@ mode: renting_contact
 content:
   field_phones:
     type: string
-    weight: 2
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: content
   user_picture:
     type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+    third_party_settings: {  }
     weight: 0
     region: content
-    settings:
-      image_style: thumbnail
-      image_link: content
-    third_party_settings: {  }
-    label: hidden
 hidden:
   langcode: true
   member_for: true
