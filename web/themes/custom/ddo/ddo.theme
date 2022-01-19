@@ -48,3 +48,17 @@ function ddo_preprocess_image(&$variables) {
     unset($variables['attributes']['typeof']);
   }*/
 }
+
+function ddo_preprocess_menu_local_tasks(&$variables) {
+  //dpm($variables);
+  if (!empty($variables['primary']) && array_key_first($variables['primary']) == 'views_view:view.calendar.page_day') {
+    $keys = array_keys($variables['primary']);
+
+    $ordered_tabs[$keys[1]] = $variables['primary'][$keys[1]];
+    $ordered_tabs[$keys[2]] = $variables['primary'][$keys[2]];
+    $ordered_tabs[$keys[0]] = $variables['primary'][$keys[0]];
+    $ordered_tabs[$keys[3]] = $variables['primary'][$keys[3]];
+
+    $variables['primary'] = $ordered_tabs;
+  }
+}
