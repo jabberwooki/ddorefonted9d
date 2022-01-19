@@ -1,0 +1,11 @@
+uuid: 36f0a626-d310-4389-b7dc-c2f12685aa36
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: link_to_calendar
+title: 'Lien vers calendrier'
+content:
+  value: "<p>Le domaine d'O<br />\r\nmois par mois</p>\r\n\r\n<div><a href=\"/calendrier\">Le calendrier</a></div>\r\n"
+  format: full_html
