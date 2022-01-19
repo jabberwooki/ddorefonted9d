@@ -42,10 +42,10 @@
     <div class="container">
       {% if not field_casting is empty or not field_production is empty or not field_coproduction is empty or not field_partnerships is empty %}
         <div class="row">
-          <div class="col-md-4 offset-md-1 order-md-2">
+          <div class="col-md-4 offset-md-1 order-md-2" id="col-book-show">
             <button class="btn btn-secondary" id="book-show">Réserver</button>
           </div>
-          <div class="col-md-7 order-md-1">
+          <div class="col-md-7 order-md-1" id="col-short-links-show">
             {# Test si les champs sont présents #}
             {% if not field_casting is empty %}
               <a href="#casting" class="anchor-show-full">Distribution</a>

@@ -11,7 +11,7 @@ dependencies:
     - ddo
 id: shows_all_shows
 theme: ddo
-region: content
+region: featured_top
 weight: -11
 provider: null
 plugin: 'views_exposed_filter_block:shows-all_shows'

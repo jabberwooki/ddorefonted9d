@@ -89,45 +89,6 @@
       font-weight: normal;
       padding-left: 15px;
     }
-    .festival-access-calendar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 15px;
-
-      .field-content {
-        a {
-          @include black_sidebar();
-          display: inline-block;
-          color: white;
-          font-size: 0.875em;
-          text-transform: uppercase;
-          margin: 0 20px 0 0;
-          padding: 3px 10px;
-          font-weight: 700;
-        }
-      }
-      a.btn-calendar {
-        @include custom_button(black, white, white, black, black);
-        display: inline-block;
-        padding: 5px 7px 5px 15px;
-        font-weight: 700;
-        &:before {
-          @extend %icon-fontello;
-          content: "\e807";
-          font-size: 1rem;
-          color: black;
-          position: relative;
-          left: -5px;
-        }
-        &:hover {
-          text-decoration: none;
-          &:before {
-            color: white;
-          }
-        }
-      }
-    }
   }
 
 }
