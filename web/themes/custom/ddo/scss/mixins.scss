@@ -118,7 +118,7 @@
   border: 1px solid $border-color !important;
   text-transform: uppercase;
   background-color: $bg_color !important;
-  color: $font_color;
+  color: $font_color !important;
   &:hover {
     background-color: $bg_color_hover !important;
     color: $font_color_hover !important;

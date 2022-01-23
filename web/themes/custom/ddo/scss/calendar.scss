@@ -1,0 +1,326 @@
+.path-calendrier {
+  //pour les mois
+  .view-display-id-page_month {
+    ul.js-pager__items {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  // pour les années ******************************/
+  .view-display-id-page {
+    .mini-day-on {
+      a {
+        color: map-get($theme-colors, "secondary");
+      }
+    }
+  }
+
+  // pour les semaines ******************************/
+  .weekview {
+    a {
+      color: map-get($theme-colors, "secondary");
+      font-size: 1.4em;
+    }
+  }
+
+  // pour les jours ******************************/
+  .dayview {
+    a {
+      color: map-get($theme-colors, "secondary");
+      font-size: 1.5em;
+    }
+  }
+
+}
+
+.view-calendar {
+  .view-header {
+    position: relative;
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    li.prev {
+      a {
+        width: 90px;
+        font-family: "Gotham", Arial, sans-serif;
+      }
+    }
+
+    li.next {
+      a {
+        font-family: "Gotham", Arial, sans-serif;
+      }
+    }
+  }
+
+  /* Specific calendar **************************************************************************************************/
+  table.full {
+    float: left;
+    .top-day-selected {
+      border-top: 1px solid black !important;
+      border-left: 1px solid black !important;
+      border-right: 1px solid black !important;
+    }
+    .bottom-day-selected {
+      border-bottom: 1px solid black !important;
+      border-left: 1px solid black !important;
+      border-right: 1px solid black !important;
+    }
+    .date-box div.inner {
+      cursor: pointer;
+    }
+    caption {
+      padding: 0;
+      caption-side: bottom;
+      @include media-breakpoint-down(sm) {
+        caption-side: top;
+        .legend-calendar-show {
+          &:before {
+            margin: 4px 10px 1px 10px !important;
+          }
+        }
+      }
+
+      .legend-calendar-news {
+        color: black;
+        float: left;
+        font-weight: 700;
+        font-style: normal;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 9px;
+          height: 9px;
+          background-color: black !important;
+          float: left;
+          margin: 4px 10px 1px 35px;
+          border-radius: 7px;
+        }
+      }
+
+      .legend-calendar-show {
+        color: map-get($theme-colors, "secondary");
+        float: left;
+        font-weight: 700;
+        font-style: normal;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 9px;
+          height: 9px;
+          background-color: map-get($theme-colors, "secondary") !important;
+          float: left;
+          margin: 4px 10px 1px 35px;
+          border-radius: 7px;
+        }
+      }
+    }
+
+    /* pour les petits écrans  ***********/
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      td {
+        width: 14%;
+      }
+    }
+    /* pour les grands écrans  ***********/
+    @include media-breakpoint-up(md) {
+      width: auto !important;
+      td {
+        width: 80px;
+      }
+    }
+    /* Pour petits et grands écrans ****************/
+    th {
+      padding: 15px 0 30px 0;
+      background-color: transparent;
+      border: 0;
+      font-family: "Gotham", Arial, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    td {
+      .effective-day-caleandar-domainedo {
+        color: black;
+        font-style: normal;
+        font-weight: 800;
+
+        &:hover {
+          color: map-get($theme-colors, "secondary");
+          cursor: pointer;
+        }
+      }
+
+      &.date-box {
+        text-align: center;
+
+        &.empty {
+          background-color: transparent;
+        }
+
+        height: 20px;
+        border: 0;
+
+        > div {
+          border: 0;
+
+          > div {
+            border: 0;
+            background-color: transparent;
+          }
+        }
+      }
+
+      &.single-day {
+        height: 60px;
+        border: 0;
+
+        &.empty {
+          background-color: transparent;
+        }
+
+        .group-show-points-domainedo {
+          &.selected-day-domainedo {
+            background-color: dimgrey;
+          }
+
+          display: table;
+          margin: 0 auto;
+          min-height: 50px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.group-size-4 {
+            width: 40px;
+          }
+
+          &.group-size-3 {
+            width: 30px;
+          }
+
+          &.group-size-2 {
+            width: 20px;
+          }
+
+          &.group-size-1 {
+            width: 10px;
+          }
+
+          .item-show-point-domainedo {
+            width: 9px;
+            height: 9px;
+            background-color: map-get($theme-colors, "secondary") !important;
+
+            &.news {
+              background-color: $blue-event !important;
+            }
+
+            float: left;
+            margin: 1px 1px 1px 0;
+            border-radius: 7px;
+          }
+
+          &:hover {
+            .item-show-point-domainedo {
+              background-color: black !important;
+
+            }
+          }
+        }
+      }
+
+      div.day {
+        float: none;
+        width: auto;
+      }
+
+      overflow: hidden;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: lightgrey;
+      }
+
+      div.inner {
+        div {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    .selected-day-domainedo {
+      background-color: dimgrey !important;
+    }
+
+
+  }
+
+  #calendar-detail-domainedo {
+    /* Grands écrans ****************************/
+    @include media-breakpoint-up(md) {
+      float: left;
+      margin-left: 20px;
+      width: 35%;
+      min-height: 500px;
+
+    }
+    /* Petits écrans ****************************/
+    @include media-breakpoint-down(md) {
+      float: none;
+      margin-left: 20px;
+    }
+    /* Zone de droite pour petits et grands écrans ********************************************************************/
+    .right-date {
+      clear: both;
+      display: table;
+      font-family: "Gotham", Arial, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+
+      &:after {
+        content: "";
+        display: block;
+        border: 4px solid $brown; /*@grenadine-off-ddo*/
+        margin-top: 2px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .monthview {
+      a {
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        padding-bottom: 9px;
+        font-style: normal;
+        font-weight: 800;
+        text-decoration: none;
+        color: map-get($theme-colors, "secondary") !important;
+      }
+
+      img {
+        float: left;
+        max-width: 25% !important;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+
+      .hour-show-event {
+        font-weight: 800;
+        font-size: 2em;
+      }
+    }
+  }
+}
