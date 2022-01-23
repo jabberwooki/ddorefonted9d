@@ -26,7 +26,7 @@
 
         // Parcours de toutes les cellules du tableau comprenant les dates
         $(".date-box div.inner").each(function (index) {
-        // Gestion du click sur le jour
+          // Gestion du click sur le jour
           $(this).click(function (event) {
             event.preventDefault();
             // Affichage de la div contenant les spectacles correspondants
@@ -53,31 +53,38 @@
                 "group-show-points-domainedo group-size-" + width_container_points,
               id: "group-show-domainedo-" + index
             })
-              .appendTo($(this))
-              .click(function () {
-                // Cache tous les groupes de spectacles de droite
-                $(".group-show-domainedo").hide(0);
-                // affiche le groupe concerné
-                $("." + $(this).attr("id")).show(1500);
-                $(".selected-day-domainedo").removeClass("selected-day-domainedo");
-                $(this).addClass("selected-day-domainedo");
-
-                // Scroll to result
-                if ($(window).width() < 993) {
-                  $("html,body").animate(
-                    {
-                      scrollTop: $("#calendar-detail-domainedo").offset().top + 130
-                    },
-                    "slow"
-                  );
-                }
-              });
+              .appendTo($(this));
 
             // création d'un groupe avec les spectacles
             container_shows = $("<div></div>", {
               class: "group-show-domainedo group-show-domainedo-" + index
             });
 
+            // gestion du click sur la partie basse de la case
+            $(this).click(function () {
+              // Cache tous les groupes de spectacles de droite
+              $(".group-show-domainedo").hide(0);
+              // affiche le groupe concerné
+              $(".group-show-domainedo-" + index).show(500);
+              $(".selected-day-domainedo").removeClass("selected-day-domainedo");
+              $(this).addClass("selected-day-domainedo");
+
+              // Class pour le contour
+              $(".top-day-selected").removeClass("top-day-selected");
+              $(".bottom-day-selected").removeClass("bottom-day-selected");
+              $(this).parents("td").addClass("bottom-day-selected");
+              $(`td.date-box:eq(${index})`).addClass("top-day-selected");
+
+              // Scroll to result
+              if ($(window).width() < 993) {
+                $("html,body").animate(
+                  {
+                    scrollTop: $("#calendar-detail-domainedo").offset().top + 130
+                  },
+                  "slow"
+                );
+              }
+            });
 
             // Parcours des spectacles et/ou des événements
             $(".view-item", $(this)).each(function (num) {
