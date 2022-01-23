@@ -65,6 +65,9 @@
       border-left: 1px solid black !important;
       border-right: 1px solid black !important;
     }
+    div.inner {
+      cursor: pointer;
+    }
     .bottom-day-selected {
       border-bottom: 1px solid black !important;
       border-left: 1px solid black !important;
@@ -259,7 +262,7 @@
     }
 
     .selected-day-domainedo {
-      background-color: dimgrey !important;
+      background-color: transparent !important;
     }
 
 
