@@ -27,3 +27,10 @@ secondary-menu:
   dependencies:
     - core/jquery
     - core/drupal
+calendar:
+  version: VERSION 1
+  js:
+    js/ddo_calendar.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
