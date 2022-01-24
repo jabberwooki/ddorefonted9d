@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+{# Récupération de l'url du node documentation en cours #}
+{% set url_destination = path('entity.node.canonical', {'node': content['#node'].id()  }) %}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+{{ title_suffix.contextual_links }}
+<div>
+  <a class="link-place-technique-image" href="{{ url_destination }}">
+    {{ content.field_paragraphs }}
+  </a>
+  <a class="link-place-technique-title" href="{{ url_destination }}">{{ title }}</a>
+</div>
+
+
+</{{ ds_content_wrapper }}>
