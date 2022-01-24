@@ -317,6 +317,30 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  technique:
+    id: technique
+    display_title: Technique
+    display_plugin: page
+    position: 1
+    display_options:
+      title: Technique
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        title: false
+      display_description: ''
+      display_extenders: {  }
+      path: taxonomy/term/%
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   term_location:
     id: term_location
     display_title: Lieu

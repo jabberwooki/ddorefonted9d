@@ -1,5 +1,5 @@
 enable_override: true
 view: taxonomy_term_copy
-view_display: page_1
+view_display: technique
 inherit_settings: false
 pass_arguments: false
