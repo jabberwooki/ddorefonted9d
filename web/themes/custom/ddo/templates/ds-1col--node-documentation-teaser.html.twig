@@ -10,15 +10,16 @@
  */
 #}
 {# Récupération de l'url du node documentation en cours #}
-{% set url_destination = path('entity.node.canonical', {'node': content['#node'].id()  }) %}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+{% set url_destination = path('entity.node.canonical', {'node': content['#node'].id()  }) %}
 {{ title_suffix.contextual_links }}
-<div>
+<div class="technique-teaser">
   <a class="link-place-technique-image" href="{{ url_destination }}">
     {{ content.field_paragraphs }}
   </a>
   <a class="link-place-technique-title" href="{{ url_destination }}">{{ title }}</a>
 </div>
-
+{{ body }}
+<a class="btn btn-more float-end" href="{{ url_destination }}">Plus d'infos</a>
 
 </{{ ds_content_wrapper }}>
