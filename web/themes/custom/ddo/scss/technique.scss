@@ -1,7 +1,9 @@
+/* La page de présentation globale de la technique*/
 .page-vocabulary-espace-pro {
   .node--view-mode-teaser {
     border: 0 !important;
   }
+
   #row-technique-places {
     @include media-breakpoint-up(md) {
       display: flex;
@@ -65,5 +67,39 @@
   }
 
 
+}
+
+/* Une page de lieu pour la technique */
+body.node--type-documentation {
+  .open-close {
+    background-color: #EFEFEF;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    .layout.layout--onecol {
+      div.layout__region {
+        > .field--name-field-title {
+          color: black;
+          font-weight: bold;
+          &:hover {
+            cursor: pointer;
+          }
+          &:after {
+            float: right;
+            @extend %icon-fontello;
+            content: "\e836";
+            font-size: 1rem;
+            color: black;
+          }
+          &.open {
+            &:after {
+              content: "\e835";
+              color: map-get($theme-colors, "secondary");
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
