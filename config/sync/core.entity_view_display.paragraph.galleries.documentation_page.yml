@@ -5,20 +5,79 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.documentation_page
     - field.field.paragraph.galleries.field_gallery
+    - image.style.3_2_image
+    - image.style.slideshow
     - paragraphs.paragraphs_type.galleries
   module:
     - ds
+    - slick
 id: paragraph.galleries.documentation_page
 targetEntityType: paragraph
 bundle: galleries
 mode: documentation_page
 content:
   field_gallery:
-    type: entity_reference_entity_view
+    type: slick_media
     label: hidden
     settings:
+      caption:
+        field_authors: '0'
+        field_media_slideshow: '0'
+        field_tags: '0'
+      optionset: default
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      icon: ''
+      layout: ''
       view_mode: sidebar
-      link: false
+      cache: 0
+      current_view_mode: documentation_page
+      skin: split
+      fx: ''
+      style: column
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      responsive_image_style: ''
+      box_style: ''
+      image_style: slideshow
+      media_switch: slick_lightbox
+      ratio: ''
+      thumbnail_style: 3_2_image
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      thumbnail: ''
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: hover
+      thumbnail_position: ''
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+      use_theme_field: false
+      preserve_keys: false
+      visible_items: null
     third_party_settings:
       ds:
         ds_limit: ''
