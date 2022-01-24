@@ -34,3 +34,10 @@ calendar:
   dependencies:
     - core/jquery
     - core/drupal
+technique:
+  version: VERSION 1
+  js:
+    js/technique.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
