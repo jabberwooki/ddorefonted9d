@@ -11,15 +11,24 @@
 #}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
-  {{ title_suffix.contextual_links }}
+{{ title_suffix.contextual_links }}
 
 <div class="div-image-style-banner">
-  {#{{ drupal_dump(node.field_paragraphs)  }}#}
+  {# {{ drupal_dump(node.field_paragraphs)  }} #}
   {% for item in node.field_paragraphs %}
-    {% if item.target_id == 1 %}
+    {% if loop.index == 1 %}
       {{ drupal_entity('paragraph', item.target_id, "documentation_page") }}
     {% endif %}
   {% endfor %}
+</div>
+<div class="container wrapper-over-img-abs">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="group-text-over-img-abs">
+      {{ title }}
+    </div>
+  </div>
 </div>
 <div class="container">
   <div class="row">
@@ -29,28 +38,16 @@
     <div class="col-md-8 offset-md-1 content-with-banner-img">
       {{ body }}
       {% for item in node.field_paragraphs %}
-        {% if item.target_id == 2 %}
-          {{ drupal_entity('paragraph', item.target_id, "documentation_page") }}
-        {% endif %}
-        {% if item.target_id == 5 %}
-          <div class="open-close">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
-        {% endif %}
-        {% if item.target_id == 11 %}
-          <div class="open-close">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
-        {% endif %}
-        {% if item.target_id == 14 %}
-          <div class="open-close">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
-        {% endif %}
-        {% if item.target_id == 19 %}
-          <div class="">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
+        {% if loop.index > 1 %}
+          <div class="custom-paragraph">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
         {% endif %}
       {% endfor %}
-      {#  {{ dump(node.field_paragraphs[1]|keys) }} #}
-        {# {{ item.target_id }} #}
-        {# {{ dump(item|keys) }} #}
-      {# {{ item.entity.field_title.value }}#}
-      {#  <img src="{{ file_url(item.entity.field_media_image.entity.fileuri) }}" />#}
-{#  {{ ds_content }} #}
+      {# {{ dump(node.field_paragraphs[1]|keys) }} #}
+      {# {{ item.target_id }} #}
+      {# {{ dump(item|keys) }} #}
+      {# {{ item.entity.field_title.value }} #}
+      {# <img src="{{ file_url(item.entity.field_media_image.entity.fileuri) }}" /> #}
+      {# {{ ds_content }} #}
 
     </div>
   </div>
