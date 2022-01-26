@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.renting_contact
+    - field.field.user.user.field_classement
     - field.field.user.user.field_description
     - field.field.user.user.field_photo
     - field.field.user.user.field_pole
@@ -49,6 +50,7 @@ bundle: user
 mode: renting_contact
 content: {  }
 hidden:
+  field_classement: true
   field_description: true
   field_photo: true
   field_pole: true

@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_classement
     - field.field.user.user.field_description
     - field.field.user.user.field_photo
     - field.field.user.user.field_pole
@@ -20,6 +21,12 @@ mode: default
 content:
   account:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_classement:
+    type: options_select
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

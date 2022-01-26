@@ -3,11 +3,13 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_classement
     - field.field.user.user.field_description
     - field.field.user.user.field_photo
     - field.field.user.user.field_pole
   module:
     - ds
+    - options
     - text
     - user
 third_party_settings:
@@ -37,6 +39,13 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_classement:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_description:
     type: text_default
     label: above
