@@ -4,12 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.renting_contact
-    - field.field.user.user.field_phones
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.user.user.field_description
+    - field.field.user.user.field_photo
+    - field.field.user.user.field_pole
   module:
     - ds
-    - image
     - user
 third_party_settings:
   ds:
@@ -48,24 +47,10 @@ id: user.user.renting_contact
 targetEntityType: user
 bundle: user
 mode: renting_contact
-content:
-  field_phones:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  user_picture:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: thumbnail
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
+  field_description: true
+  field_photo: true
+  field_pole: true
   langcode: true
   member_for: true

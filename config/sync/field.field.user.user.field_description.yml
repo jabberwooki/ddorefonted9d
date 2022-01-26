@@ -1,21 +1,21 @@
-uuid: 59ffd5fd-ea72-4eab-9b1d-b2d52389e900
+uuid: e421d6b1-6057-4777-ac2f-353f77681f6a
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.user.field_phones
+    - field.storage.user.field_description
   module:
-    - telephone
+    - text
     - user
-id: user.user.field_phones
-field_name: field_phones
+id: user.user.field_description
+field_name: field_description
 entity_type: user
 bundle: user
-label: Téléphone(s)
+label: Description
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: telephone
+field_type: text_long

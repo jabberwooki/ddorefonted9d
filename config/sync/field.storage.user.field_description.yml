@@ -1,18 +1,18 @@
-uuid: 348b9ed4-2d29-4137-9f98-49f3a3d3fa95
+uuid: 8f0bd4b4-5525-4ab3-8f89-73b1a5aee1c8
 langcode: fr
 status: true
 dependencies:
   module:
-    - telephone
+    - text
     - user
-id: user.field_phones
-field_name: field_phones
+id: user.field_description
+field_name: field_description
 entity_type: user
-type: telephone
+type: text_long
 settings: {  }
-module: telephone
+module: text
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
