@@ -71,6 +71,69 @@
 
 /* Une page de lieu pour la technique */
 body.node--type-documentation {
+
+  .div-image-style-banner {
+    position: relative;
+    display: block;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 50%;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+      visibility: visible;
+      width: 100%;
+    }
+    margin: 0 !important;
+    padding: 0 !important;
+    .field--type-entity-reference {
+      margin: 0 !important;
+      padding: 0 !important;
+      .field--type-image {
+        float: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        img {
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+      }
+    }
+
+    .field--name-field-authors {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      @include black_sidebar();
+    }
+  }
+  .wrapper-over-img-abs {
+    position: relative;
+    .group-text-over-img-abs {
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      .field--name-title{
+        font-size: 2.25rem;
+        @include media-breakpoint-down(md) {
+          font-size: 1.4rem;
+        }
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 0.625rem;
+        margin-top: 0;
+        font-style: normal;
+        font-weight: 800;
+      }
+
+    }
+  }
+  .content-with-banner-img {
+    padding-top: 20px;
+  }
   .open-close {
     background-color: #EFEFEF;
     margin-bottom: 5px;
@@ -97,6 +160,33 @@ body.node--type-documentation {
               color: map-get($theme-colors, "secondary");
             }
           }
+        }
+      }
+    }
+  }
+  .field--name-field-references {
+    > .field__label {
+      font-size: 1em;
+      text-transform: uppercase;
+      color: map-get($theme-colors, "secondary");
+      padding: 10px 0;
+      font-style: normal;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+    > .field__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > * {
+        flex-basis: 32%;
+        .field--name-field-title {
+          font-size: 1rem;
+          text-transform: uppercase;
+          color: #000;
+          padding: 10px 0;
+          font-style: normal;
+          font-weight: 700;
         }
       }
     }
