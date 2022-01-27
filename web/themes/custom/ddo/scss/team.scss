@@ -3,6 +3,11 @@ body.page-view-user-admin-people {
     float: left;
     margin-right: 20px;
   }
+  #page-nav-left {
+    @include media-breakpoint-down(md) {
+      display: none !important;
+    }
+  }
   h2 {
     @include special_underline(black, map-get($theme-colors, "secondary"));
     text-transform: uppercase;

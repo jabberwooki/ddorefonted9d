@@ -35,10 +35,24 @@ body.page-view-multimedia-area {
   .view-content.row {
     display: flex;
     justify-content: flex-start;
+    @include media-breakpoint-down(md) {
+      .field--name-media-name,
+      .field--name-thumbnail{
+        text-align: center;
+      }
+
+    }
     margin: 0 -0.5%;
     > div {
-      flex-basis: 15.833333333%;
-      margin: 0 0.4%;
+      @include media-breakpoint-up(md) {
+        flex-basis: 15.833333333%;
+        margin: 0 0.4%;
+      }
+      @include media-breakpoint-down(md) {
+        flex-basis: 99.2%;
+        margin: 0 0.4%;
+      }
+
     }
   }
 }

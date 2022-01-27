@@ -4,6 +4,9 @@
     justify-content: space-between;
     > div.views-row {
       flex-basis: 33%;
+      @include media-breakpoint-down(md) {
+        flex-basis: 99%;
+      }
       .newsletter-teaser {
         position: relative;
         .field--type-image {
