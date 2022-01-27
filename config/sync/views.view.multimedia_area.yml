@@ -12,6 +12,7 @@ dependencies:
     - 'taxonomy_term:scald_tags:1cf0fdb3-4f12-4630-9bc4-319d2135e098'
     - 'taxonomy_term:scald_tags:5dc5081d-d30e-471a-98f3-a98de2440844'
     - 'taxonomy_term:scald_tags:5f61018d-bf2f-431a-aad0-d1200a0cb631'
+    - 'taxonomy_term:scald_tags:70affaf2-d5b9-4677-b36c-2d066fe51467'
     - 'taxonomy_term:scald_tags:b38f3400-f751-4dd9-b2f3-0be7056a611b'
     - 'taxonomy_term:scald_tags:b3a45b38-115c-4833-94bb-2fa545a038fc'
     - 'taxonomy_term:scald_tags:b614ef0e-71d6-4cd7-9383-6aa9076897e8'
@@ -91,7 +92,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 0
           total_pages: null
           id: 0
           tags:
@@ -332,7 +333,162 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      sorts:
+        created:
+          id: created
+          table: media_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      filters:
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+          value:
+            gallery: gallery
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: media__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            508: 508
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: scald_tags
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_tags_target_id_1:
+          id: field_tags_target_id_1
+          table: media__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: and
+          value:
+            62: 62
+            345: 345
+            80: 80
+            2183: 2183
+            2262: 2262
+            243: 243
+            132: 132
+            78: 78
+            32: 32
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_1_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_tags_target_id_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tags_target_id_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              location: '0'
+              redacteur: '0'
+              webmaster: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: scald_tags
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
+        sorts: false
+        filters: false
+        filter_groups: false
         header: false
       header:
         area:
