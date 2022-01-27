@@ -1097,6 +1097,9 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      access:
+        type: none
+        options: {  }
       sorts:
         weight:
           id: weight
@@ -1145,6 +1148,7 @@ display:
         type: fields
         options: {  }
       defaults:
+        access: false
         title: false
         style: false
         row: false
@@ -1172,7 +1176,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
       tags:
         - 'config:field.storage.user.field_description'
         - 'config:field.storage.user.field_photo'
