@@ -901,8 +901,8 @@ display:
         - url.query_args
         - user.permissions
       tags: {  }
-  page_2:
-    id: page_2
+  view_team:
+    id: view_team
     display_title: Equipe
     display_plugin: page
     position: 2
