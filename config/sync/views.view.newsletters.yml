@@ -187,6 +187,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        header: false
+      header: {  }
       display_extenders: {  }
       path: lettres-infos
       menu:

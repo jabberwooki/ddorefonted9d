@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - filter.format.html_free
     - node.type.festival
     - node.type.page
     - node.type.programmer
@@ -68,5 +69,6 @@ permissions:
   - 'edit own structure content'
   - 'translate interface'
   - 'use text format full_html'
+  - 'use text format html_free'
   - 'view own unpublished content'
   - 'view the administration theme'
