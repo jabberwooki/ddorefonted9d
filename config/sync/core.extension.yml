@@ -29,6 +29,7 @@ module:
   ddo_migrate: 0
   ddo_utils: 0
   devel: 0
+  devel_kint_extras: 0
   devel_php: 0
   draggableviews: 0
   dynamic_page_cache: 0
