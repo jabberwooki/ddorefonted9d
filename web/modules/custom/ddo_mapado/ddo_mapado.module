@@ -1,0 +1,201 @@
+<?php
+/*
+ * Ce module est le portage en Drupal 9 du module domainedo_mapado.module,
+ * contenu dans la feature domainedo_mapado de la version Drupal 7 du site web du domaine d'O.
+ *
+ * Seul le fichier .module est porté en D9, les champs "Mapado" d'un node Spectacle
+ * étant maintenant gérés par le mécanisme d'import/export de configuration Drupal 9.
+ * Ces 3 champs sont les suivants :
+ * - field_mapado_apislug
+ * - field_mapado_ticketing
+ * - field_mapado_dates_ids
+ *
+ * Les fonctions implémentées dans la version D7 étaient les suivantes :
+ *
+ * - domainedo_mapado_form_show_node_form_alter()
+ * - domainedo_mapado_get_data_for_mapado()
+ * - domainedo_mapado_node_postinsert()
+ * - domainedo_mapado_node_postupdate()
+ * - domainedo_mapado_node_postdelete()
+ * - domainedo_mapado_node_view()
+ * - domainedo_mapado_send_event_date_request_to_mapado()
+ * - domainedo_mapado_send_event_date_request_to_mapado()
+ * - changeReservationButtonToShowView()
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
+
+function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Mise en readonly des 3 champs Mapado.
+  $form['field_mapado_apislug']['#disabled'] = true;
+  $form['field_mapado_ticketing']['#disabled'] = true;
+  $form['field_mapado_dates_ids']['#disabled'] = true;
+}
+
+/**
+ * Récupère les données d'un node spectacle à envoyer à Mapado.
+ *
+ * @param $node
+ * @return array Tableau contenant les données à envoyer à Mapado.
+ *
+ * ----------------- Champs obligatoires ---------------------------------------
+ * DOMAINE D'O                                  MAPADO
+ * - title                                      - title
+ * - "/v2/activities/montpellier--domaine-do"   - place
+ * - description                                - description
+ * - field_show_dates                           - formattedSchedule
+ * ----------------- Champs supplémentaires ------------------------------------
+ * DOMAINE D'O                                  MAPADO
+ * - field_show_type                            - ??? (Rubrique)
+ * - field_location                             - concaténé en tête du champ description.
+ * - field_scald_image                          - imageList
+ * - field_by                                   - ??? (Interprète)
+ * - field_festival                             - ???
+ */
+function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
+  $show_data = array();
+  $is_watchdog_on = true;
+
+  ////////////////////////////// 1 - Nom de l'événement (title -> title) ///////////////////////////////////////////////
+  $show_data['title'] = $node->getTitle();
+
+  ////////////////////////////// 2 et 3 - Lieu de l'événement et Ville /////// /////////////////////////////////////////
+  //
+  // On suppose que seuls les spectacles ayant lieu au domaine d'O (intra-muros) peuvent avoir plusieurs lieux.
+  // Pour les autres, si une meme représentation a lieu à 2 endroits différents, alors ce sont des spectacles différents.
+  // La logique est la suivante :
+  //
+  // Si intra-muros alors
+  //     on récupère le ou les lieux et on récupère les données suivantes :
+  //     $place = Domaine d'O - Lieu 1, lieu 2...
+  //     $city = Montpellier
+  // Sinon
+  //     on récupère le lieu unique et on le découpe pour avoir :
+  //     $place = lieu dans la ville
+  //     $ville = ville indiquée
+  // A NOTER : Il est important de saisir les termes du vocabulaire 'Lieux de spectacle'
+  // dans le bon ordre : ville - lieu
+  // et non l'inverse.
+  //
+  // Coté Mapado, la logique est la suivante (on ne peut pas la modifier) :
+  //
+  // Si "place" ET "city" ne sont pas renseignés alors
+  //     Mapado affiche "Domaine d'O - Montpellier" (qui je suppose est la valeur affichée de "venue":"/v1/venues/391")
+  //     sur la liste des évenements, visible de l'admin mapado seulement
+  //     ainsi que sur la page d'achat de billets, visible des internautes.
+  // Sinon
+  //     Mapado affiche "place - ville" sur la liste des événements
+  //     Mais n'affiche que ...
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Qu'il y ait un ou plusieurs lieux, le code suivant retourne un seul tid, celui du premier lieu s'il y en a plusieurs.
+  $location_tid = $node->get('field_location')->target_id;
+
+  // On vérifie si c'est un spectacle INTRAMUROS ou EXTRAMUROS en récupérant le parent du lieu.
+  $parent = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadParents($location_tid);
+  $parent = reset($parent)->getName();
+
+  // Si c'est au domaine d'O
+  if (strtoupper($parent) == 'INTRAMUROS') {
+    $is_intramuros = true;
+    // S'il y a plus d'un lieu, on récupère aussi les autres noms de lieu
+    if (count($node->get('field_location')) > 1) {
+      $location_names = array();
+      foreach ($node->get('field_location')->getValue() as $item) {
+        $location_names[] = \Drupal::service('entity_type.manager')
+          ->getStorage('taxonomy_term')->load($item['target_id'])->getName();
+      }
+      $location = implode(', ', $location_names);
+    }
+    else {
+      $location = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->load($location_tid);
+      $location = $location->getName();
+    }
+    $show_data['place'] = 'Domaine d\'O - ' . $location;
+    $show_data['city'] = 'Montpellier';
+  }
+  // Et si c'est ailleurs qu'au domaine d'O
+  elseif (strtoupper($parent) == 'EXTRAMUROS') {
+    $is_intramuros = false;
+    $location = \Drupal::service('entity_type.manager')
+      ->getStorage('taxonomy_term')->load($location_tid)->getName();
+
+    // On vérifie avec quoi le rédacteur a séparé la ville et le lieu ( tiret ou virgule)
+    // dans les termes de taxonomie extramuros.
+    if (strpos($location, ',')) {
+      $show_address = explode(',', $location);
+    }
+    else {
+      $show_address = explode(' - ', $location);
+    }
+    $city = trim($show_address[0]);
+    $place = trim($show_address[1]);
+    $show_data['place'] = $place;
+    $show_data['city'] = $city;
+  }
+
+  ////////////////////////////// 4 - Description (description -> description) //////////////////////////////////////////
+  $description = $node->body->getValue();
+  $description = reset($description);
+  if (!empty($description['summary'])) {
+    $description= strip_tags($description['summary']);
+  }
+  else {
+    $description = substr(strip_tags($description['value']), 0, 200) . '...';
+  }
+  $show_data['description'] = $description;
+
+  // Version 2 (2019) : Lorsque ce n'est pas un spectacle intra-muros,
+  // il faut préciser la ville et le lieu dans le texte de la description.
+  if (!$is_intramuros) {
+    $show_data['description'] = 'LIEU : ' . $city . " - " . $place . "." . "\n"
+      . $show_data['description'];
+  }
+
+  ////////////////////////////// 5 - Type de spectacle (field_show_type -> ???) ////////////////////////////////////////
+  $show_type = \Drupal::service('entity_type.manager')
+      ->getStorage('taxonomy_term')->load($node->field_show_type->target_id)->getName();
+  $show_data['showType'] = $show_type;
+
+  ////////////////////////////// 6 - Photo du spectacle (field_media_image) ////////////////////////////////////////////
+  if (isset($node->field_media_image->target_id)) {
+    $media = Media::load($node->field_media_image->target_id);
+    $image_uri = $node->field_media_image->entity->field_media_image->entity->getFileUri();
+    $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
+    dpm($image_url);
+
+    // Contrainte pour les tests en local : il faut utiliser une image déjà présente sur la prod.
+    // Si je teste depuis mon dev local, le serveur d'images Mapado ne pourra pas me voir.
+    // Donc je change pour l'url du serveur de prod qui, lui, sera accessible par Mapado.
+    $host = $_SERVER['HTTP_HOST'];
+    if (strpos($host, ".localhost") !== false) {
+      $image_url = str_replace($host, 'www.domainedo.fr', $image_url);
+    }
+    $show_data['imageUrl'] = $image_url;
+  }
+
+  ////////////////////////////// 7 - Interprète (field_by -> performer) ////////////////////////////////////////////////
+  $structures = $node->field_by->getValue();
+
+  $structure_titles = array();
+  foreach ($node->field_by->getValue() as $item) {
+    $structure_titles[] = \Drupal::service('entity_type.manager')
+      ->getStorage('node')->load($item['target_id'])->getTitle();
+  }
+  $structure_titles_string = implode(' / ', $structure_titles);
+  $show_data['performer'] = $structure_titles_string;
+
+  ////////////////////////////// 8 - Festival (field_festival -> ???) ////////////////////////////////////////////////
+  // Festival (field_festival -> ??? pas encore disponible).
+  if (isset($node->field_festival)) {
+    dpm($node->field_festival->target_id);
+    $festival_title = \Drupal::service('entity_type.manager')
+      ->getStorage('node')->load($node->field_festival->target_id)->getTitle();
+    $show_data['festival'] = trim($festival_title);
+  }
+
+  return $show_data;
+}
+
