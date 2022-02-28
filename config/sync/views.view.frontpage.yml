@@ -2141,6 +2141,9 @@ display:
         options:
           offset: 0
           items_per_page: 9
+      cache:
+        type: tag
+        options: {  }
       empty: {  }
       sorts:
         field_dates_value:
@@ -2356,6 +2359,7 @@ display:
             delta_fields: {  }
       defaults:
         empty: false
+        cache: false
         title: false
         pager: false
         use_more: false
