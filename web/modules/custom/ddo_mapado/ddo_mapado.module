@@ -25,7 +25,10 @@
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 
@@ -33,7 +36,6 @@ function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $f
   // Mise en readonly des 3 champs Mapado.
   $form['field_mapado_apislug']['#disabled'] = true;
   $form['field_mapado_dates_ids']['#disabled'] = true;
-  $form['field_mapado_flag']['#disabled'] = true;
   $form['field_mapado_ticketing']['#disabled'] = true;
 }
 
@@ -411,7 +413,146 @@ function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
   }
 }
 
+/**
+ * Implémente hook_entity_bundle_field_info().
+ *
+ * @param EntityTypeInterface $entity_type
+ * @param $bundle
+ * @param array $base_field_definitions
+ * @return array $fields
+ */
+function ddo_mapado_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $fields = [];
+  if ($entity_type->id() == 'node') {
+    if ($bundle == 'show') {
+      $fields['mapado_url'] = BaseFieldDefinition::create('link')
+        ->setLabel(t('URL Mapado'))
+        ->setComputed(TRUE)
+        ->setClass('\Drupal\ddo_mapado\MapadoUrlComputed')
+        ->setDisplayConfigurable('view', TRUE);
+    }
+  }
+
+  return $fields;
+}
+
+
+
+/**
+ * Implémente hook_ENTITY-TYPE_view().
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ * @param EntityViewDisplayInterface $display
+ * @param $view_mode
+ * @return void
+ */
 function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getType() == 'show') {
+    $is_on_sale = TRUE;
+
+    // Recul de la date courante de 4 heures pour permettre aux internautes d'acheter alors que le spectacle est en cours.
+    $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+
+    // On vérifie s'il y a au moins une date de spectacle dans le futur. On arrête la boucle dès qu'on en trouve une.
+    $coming_date = false;
+    foreach ($entity->field_dates->getValue() as $item) {
+      if($item['value'] > $today) {
+        $coming_date = true;
+        break;
+      }
+    }
+
+    // S'il n'y en a pas, le spectacle n'est plus en vente.
+    if (!$coming_date) {
+      $is_on_sale = FALSE;
+    }
+    // sinon, on vérifie qu'il existe sur Mapado et qu'il y est en vente.
+    elseif (isset($node->field_mapado_ticketing->value)) {
+      $url = 'https://ticketing.mapado.net'
+        . $entity->field_mapado_ticketing->value
+        . '?fields=@id,title,slug,isOnSale,availabilityStatus,sellingDeviceData{hasTicketPriceOnSale,sellingDevice{name}}';
+      $request_result = ddo_mapado_send_request_to_ticketing_api($url);
+      $result_data = json_decode($request_result);
+
+      // La variable isOnSale passe à TRUE dès qu'on met une séance en vente sur Mapado,
+      // meme si celle-ci n'a pas encore de tarif associé.
+      // Donc il est insuffisant de tester isOnSale.
+      // Il faut tester directement la variable availabilityStatus qui prend les valeurs suivantes :
+      // - si aucune séance en vente ->  pastOrClosed
+      // - si séance en vente, mais pas encore de tarif -> noTicketPrice
+      // - si séance en vente avec tarif -> onSale
+      // -si tout vendu -> soldOut (cas à vérifier auprès de Mapado).
+      // On teste donc si  availabilityStatus vaut "onSale".
+
+      // S'il n'est pas en vente sur Mapado,
+      if (!isset($result_data->availabilityStatus) || $result_data->availabilityStatus != 'onSale') {
+        $is_on_sale = FALSE;
+      }
+      // sinon il faut vérifier qu'il y a vente sur le canal domainedo (canal correspondant au site web).
+      else {
+        $has_price = false;
+        foreach ($result_data->sellingDeviceData as $item) {
+          if ($item->sellingDevice->name == 'domainedo' && $item->hasTicketPriceOnSale) {
+            $has_price = true;
+          }
+        }
+        if (!$has_price) {
+          $is_on_sale = FALSE;
+        }
+      }
+    }
+    else {
+      $is_on_sale = false;
+    }
+// A GARDER POUR TESTS
+//$is_on_sale = false;
+//$is_on_sale = true;
+
+    // Valuers du champ Réservation :
+    // prochainement = 1
+    // url billetterie = 2
+    // complet = 3
+    // annulé = 4
+    // passé = 5
+    // externalisé = 7
+    // gratuit = 8
+    $reservation_value = $entity->field_reservation->value;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Le bouton RESERVER doit pointer soit vers la billetterie soit vers la fiche Spectacle.
+    // Les deux version de ce bouton sont générées dans le champ calculé $build['mapado_url'].
+    // (Voir web/modules/custom/ddo_mapado/src/MapadoUrlComputed.php)
+    // $build['mapado_url'][0] contient l'url vers la fiche spectacle
+    // $build['mapado_url'][1] contient l'url vers la billetterie
+    // A partir de ça, et en fonction de la valeur de $is_on_sale et du $view_mode,
+    // on agit sur l'un, l'autre ou les deux urls.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Si le spectacle n'est pas en vente, ou bien externalisé (7) ou gratuit (8),
+    // on ne garde que le lien vers la fiche spectacle dans le teaser
+    // on ne garde aucun des deux liens dans la fiche spectacle
+    if (!$is_on_sale || in_array($reservation_value, [7,8])) {
+      if ($view_mode == 'teaser') {
+        unset($build['mapado_url'][1]);
+      }
+      elseif ($view_mode == 'full') {
+        unset($build['mapado_url']);
+      }
+    }
+    // Et si le spectacle en vente sur Mapado,
+    // on ne garde que le lien vers la billetterie dans le teaser comme dans la fiche spectacle.
+    else {
+        unset($build['mapado_url'][0]);
+    }
+
+    // Désactivation du cache pour voir le bouton changer d'url.
+    $build['#cache']['max-age'] = 0;
+    \Drupal::service('page_cache_kill_switch')->trigger();
+  }
+}
+
+function ddo_mapado_node_view_alter(array &$build, $entity, $display) {
 
 }
 
@@ -616,3 +757,4 @@ function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=nul
 
   return $result;
 }
+

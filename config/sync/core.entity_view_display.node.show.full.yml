@@ -98,6 +98,7 @@ third_party_settings:
         - field_additional_info
         - field_reservation
         - field_ticketing_url
+        - mapado_url
         - field_coming_soon
         - field_full
         - field_reimbursement
@@ -163,14 +164,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 33
+    weight: 34
     region: ds_content
   field_coming_soon:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 25
+    weight: 26
     region: ds_content
   field_coproduction:
     type: text_default
@@ -199,7 +200,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 39
+    weight: 40
     region: ds_content
   field_duration:
     type: string
@@ -237,7 +238,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 26
+    weight: 27
     region: ds_content
   field_galeries:
     type: entity_reference_entity_view
@@ -246,14 +247,14 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 29
+    weight: 30
     region: ds_content
   field_galleries_link:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 34
+    weight: 35
     region: ds_content
   field_generic_location:
     type: string
@@ -296,7 +297,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 28
+    weight: 29
     region: ds_content
   field_partnerships:
     type: text_default
@@ -332,7 +333,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 27
+    weight: 28
     region: ds_content
   field_reservation:
     type: list_default
@@ -357,7 +358,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    weight: 32
+    weight: 33
     region: ds_content
   field_sounds:
     type: entity_reference_entity_view
@@ -366,14 +367,14 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 31
+    weight: 32
     region: ds_content
   field_sounds_link:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 36
+    weight: 37
     region: ds_content
   field_subtitle:
     type: string
@@ -400,7 +401,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 37
+    weight: 38
     region: ds_content
   field_videos:
     type: entity_reference_entity_view
@@ -411,14 +412,14 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    weight: 30
+    weight: 31
     region: ds_content
   field_videos_link:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 35
+    weight: 36
     region: ds_content
   langcode:
     type: language
@@ -427,12 +428,24 @@ content:
       link_to_entity: false
       native_language: false
     third_party_settings: {  }
-    weight: 38
+    weight: 39
     region: ds_content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: ds_content
+  mapado_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 25
     region: ds_content
   sharethis:
     settings: {  }

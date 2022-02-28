@@ -80,6 +80,7 @@ third_party_settings:
         - body
         - node_link
         - field_ticketing_url
+        - mapado_url
         - field_location
     fields:
       node_link:
@@ -142,7 +143,7 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    weight: 7
+    weight: 8
     region: ds_content
   field_media_image:
     type: entity_reference_entity_view
@@ -164,6 +165,18 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 6
+    region: ds_content
+  mapado_url:
+    type: link_separate
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
     region: ds_content
 hidden:
   field_additional_info: true
