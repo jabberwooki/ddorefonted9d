@@ -14,10 +14,7 @@ source:
   plugin: d7_node
   node_type: structure
 process:
-  nid:
-    -
-      plugin: get
-      source: tnid
+  nid: nid
   vid:
     -
       plugin: get
@@ -120,7 +117,6 @@ process:
       source: pseudo_metatag_entities
 destination:
   plugin: 'entity:node'
-  translations: true
   default_bundle: structure
 migration_dependencies:
   required:

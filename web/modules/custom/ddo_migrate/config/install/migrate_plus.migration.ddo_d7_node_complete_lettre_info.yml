@@ -14,9 +14,7 @@ source:
   plugin: d7_node
   node_type: lettre_info
 process:
-  nid:
-    plugin: get
-    source: tnid
+  nid: nid
   vid:
     plugin: get
     source: vid
@@ -73,7 +71,6 @@ process:
     source: pseudo_metatag_entities
 destination:
   plugin: "entity:node"
-  translations: true
   default_bundle: newsletter
 migration_dependencies:
   required:

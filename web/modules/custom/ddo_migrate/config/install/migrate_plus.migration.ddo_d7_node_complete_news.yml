@@ -14,7 +14,7 @@ source:
   plugin: d7_node
   node_type: news
 process:
-  nid: tnid
+  nid: nid
   vid: vid
   langcode:
     plugin: default_value
@@ -122,7 +122,6 @@ process:
     source: pseudo_metatag_entities
 destination:
   plugin: 'entity:node'
-  translations: true
   default_bundle: news
 migration_dependencies:
   required:
