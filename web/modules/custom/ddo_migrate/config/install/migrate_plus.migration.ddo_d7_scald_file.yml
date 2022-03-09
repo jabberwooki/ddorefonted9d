@@ -39,6 +39,7 @@ destination:
 migration_dependencies:
   required:
     - ddo_d7_user
+    - ddo_d7_file
     - ddo_d7_taxonomy_term_scald_authors
     - ddo_d7_taxonomy_term_scald_tags
   optional: {  }
