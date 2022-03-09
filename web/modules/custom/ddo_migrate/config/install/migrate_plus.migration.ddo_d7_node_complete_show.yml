@@ -37,35 +37,47 @@ process:
         default_value: 'Réserver'
       options: attributes
   field_ticketing_url/options: field_boxoffice_url/attributes
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_by:
+#    plugin: sub_process
+#    source: field_by
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_structure
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
   field_by:
-    plugin: sub_process
+    plugin: migration_lookup
+    migration: ddo_d7_node_complete_structure
     source: field_by
-    process:
-      target_id:
-        -
-          plugin: migration_lookup
-          migration: ddo_d7_node_complete_structure
-          source: target_id
-        -
-          plugin: callback
-          callable: array_shift
   field_casting: field_casting
   field_coming_soon: field_coming_soon
   field_coproduction: field_coproduction
   field_duration: field_duration
   field_entrance: field_entrance
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_festival:
+#    plugin: sub_process
+#    source: field_festival
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_festival
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
   field_festival:
-    plugin: sub_process
+    plugin: migration_lookup
+    migration: ddo_d7_node_complete_festival
     source: field_festival
-    process:
-      target_id:
-        -
-          plugin: migration_lookup
-          migration: ddo_d7_node_complete_festival
-          source: target_id
-        -
-          plugin: callback
-          callable: array_shift
   field_from: field_from
   field_full: field_full
   field_location:
@@ -75,21 +87,31 @@ process:
   field_price: field_price
   field_production: field_production
 #  field_promoted: field_promoted
+
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_proposed_by:
+#    plugin: sub_process
+#    source: field_proposed_by
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration:
+#          - ddo_d7_node_complete_festival
+#          - ddo_d7_node_complete_programmer
+#          - ddo_d7_node_complete_structure
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
   field_proposed_by:
-    plugin: sub_process
+    plugin: migration_lookup
+    migration:
+      - ddo_d7_node_complete_festival
+      - ddo_d7_node_complete_programmer
+      - ddo_d7_node_complete_structure
     source: field_proposed_by
-    process:
-      target_id:
-        -
-          plugin: migration_lookup
-          migration:
-          - ddo_d7_node_complete_festival
-          - ddo_d7_node_complete_programmer
-          - ddo_d7_node_complete_structure
-          source: target_id
-        -
-          plugin: callback
-          callable: array_shift
   field_reimbursement: field_reimbursement
   field_reservation: field_reservation
   field_galeries:
@@ -142,18 +164,24 @@ process:
   field_partnerships: field_partenariats
   field_restauration: field_restauration
   field_generic_location: field_lieu_generique
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_shows:
+#    plugin: sub_process
+#    source: field_linked_shows
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_show
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
   field_shows:
-    plugin: sub_process
+    plugin: migration_lookup
+    migration: ddo_d7_node_complete_show
     source: field_linked_shows
-    process:
-      target_id:
-        -
-          plugin: migration_lookup
-          migration: ddo_d7_node_complete_show
-          source: target_id
-        -
-          plugin: callback
-          callable: array_shift
   field_offline: field_offline
   field_mapado_apislug: field_mapado_apislug
   field_mapado_dates_ids: field_mapado_dates_ids
