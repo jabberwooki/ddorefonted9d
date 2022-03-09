@@ -91,20 +91,22 @@ process:
     -
       plugin: field_link
       source: field_site_web
-  #~ field_structure_shows:
-    #~ -
-      #~ plugin: get
-      #~ source: field_structure_shows
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_shows:
+#    plugin: sub_process
+#    source: field_structure_shows
+#    process:
+#      target_id:
+#        - plugin: migration_lookup
+#          migration: ddo_d7_node_complete_show
+#          source: target_id
+#        - plugin: callback
+#          callable: array_shift
   field_shows:
-    plugin: sub_process
+    plugin: migration_lookup
+    migration: ddo_d7_node_complete_show
     source: field_structure_shows
-    process:
-      target_id:
-        - plugin: migration_lookup
-          migration: ddo_d7_node_complete_show
-          source: target_id
-        - plugin: callback
-          callable: array_shift
   field_structure_type:
     -
       plugin: migration_lookup
