@@ -5,8 +5,8 @@ dependencies: {  }
 id: ddo_d7_node_complete_programmer
 migration_tags:
   - 'Drupal 7'
-  - 'DDO_migrations'
-  - 'DDO_nodes'
+  - 'DDO migrations'
+  - 'DDO nodes'
   - Content
 migration_group: ddo_migrate
 label: 'Node (Programmateur)'

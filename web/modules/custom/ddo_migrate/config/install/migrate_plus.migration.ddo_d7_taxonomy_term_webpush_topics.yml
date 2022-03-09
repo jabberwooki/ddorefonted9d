@@ -5,8 +5,8 @@ dependencies: {  }
 id: ddo_d7_taxonomy_term_webpush_topics
 migration_tags:
   - 'Drupal 7'
-  - 'DDO_migrations'
-  - 'DDO_taxo_terms'
+  - 'DDO migrations'
+  - 'DDO terms'
   - Content
 migration_group: ddo_migrate
 label: 'Taxonomy terms (Webpush topics)'

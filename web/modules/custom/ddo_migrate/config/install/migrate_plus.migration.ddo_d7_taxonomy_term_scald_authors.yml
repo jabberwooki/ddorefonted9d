@@ -8,9 +8,9 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
-  - 'DDO_migrations'
-  - 'DDO_scald'
-  - 'DDO_taxo_terms'
+  - 'DDO migrations'
+  - 'DDO scald'
+  - 'DDO terms'
   - Content
 migration_group: ddo_migrate
 label: 'Taxonomy terms (Authors)'
