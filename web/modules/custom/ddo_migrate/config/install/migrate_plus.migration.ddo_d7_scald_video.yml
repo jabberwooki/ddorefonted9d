@@ -4,6 +4,9 @@ dependencies: {  }
 id: ddo_d7_scald_video
 migration_tags:
   - 'Drupal 7'
+  - 'DDO_migrations'
+  - 'DDO_scald'
+  - 'DDO_media'
   - Content
 migration_group: ddo_migrate
 label: 'Scald Videos'
@@ -24,11 +27,11 @@ process:
   status:
     plugin: default_value
     default_value: 1
-  field_authors: 
+  field_authors:
       plugin: migration_lookup
       migration: ddo_d7_taxonomy_term_scald_authors
       source: scald_authors
-  field_tags: 
+  field_tags:
     plugin: migration_lookup
     migration: ddo_d7_taxonomy_term_scald_tags
     source: scald_tags
