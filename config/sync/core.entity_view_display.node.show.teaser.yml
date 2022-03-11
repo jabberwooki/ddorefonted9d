@@ -82,6 +82,7 @@ third_party_settings:
         - field_ticketing_url
         - mapado_url
         - field_location
+        - field_minimum_age
     fields:
       node_link:
         plugin_id: node_link
@@ -154,6 +155,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: ds_content
+  field_minimum_age:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: ds_content
   field_ticketing_url:
     type: link_separate
     label: above
@@ -198,7 +210,6 @@ hidden:
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
   field_media_thumbnail: true
-  field_minimum_age: true
   field_offline: true
   field_partnerships: true
   field_price: true

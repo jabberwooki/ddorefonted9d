@@ -146,4 +146,5 @@ hidden:
   field_videos_link: true
   langcode: true
   links: true
+  mapado_url: true
   sharethis: true
