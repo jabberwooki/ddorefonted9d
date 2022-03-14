@@ -87,10 +87,13 @@ process:
 #        -
 #          plugin: callback
 #          callable: array_shift
-  field_shows:
-    plugin: migration_lookup
-    migration: ddo_d7_node_complete_show
-    source: field_festival_shows
+
+# Désactivé pour laisser faire le module Corresponding Entity References.
+# Ce champ doit être modifié automatiquement chaque fois qu'un node spectacle est importé.
+#  field_shows:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_show
+#    source: field_festival_shows
   field_logo:
     -
       plugin: sub_process
