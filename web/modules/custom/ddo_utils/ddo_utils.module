@@ -1,7 +1,16 @@
 <?php
 
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
+use Drupal\path_alias\Entity\PathAlias;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\views\ViewExecutable;
 
 function ddo_utils_views_pre_render(ViewExecutable $view) {
@@ -21,18 +30,72 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
 
 }
 
+/**
+ * Implémente hook_form_alter().
+ *
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ * @return void
+ */
+function ddo_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Si c'est un festival, on ajoute une fonction de validation
+  if (in_array($form_id, ['node_festival_form','node_festival_edit_form'])) {
+    $form['#validate'][] = 'ddo_utils_festival_form_validate';
+
+    if ($form_id == 'node_festival_edit_form') {
+      $form['field_festival_name']['#disabled'] = true;
+    }
+  }
+}
+
+/**
+ * Fonction de validation custom pour les festivals.
+ *
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @return void
+ * @throws InvalidPluginDefinitionException
+ * @throws PluginNotFoundException
+ */
+function ddo_utils_festival_form_validate($form, FormStateInterface &$form_state) {
+  // Pour éviter de créer un doublon, on cherche s'il existe déjà un festival
+  // de même type (field_festival_name) pour la même saison (field_season).
+  $festival_name_value = $form_state->getValue('field_festival_name')[0]['value'];
+  $season_value = $form_state->getValue('field_season')[0]['value'];
+
+  $query = \Drupal::entityQuery('node')
+  // Pour un festival en cours de création, les conditions suivantes suffisent.
+    ->condition('type', 'festival')
+    ->condition('field_festival_name', $festival_name_value)
+    ->condition('field_season', $season_value);
+  // Pour un festival en cours de modification, il faut que le festival recherché
+  // soit un autre festival que lui-même. Sinon sauvegarde de toute modif de festival impossible.
+  if ($form['#form_id'] == 'node_festival_edit_form') {
+    $current_festival_nid = $form_state->getformObject()->getEntity()->id();
+    $query->condition('nid', $current_festival_nid, '<>');
+  }
+  $nids = $query->execute();
+  if (count($nids) > 0) {
+    $festivals_names = ddo_utils_get_festival_names();
+    $name = $festivals_names[$festival_name_value];
+    $message = "La saison {$season_value} du festival {$name} existe déjà !";
+    $form_state->setErrorByName('field_season', $message);
+  }
+}
 
 function ddo_utils_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Filtre exposé de la page Spectacles.
   if ($form['#id'] == 'views-exposed-form-shows-all-shows') {
     // 1 - Champ Festival
     // Nettoyage du champ pour ne garder que la dernière édition de chaque festival.
-    $latest_festivals_ids = ddo_utils_get_latest_festivals();
+    $latest_festival_seasons_ids = ddo_utils_get_latest_festival_seasons_ids();
     foreach ($form['field_festival_target_id']['#options'] as $key => $option) {
-      if ($key != 'All' && !in_array($key, $latest_festivals_ids)) {
+      if ($key != 'All' && !in_array($key, $latest_festival_seasons_ids)) {
         unset($form['field_festival_target_id']['#options'][$key]);
       }
     }
+
     // 2 - Champ Type de spectacle
     // Transformé en cases à cocher dans BEF.
 
@@ -63,12 +126,170 @@ function ddo_utils_form_views_exposed_form_alter(&$form, FormStateInterface $for
   }
 }
 
+function ddo_utils_get_latest_festival_seasons_ids() {
+  $query = \Drupal::database()->select('node_field_data', 'fd');
+  $query->join('node__field_festival_name', 'ffn', 'fd.nid=ffn.entity_id');
+  $query->join('node__field_season', 'fs','fd.nid=fs.entity_id');
+  $query->condition('fd.type', 'festival');
+  $query->condition('fd.status', 1);
+  $query->fields('fd', array('nid'));
+  $query->fields('ffn', array('field_festival_name_value'));
+  $query->fields('fs', array('field_season_value'));
+  $result = $query->execute()->fetchAll();
+
+  $latest_festival_season_ids = [];
+  $latest_seasons = [];
+  foreach($result as $data) {
+    if(!isset($latest_festival_season_ids[$data->field_festival_name_value])) {
+      $latest_festival_season_ids[$data->field_festival_name_value] = $data->nid;
+      $latest_seasons[$data->field_festival_name_value] = $data->field_season_value;
+    }
+    else {
+      if ($data->field_season_value > $latest_seasons[$data->field_festival_name_value]) {
+        $latest_seasons[$data->field_festival_name_value] = $data->field_season_value;
+        $latest_festival_season_ids[$data->field_festival_name_value] = $data->nid;
+      }
+    }
+  }
+  ksort($latest_festival_season_ids);
+
+  return $latest_festival_season_ids;
+}
+
+/**
+ * Retourne un tableau contenant la liste complète des festivals, avec le nom complet et l'url de chaque fesival.
+ * Repris tel que de la version Drupal 7.
+ *
+ * @return array[] Tableau des festivals.
+ */
+function ddo_utils_get_festivals() {
+  $festivals = array(
+    'saperlipopette' => array('title' => 'Saperlipopette', 'weight' => 11, 'url' => 'spectacles/saperlipopette'),
+    'printemps-des-comediens' => array('title' => 'Printemps des comédiens', 'weight' => 12, 'url' => 'spectacles/printemps-des-comédiens'),
+    'folies-do' => array('title' => 'Folies d\'O', 'weight' => 13, 'url' => 'spectacles/folies-do'),
+    'radio-france' => array('title' => 'Radio France', 'weight' => 14, 'url' => 'spectacles/radio-france'),
+    'nuits-do' => array('title' => 'Nuits d\'O', 'weight' => 15, 'url' => 'spectacles/nuits-do'),
+    'arabesques' => array('title' => 'Arabesques', 'weight' => 16, 'url' => 'spectacles/arabesques'),
+    'festival-hiver' => array('title' => 'Festival d\'hiver', 'weight' => 17, 'url' => 'spectacles/festival-dhiver'),
+    'nuit-gitane' => array('title' => 'Nuit Gitane', 'weight' => 18, 'url' => 'spectacles/nuit-gitane'),
+    'cine-metropole' => array('title' => 'Ciné Métropole', 'weight' => 19, 'url' => 'spectacles/cine-metropole'),
+    'cirque-metropole' => array('title' => 'Cirque Métropole', 'weight' => 20, 'url' => 'spectacles/cirque-metropole'),
+    'danseplatforma' => array('title' => 'dansePlatForma', 'weight' => 21, 'url' => 'spectacles/danseplatforma'),
+  );
+
+  return $festivals;
+}
+
+/**
+ * Récupère les noms de festival tels que paramétrés comme valeurs autorisées dans le champ field_festival_name
+ * du type de contenu Festival.
+ *
+ * @return array[] Tableau des noms de festival.
+ */
 function ddo_utils_get_festival_names() {
   $field_info = FieldConfig::loadByName('node', 'festival', 'field_festival_name');
   return $field_info->getSettings()['allowed_values'];
 }
 
-function ddo_utils_get_latest_festivals($ids_only=true) {
+/**
+ * Retourne le titre générique et l'url d'un festival.
+ * @param $edition_id
+ * @return array|null
+ */
+function ddo_utils_get_festival_infos($edition_id) {
+  $query = \Drupal::database()->select('node__field_festival_name', 'ffn');
+  $query->addField('ffn', 'field_festival_name_value');
+  $query->condition('ffn.entity_id', $edition_id);
+  $result = $query->execute()->fetchField();
+
+  $infos = null;
+  if ($result != 'festival-hiver') {
+    $festivals = domainedo_shows_get_festivals();
+    $infos = $festivals[$result];
+  }
+  return $infos;
+}
+
+/**
+ * Retourne le dernier festival (dernière saison) d'un festival donné.
+ *
+ * @param string $festival_name Le nom du festival.
+ * @param int $ignored_id Nid de l'édition du festival à ignorer.
+ * @return array
+ */
+function ddo_utils_get_latest_festival_values($festival_name, $ignored_id=FALSE) {
+  $query = \Drupal::database()->select('node_field_data', 'fd');
+  $query->join('node__field_festival_name', 'ffn', 'fd.nid=ffn.entity_id');
+  $query->join('node__field_season', 'fs','fd.nid=fs.entity_id');
+  $query->condition('fd.type', 'festival');
+  $query->condition('ffn.field_festival_name_value', $festival_name);
+  $query->condition('fd.status', 1);
+  $query->fields('fd', array('nid'));
+  $query->fields('ffn', array('field_festival_name_value'));
+  $query->fields('fs', array('field_season_value'));
+  $result = $query->execute()->fetchAll();
+
+  $festival_values = array();
+  foreach ($result as $festival) {
+    if ($ignored_id && $festival->nid == $ignored_id) continue;
+    $festival_values[$festival->field_season_value] = $festival->nid;
+  }
+  krsort($festival_values);
+  return array('nid' => current($festival_values), 'season' => key($festival_values));
+}
+
+/**
+ * Retourne toutes les saisons d'un festival.
+ *
+ * @param $festival_name Nom machine du festival.
+ * @return void
+ */
+function ddo_utils_get_all_seasons_festival_values($festival_name) {
+  $query = \Drupal::database()->select('node_field_data', 'fd');
+  $query->join('node__field_festival_name', 'ffn', 'fd.nid=ffn.entity_id');
+  $query->join('node__field_season', 'fs','fd.nid=fs.entity_id');
+  $query->condition('fd.type', 'festival');
+  $query->condition('ffn.field_festival_name_value', $festival_name);
+  $query->condition('fd.status', 1);
+  $query->fields('fd', array('nid'));
+  $query->fields('ffn', array('field_festival_name_value'));
+  $query->fields('fs', array('field_season_value'));
+  $result = $query->execute()->fetchAll();
+
+  $festival_values = array();
+  foreach ($result as $festival) {
+    $festival_values[$festival->field_season_value] = $festival->nid;
+  }
+  krsort($festival_values);
+  return $festival_values;
+}
+
+function ddo_utils_get_all_festivals_latest_season() {
+  $query = \Drupal::database()->select('node_field_data', 'fd');
+  $query->join('node__field_festival_name', 'ffn', 'fd.nid=ffn.entity_id');
+  $query->join('node__field_season', 'fs','fd.nid=fs.entity_id');
+  //$query->condition('fd.type', 'festival');
+  //$query->condition('ffn.field_festival_name_value', $festival_name);
+  $query->condition('fd.status', 1);
+  $query->fields('fd', array('nid'));
+  $query->fields('ffn', array('field_festival_name_value'));
+  $query->addExpression('MAX(field_season_value');
+  $query->groupBy('field_festival_name_value');
+
+  $result = $query->execute()->fetchAll();
+
+}
+
+/**
+ * Retourne les festivals des n dernières années.
+ *
+ * @param boolean $ids_only Si TRUE, récupère seulement les nids.
+ * @param int $year_number Nombre d'années à récupérer. Retourne 2 années par défaut.
+ * @return array
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws PluginNotFoundException
+ */
+function ddo_utils_get_latest_festivals($ids_only=true, $year_number=2) {
   // Festivals de l'année courante et de l'année précédente seulement.
   $season_condition = date('Y') - 2;
 
@@ -114,4 +335,457 @@ function ddo_utils_get_latest_festivals($ids_only=true) {
   return $latest_festivals_data;
 }
 
+/**
+ * Teste si le festival passé en paramètre est le plus récent.
+ * Si oui, retourne le nid du festival de la saison précédente, ou TRUE s'il n'y a pas de précédent
+ * Si non, retourne FALSE.
+ *
+ * @param Object $node Le festival testé.
+ * @param Bolean $is_new TRUE si the festival traité est nouveau, sinon FALSE.
+ * @return mixed
+ *   TRUE si le festival traité est le seul de sa catégorie.
+ *   Le tableau ($nid, $season) du festival précédent, s'il y en a et que le festival traité est le dernier.
+ *   FALSE si le festival traité n'est pas le dernier.
+ */
+function ddo_utils_is_latest_festival($node) {
+  // On récupère d'abord tous les festivals dont le nom est celui auquel est rattaché le node.
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'festival')
+    ->condition('field_festival_name', $node->field_festival_name->value)
+    // Le festival en cours de traitement ne doit pas être récupéré de la db pour éviter d'être comparé à lui-même.
+    ->condition('nid', $node->id(), '<>');
+  $nids = $query->execute();
 
+  // S'il n'y a pas d'autre festival, on retourne TRUE,
+  if (empty($nids)) {
+    return TRUE;
+  }
+  // sinon on cherche si le festival traité est le dernier ou pas des festivals existants.
+  $festivals = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+  $max_season = 0;
+  $nid = 0;
+  // On récupère les valeurs nid et field_season de la saison la plus récente du festival traité.
+  foreach($festivals as $festival) {
+    if ($festival->field_season->value > $max_season) {
+      $max_season = $festival->field_season->value;
+      $nid = $festival->id();
+    }
+  }
+
+  // Puis on compare ces valeurs au festival en cours d'enregistrement.
+  // Si ce festival est plus récent, on retourne ces valeurs,
+  if ($node->field_season->value > $max_season) {
+    return [
+      'nid' => $nid,
+      'season' => $max_season
+    ];
+  }
+  // et s'il n'est pas le dernier
+  else {
+    return FALSE;
+  }
+}
+
+//function getFestival($node_show) {
+//  // Non implémenté pour la raison suivante :
+//  // En Drupal 9, un node est chargé de la façon suivante :
+//  //   $festival = \Drupal::service('entity_type.manager')->getStorage('node')->load($node->field_festival->target_id);
+//}
+
+/**
+ * @param EntityInterface $node
+ * @return void
+ */
+function ddo_utils_node_insert(EntityInterface $node) {
+  if ($node->getType() == 'festival') {
+    try {
+      ddo_utils_festival_path_alias_update($node);
+    }
+    catch (EntityStorageException $e) {
+      watchdog_exception('ddo_utils', $e);
+    }
+  }
+}
+
+/**
+ * @param EntityInterface $node
+ * @return void
+ */
+function ddo_utils_node_update(EntityInterface $node) {
+  if ($node->getType() == 'festival') {
+    // On n'agit que si la nature du festival (festival_name) ou bien la saison a changé.
+    if (($node->field_festival_name->value != $node->original->field_festival_name->value)
+      || ($node->field_season->value != $node->original->field_season->value)) {
+
+      try {
+        ddo_utils_festival_path_alias_update($node);
+      }
+      catch (EntityStorageException $e) {
+        watchdog_exception('ddo_utils', $e);
+      }
+    }
+  }
+}
+
+function ddo_utils_node_delete(EntityInterface $node) {
+  $is_logger_on = false;
+
+  if ($node->getType() == 'festival') {
+    $is_latest = ddo_utils_is_latest_festival($node);
+
+    if ($is_logger_on) {
+      dpm($is_latest);
+    }
+
+    // Si le festival n'est pas le seul et qu'il est le plus récent ($is_latest = array), il faut modifier l'alias
+    // de la saison précédente dont la forme doit passer de  "/spectacles/nom-machine-festival/année"//
+    // à "/spectacles/nom-machine-festival",
+    if (!is_bool($is_latest)) {
+      $alias_value = "/spectacles/{$node->field_festival_name->value}";
+      $path_value = "/node/{$is_latest['nid']}";
+      ddo_utils_update_path_alias($path_value, $alias_value);
+
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_utils')->info("Le nid du festival à modifier est {$is_latest['nid']}");
+        dpm("Le nid du festival à modifier est {$is_latest['nid']}");
+        dpm($path_value);
+        dpm($alias_value);
+      }
+    }
+    // Et si le festival n'est pas seul et qu'il n'est pas le plus récent ($is_latest = false),
+    // ou s'il est seul ($is_latest = true),
+    // il n'y a rien à faire.
+    else {
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_utils')->info("Il n'y a rien à faire");
+        dpm("Il n'y a rien à faire");
+      }
+    }
+  }
+}
+
+/**
+ * Met à jour l'alias d'url d'un festival
+ *
+ * @param EntityInterface $node
+ * @return void
+ * @throws EntityStorageException
+ */
+function ddo_utils_festival_path_alias_update(EntityInterface $node) {
+  $base_alias = "/spectacles/{$node->field_festival_name->value}";
+  $is_latest = ddo_utils_is_latest_festival($node);
+  $is_logger_on = false;
+
+  if ($is_logger_on) {
+    dpm($is_latest);
+  }
+
+  // $is_latest vaut :
+  // - true, s'il est le seul de sa catégorie
+  // - false, s'il n'est pas le seul et pas le plus récent
+  // - un array(id, season) du précédent plus récent s'il n'est pas le seul et qu'il est le plus récent.
+
+  // Si le festival n'est pas le seul et qu'il est le plus récent ($is_latest = array),
+  // il faut modifier son alias ET l'alias de la saison précédente.
+  if (!is_bool($is_latest)) {
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_utils')->info("Le festival n'est pas le seul et est le plus récent");
+      dpm("Le festival n'est pas le seul et est le plus récent");
+    }
+
+    // Modification de son alias
+    // qui doit être de la forme "/spectacles/nom-machine-festival",
+    $alias_value = $base_alias;
+    $path_value = "/node/{$node->id()}";
+    ddo_utils_update_path_alias($path_value, $alias_value);
+
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_utils')->info("L'alias du festival est modifié");
+      dpm($path_value);
+      dpm($alias_value);
+      dpm("L'alias du festival est modifié");
+    }
+
+    // Modification de l'alias de la saison précédente
+    // qui doit être de la forme "/spectacles/nom-machine-festival/année".
+    $alias_value = $base_alias . "/{$is_latest['season']}";
+    $path_value = "/node/{$is_latest['nid']}";
+    ddo_utils_update_path_alias($path_value, $alias_value);
+
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_utils')->info("L'alias du festival précédent est modifié");
+      dpm($path_value);
+      dpm($alias_value);
+      dpm("L'alias du festival précédent est modifié");
+    }
+  }
+  else {
+    // Si le festival n'est pas seul et qu'il n'est pas le plus récent ($is_latest = false),
+    // son alias doit être de la forme "/spectacles/nom-machine-festival/année".
+    if (!$is_latest) {
+      $alias_value = $base_alias . "/{$node->field_season->value}";
+
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_utils')->info("Le festival n'est pas unique et n'est pas le plus récent");
+        dpm("Le festival n'est pas le seul et n'est pas le plus récent");
+        dpm($alias_value);
+      }
+    }
+    // Et s'il est seul, donc le plus récent ($is_latest = true),
+    // son alias doit être de la forme "/spectacles/nom-machine-festival",
+    else {
+      $alias_value = $base_alias;
+
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_utils')->info("Le festival est unique et donc le plus récent");
+        dpm("Le festival est le seul, donc le plus récent");
+        dpm($alias_value);
+      }
+    }
+    $path_value = "/node/{$node->id()}";
+
+    if ($is_logger_on) {
+      dpm($path_value);
+    }
+
+    // Modification de l'alias
+    ddo_utils_update_path_alias($path_value, $alias_value);
+  }
+}
+
+
+function ddo_utils_update_path_alias($path_value, $alias_value) {
+  $is_logger_on = false;
+
+  try {
+    $alias_storage = \Drupal::entityTypeManager()->getStorage('path_alias');
+    $path_aliases = $alias_storage->loadByProperties(['path' => $path_value]);
+
+    if ($is_logger_on) {
+      dpm($path_aliases);
+    }
+
+    // Si le tableau $path_aliases n'est pas vide, c'est qu'on est en modification ou suppression de festival.
+    if (!empty($path_aliases)) {
+      foreach ($path_aliases as $path_alias) {
+        if ($path_alias->language()->getId() == 'fr') {
+          $path_alias->setAlias($alias_value);
+          $path_alias->save();
+        }
+      }
+    }
+    // sinon, c'est qu'on est en création de festival, il faut créer un alias manuellement.
+    else {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      ddo_utils_create_path_alias($path_value, $alias_value, $langcode);
+    }
+  } catch (InvalidPluginDefinitionException|PluginNotFoundException $e) {
+    watchdog_exception('ddo_utils', $e);
+  }
+}
+
+/**
+ * @param $path_value
+ * @param $alias_value
+ * @param $langcode
+ * @return void
+ */
+function ddo_utils_create_path_alias($path_value, $alias_value, $langcode) {
+  $path_alias = PathAlias::create([
+    'path' => $path_value,
+    'alias' => $alias_value,
+    'langcode' => $langcode,
+  ]);
+
+  try {
+    $path_alias->save();
+  }
+  catch (EntityStorageException $e) {
+  }
+}
+
+function ddo_utils_get_festival_text($festival_name, $festival_season) {
+  $texts = [
+    'arabesques' => '',
+    'cine-metropole' => " de la Métropole fait son Cinéma",
+    'cirque-metropole' => " de la Métropole fait son Cirque",
+    'danseplatforma' => 'de dansePlatForma',
+    'festival-hiver' => " de la Saison "
+      . ($season_first_year = substr($festival_season, -2))
+      . "/" .($season_first_year + 1),
+    'folies-do' => " des Folies d'O",
+    'nuit-gitane' => 'de la Nuit Gitane',
+    'nuits-do' => " des Nuits d'O",
+    'printemps-des-comediens' => " du Printemps des Comédiens",
+    'radio-france' => " de Radio France",
+    'saperlipopette' => " de Saperlipopette",
+  ];
+
+  return $texts[$festival_name];
+}
+
+function ddo_utils_node_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($build['#node']->getType() == 'show') {
+    if ($build['#view_mode'] == 'teaser') {
+
+    }
+    elseif ($build['#view_mode'] == 'full') {
+      $show = $build['#node'];
+
+      /////////////// CONSTRUCTION DES DONNÉES STRUCTURÉES /////////////////////
+      $structured_data = array();
+
+      // Attention : S'il s'agit de plusieurs spectacles répartis sur plusieurs jours
+      // et nécessitant chacun un billet d'entrée individuel,
+      // ajoutez un élément Event distinct pour chaque spectacle.
+      // cf : https://developers.google.com/search/docs/data-types/event
+      foreach($show->get('field_dates')->getValue() as $date) {
+        $show_data = array(
+          '@context' => 'https://schema.org',
+          '@type' => 'Event',
+        );
+        // Titre
+        $show_data['name'] = $show->label();
+
+        // Gestion des dates
+        $show_data['startDate'] = $date['value'];
+
+        // Adresse (on ne tient compte que du premier lieu s'il y en a plusieurs, comme dans la version D7).
+        $location_name = Term::load($show->field_location->target_id)->getName();
+        $parents = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadParents($show->field_location->target_id);
+        $parent_name = reset($parents)->getName();
+        if (strtoupper($parent_name) == 'INTRAMUROS') {
+          $show_data['location'] = array(
+            "@type" => "Place",
+            "name"=> "Domaine d'O > " . $location_name,
+            "address"=> array(
+              "@type" => "PostalAddress",
+              "@streetAddress" => "178, rue de la Carriérasse",
+              "@addressLocality" => "Montpellier",
+              "@postalCode" => "34090")
+          );
+        } else {
+          $show_address = explode(' - ', $location_name);
+          $city = $show_address[0];
+          $place = $show_address[1];
+          $show_data['location'] = array(
+            "@type" => "Place",
+            "name"=> $place ,
+            "address"=> array(
+              "@type" => "PostalAddress",
+              "@addressLocality" => $city)
+          );
+        }
+
+        // Image
+        $show_image = Media::load($show->field_media_image->target_id);
+        $image_file = File::load($show_image->field_media_image->target_id);
+        $abs_url = $image_file->createFileUrl(false);
+        $parts = explode('default/files/', $abs_url);
+
+        // Style d'image utilisé dans la page détaillée d'un spectacle = banner.
+        $style_folder = "styles/banner/public/";
+        $styled_image_url = $parts[0] . "default/files/" . $style_folder . $parts[1];
+        $show_data['image'] = $styled_image_url;
+
+        // Performer
+        if (isset($show->field_by->target_id)) {
+          $structure_titles = [];
+          $structure_type = "";
+          $is_organization = false;
+
+          foreach($show->get('field_by')->getValue() as $structure) {
+
+            $structure = \Drupal::service('entity_type.manager')->getStorage('node')->load($structure['target_id']); //->getName();
+            $structure_titles[] = $structure->label();
+
+            if (isset($show->field_structure_type->target_id)) {
+              $structure_type = Term::load($show->field_structure_type->target_id)->getName();
+              // il suffit qu'une seule structure ne soit pas un "artiste" seul pour
+              // que l'on considère que c'est une "organisation" au sens de https://schema.org/Event
+              if ($structure_type != "Artiste seul") {
+                $is_organization = TRUE;
+              }
+            }
+          }
+          $structure_type = ($is_organization) ? "Organization" : "Person";
+          $structure_titles_string = implode(' / ', $structure_titles);
+
+          $show_data['performer'] = array(
+            "@type" => $structure_type,
+            "name"=> $structure_titles_string
+          );
+        }
+
+        // Offers
+        if (isset($show->field_price->value)) {
+          $structured_data['offers'] = array(
+            "@type" => "Offer",
+            "price" => $show->field_price->value
+          );
+        }
+
+        // Les données d'un spectacle sont ajoutées au tableau $array_structured_data.
+        $structured_data[] = $show_data;
+      }
+
+      if($show->get('field_dates')->count() == 1){
+        $structured_data = $structured_data[0];
+      }
+
+      // Encodage JSON de la totalité des données structurées.
+      $json_ld_script = [
+        '#tag' => 'script',
+        '#attributes' => array('type' => 'application/ld+json'),
+        '#value' => defined('JSON_UNESCAPED_SLASHES') ?
+            json_encode($structured_data, JSON_UNESCAPED_SLASHES) :
+            json_encode($structured_data)
+      ];
+      // Puis ajout de ces données dans le <head>
+      $build['#attached']['html_head'][] = [$json_ld_script, 'meta_tag_info'];
+
+      //////////////// GESTION DE LA VALEUR DU CHAMP RESERVATION /////////////////
+      // Valeurs du champ Réservation :
+      // prochainement = 1
+      // url billetterie = 2
+      // complet = 3
+      // annulé = 4
+      // passé = 5
+      // externalisé = 7
+      // gratuit = 8
+      $reservation_value = $show->field_reservation->value;
+
+      // Si le champ est sur "url billetterie" (valeur = 2) ET QUE le spectacle est passé,
+      // il faut faire comme si le champ était sur "passé" (valeur = 5).
+      if ($show->field_reservation->value == 2) {
+        // Dernière date de spectacle.
+        $show_last_date_data = end($show->get('field_dates')->getValue());
+        $last_date_raw = $show_last_date_data['value'];
+        $last_date = date("Y-m-d\TH:i:sP", strtotime($last_date_raw));
+
+        // Date courante.
+        // Avant de comparer les dates, on recule la date courante de 4 h
+        // pour permettre aux internautes d'acheter alors que le spectacle est en cours.
+        $now = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+
+        // Si le spectacle est passé, il faut cacher tous les champs dépendants de la valeur Réservation
+        // sauf le champ dépendant de annulé (valeur = 5)
+        if ($last_date < $now) {
+          $dependent_fields = array(
+            '1' => 'field_coming_soon',
+            //'2' => 'field_ticketing_url', Pas géré de la même manière en D9.
+            '3' => 'field_full',
+            '4' => 'field_reimbursement',
+            '6' => 'field_offline',
+          );
+          foreach ($dependent_fields as $key=>$dependent_field) {
+            if ($key != 5) {
+              unset($build[$dependent_field]);
+            }
+          }
+        }
+      }
+    }
+  }
+}
