@@ -4,7 +4,7 @@ dependencies: {  }
 id: ddo_d7_scald_file
 migration_tags:
   - 'Drupal 7'
-  - 'DDO'
+  - 'DDO migrations'
   - 'DDO scald'
   - 'DDO media'
   - Content
