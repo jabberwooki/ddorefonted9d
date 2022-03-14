@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: structures_shows
 label: 'Structures - Spectacles'
-enabled: false
+enabled: true
 first_field: field_shows
 second_field: field_by
 bundles: {  }

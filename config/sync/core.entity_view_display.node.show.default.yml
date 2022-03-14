@@ -104,6 +104,7 @@ third_party_settings:
         - field_videos_link
         - field_sounds_link
         - field_top_link
+        - field_form
     fields:
       node_title:
         plugin_id: node_title
@@ -164,16 +165,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 16
-    region: content
-  field_currently:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 40
     region: content
   field_dates:
     type: datetime_default
@@ -431,6 +422,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_currently: true
   field_mapado_apislug: true
   field_mapado_dates_ids: true
   field_mapado_ticketing: true

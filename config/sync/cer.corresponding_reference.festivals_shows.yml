@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: festivals_shows
 label: 'Festivals - Spectacles'
-enabled: false
+enabled: true
 first_field: field_shows
 second_field: field_festival
 bundles:
