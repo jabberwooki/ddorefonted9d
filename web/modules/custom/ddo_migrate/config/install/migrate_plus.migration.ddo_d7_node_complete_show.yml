@@ -53,10 +53,18 @@ process:
 #        -
 #          plugin: callback
 #          callable: array_shift
+#  field_by:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_structure
+#    source: field_by
   field_by:
-    plugin: migration_lookup
-    migration: ddo_d7_node_complete_structure
+    plugin: sub_process
     source: field_by
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_structure
+        source: target_id # The key used in D7
   field_casting: field_casting
   field_coming_soon: field_coming_soon
   field_coproduction: field_coproduction
@@ -76,10 +84,18 @@ process:
 #        -
 #          plugin: callback
 #          callable: array_shift
+#  field_festival:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_festival
+#    source: field_festival
   field_festival:
-    plugin: migration_lookup
-    migration: ddo_d7_node_complete_festival
+    plugin: sub_process
     source: field_festival
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_festival
+        source: target_id # The key used in D7
   field_from: field_from
   field_full: field_full
   field_location:
@@ -107,13 +123,24 @@ process:
 #        -
 #          plugin: callback
 #          callable: array_shift
+#  field_proposed_by:
+#    plugin: migration_lookup
+#    migration:
+#      - ddo_d7_node_complete_festival
+#      - ddo_d7_node_complete_programmer
+#      - ddo_d7_node_complete_structure
+#    source: field_proposed_by
   field_proposed_by:
-    plugin: migration_lookup
-    migration:
-      - ddo_d7_node_complete_festival
-      - ddo_d7_node_complete_programmer
-      - ddo_d7_node_complete_structure
+    plugin: sub_process
     source: field_proposed_by
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration:
+          - ddo_d7_node_complete_festival
+          - ddo_d7_node_complete_programmer
+          - ddo_d7_node_complete_structure
+        source: target_id # The key used in D7
   field_reimbursement: field_reimbursement
   field_reservation: field_reservation
   field_galeries:
@@ -180,10 +207,18 @@ process:
 #        -
 #          plugin: callback
 #          callable: array_shift
+#  field_shows:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_show
+#    source: field_linked_shows
   field_shows:
-    plugin: migration_lookup
-    migration: ddo_d7_node_complete_show
+    plugin: sub_process
     source: field_linked_shows
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_show
+        source: target_id # The key used in D7
   field_offline: field_offline
   field_mapado_apislug: field_mapado_apislug
   field_mapado_dates_ids: field_mapado_dates_ids
