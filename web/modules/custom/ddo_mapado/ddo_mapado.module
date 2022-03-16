@@ -32,6 +32,8 @@ use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 
+define('MAPADO_SYNC', true);
+
 function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Mise en readonly des 3 champs Mapado.
   $form['field_mapado_apislug']['#disabled'] = true;
@@ -211,7 +213,11 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
 function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show') {
+  if (!MAPADO_SYNC) {
+    dpm('Attention ! La synchronisation Mapado n\'est activée.');
+  }
+
+  if (($bundle = $entity->bundle()) == 'page' && MAPADO_SYNC) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -285,7 +291,11 @@ function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show') {
+  if (!MAPADO_SYNC) {
+    dpm('Attention ! La synchronisation Mapado n\'est activée.');
+  }
+
+  if (($bundle = $entity->bundle()) == 'show' && MAPADO_SYNC) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -393,7 +403,11 @@ function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show') {
+  if (!MAPADO_SYNC) {
+    dpm('Attention ! La synchronisation Mapado n\'est activée.');
+  }
+
+  if (($bundle = $entity->bundle()) == 'show' && MAPADO_SYNC) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
     }
@@ -468,7 +482,7 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
       $is_on_sale = FALSE;
     }
     // sinon, on vérifie qu'il existe sur Mapado et qu'il y est en vente.
-    elseif (isset($node->field_mapado_ticketing->value)) {
+    elseif (isset($entity->field_mapado_ticketing->value)) {
       $url = 'https://ticketing.mapado.net'
         . $entity->field_mapado_ticketing->value
         . '?fields=@id,title,slug,isOnSale,availabilityStatus,sellingDeviceData{hasTicketPriceOnSale,sellingDevice{name}}';
