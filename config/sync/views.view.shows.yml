@@ -254,6 +254,23 @@ display:
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: true
+      cache:
+        type: none
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "Le festival n'a pas encore ou n'a plus de spectacles.\r\nLe véritable contenu de cette zone de texte est géré dans le fichier ddo_utils.module, fonction ddo_utils_views_pre_render()."
+            format: html_free
+          tokenize: false
       sorts:
         field_dates_value:
           id: field_dates_value
@@ -515,7 +532,10 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
+        cache: false
         title: false
+        use_ajax: false
         pager: false
         exposed_form: false
         group_by: false
@@ -524,6 +544,7 @@ display:
         filters: false
         filter_groups: false
       relationships: {  }
+      use_ajax: false
       group_by: false
       display_description: ''
       exposed_block: true

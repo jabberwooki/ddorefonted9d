@@ -28,6 +28,127 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
 //    }
 //  }
 
+  if ($view->id() == 'shows' && $view->current_display == 'all_shows') {
+    if (empty($view->result)) {
+      // Contexte :
+      // On arrive ici (vue : shows, affichage : all_shows) si l'on a cliqué sur le nom d'un festival
+      // dans le filtre exposé de la page SPECTACLES (/spectacles/tous-les-spectacles).
+      // Il s'agit de l'édition la plus récente de ce festival.
+      //
+      // La vue affiches les spectacles de ce festival si :
+      // - ils sont publiés
+      // - ils ont au moins une date de représentation postérieure à la date courante
+      //
+      // Si la vue est vide, 3 possibilités :
+      // - Il n'a pas encore de spectacle => le festival est en cours de programmation.
+      // - Il y a des spectacles mais aucun n'est publié => le festival est en cours de programmation.
+      // - Il y a des spectacles publiés, c'est donc qu'ils sont passés => le festival est passé.
+
+      // Lorsqu'on filtre sur un festival, l'id de ce festival (target_i) est dans l'url.
+      if ($festival_nid = Drupal::request()->query->get('field_festival_target_id')) {
+        // 1 - Données festival.
+        $festival = \Drupal::service('entity_type.manager')->getStorage('node')->load($festival_nid);
+        $festival_season = $festival->field_season->value;
+        $festival_text = ddo_utils_get_festival_text($festival->field_festival_name->value, $festival_season);
+        $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $festival_nid, $langcode);
+
+        // 2 - Données spectacles.
+        $shows = $festival->get('field_shows')->getValue();
+
+        // 3 - Préparation du message à afficher dans la fenêtre modale.
+        $festival_status = '';
+
+        // Si le festival n'a pas de spectacles, il est en cours de programmation,
+        if(empty($shows)) {
+          $festival_status = ' en cours de programmation';
+        }
+        // sinon le festival a des spectacles attachés
+        else {
+          // mais si aucun n'est publié, le festival est en cours de programmation
+          if (! ddo_utils_exist_published_shows($shows)) {
+            $festival_status = ' en cours de programmation';
+          }
+          // et si des spectacles sont publiés, c'est qu'ils sont tous dans le passé.
+          else {
+            $next_season = $festival_season + 1;
+            $festival_status = " passée, rendez-vous prochainement pour l'édition {$next_season}";
+          }
+        }
+        $msg =
+          '<p>
+            <a href="' . $path_alias . '">' . "L'édition {$festival_season} {$festival_text}</a> est {$festival_status}." .
+          '</p>
+          <p>
+            Soyez les premiers informés : Inscrivez-vous à <a href="/lettres-infos">la lettre d\'infos</a>
+          </p>';
+
+        // 4 - Préparation de la fenêtre modale
+        $modal_markup =
+          '<div class="modal fade" id="festivalModal" tabindex="-1" role="dialog" aria-labelledby="festivalModalCenter" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">' .
+                  '<h5 class="modal-title" id="festival-modal-title"></h5>' .
+                  '<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">' .
+                  $msg .
+                '</div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
+            </div>
+          </div>';
+
+        // 5 - Placement code HTML de la fenêtre modale dans le champ "no result" de la vue
+        $view->empty['area']->options['content']['value'] = $modal_markup;
+
+        // 5 - Chargement de la librairie css/js pour cette fenêtre modale
+        $view->element['#attached']['library'][] = 'ddo_utils/festivalmodal';
+      }
+    }
+  }
+}
+
+function ddo_utils_exist_published_shows($show_ids=[]) {
+  $exist_published_shows = false;
+  if (empty($show_ids)) {
+    return $exist_published_shows;
+  }
+
+  $ids = [];
+  foreach ($show_ids as $value) {
+    $ids[] = $value['target_id'];
+  }
+
+  $result = \Drupal::database()->select('node_field_data', 'n')
+    ->fields('n', ['nid','status'])
+    ->condition('type', 'show')
+    ->condition('status', 1)
+    ->condition('nid', $ids, 'IN')
+    ->execute()
+    ->fetchAll();
+
+  if (count($result) > 0) {
+    $exist_published_shows = true;
+  }
+
+  return $exist_published_shows;
+}
+
+function ddo_utils_theme($existing, $type, $theme, $path) {
+  return [
+    'ddo_utils_festival_block' => [
+      'variables' => [
+        'block_title' => NULL,
+        'content' => NULL,
+      ]
+    ]
+  ];
 }
 
 /**
@@ -198,14 +319,24 @@ function ddo_utils_get_festival_names() {
  */
 function ddo_utils_get_festival_infos($edition_id) {
   $query = \Drupal::database()->select('node__field_festival_name', 'ffn');
+  $query->join('node__field_season', 'fs', 'ffn.entity_id=fs.entity_id');
+  $query->join('path_alias', 'pa', 'substring(path,7)=ffn.entity_id');
   $query->addField('ffn', 'field_festival_name_value');
+  $query->addField('fs', 'field_season_value');
+  $query->addField('pa', 'alias');
   $query->condition('ffn.entity_id', $edition_id);
-  $result = $query->execute()->fetchField();
+  $result = $query->execute()->fetchAssoc();
 
-  $infos = null;
-  if ($result != 'festival-hiver') {
-    $festivals = domainedo_shows_get_festivals();
-    $infos = $festivals[$result];
+  $infos = [];
+//  if ($result != 'festival-hiver') {
+//    $festivals = ddo_utils_get_festivals();
+//    $infos = $festivals[$result];
+//  }
+  if (!empty($result)) {
+    $festivals = ddo_utils_get_festivals();
+    $infos['festival_human_name'] = $festivals[$result['field_festival_name_value']]['title'];
+    $infos['season'] = $result['field_season_value'];
+    $infos['alias'] = $result['alias'];
   }
   return $infos;
 }
@@ -607,7 +738,7 @@ function ddo_utils_create_path_alias($path_value, $alias_value, $langcode) {
 
 function ddo_utils_get_festival_text($festival_name, $festival_season) {
   $texts = [
-    'arabesques' => '',
+    'arabesques' => ' d\'Arabesques',
     'cine-metropole' => " de la Métropole fait son Cinéma",
     'cirque-metropole' => " de la Métropole fait son Cirque",
     'danseplatforma' => 'de dansePlatForma',
