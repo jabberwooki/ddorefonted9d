@@ -32,7 +32,7 @@ use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 
-define('MAPADO_SYNC', true);
+define('MAPADO_SYNC', false);
 
 function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Mise en readonly des 3 champs Mapado.
