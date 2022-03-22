@@ -32,13 +32,41 @@ use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 
-define('MAPADO_SYNC', false);
-
 function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Mise en readonly des 3 champs Mapado.
-  $form['field_mapado_apislug']['#disabled'] = true;
-  $form['field_mapado_dates_ids']['#disabled'] = true;
-  $form['field_mapado_ticketing']['#disabled'] = true;
+//  $form['field_mapado_apislug']['#disabled'] = true;
+//  $form['field_mapado_dates_ids']['#disabled'] = true;
+//  $form['field_mapado_ticketing']['#disabled'] = true;
+}
+
+function ddo_mapado_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Si on est dans une page de création, modification ou suppression de spectacle,
+  // il faut avertir le rédacteur du statut de la synchronisation Mapado (activée/désactivée)
+  if (in_array($form_id, ['node_show_form','node_show_edit_form', 'node_show_delete_form'])) {
+    // On récupère le code HTML du bloc "Mapado synchronization".
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance('mapado_sync_block', []);
+    $render_array = $plugin_block->build();
+    $block_markup = \Drupal::service('renderer')->render($render_array);
+
+    // On place ce code HTML en tout début de formulaire
+    $form['#prefix'] = $block_markup;
+    // et juste au dessus du bouton Enregistrer|Supprimer.
+    $form['actions']['submit']['#prefix'] = $block_markup;
+
+    // Si on est dans le formulaire de suppression, on ne garde que le code en tête de formulaire.
+    // Pas besoin d'afficher 2 fois le statut à quelques centimètres d'écart.
+    if ($form_id == 'node_show_delete_form') {
+      unset($form['actions']['submit']['#prefix']);
+    }
+    // Et si on est dans les formulaires d'ajout ou modif, on rend les champs Mapado accessibles en lecture seule.
+    // C'est la synchronisation DDO <=> MAPADO seule qui gère le contenu de ces champs.
+    else {
+      $form['field_mapado_apislug']['#disabled'] = true;
+      $form['field_mapado_dates_ids']['#disabled'] = true;
+      $form['field_mapado_ticketing']['#disabled'] = true;
+    }
+  }
 }
 
 /**
@@ -201,6 +229,14 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
   return $show_data;
 }
 
+function ddo_mapado_is_sync_enabled() {
+  $config = \Drupal::config('mapado.settings');
+  if ($config->get('enable_sync')) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Implémente hoo_ENTITY_TYPE_insert().
  *
@@ -213,11 +249,7 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
 function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (!MAPADO_SYNC) {
-    dpm('Attention ! La synchronisation Mapado n\'est activée.');
-  }
-
-  if (($bundle = $entity->bundle()) == 'page' && MAPADO_SYNC) {
+  if (($bundle = $entity->bundle()) == 'page' && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -291,11 +323,7 @@ function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (!MAPADO_SYNC) {
-    dpm('Attention ! La synchronisation Mapado n\'est activée.');
-  }
-
-  if (($bundle = $entity->bundle()) == 'show' && MAPADO_SYNC) {
+  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -403,11 +431,7 @@ function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (!MAPADO_SYNC) {
-    dpm('Attention ! La synchronisation Mapado n\'est activée.');
-  }
-
-  if (($bundle = $entity->bundle()) == 'show' && MAPADO_SYNC) {
+  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
     }
@@ -772,3 +796,14 @@ function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=nul
   return $result;
 }
 
+function ddo_mapado_theme($existing, $type, $theme, $path) {
+  return [
+    'ddo_mapado_block' => [
+      'variables' => [
+        'block_title' => NULL,
+        'sync_enabled' => NULL,
+        'mapado_class' => NULL,
+      ],
+    ],
+  ];
+}

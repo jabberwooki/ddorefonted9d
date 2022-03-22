@@ -1,0 +1,7 @@
+mapado.settings:
+  path: '/admin/config/services/mapado'
+  defaults:
+    _form: '\Drupal\ddo_mapado\Form\MapadoConfigForm'
+    _title: 'Paramétrage Mapado'
+  requirements:
+    _permission: 'administer mapado'

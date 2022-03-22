@@ -25,7 +25,7 @@
           </ul>
         </nav>
       </div>
-      <div class="col-md-5 d-flex align-items-center justify-content-center">
+      <div class="col-md-5 d-flex flex-column align-items-center justify-content-center">
         {{ page.header }}
       </div>
       <div class="col-md-4 d-flex justify-content-end align-items-start" id="buttons-notification-subscribe">
@@ -34,11 +34,4 @@
       </div>
     </div>
   </div>
-  {% if logged_in %}
-  <div class="container">
-    <div class="row" style="text-align: center; color: red;">
-      <div class="mapado-sync"> ----- La synchronisation Mapado {{ mapado_sync ? "EST" : "N'EST PAS" }} activée ----- </div>
-    </div>
-  </div>
-  {% endif %}
 </header>

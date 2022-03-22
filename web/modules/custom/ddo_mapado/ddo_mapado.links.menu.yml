@@ -1,0 +1,5 @@
+mapado.settings:
+  title: 'Mapado'
+  route_name: 'mapado.settings'
+  description: 'Paramétrage du module Mapado'
+  parent: system.admin_config_services

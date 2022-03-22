@@ -1,0 +1,15 @@
+#madado-sync-status {
+  border: 1px solid #000000;
+  color: white;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+}
+#madado-sync-status .sync-status {
+  font-weight: bold;
+}
+#madado-sync-status.enabled {
+  background-color: #66bb6a; /* light green */
+}
+#madado-sync-status.disabled {
+  background-color: #F74E2D; /* light red */
+}
