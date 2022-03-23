@@ -17,7 +17,7 @@ class MapadoSyncBlock extends BlockBase {
 
   public function build() {
     $block_title = "Mapado synchronization";
-    $config = \Drupal::config('mapado.settings');
+    $config = \Drupal::config('ddo_mapado.settings');
     if ($config->get('enable_sync')) {
       $sync_enabled = true;
       $mapado_class = "enabled";

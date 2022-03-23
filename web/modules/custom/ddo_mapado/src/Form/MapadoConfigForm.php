@@ -11,7 +11,7 @@ class MapadoConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['mapado.settings'];
+    return ['ddo_mapado.settings'];
   }
 
   /**
@@ -25,7 +25,7 @@ class MapadoConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('mapado.settings');
+    $config = $this->config('ddo_mapado.settings');
 
     $form['enable_sync'] = [
       '#type' => 'checkbox',
@@ -42,7 +42,7 @@ class MapadoConfigForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
-    $this->config('mapado.settings')
+    $this->config('ddo_mapado.settings')
       ->set('enable_sync', $form_state->getValue('enable_sync'))
       ->save();
   }
