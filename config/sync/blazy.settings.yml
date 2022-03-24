@@ -2,7 +2,6 @@ _core:
   default_config_hash: t2LzrClibyhtJD_yHiWZ6AyD-EYKhe94rOo3dUGLLUU
 langcode: fr
 admin_css: true
-decode: false
 fx: ''
 noscript: false
 one_pixel: true
@@ -16,7 +15,6 @@ blazy:
   validateDelay: 25
   container: ''
 io:
-  enabled: false
   unblazy: false
   rootMargin: 0px
   threshold: '0'
