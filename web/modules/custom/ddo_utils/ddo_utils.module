@@ -84,25 +84,29 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
           </p>';
 
         // 4 - Préparation de la fenêtre modale
-        $modal_markup =
-          '<div class="modal fade" id="festivalModal" tabindex="-1" role="dialog" aria-labelledby="festivalModalCenter" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+        $modal_markup = '
+          <div class="modal fade" id="festivalModal" tabindex="-1" aria-labelledby="infosFestival" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+
               <div class="modal-content">
-                <div class="modal-header">' .
-                  '<h5 class="modal-title" id="festival-modal-title"></h5>' .
-                  '<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">' .
                   $msg .
                 '</div>
+
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                 </div>
+
               </div>
             </div>
-          </div>';
+          </div>
+        ';
 
         // 5 - Placement code HTML de la fenêtre modale dans le champ "no result" de la vue
         $view->empty['area']->options['content']['value'] = $modal_markup;
