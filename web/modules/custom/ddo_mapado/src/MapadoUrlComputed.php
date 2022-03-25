@@ -13,9 +13,14 @@ class MapadoUrlComputed extends FieldItemList {
    * Computed Mapado URL.
    */
   protected function computeValue() {
+    $entity = $this->getEntity();
+    if ($entity->isNew()) {
+      return;
+    }
+
     // Construction du lien vers la fiche Spectacle
     $entity_uri =
-      Url::fromRoute('entity.node.canonical', ['node' => $this->getEntity()->id()], ['absolute' => TRUE])
+      Url::fromRoute('entity.node.canonical', ['node' => $entity->id()], ['absolute' => TRUE])
         ->toString();
     $link0 = array(
       'uri' => $entity_uri,
@@ -24,8 +29,8 @@ class MapadoUrlComputed extends FieldItemList {
     );
 
     // Construction du lien vers la billetterie
-    $mapado_url = $this->getEntity()->get('field_ticketing_url')->get(0)->getUrl()->getUri();
-    $slug = $this->getEntity()->field_mapado_apislug->value;
+    $mapado_url = $entity->get('field_ticketing_url')->get(0)->getUrl()->getUri();
+    $slug = $entity->field_mapado_apislug->value;
     $event_uri = $mapado_url . $slug;
     $link1 = array(
       'uri' => $event_uri,

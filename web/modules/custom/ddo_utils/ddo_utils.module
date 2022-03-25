@@ -814,15 +814,17 @@ function ddo_utils_node_view_alter(array &$build, EntityInterface $entity, Entit
         }
 
         // Image
-        $show_image = Media::load($show->field_media_image->target_id);
-        $image_file = File::load($show_image->field_media_image->target_id);
-        $abs_url = $image_file->createFileUrl(false);
-        $parts = explode('default/files/', $abs_url);
+        if (isset($show->field_media_image->target_id)) {
+          $show_image = Media::load($show->field_media_image->target_id);
+          $image_file = File::load($show_image->field_media_image->target_id);
+          $abs_url = $image_file->createFileUrl(false);
+          $parts = explode('default/files/', $abs_url);
 
-        // Style d'image utilisé dans la page détaillée d'un spectacle = banner.
-        $style_folder = "styles/banner/public/";
-        $styled_image_url = $parts[0] . "default/files/" . $style_folder . $parts[1];
-        $show_data['image'] = $styled_image_url;
+          // Style d'image utilisé dans la page détaillée d'un spectacle = banner.
+          $style_folder = "styles/banner/public/";
+          $styled_image_url = $parts[0] . "default/files/" . $style_folder . $parts[1];
+          $show_data['image'] = $styled_image_url;
+        }
 
         // Performer
         if (isset($show->field_by->target_id)) {
