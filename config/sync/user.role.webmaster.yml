@@ -29,6 +29,7 @@ dependencies:
     - block
     - comment
     - contextual
+    - ddo_mapado
     - draggableviews
     - eu_cookie_compliance
     - file
@@ -63,6 +64,7 @@ permissions:
   - 'administer blocks'
   - 'administer comments'
   - 'administer eu cookie compliance popup'
+  - 'administer mapado'
   - 'administer menu'
   - 'administer meta tags'
   - 'administer nodes'
