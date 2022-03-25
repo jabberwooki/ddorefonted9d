@@ -6,7 +6,7 @@ label: 'Bandeau large'
 id: banner
 description: ''
 aspect_ratio: '215:77'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 1935
-hard_limit_height: 693
+soft_limit_width: 1935
+soft_limit_height: 693
+hard_limit_width: null
+hard_limit_height: null

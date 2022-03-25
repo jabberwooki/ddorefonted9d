@@ -15,6 +15,7 @@ effects:
     weight: 1
     data:
       crop_type: banner_narrow
+      automatic_crop_provider: null
   d1a6789d-407c-419a-a300-f91f853883b4:
     uuid: d1a6789d-407c-419a-a300-f91f853883b4
     id: image_scale
@@ -22,4 +23,4 @@ effects:
     data:
       width: null
       height: 377
-      upscale: false
+      upscale: true
