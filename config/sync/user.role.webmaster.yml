@@ -12,24 +12,39 @@ dependencies:
     - media.type.remote_audio
     - media.type.remote_video
     - media.type.video
+    - node.type.article
+    - node.type.documentation
+    - node.type.entrance
     - node.type.festival
+    - node.type.news
+    - node.type.newsletter
     - node.type.page
+    - node.type.person
     - node.type.programmer
+    - node.type.rentable_place
     - node.type.show
     - node.type.structure
+    - node.type.webform
   module:
     - block
     - comment
     - contextual
     - draggableviews
+    - eu_cookie_compliance
+    - file
     - filter
     - locale
     - media
+    - metatag
     - node
+    - paragraphs
     - path
+    - quickedit
     - redirect
+    - sharethis
     - system
     - taxonomy
+    - toolbar
 id: webmaster
 label: webmaster
 weight: 5
@@ -40,39 +55,63 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access draggableviews'
+  - 'access files overview'
+  - 'access in-place editing'
   - 'access site in maintenance mode'
   - 'access site reports'
+  - 'access toolbar'
   - 'administer blocks'
   - 'administer comments'
+  - 'administer eu cookie compliance popup'
   - 'administer menu'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'administer redirects'
+  - 'administer sharethis'
   - 'administer taxonomy'
   - 'administer url aliases'
   - 'administer users'
   - 'bypass node access'
   - 'change own username'
+  - 'create article content'
   - 'create audio media'
   - 'create document media'
+  - 'create documentation content'
+  - 'create entrance content'
   - 'create festival content'
   - 'create gallery media'
   - 'create image media'
   - 'create media'
+  - 'create news content'
+  - 'create newsletter content'
   - 'create page content'
+  - 'create person content'
   - 'create programmer content'
   - 'create remote_audio media'
   - 'create remote_video media'
+  - 'create rentable_place content'
   - 'create show content'
   - 'create structure content'
   - 'create url aliases'
   - 'create video media'
+  - 'create webform content'
+  - 'delete any article content'
   - 'delete any audio media'
   - 'delete any document media'
+  - 'delete any documentation content'
+  - 'delete any entrance content'
+  - 'delete any festival content'
   - 'delete any gallery media'
   - 'delete any image media'
   - 'delete any media'
+  - 'delete any news content'
+  - 'delete any newsletter content'
+  - 'delete any page content'
+  - 'delete any person content'
+  - 'delete any programmer content'
   - 'delete any remote_audio media'
   - 'delete any remote_video media'
+  - 'delete any rentable_place content'
   - 'delete any show content'
   - 'delete any structure content'
   - 'delete any video media'
@@ -89,15 +128,25 @@ permissions:
   - 'delete own show content'
   - 'delete own structure content'
   - 'delete own video media'
+  - 'display eu cookie compliance popup'
+  - 'edit any article content'
   - 'edit any audio media'
   - 'edit any document media'
+  - 'edit any documentation content'
+  - 'edit any entrance content'
   - 'edit any festival content'
   - 'edit any gallery media'
   - 'edit any image media'
+  - 'edit any news content'
+  - 'edit any newsletter content'
   - 'edit any page content'
+  - 'edit any person content'
   - 'edit any programmer content'
+  - 'edit any rentable_place content'
   - 'edit any show content'
   - 'edit any structure content'
+  - 'edit any webform content'
+  - 'edit own article content'
   - 'edit own festival content'
   - 'edit own page content'
   - 'edit own programmer content'
@@ -112,3 +161,4 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'

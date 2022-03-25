@@ -11,15 +11,24 @@ dependencies:
     - media.type.remote_audio
     - media.type.remote_video
     - media.type.video
+    - node.type.article
+    - node.type.documentation
+    - node.type.entrance
     - node.type.news
+    - node.type.newsletter
     - node.type.page
   module:
+    - contextual
     - draggableviews
+    - file
     - filter
     - media
+    - metatag
     - node
     - path
+    - quickedit
     - system
+    - toolbar
 id: redacteur
 label: redacteur
 weight: 4
@@ -28,16 +37,25 @@ permissions:
   - 'access administration pages'
   - 'access content'
   - 'access content overview'
+  - 'access contextual links'
   - 'access draggableviews'
+  - 'access files overview'
+  - 'access in-place editing'
   - 'access media overview'
+  - 'access toolbar'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'change own username'
+  - 'create article content'
   - 'create audio media'
   - 'create document media'
+  - 'create documentation content'
+  - 'create entrance content'
   - 'create gallery media'
   - 'create image media'
   - 'create media'
   - 'create news content'
+  - 'create newsletter content'
   - 'create page content'
   - 'create remote_audio media'
   - 'create remote_video media'
