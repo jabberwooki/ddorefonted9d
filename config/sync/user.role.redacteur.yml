@@ -4,14 +4,31 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - media.type.audio
+    - media.type.document
+    - media.type.gallery
+    - media.type.image
+    - media.type.remote_audio
+    - media.type.remote_video
+    - media.type.video
+    - node.type.article
+    - node.type.documentation
+    - node.type.entrance
     - node.type.news
+    - node.type.newsletter
     - node.type.page
   module:
+    - contextual
     - draggableviews
+    - file
     - filter
+    - media
+    - metatag
     - node
     - path
+    - quickedit
     - system
+    - toolbar
 id: redacteur
 label: redacteur
 weight: 4
@@ -20,18 +37,70 @@ permissions:
   - 'access administration pages'
   - 'access content'
   - 'access content overview'
+  - 'access contextual links'
   - 'access draggableviews'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'change own username'
+  - 'create article content'
+  - 'create audio media'
+  - 'create document media'
+  - 'create documentation content'
+  - 'create entrance content'
+  - 'create gallery media'
+  - 'create image media'
+  - 'create media'
   - 'create news content'
+  - 'create newsletter content'
   - 'create page content'
+  - 'create remote_audio media'
+  - 'create remote_video media'
   - 'create url aliases'
+  - 'create video media'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any gallery media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any remote_audio media'
+  - 'delete any remote_video media'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own gallery media'
+  - 'delete own image media'
   - 'delete own news content'
   - 'delete own page content'
+  - 'delete own remote_audio media'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any gallery media'
+  - 'edit any image media'
   - 'edit any news content'
   - 'edit any page content'
+  - 'edit any remote_audio media'
+  - 'edit any remote_video media'
+  - 'edit any video media'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own gallery media'
+  - 'edit own image media'
   - 'edit own news content'
   - 'edit own page content'
+  - 'edit own remote_audio media'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'update any media'
+  - 'update media'
   - 'use text format full_html'
+  - 'view all media revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view the administration theme'

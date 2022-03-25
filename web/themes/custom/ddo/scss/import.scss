@@ -9,13 +9,13 @@
 // typography
 @import "typography";
 //bootstrap
-@import "bootstrap";
+@import "../bootstrap/scss/bootstrap";
 //material design bootstrap
 //@import "../node_modules/mdbootstrap/scss/mdb-free.scss";
 // mixins
 @import "mixins";
 // barrio
-@import "barrio";
+@import "../../../contrib/bootstrap_barrio/scss/barrio";
 
 @import "nav";
 @import "global";
