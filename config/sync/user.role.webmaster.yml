@@ -5,6 +5,13 @@ dependencies:
   config:
     - filter.format.full_html
     - filter.format.html_free
+    - media.type.audio
+    - media.type.document
+    - media.type.gallery
+    - media.type.image
+    - media.type.remote_audio
+    - media.type.remote_video
+    - media.type.video
     - node.type.festival
     - node.type.page
     - node.type.programmer
@@ -17,6 +24,7 @@ dependencies:
     - draggableviews
     - filter
     - locale
+    - media
     - node
     - path
     - redirect
@@ -44,20 +52,48 @@ permissions:
   - 'administer users'
   - 'bypass node access'
   - 'change own username'
+  - 'create audio media'
+  - 'create document media'
   - 'create festival content'
+  - 'create gallery media'
+  - 'create image media'
+  - 'create media'
   - 'create page content'
   - 'create programmer content'
+  - 'create remote_audio media'
+  - 'create remote_video media'
   - 'create show content'
   - 'create structure content'
   - 'create url aliases'
+  - 'create video media'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any gallery media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any remote_audio media'
+  - 'delete any remote_video media'
   - 'delete any show content'
   - 'delete any structure content'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own document media'
   - 'delete own festival content'
+  - 'delete own gallery media'
+  - 'delete own image media'
   - 'delete own page content'
   - 'delete own programmer content'
+  - 'delete own remote_audio media'
+  - 'delete own remote_video media'
   - 'delete own show content'
   - 'delete own structure content'
+  - 'delete own video media'
+  - 'edit any audio media'
+  - 'edit any document media'
   - 'edit any festival content'
+  - 'edit any gallery media'
+  - 'edit any image media'
   - 'edit any page content'
   - 'edit any programmer content'
   - 'edit any show content'
@@ -68,7 +104,11 @@ permissions:
   - 'edit own show content'
   - 'edit own structure content'
   - 'translate interface'
+  - 'update any media'
+  - 'update media'
   - 'use text format full_html'
   - 'use text format html_free'
+  - 'view all media revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view the administration theme'
