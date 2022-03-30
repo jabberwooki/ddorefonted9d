@@ -25,9 +25,12 @@
       {{ field_media_image }}
     </a>
     <div class="show-age" data-age="{{ content.field_minimum_age.0 }}"></div>
-    <div class="festival-teaser-show">
-      {{ content.field_festival }}
-    </div>
+    {% if content.field_festival is empty %}
+      <div class="festival-teaser-show">
+        {{ content.field_festival }}
+      </div>
+    {% endif %}
+
     {% if 'extra' in node.field_location.0.entity.parent.entity.label|lower %}
       <div class="teaser-location extramuros" title="Hors les murs du domaine d'O">
         <span class="visually-hidden-focusable">Hors les murs du domaine d'O</span>
