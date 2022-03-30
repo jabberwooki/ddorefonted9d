@@ -18,7 +18,9 @@
 
   .festival-teaser-show {
     @include black_sidebar();
-    display: none;
+    position: absolute;
+    top: 5px;
+    left: 15px;
   }
 
   .teaser-location {

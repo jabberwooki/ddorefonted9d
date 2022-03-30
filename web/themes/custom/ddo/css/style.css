@@ -13520,7 +13520,9 @@ ul.pagination li.active span {
   font-style: normal;
   font-weight: 500;
   color: white;
-  display: none;
+  position: absolute;
+  top: 5px;
+  left: 15px;
 }
 .teaser-show .festival-teaser-show a {
   color: white;
