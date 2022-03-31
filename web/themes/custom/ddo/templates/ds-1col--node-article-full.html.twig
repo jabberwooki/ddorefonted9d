@@ -13,7 +13,7 @@
 
 {{ title_suffix.contextual_links }}
 <div class="div-image-style-banner">
-  {% if not node.field_banner_image.isempty %}
+  {% if not node.field_banner_image is empty %}
     {{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, 'banner_narrow', {responsive: true}) }}
   {% endif %}
 </div>
