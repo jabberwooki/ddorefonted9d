@@ -6,7 +6,7 @@ label: 'Image 3/2'
 id: 3_2_image
 description: ''
 aspect_ratio: '3:2'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 780
-hard_limit_height: 517
+soft_limit_width: 780
+soft_limit_height: 517
+hard_limit_width: null
+hard_limit_height: null

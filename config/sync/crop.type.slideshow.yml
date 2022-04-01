@@ -6,7 +6,7 @@ label: Diaporama
 id: slideshow
 description: ''
 aspect_ratio: '317:220'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 634
-hard_limit_height: 440
+soft_limit_width: 634
+soft_limit_height: 440
+hard_limit_width: null
+hard_limit_height: null

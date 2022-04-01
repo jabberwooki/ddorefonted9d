@@ -15,6 +15,7 @@ effects:
     weight: 1
     data:
       crop_type: currently
+      automatic_crop_provider: null
   a42f4448-220e-458f-9ae5-aabbbf786260:
     uuid: a42f4448-220e-458f-9ae5-aabbbf786260
     id: image_scale
@@ -22,4 +23,4 @@ effects:
     data:
       width: 768
       height: null
-      upscale: false
+      upscale: true

@@ -15,6 +15,7 @@ effects:
     weight: 1
     data:
       crop_type: square_image
+      automatic_crop_provider: null
   cf749b53-d6c4-4eff-a084-f3b3a3652c41:
     uuid: cf749b53-d6c4-4eff-a084-f3b3a3652c41
     id: image_scale
@@ -22,4 +23,4 @@ effects:
     data:
       width: 768
       height: null
-      upscale: false
+      upscale: true
