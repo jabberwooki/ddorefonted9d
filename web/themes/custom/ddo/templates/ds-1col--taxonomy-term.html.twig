@@ -12,7 +12,7 @@
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
 {{ title_suffix.contextual_links }}
-{% if not taxonomy_term.field_image is empty  %}
+{% if taxonomy_term.field_image is not empty  %}
   <div class="div-image-style-banner">
     {{ drupal_image(taxonomy_term.field_image.entity.field_media_image.entity.uri.value, 'banner_narrow', {responsive: true}) }}
   </div>
