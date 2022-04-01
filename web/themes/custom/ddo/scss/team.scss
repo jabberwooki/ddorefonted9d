@@ -2,7 +2,19 @@ body.page-view-user-admin-people {
   .field--name-field-media-image {
     float: left;
     margin-right: 20px;
+    max-width: 30%;
   }
+  .views-field-field-description {
+    h3 {
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.25em;
+      color: map-get($theme-colors, "secondary");
+      margin-bottom: 0;
+    }
+  }
+
   #page-nav-left {
     @include media-breakpoint-down(md) {
       display: none !important;
