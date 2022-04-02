@@ -12,7 +12,7 @@ dependencies:
 id: ddo_sub_main_menu
 theme: ddo
 region: sidebar_first
-weight: 0
+weight: -16
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -20,7 +20,7 @@ settings:
   label: 'Sous navigation principale'
   label_display: '0'
   provider: system
-  level: 2
+  level: 1
   depth: 0
   expand_all_items: true
 visibility:
