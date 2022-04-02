@@ -1,3 +1,10 @@
+## SASS
+La compilation du scss via gulp ne fonctionnant plus à partir de mars 2022, je complile le code de manière classique :
+Se rendre sur le répertoire racine du thème puis lancer :  sass --watch scss/import.scss css/style.css
+
+
+
+DEFAULT DRUPAL TXT
 Themes allow you to change the look and feel of your Drupal site. You can use
 themes contributed by others or create your own.
 
