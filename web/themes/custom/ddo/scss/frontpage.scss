@@ -1,3 +1,10 @@
+.page-view-frontpage {
+  @include media-breakpoint-up(xxl) {
+    .container {
+      max-width: 1140px !important;
+    }
+  }
+}
 /* Info flash  ********************************************************************************/
 .highlighted {
 
