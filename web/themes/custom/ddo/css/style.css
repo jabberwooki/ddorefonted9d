@@ -13813,6 +13813,22 @@ ul.pagination li.active span {
   color: white;
   font-size: 1.2rem;
 }
+.node--type-show #wrap-full-show .link-book-teaser-show {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 0.813em;
+  border-radius: 0;
+  background-color: #F74E2D;
+  border: 1px solid #F74E2D;
+  text-transform: uppercase;
+  color: white;
+  margin-top: -3px;
+  margin-bottom: 7px;
+}
+.node--type-show #wrap-full-show .link-book-teaser-show:hover {
+  background-color: white;
+  color: #F74E2D !important;
+}
 .node--type-show #wrap-full-show .row-anchor-full-show {
   background-color: #EFEFEF;
   padding: 10px 0 0 0;

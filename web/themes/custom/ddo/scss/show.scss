@@ -163,6 +163,7 @@
 }
 
 /* Contenu complet de spectacle*/
+
 .node--type-show {
   #wrap-full-show {
     .div-image-style-banner {
@@ -243,7 +244,11 @@
       }
 
     }
-
+    .link-book-teaser-show {
+      @include button_book_show();
+      margin-top: -3px;
+      margin-bottom: 7px;
+    }
     .row-anchor-full-show {
       background-color: $gray-300;
       padding: 10px 0 0 0;
