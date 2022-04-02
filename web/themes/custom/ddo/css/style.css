@@ -14134,6 +14134,12 @@ body.page-view-shows .under-featured-top-all-shows .form-actions button:hover {
   max-width: 33%;
 }
 
+@media (min-width: 1400px) {
+  .page-view-frontpage .container {
+    max-width: 1140px !important;
+  }
+}
+
 /* Info flash  ********************************************************************************/
 .highlighted {
   background-color: #F74E2D;
@@ -15150,7 +15156,7 @@ body.node--type-documentation .field--name-field-references > .field__items > * 
 body.page-view-user-admin-people .field--name-field-media-image {
   float: left;
   margin-right: 20px;
-  max-width: 30%;
+  max-width: 174px;
 }
 body.page-view-user-admin-people .views-field-field-description h3, body.page-view-user-admin-people .views-field-field-description .h3 {
   text-transform: uppercase;
