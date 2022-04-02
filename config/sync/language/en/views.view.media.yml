@@ -7,7 +7,7 @@ display:
       title: Media
       fields:
         media_bulk_form:
-          action_title: RulesAction
+          action_title: Action
         thumbnail__target_id:
           label: Thumbnail
           separator: ', '

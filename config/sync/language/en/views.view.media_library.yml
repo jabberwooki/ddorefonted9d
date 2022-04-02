@@ -7,7 +7,7 @@ display:
       title: Media
       fields:
         media_bulk_form:
-          action_title: RulesAction
+          action_title: Action
       pager:
         options:
           tags:
@@ -64,7 +64,7 @@ display:
     display_options:
       fields:
         media_bulk_form:
-          action_title: RulesAction
+          action_title: Action
         name:
           separator: ', '
         edit_media:

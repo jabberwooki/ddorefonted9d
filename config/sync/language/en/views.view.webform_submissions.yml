@@ -60,7 +60,7 @@ display:
       fields:
         webform_submission_bulk_form:
           label: 'Webform submission operations bulk form'
-          action_title: RulesAction
+          action_title: Action
         sid:
           label: '#'
           separator: ', '
@@ -101,7 +101,7 @@ display:
       fields:
         webform_submission_bulk_form:
           label: 'Webform submission operations bulk form'
-          action_title: RulesAction
+          action_title: Action
         sid:
           label: '#'
           separator: ', '

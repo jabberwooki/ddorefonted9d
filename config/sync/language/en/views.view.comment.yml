@@ -7,7 +7,7 @@ display:
       title: Comments
       fields:
         comment_bulk_form:
-          action_title: RulesAction
+          action_title: Action
         subject:
           label: Subject
           separator: ', '
@@ -70,7 +70,7 @@ display:
     display_options:
       fields:
         comment_bulk_form:
-          action_title: RulesAction
+          action_title: Action
         subject:
           label: Subject
           separator: ', '
