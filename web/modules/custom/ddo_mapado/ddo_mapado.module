@@ -748,7 +748,7 @@ function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=nul
       // Bien que non indiqué dans la doc, timezone est obligatoire, sinon "Internal Server Error".
       $data['timezone'] = 'Europe/Paris';
       // Lieu (Domaine d'O)
-      $data['venue'] = '/v1/venues/391';
+      //$data['venue'] = '/v1/venues/391';
       // Ville
       $data['city'] = 'Montpellier';
     }
