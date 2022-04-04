@@ -189,7 +189,6 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
 
   ////////////////////////////// 6 - Photo du spectacle (field_media_image) ////////////////////////////////////////////
   if (isset($node->field_media_image->target_id)) {
-    $media = Media::load($node->field_media_image->target_id);
     $image_uri = $node->field_media_image->entity->field_media_image->entity->getFileUri();
     $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
 
@@ -701,12 +700,12 @@ function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=nul
       curl_setopt($ch2, CURLOPT_ENCODING, 'gzip, deflate');
 
       $headers2 = array();
-      $headers2[] = "Origin: https://www.mapado.com";
+      //$headers2[] = "Origin: https://www.mapado.com";
       $headers2[] = "Content-Type: application/x-www-form-urlencoded";
       $headers2[] = "Accept: */*";
-      $headers2[] = "Referer: https://www.mapado.com/create-activity";
-      $headers2[] = "X-Requested-With: XMLHttpRequest";
-      $headers2[] = "Connection: keep-alive";
+      //$headers2[] = "Referer: https://www.mapado.com/create-activity";
+      //$headers2[] = "X-Requested-With: XMLHttpRequest";
+      //$headers2[] = "Connection: keep-alive";
       curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers2);
       $result = curl_exec($ch2);
 
