@@ -212,7 +212,7 @@ display:
             label: ''
             field_identifier: weight
           exposed: false
-          draggable_views_reference: 'frontpage:page_1'
+          draggable_views_reference: 'frontpage:news_sorting'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       filters:
@@ -1419,9 +1419,9 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: weight
+            field_identifier: ''
           exposed: false
-          draggable_views_reference: 'frontpage:page_1'
+          draggable_views_reference: this
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       filters:
@@ -2797,7 +2797,7 @@ display:
             label: ''
             field_identifier: weight
           exposed: false
-          draggable_views_reference: 'frontpage:page_2'
+          draggable_views_reference: 'frontpage:slideshow_sorting'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       filters:
@@ -3303,6 +3303,23 @@ display:
         options:
           offset: 0
       empty: {  }
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: draggable_views_sort_default
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          draggable_views_reference: this
+          draggable_views_null_order: after
+          draggable_views_pass_arguments: false
       filters:
         status:
           id: status
@@ -3523,6 +3540,7 @@ display:
         style: false
         row: false
         fields: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''

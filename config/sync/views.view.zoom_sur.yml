@@ -617,7 +617,7 @@ display:
             label: ''
             field_identifier: weight
           exposed: false
-          draggable_views_reference: 'zoom_sur:zoom_sortin'
+          draggable_views_reference: 'zoom_sur:zoom_sorting'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       style:
@@ -1086,7 +1086,7 @@ display:
             label: ''
             field_identifier: weight
           exposed: false
-          draggable_views_reference: 'zoom_sur:zoom_sortin'
+          draggable_views_reference: 'zoom_sur:zoom_sorting'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       style:
