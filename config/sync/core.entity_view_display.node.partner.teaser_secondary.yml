@@ -1,0 +1,55 @@
+uuid: dbf35a95-58dd-48ae-83c0-e794cc5f39c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_secondary
+    - field.field.node.partner.body
+    - field.field.node.partner.field_logo
+    - field.field.node.partner.field_partner_type
+    - image.style.medium
+    - node.type.partner
+  module:
+    - ds
+    - media
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - field_logo
+id: node.partner.teaser_secondary
+targetEntityType: node
+bundle: partner
+mode: teaser_secondary
+content:
+  field_logo:
+    type: media_thumbnail
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+hidden:
+  body: true
+  field_partner_type: true
+  langcode: true
+  links: true
+  sharethis: true

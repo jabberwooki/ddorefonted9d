@@ -1,0 +1,10 @@
+uuid: 73e62c06-90e7-4e48-9a11-983776b16490
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_secondary
+label: 'Accroche secondaire'
+targetEntityType: node
+cache: true
