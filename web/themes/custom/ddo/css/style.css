@@ -13364,8 +13364,13 @@ body {
   clear: both;
 }
 
-.field--type-image {
+.node .field--type-image {
   float: none;
+}
+@media (min-width: 576px) {
+  .node .field--type-image {
+    float: none;
+  }
 }
 
 img {
