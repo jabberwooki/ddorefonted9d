@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.media.currently
     - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.original
+    - core.entity_view_mode.media.small_150
     - core.entity_view_mode.media.teaser
     - core.entity_view_mode.media.zoom
   module:
@@ -48,7 +50,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p class="txt-intro txt-intro-grenadine txt-normal"> <pre> <div> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <p class="txt-intro txt-intro-grenadine txt-normal clearfix clear">'
       filter_html_help: true
       filter_html_nofollow: false
   blazy_filter:
@@ -108,6 +110,8 @@ filters:
       allowed_view_modes:
         currently: currently
         media_library: media_library
+        original: original
+        small_150: small_150
         teaser: teaser
         zoom: zoom
       allowed_media_types:

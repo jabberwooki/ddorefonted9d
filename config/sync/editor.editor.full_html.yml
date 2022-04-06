@@ -56,7 +56,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal"
+      styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
 image_upload:
   status: true
   scheme: public

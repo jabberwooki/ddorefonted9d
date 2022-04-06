@@ -1,0 +1,15 @@
+uuid: 34a507b2-9a21-406a-855b-c1e54e3e5985
+langcode: fr
+status: true
+dependencies: {  }
+name: small_150
+label: petit-150
+effects:
+  c657a46a-b2d5-4e49-942e-23443eb6b6af:
+    uuid: c657a46a-b2d5-4e49-942e-23443eb6b6af
+    id: image_scale
+    weight: 1
+    data:
+      width: 150
+      height: null
+      upscale: true
