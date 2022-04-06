@@ -6,6 +6,12 @@ body {
 .clear {
   clear: both;
 }
+.node .field--type-image {
+  float: none;
+  @include media-breakpoint-up(sm) {
+    float: none;
+  }
+}
 img {
   max-width: 100%;
 }

@@ -13364,6 +13364,15 @@ body {
   clear: both;
 }
 
+.node .field--type-image {
+  float: none;
+}
+@media (min-width: 576px) {
+  .node .field--type-image {
+    float: none;
+  }
+}
+
 img {
   max-width: 100%;
 }
