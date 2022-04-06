@@ -111,6 +111,7 @@ filters:
         teaser: teaser
         zoom: zoom
       allowed_media_types:
+        document: document
         gallery: gallery
         image: image
         remote_video: remote_video
