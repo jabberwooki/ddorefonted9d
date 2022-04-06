@@ -43,21 +43,20 @@
       {% if not field_casting is empty or not field_production is empty or not field_coproduction is empty or not field_partnerships is empty %}
         <div class="row">
           <div class="col-md-4 offset-md-1 order-md-2" id="col-book-show">
-            {# <button class="btn btn-secondary" id="book-show">Réserver</button>#}
+            {# <button class="btn btn-secondary" id="book-show">Réserver</button> #}
 
-{#          On affiche l'un, l'autre ou aucun des deux boutons RESERVER
+            {#          On affiche l'un, l'autre ou aucun des deux boutons RESERVER
             en fonction de ce qui est évalué dans le hook ddo_mapado_node_view().
-#}
+            #}
             {% if not mapado_url.0 is empty %}
-            <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.0.uri }}">
-              {{ node.mapado_url.0.title }}
-            </a>
+              <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.0.uri }}">
+                {{ node.mapado_url.0.title }}
+              </a>
             {% endif %}
-
-            {% if not mapado_url.1 is empty %}
-            <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.1.uri }}">
-              {{ node.mapado_url.1.title }}
-            </a>
+            {% if not mapado_url.1 is empty and node.field_reservation.0.value==2 %}
+              <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.1.uri }}">
+                {{ node.mapado_url.1.title }}
+              </a>
             {% endif %}
 
           </div>
@@ -86,6 +85,19 @@
       <div class="col-md-4 offset-md-1 order-md-2">
         {# Colonne de droite sur grand écran #}
         <div class="show-aside-information">
+          {# Prochainement #}
+          {% if node.field_reservation.0.value == 1 %}
+            {{ field_coming_soon }}
+          {% endif %}
+          {# Remboursement #}
+          {% if node.field_reservation.0.value == 3 %}
+            {{ field_reimbursement }}
+          {% endif %}
+          {# Annulé #}
+          {% if node.field_reservation.0.value == 4 %}
+            <div class="field__label">Annulé</div>
+            <div class="field__item"><p>Le spectacle est annulé. Merci de contacter la billetterie.</p></div>
+          {% endif %}
           <section class="section-all-show-dates">
             <h3 class="title-all-show-dates">Toutes les dates</h3>
             <ul class="list-unstyled">
@@ -136,6 +148,7 @@
             {{ field_restauration }}
           </section>
           {{ field_additional_info }}
+
         </div>
       </div>
       <div class="col-md-7 order-md-1">
