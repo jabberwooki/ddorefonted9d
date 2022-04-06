@@ -102,7 +102,8 @@
             <h3 class="title-all-show-dates">Toutes les dates</h3>
             <ul class="list-unstyled">
               {% for date in node.field_dates %}
-                <li>{{ date.value | date('U') |  format_date('show_date') | capitalize }}</li>
+                {% set hour_plus_two = date.value |  date("H") + 2 %}
+                <li>{{ date.value | date("m/d/Y") | capitalize  }} - {{ hour_plus_two }}:{{ date.value | date("i") | capitalize  }}</li>
               {% endfor %}
             </ul>
           </section>
