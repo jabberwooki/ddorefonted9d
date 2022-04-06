@@ -13364,6 +13364,10 @@ body {
   clear: both;
 }
 
+.field--type-image {
+  float: none;
+}
+
 img {
   max-width: 100%;
 }
