@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.partner.body
     - field.field.node.partner.field_logo
     - field.field.node.partner.field_partner_type
+    - field.field.node.partner.field_website
     - image.style.medium
     - node.type.partner
   module:
     - ds
+    - link
     - media
     - options
     - text
@@ -37,6 +39,7 @@ third_party_settings:
         - node_title
         - field_logo
         - field_partner_type
+        - field_website
         - body
     fields:
       node_title:
@@ -54,7 +57,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: ds_content
   field_logo:
     type: media_thumbnail
@@ -71,6 +74,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: ds_content
+  field_website:
+    type: link_separate
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
     region: ds_content
 hidden:
   langcode: true

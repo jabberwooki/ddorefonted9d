@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.partner.body
     - field.field.node.partner.field_logo
     - field.field.node.partner.field_partner_type
+    - field.field.node.partner.field_website
     - image.style.medium
     - node.type.partner
   module:
     - ds
+    - link
     - media
     - text
     - user
@@ -35,6 +37,7 @@ third_party_settings:
       ds_content:
         - field_logo
         - body
+        - field_website
 id: node.partner.teaser
 targetEntityType: node
 bundle: partner
@@ -55,6 +58,18 @@ content:
       image_style: medium
     third_party_settings: {  }
     weight: 0
+    region: ds_content
+  field_website:
+    type: link_separate
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
     region: ds_content
 hidden:
   field_partner_type: true
