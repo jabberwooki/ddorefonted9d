@@ -31,6 +31,9 @@
           {{ node.field_pdf_programme.entity.name.value }}
         </a>
       {% endif %}
+      {% if not field_files is empty  %}
+        {{ field_files }}
+      {% endif %}
       {% if not field_online_flipthrough is empty and not node.field_online_flipthrough.0 is empty %}
         <a class="link-flipthrough"
            href="{{ node.field_online_flipthrough.0.url }}" target="_blank">
