@@ -76,6 +76,11 @@ settings:
             - Format
             - Styles
         -
+          name: Color
+          items:
+            - TextColor
+            - BGColor
+        -
           name: 'Tools 2'
           items:
             - ShowBlocks
@@ -85,6 +90,8 @@ settings:
       language_list: un
     stylescombo:
       styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
+    colorbutton:
+      colors: ''
 image_upload:
   status: true
   scheme: public
