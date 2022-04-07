@@ -47,6 +47,9 @@ settings:
     -
       value: comedie-livre-jeunesse
       label: 'La Comédie du Livre Jeunesse'
+    -
+      value: montpellier-danse
+      label: 'Montpellier Danse'
   allowed_values_function: ''
 module: options
 locked: false
