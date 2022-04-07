@@ -1,3 +1,4 @@
+web/sites/default/services.yml
 # Exports
 *.gz
 *.sql
