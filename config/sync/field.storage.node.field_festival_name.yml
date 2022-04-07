@@ -44,6 +44,9 @@ settings:
     -
       value: danseplatforma
       label: dansePlatForma
+    -
+      value: comedie-livre-jeunesse
+      label: 'La Comédie du Livre Jeunesse'
   allowed_values_function: ''
 module: options
 locked: false

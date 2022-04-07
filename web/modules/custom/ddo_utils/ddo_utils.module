@@ -300,6 +300,7 @@ function ddo_utils_get_festivals() {
     'cine-metropole' => array('title' => 'Ciné Métropole', 'weight' => 19, 'url' => 'spectacles/cine-metropole'),
     'cirque-metropole' => array('title' => 'Cirque Métropole', 'weight' => 20, 'url' => 'spectacles/cirque-metropole'),
     'danseplatforma' => array('title' => 'dansePlatForma', 'weight' => 21, 'url' => 'spectacles/danseplatforma'),
+    'comedie-livre-jeunesse' => array('title' => 'La Comédie du Livre Jeunesse', 'weight' => 22, 'url' => 'spectacles/comedie-livre-jeunesse'),
   );
 
   return $festivals;
