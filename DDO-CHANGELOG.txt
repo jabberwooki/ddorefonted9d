@@ -1,3 +1,7 @@
+Domaine d'O 1.0.1 - 2021-04-08
+----------------------------
+Rajout des fichiers default.settings.php et default.services.yml
+
 Domaine d'O 1.0 - 2021-04-08
 ----------------------------
 Première version du site du domaine d'O avec D9 
