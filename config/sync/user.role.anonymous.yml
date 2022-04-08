@@ -1,0 +1,21 @@
+uuid: 0cd489a8-7a5b-4aa8-a7b6-007713b97cce
+langcode: fr
+status: true
+dependencies:
+  module:
+    - comment
+    - media
+    - search
+    - system
+_core:
+  default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'search content'
+  - 'use advanced search'
+  - 'view media'

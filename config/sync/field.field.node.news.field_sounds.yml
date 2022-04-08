@@ -1,0 +1,29 @@
+uuid: f4989653-14a4-4e31-b356-f93f2f4ca7c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sounds
+    - media.type.remote_audio
+    - node.type.news
+id: node.news.field_sounds
+field_name: field_sounds
+entity_type: node
+bundle: news
+label: Sons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_audio: remote_audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

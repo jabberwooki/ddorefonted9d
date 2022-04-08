@@ -1,0 +1,10 @@
+uuid: 28a82376-440c-47d3-9a8a-92681c6feea4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.taxo_term_page
+label: 'Page taxo'
+targetEntityType: paragraph
+cache: true

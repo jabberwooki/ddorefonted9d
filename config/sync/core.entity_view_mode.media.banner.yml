@@ -1,0 +1,10 @@
+uuid: c3685e5d-e6ee-40eb-8d05-336c35a5b93e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.banner
+label: 'Bandeau large'
+targetEntityType: media
+cache: true

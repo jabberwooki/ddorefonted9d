@@ -1,0 +1,43 @@
+global-styling:
+  version: VERSION
+  js:
+    js/bootstrap.min.js: { weight: -48 }
+    js/barrio.js: {}
+    js/custom.js: {}
+    js/search.js: {}
+    js/mega_menu.js: {}
+  css:
+    component:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/popperjs
+home-slideshow:
+  version: VERSION 1
+  js:
+    js/home_slideshow.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+secondary-menu:
+  version: VERSION 1
+  js:
+    js/secondary_menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+calendar:
+  version: VERSION 1
+  js:
+    js/ddo_calendar.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+technique:
+  version: VERSION 1
+  js:
+    js/technique.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

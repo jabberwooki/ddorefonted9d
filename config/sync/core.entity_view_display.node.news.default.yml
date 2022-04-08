@@ -1,0 +1,149 @@
+uuid: 77b25fe5-4a51-4795-b0b8-43036cccf80e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.news.body
+    - field.field.node.news.field_banner_image
+    - field.field.node.news.field_currently
+    - field.field.node.news.field_dates
+    - field.field.node.news.field_files
+    - field.field.node.news.field_galeries
+    - field.field.node.news.field_more_infos_link
+    - field.field.node.news.field_new_window
+    - field.field.node.news.field_newsflash
+    - field.field.node.news.field_publication_date
+    - field.field.node.news.field_send_notification
+    - field.field.node.news.field_sidebar_image
+    - field.field.node.news.field_slideshow
+    - field.field.node.news.field_sounds
+    - field.field.node.news.field_target_url
+    - field.field.node.news.field_topic_mode
+    - field.field.node.news.field_video_only
+    - field.field.node.news.field_videos
+    - field.field.node.news.field_webpush_topics
+    - field.field.node.news.field_zoom_text
+    - node.type.news
+  module:
+    - datetime
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - sharethis
+        - links
+        - node_title
+        - field_banner_image
+        - field_sidebar_image
+        - field_dates
+        - body
+        - field_galeries
+        - field_videos
+        - field_sounds
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h3
+          class: ''
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_banner_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_dates:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_galeries:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_sidebar_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_sounds:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_videos:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_currently: true
+  field_files: true
+  field_more_infos_link: true
+  field_new_window: true
+  field_newsflash: true
+  field_publication_date: true
+  field_send_notification: true
+  field_slideshow: true
+  field_target_url: true
+  field_topic_mode: true
+  field_video_only: true
+  field_webpush_topics: true
+  field_zoom_text: true
+  langcode: true

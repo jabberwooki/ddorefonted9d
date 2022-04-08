@@ -1,0 +1,46 @@
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_scald_image
+migration_tags:
+  - 'Drupal 7'
+  - 'DDO migrations'
+  - 'DDO scald'
+  - 'DDO media'
+  - Content
+migration_group: ddo_migrate
+label: 'Scald images'
+source:
+  plugin: migrate_source_scald_atom
+  atom_type: image
+process:
+  name: title
+  created: created
+  changed: timestamp
+  uid:
+    plugin: migration_lookup
+    migration: ddo_d7_user
+    source: publisher
+  status:
+    plugin: default_value
+    default_value: 1
+  field_authors:
+      plugin: migration_lookup
+      migration: ddo_d7_taxonomy_term_scald_authors
+      source: scald_authors
+  field_tags:
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_scald_tags
+    source: scald_tags
+  field_media_image/target_id: base_id
+  field_media_image/alt: title
+destination:
+  plugin: 'entity:media'
+  default_bundle: image
+migration_dependencies:
+  required:
+    - ddo_d7_user
+    - ddo_d7_file
+    - ddo_d7_taxonomy_term_scald_authors
+    - ddo_d7_taxonomy_term_scald_tags
+  optional: {  }

@@ -1,0 +1,22 @@
+uuid: be7a2f20-8cf1-4c4b-8e33-305b905c6cde
+langcode: fr
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - ddo
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: ddo_breadcrumbs
+theme: ddo
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fils d''ariane'
+  label_display: '0'
+  provider: system
+visibility: {  }

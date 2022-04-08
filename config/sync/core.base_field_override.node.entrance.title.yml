@@ -1,0 +1,18 @@
+uuid: 9d891969-e245-4f2d-8c62-392557016aa2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.entrance
+id: node.entrance.title
+field_name: title
+entity_type: node
+bundle: entrance
+label: Nom
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

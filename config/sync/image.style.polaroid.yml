@@ -1,0 +1,15 @@
+uuid: d45169f7-8ac2-4da2-bb9d-0120dd1d36f0
+langcode: fr
+status: true
+dependencies: {  }
+name: polaroid
+label: Polaroid
+effects:
+  1459fe8f-1caf-4a2a-b630-a1cd7e8b5e75:
+    uuid: 1459fe8f-1caf-4a2a-b630-a1cd7e8b5e75
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 174
+      height: 276
+      anchor: center-center

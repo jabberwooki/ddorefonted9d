@@ -1,0 +1,17 @@
+uuid: 3af5b396-ccd9-420d-933f-c4f43318bc77
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: LkO63Zl2cP_l9YdjzWI8dWoD9uD0pytkPiUiUM2bo9A
+id: phone_types
+label: 'Phone type'
+category: Démographique
+likert: false
+options: |
+  Home: Home
+  Office: Office
+  Cell: Cell

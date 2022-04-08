@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('bootstrap_barrio/form') }}
+<div class="row">
+  <div class="col">
+    <form{{ attributes }}>
+      {{ children }}
+    </form>
+  </div>
+  <div class="col d-flex flex-column justify-content-center div-calendar-all-shows">
+    <h3 class="title-calendar">Le domaine d'O <br>mois par mois</h3>
+    <div class="div-link-calendar"><a href="/calendrier" class="btn-calendar">Le calendrier</a></div>
+  </div>
+</div>

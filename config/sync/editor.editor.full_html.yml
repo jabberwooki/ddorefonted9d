@@ -1,0 +1,102 @@
+uuid: 480de49d-7600-4fe0-9e29-256077ab5826
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Source
+          items:
+            - Source
+        -
+          name: 'Text Handling'
+          items:
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: 'Tools 1'
+          items:
+            - Undo
+            - Redo
+            - SpecialChar
+            - RemoveFormat
+        -
+          name: Media
+          items:
+            - DrupalImage
+            - DrupalMediaLibrary
+            - Table
+            - HorizontalRule
+            - '-'
+      -
+        -
+          name: 'Text Formatting'
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - Subscript
+            - Superscript
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - Blockquote
+        -
+          name: 'Text Alignment'
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+      -
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+            - Styles
+        -
+          name: Color
+          items:
+            - TextColor
+            - BGColor
+        -
+          name: 'Tools 2'
+          items:
+            - ShowBlocks
+            - Maximize
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
+    colorbutton:
+      colors: ''
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

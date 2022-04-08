@@ -1,0 +1,124 @@
+uuid: 50a5831b-e3a3-467d-9b47-2384f4fa2ad5
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_url_alias
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: ddo_migrate
+label: 'URL aliases'
+source:
+  plugin: d7_url_alias
+  constants:
+    slash: /
+process:
+  id:
+    -
+      plugin: get
+      source: pid
+  _path:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - source
+  alias:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - alias
+  node_translation:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_NID
+      index:
+        - 1
+    -
+      plugin: migration_lookup
+      migration:
+        - ddo_d7_node_complete_article
+        - ddo_d7_node_complete_entree
+        - ddo_d7_node_complete_festival
+        - ddo_d7_node_complete_lettre_info
+        - ddo_d7_node_complete_lieu_location
+        - ddo_d7_node_complete_news
+        - ddo_d7_node_complete_page
+        - ddo_d7_node_complete_page_complexe
+        - ddo_d7_node_complete_personne
+        - ddo_d7_node_complete_presentation_location_salles
+        - ddo_d7_node_complete_press_document
+        - ddo_d7_node_complete_programmer
+        - ddo_d7_node_complete_relpub_document
+        - ddo_d7_node_complete_retour_sur
+        - ddo_d7_node_complete_show
+        - ddo_d7_node_complete_structure
+        - ddo_d7_node_complete_tech_document
+        - ddo_d7_node_complete_webform
+    -
+      plugin: node_complete_node_translation_lookup
+  langcode:
+    -
+      plugin: null_coalesce
+      source:
+        - '@node_translation/1'
+        - language
+  path:
+    -
+      plugin: path_set_translated
+      source:
+        - '@_path'
+        - '@node_translation'
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:path_alias'
+migration_dependencies:
+  required: {  }
+  optional:
+    - ddo_d7_node_complete_article
+    - ddo_d7_node_complete_entree
+    - ddo_d7_node_complete_festival
+    - ddo_d7_node_complete_lettre_info
+    - ddo_d7_node_complete_lieu_location
+    - ddo_d7_node_complete_news
+    - ddo_d7_node_complete_page
+    - ddo_d7_node_complete_page_complexe
+    - ddo_d7_node_complete_personne
+    - ddo_d7_node_complete_presentation_location_salles
+    - ddo_d7_node_complete_press_document
+    - ddo_d7_node_complete_programmer
+    - ddo_d7_node_complete_relpub_document
+    - ddo_d7_node_complete_retour_sur
+    - ddo_d7_node_complete_show
+    - ddo_d7_node_complete_structure
+    - ddo_d7_node_complete_tech_document
+    - ddo_d7_node_complete_webform
+    - ddo_d7_node_complete_article
+    - ddo_d7_node_complete_entree
+    - ddo_d7_node_complete_festival
+    - ddo_d7_node_complete_lettre_info
+    - ddo_d7_node_complete_lieu_location
+    - ddo_d7_node_complete_news
+    - ddo_d7_node_complete_page
+    - ddo_d7_node_complete_page_complexe
+    - ddo_d7_node_complete_personne
+    - ddo_d7_node_complete_presentation_location_salles
+    - ddo_d7_node_complete_press_document
+    - ddo_d7_node_complete_programmer
+    - ddo_d7_node_complete_relpub_document
+    - ddo_d7_node_complete_retour_sur
+    - ddo_d7_node_complete_show
+    - ddo_d7_node_complete_structure
+    - ddo_d7_node_complete_tech_document
+    - ddo_d7_node_complete_webform

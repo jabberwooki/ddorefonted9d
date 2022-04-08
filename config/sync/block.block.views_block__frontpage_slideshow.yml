@@ -1,0 +1,29 @@
+uuid: b5c762dc-5502-4372-83d2-bc4ddf324428
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - system
+    - views
+  theme:
+    - ddo
+id: views_block__frontpage_slideshow
+theme: ddo
+region: featured_top
+weight: -11
+provider: null
+plugin: 'views_block:frontpage-slideshow'
+settings:
+  id: 'views_block:frontpage-slideshow'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

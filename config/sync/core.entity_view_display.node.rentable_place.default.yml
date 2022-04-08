@@ -1,0 +1,88 @@
+uuid: b3e3cb13-cb2d-4e89-8890-f69061ff58cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.rentable_place.body
+    - field.field.node.rentable_place.field_contact
+    - field.field.node.rentable_place.field_gallery
+    - field.field.node.rentable_place.field_media_image
+    - node.type.rentable_place
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - langcode
+        - sharethis
+        - links
+        - body
+        - field_media_image
+        - field_gallery
+        - field_contact
+id: node.rentable_place.default
+targetEntityType: node
+bundle: rentable_place
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_contact:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_gallery:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_media_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  langcode:
+    type: language
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden: {  }

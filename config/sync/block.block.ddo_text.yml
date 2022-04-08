@@ -1,0 +1,22 @@
+uuid: d87e8b60-4589-4b00-a31e-97692904fe2a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.ddo_text
+  module:
+    - simple_block
+  theme:
+    - ddo
+id: ddo_text
+theme: ddo
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'simple_block:ddo_text'
+settings:
+  id: 'simple_block:ddo_text'
+  label: 'Texte bas de page'
+  label_display: '0'
+  provider: simple_block
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: eff3fe8d-31b8-4564-ad34-167213a6ad67
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_type
+    - node.type.partner
+  module:
+    - options
+id: node.partner.field_partner_type
+field_name: field_partner_type
+entity_type: node
+bundle: partner
+label: 'Type de partenaire'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,52 @@
+uuid: 91a75013-c596-4574-96f7-67eeaa11b1e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.documents.field_documents
+    - field.field.paragraph.documents.field_lien
+    - field.field.paragraph.documents.field_text
+    - field.field.paragraph.documents.field_title
+    - paragraphs.paragraphs_type.documents
+  module:
+    - link
+    - media_library
+id: paragraph.documents.default
+targetEntityType: paragraph
+bundle: documents
+mode: default
+content:
+  field_documents:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_lien:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

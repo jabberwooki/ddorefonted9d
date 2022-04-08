@@ -1,0 +1,17 @@
+uuid: 52847fb1-500a-42c0-aaa7-d16472ac93ab
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Personne
+type: person
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

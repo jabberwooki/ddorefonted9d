@@ -1,0 +1,348 @@
+#header {
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    width: 100%;
+  }
+}
+/* Boutons réseaux sociaux */
+.nav-social {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  margin-top: 3px;
+
+  a.icon-facebook {
+    @include social-icon("\e801");
+  }
+
+  a.icon-twitter {
+    @include social-icon("\e800");
+  }
+
+  a.icon-youtube {
+    @include social-icon("\e802");
+  }
+
+  a.icon-tripadvisor {
+    @include social-icon("\f262");
+  }
+}
+
+/* Boutons d'abonnement et de notification*/
+#buttons-notification-subscribe {
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
+  #link-subscription {
+    margin-top: 3px;
+    @include secondary-icon-link("\e840");
+  }
+
+  #webpush {
+    margin-top: 3px;
+    margin-right: 10px;
+    @include secondary-icon-link("\e84a");
+  }
+}
+
+#over-menus {
+  @include media-breakpoint-down(md) {
+    min-height: 60px;
+  }
+  /* Bouton navigation principale */
+  #custom-mega-menu-button {
+    @include media-breakpoint-down(md) {
+      left: -5px;
+    }
+    position: relative;
+    color: map-get($theme-colors, "secondary");
+    text-transform: uppercase;
+    width: 40px;
+    height: 40px;
+
+    &.open-menu-button {
+      span {
+        position: absolute;
+        bottom: -3px;
+        left: 15px;
+        font-size: 0.53125rem;
+      }
+
+      &:before {
+        @extend %icon-fontello;
+        content: "\e869";
+        font-size: 2.4rem;
+        color: map-get($theme-colors, "secondary");
+      }
+    }
+
+    &.close-menu-button {
+      span {
+        display: none;
+      }
+
+      &:before {
+        @extend %icon-fontello;
+        content: "\e832";
+        font-size: 2.4rem;
+        color: map-get($theme-colors, "secondary");
+      }
+    }
+
+
+    &:hover {
+      cursor: pointer;
+      color: black;
+
+      &:before {
+        color: black;
+      }
+    }
+  }
+
+  /* Navigation principale hors mega-menu */
+  #block-ddo-main-menu {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+    ul.nav {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        a {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.125rem !important;
+          text-transform: uppercase;
+          color: black;
+          display: block;
+          padding: 10px 36px;
+
+          &:hover {
+            color: map-get($theme-colors, "secondary");
+          }
+        }
+      }
+    }
+  }
+
+  /* Mega menu */
+  #mega-menu {
+    background-color: $gray-300;
+    min-height: 90vh !important;
+    padding-top: 20px;
+    #block-main-menu-in-mega,
+    #block-footer-menu-1-in-mega,
+    #block-footer-menu-2-in-mega,
+    #col-2-mega-menu,
+    #col-3-mega-menu {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          a {
+            color: black;
+          }
+        }
+
+        .dropdown-toggle {
+          &:after {
+            display: none;
+          }
+        }
+
+        &.nav {
+          flex-direction: column;
+
+          > li {
+            padding: 0;
+
+            > a {
+              padding: 0;
+              margin: 10px 0;
+              display: block;
+              color: #F74E2D;
+              text-transform: uppercase;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 1em;
+            }
+
+            > ul {
+              padding: 0 !important;
+
+              > li {
+                > a {
+                  margin: 10px 0;
+                  display: block;
+                  font-weight: bold;
+                  font-size: 0.875em;
+                }
+
+                > ul {
+                  > li {
+                    > a {
+                      font-weight: 400;
+                      margin: 0;
+                      padding: 5px 0 5px 20px;
+                      font-size: 0.875em;
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .dropdown-menu {
+      display: block !important;
+    }
+  }
+
+  /* Fin de la navigation principale */
+  /* Bouton de recherche */
+
+  #custom-search-button {
+    @include media-breakpoint-down(md) {
+      margin-top: 5px;
+      z-index: 9;
+    }
+    &:before {
+      @extend %icon-fontello;
+      content: "\e84f";
+      font-size: 1.875rem;
+      color: black;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:before {
+        color: map-get($theme-colors, "secondary");
+      }
+    }
+  }
+
+  /* Formulaire de recherche */
+  #search-block-form {
+    @include media-breakpoint-down(md) {
+      margin-top: 40px;
+    }
+    #edit-keys {
+      width: 300px;
+      @include media-breakpoint-down(md) {
+        width: 150px;
+      }
+
+      border: 0;
+      border-bottom: 1px solid map-get($theme-colors, "secondary");
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+
+      &:focus {
+        border: 0;
+        border-bottom: 1px solid map-get($theme-colors, "secondary");
+        box-shadow: unset !important;
+      }
+    }
+    #edit-submit {
+      border: 1px solid map-get($theme-colors, "secondary");;
+      background-color: white;
+      width: 150px;
+      text-transform: uppercase;
+      color: map-get($theme-colors, "secondary");
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+    #close-search-form {
+      &:before {
+        @extend %icon-fontello;
+        content: "\e832";
+        font-size: 1.875rem;
+        color: map-get($theme-colors, "secondary");
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &:before {
+          color: black;
+        }
+      }
+    }
+  }
+
+}
+
+
+/* Sous menu sur colonne de gauche */
+#page-nav-left {
+  nav.nav-inactive {
+    display: none;
+  }
+  ul.nav {
+    /* Global */
+    display: flex;
+    flex-direction: column;
+    li {
+      list-style: none;
+    }
+
+    a {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      display: block;
+      margin: 10px 0;
+
+      &:after {
+        content: "";
+        display: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+        opacity: 0.5;
+      }
+    }
+
+    > li {
+      a {
+        color: black;
+        font-weight: bold;
+
+        &.is-active {
+          color: map-get($theme-colors, "secondary");
+        }
+      }
+
+      ul {
+        li {
+          a {
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+/* Menus bas ***********/
+footer {
+  .nav-item {
+    > a {
+      @include media-breakpoint-down(md) {
+        padding: 10px 0!important;
+      }
+    }
+  }
+}
+

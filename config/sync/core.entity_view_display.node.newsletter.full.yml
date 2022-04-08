@@ -1,0 +1,108 @@
+uuid: 46b48569-d827-464a-be4f-bd96195b1005
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_mailchimp_url
+    - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_sending_date
+    - node.type.newsletter
+  module:
+    - datetime
+    - ds
+    - link
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - node_title
+        - field_sending_date
+        - field_mailchimp_url
+        - field_media_image
+        - body
+        - sharethis
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.newsletter.full
+targetEntityType: node
+bundle: newsletter
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: ds_content
+  field_mailchimp_url:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_media_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  field_sending_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: ds_content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: ds_content
+hidden:
+  langcode: true

@@ -1,0 +1,45 @@
+uuid: 89eeb1ea-217e-4702-9d7e-a7bd97b3ce61
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.documentation_page
+    - field.field.media.document.field_authors
+    - field.field.media.document.field_media_document
+    - field.field.media.document.field_tags
+    - media.type.document
+  module:
+    - ds
+    - file
+_core:
+  default_config_hash: DXitcriWmE5QHvGvk2OzWouaSnXD5uipkRdAG6_pnkg
+id: media.document.documentation_page
+targetEntityType: media
+bundle: document
+mode: documentation_page
+content:
+  field_authors:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 1
+    region: content
+  field_media_document:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

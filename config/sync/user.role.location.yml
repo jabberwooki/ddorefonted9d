@@ -1,0 +1,29 @@
+uuid: cad6f0a7-9e40-4b8b-8507-abef2d51212a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - contextual
+    - draggableviews
+    - filter
+    - node
+    - path
+    - redirect
+    - system
+id: location
+label: location
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access draggableviews'
+  - 'access site in maintenance mode'
+  - 'administer menu'
+  - 'administer redirects'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'use text format full_html'

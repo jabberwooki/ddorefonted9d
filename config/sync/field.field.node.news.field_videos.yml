@@ -1,0 +1,29 @@
+uuid: a3231491-2898-4c1c-be2e-a0f538b6b586
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_videos
+    - media.type.remote_video
+    - node.type.news
+id: node.news.field_videos
+field_name: field_videos
+entity_type: node
+bundle: news
+label: Vidéos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

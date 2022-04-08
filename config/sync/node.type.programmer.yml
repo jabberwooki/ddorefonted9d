@@ -1,0 +1,17 @@
+uuid: 94ce7d61-87de-436d-bf5b-a27d52339274
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Programmateur
+type: programmer
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

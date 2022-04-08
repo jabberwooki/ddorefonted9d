@@ -1,0 +1,24 @@
+uuid: 0354084c-05aa-4daf-a62b-dd76e81fea33
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offline
+    - node.type.show
+  module:
+    - text
+id: node.show.field_offline
+field_name: field_offline
+entity_type: node
+bundle: show
+label: 'Billetterie indisponible'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Billetterie momentanément indisponible. Veuillez recharger la page.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

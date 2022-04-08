@@ -1,0 +1,29 @@
+uuid: e337f736-59a6-4b33-a544-4b7dcfe81d86
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.document
+    - taxonomy.vocabulary.scald_tags
+id: media.document.field_tags
+field_name: field_tags
+entity_type: media
+bundle: document
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scald_tags: scald_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

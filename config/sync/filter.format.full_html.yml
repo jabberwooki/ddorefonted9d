@@ -1,0 +1,121 @@
+uuid: d0447192-74ff-4f66-9d5e-2f86c4885f1d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.currently
+    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.original
+    - core.entity_view_mode.media.small_150
+    - core.entity_view_mode.media.teaser
+    - core.entity_view_mode.media.zoom
+  module:
+    - blazy
+    - editor
+    - media
+    - slick
+_core:
+  default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
+name: 'HTML complet'
+format: full_html
+weight: -10
+filters:
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class=""> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <p class="txt-intro txt-intro-grenadine txt-normal clearfix clear"> <u> <span style>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      layout: ''
+      skin: ''
+      loading: ''
+      preload: false
+      background: false
+      box_media_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        currently: currently
+        media_library: media_library
+        original: original
+        small_150: small_150
+        teaser: teaser
+        zoom: zoom
+      allowed_media_types:
+        document: document
+        gallery: gallery
+        image: image
+        remote_video: remote_video

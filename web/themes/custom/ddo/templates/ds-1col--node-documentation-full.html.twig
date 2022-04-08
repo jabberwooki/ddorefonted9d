@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+<div class="div-image-style-banner">
+  {# {{ drupal_dump(node.field_paragraphs)  }} #}
+  {% for item in node.field_paragraphs %}
+    {% if loop.index == 1 %}
+      {{ drupal_entity('paragraph', item.target_id, "documentation_page") }}
+    {% endif %}
+  {% endfor %}
+</div>
+<div class="container wrapper-over-img-abs">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="group-text-over-img-abs">
+      {{ title }}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="d-sm-none d-md-block col-md-3" id="page-nav-left">
+      {{ drupal_entity('block', 'ddofooter1') }}
+    </div>
+    <div class="col-md-8 offset-md-1 content-with-banner-img">
+      {{ body }}
+      {% for item in node.field_paragraphs %}
+        {% if loop.index > 1 %}
+          <div class="custom-paragraph">{{ drupal_entity('paragraph', item.target_id, "documentation_page") }}</div>
+        {% endif %}
+      {% endfor %}
+      {# {{ dump(node.field_paragraphs[1]|keys) }} #}
+      {# {{ item.target_id }} #}
+      {# {{ dump(item|keys) }} #}
+      {# {{ item.entity.field_title.value }} #}
+      {# <img src="{{ file_url(item.entity.field_media_image.entity.fileuri) }}" /> #}
+      {# {{ ds_content }} #}
+
+    </div>
+  </div>
+</div>
+
+
+</{{ ds_content_wrapper }}>

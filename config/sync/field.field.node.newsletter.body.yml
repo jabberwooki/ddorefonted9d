@@ -1,0 +1,23 @@
+uuid: 2a41e7a4-1f7e-4493-8189-c54be48b98ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.newsletter
+  module:
+    - text
+id: node.newsletter.body
+field_name: body
+entity_type: node
+bundle: newsletter
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

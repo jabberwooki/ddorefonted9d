@@ -1,0 +1,44 @@
+uuid: 7f2cb8f4-df31-4f26-b7d4-f657c0d1c39c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_authors
+    - field.field.media.document.field_media_document
+    - field.field.media.document.field_tags
+    - media.type.document
+  module:
+    - ds
+    - file
+_core:
+  default_config_hash: DXitcriWmE5QHvGvk2OzWouaSnXD5uipkRdAG6_pnkg
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  field_authors:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 1
+    region: content
+  field_media_document:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

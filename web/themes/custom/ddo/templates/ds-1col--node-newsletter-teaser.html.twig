@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+<div class="newsletter-teaser">
+  {{ field_media_image }}
+  <div class="txt-over-newsletter-image">
+    {{ title_suffix.contextual_links }}
+    {{ field_mailchimp_url }}
+    {{ body }}
+    <div class="sending-date-nl"><span>Envoyée le : </span><span> {{ field_sending_date }}</span></div>
+  </div>
+</div>
+
+  {# {{ ds_content }} #}
+
+</{{ ds_content_wrapper }}>

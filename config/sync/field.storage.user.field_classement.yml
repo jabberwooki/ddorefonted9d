@@ -1,0 +1,48 @@
+uuid: 7db98f23-5dcc-4941-ad86-643a2e5e3295
+langcode: fr
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_classement
+field_name: field_classement
+entity_type: user
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: '1'
+    -
+      value: 2
+      label: '2'
+    -
+      value: 3
+      label: '3'
+    -
+      value: 4
+      label: '4'
+    -
+      value: 5
+      label: '5'
+    -
+      value: 6
+      label: '6'
+    -
+      value: 7
+      label: '7'
+    -
+      value: 8
+      label: '8'
+    -
+      value: 9
+      label: '9'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

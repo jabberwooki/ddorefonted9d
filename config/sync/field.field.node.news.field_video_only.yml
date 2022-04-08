@@ -1,0 +1,23 @@
+uuid: c8b6e9b6-1b1d-48d5-917a-670d0aeabbd8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_only
+    - node.type.news
+id: node.news.field_video_only
+field_name: field_video_only
+entity_type: node
+bundle: news
+label: 'Vidéo seule'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,29 @@
+uuid: a9c4fc7f-87e3-4a36-b41a-2409edcf11ff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - system
+    - views
+  theme:
+    - ddo
+id: views_block__frontpage_festival_names
+theme: ddo
+region: featured_top_large
+weight: -12
+provider: null
+plugin: 'views_block:frontpage-festival_names'
+settings:
+  id: 'views_block:frontpage-festival_names'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

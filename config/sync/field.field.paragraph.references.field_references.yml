@@ -1,0 +1,46 @@
+uuid: c3d7d90d-cd79-43de-a953-25ee73bd2cbf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_references
+    - paragraphs.paragraphs_type.reference
+    - paragraphs.paragraphs_type.references
+  module:
+    - entity_reference_revisions
+id: paragraph.references.field_references
+field_name: field_references
+entity_type: paragraph
+bundle: references
+label: Références
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      reference: reference
+    negate: 0
+    target_bundles_drag_drop:
+      binder:
+        weight: 7
+        enabled: false
+      documents:
+        weight: 8
+        enabled: false
+      galleries:
+        weight: 9
+        enabled: false
+      image:
+        weight: 10
+        enabled: false
+      reference:
+        weight: 11
+        enabled: true
+      references:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

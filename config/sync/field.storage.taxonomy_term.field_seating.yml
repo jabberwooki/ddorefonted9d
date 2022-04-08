@@ -1,0 +1,20 @@
+uuid: ee35cc7e-7b13-4a7a-965a-e7ebe7d689d0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_seating
+field_name: field_seating
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

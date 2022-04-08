@@ -1,0 +1,21 @@
+uuid: 5a5e97b3-751e-4f59-9b23-109f5b72bfd1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coming_soon
+    - node.type.show
+  module:
+    - text
+id: node.show.field_coming_soon
+field_name: field_coming_soon
+entity_type: node
+bundle: show
+label: 'Prochainement en vente'
+description: 'Texte à afficher lorsque le spectacle n''est pas encore en vente.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

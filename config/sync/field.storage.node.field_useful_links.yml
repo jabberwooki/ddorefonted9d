@@ -1,0 +1,19 @@
+uuid: 3d404f80-ab2c-45ee-b028-ac20211737d6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_useful_links
+field_name: field_useful_links
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

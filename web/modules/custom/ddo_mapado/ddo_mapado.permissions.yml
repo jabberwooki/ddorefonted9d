@@ -1,0 +1,4 @@
+administer mapado:
+  title: 'Administrer le module Mapado'
+  description: 'Activer ou désactiver la synchronisation des données spectacle entre le site web du domaine d\O et la billetterie Mapado.'
+  restrict access: TRUE

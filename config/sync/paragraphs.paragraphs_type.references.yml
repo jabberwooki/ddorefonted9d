@@ -1,0 +1,10 @@
+uuid: 5de71f89-4c27-48b8-81f9-1054613f9d97
+langcode: fr
+status: true
+dependencies: {  }
+id: references
+label: 'Références techniques'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

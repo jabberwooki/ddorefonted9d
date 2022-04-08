@@ -1,0 +1,82 @@
+uuid: 79d67483-421a-4e87-9c71-9979518a90ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.festival.body
+    - field.field.node.festival.field_archives
+    - field.field.node.festival.field_calendar_archive
+    - field.field.node.festival.field_facebook
+    - field.field.node.festival.field_festival_name
+    - field.field.node.festival.field_files
+    - field.field.node.festival.field_galeries
+    - field.field.node.festival.field_logo
+    - field.field.node.festival.field_no_result
+    - field.field.node.festival.field_online_flipthrough
+    - field.field.node.festival.field_pdf_programme
+    - field.field.node.festival.field_plain_date
+    - field.field.node.festival.field_poster
+    - field.field.node.festival.field_season
+    - field.field.node.festival.field_shows
+    - field.field.node.festival.field_sidebar_image
+    - field.field.node.festival.field_sounds
+    - field.field.node.festival.field_useful_links
+    - field.field.node.festival.field_videos
+    - node.type.festival
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        label: ''
+    regions:
+      ds_content:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.festival.list
+targetEntityType: node
+bundle: festival
+mode: list
+content: {  }
+hidden:
+  body: true
+  field_archives: true
+  field_calendar_archive: true
+  field_facebook: true
+  field_festival_name: true
+  field_files: true
+  field_galeries: true
+  field_logo: true
+  field_no_result: true
+  field_online_flipthrough: true
+  field_pdf_programme: true
+  field_plain_date: true
+  field_poster: true
+  field_season: true
+  field_shows: true
+  field_sidebar_image: true
+  field_sounds: true
+  field_useful_links: true
+  field_videos: true
+  langcode: true
+  links: true
+  sharethis: true

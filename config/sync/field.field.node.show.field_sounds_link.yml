@@ -1,0 +1,24 @@
+uuid: 8d2854e8-e446-43ac-bcde-33ff78733b93
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sounds_link
+    - node.type.show
+  module:
+    - text
+id: node.show.field_sounds_link
+field_name: field_sounds_link
+entity_type: node
+bundle: show
+label: 'Lien sons'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<a href="#sounds">Sons</a>'
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text

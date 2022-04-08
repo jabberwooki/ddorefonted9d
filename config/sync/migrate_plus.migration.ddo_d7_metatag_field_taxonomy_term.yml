@@ -1,0 +1,50 @@
+uuid: ebf6e477-a821-4488-8728-96327c1ae43b
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_metatag_field_taxonomy_term
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: ddo_migrate
+label: 'Metatag field of termes de taxonomie'
+source:
+  plugin: d7_metatag_field
+  source_module: metatag
+  ignore_map: true
+  constants:
+    field_name: field_metatag
+    langcode: und
+    type: metatag
+    status: true
+  entity_type: taxonomy_term
+  entity_type_id: taxonomy_term
+process:
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  field_name:
+    -
+      plugin: get
+      source: constants/field_name
+  langcode:
+    -
+      plugin: get
+      source: constants/langcode
+  status:
+    -
+      plugin: get
+      source: constants/status
+  type:
+    -
+      plugin: get
+      source: constants/type
+destination:
+  plugin: 'entity:field_storage_config'
+migration_dependencies:
+  required: {  }
+  optional: {  }

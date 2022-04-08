@@ -1,0 +1,112 @@
+uuid: a4ee79d9-74e4-43a1-aa45-1b47e7bae68e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.festival.body
+    - field.field.node.festival.field_archives
+    - field.field.node.festival.field_calendar_archive
+    - field.field.node.festival.field_facebook
+    - field.field.node.festival.field_festival_name
+    - field.field.node.festival.field_files
+    - field.field.node.festival.field_galeries
+    - field.field.node.festival.field_logo
+    - field.field.node.festival.field_no_result
+    - field.field.node.festival.field_online_flipthrough
+    - field.field.node.festival.field_pdf_programme
+    - field.field.node.festival.field_plain_date
+    - field.field.node.festival.field_poster
+    - field.field.node.festival.field_season
+    - field.field.node.festival.field_shows
+    - field.field.node.festival.field_sidebar_image
+    - field.field.node.festival.field_sounds
+    - field.field.node.festival.field_useful_links
+    - field.field.node.festival.field_videos
+    - node.type.festival
+  module:
+    - ds
+    - term_reference_tree
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - field_poster
+        - node_title
+        - field_season
+        - field_plain_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h3
+          class: ''
+id: node.festival.teaser
+targetEntityType: node
+bundle: festival
+mode: teaser
+content:
+  field_plain_date:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  field_poster:
+    type: term_reference_tree
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+  field_season:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+hidden:
+  body: true
+  field_archives: true
+  field_calendar_archive: true
+  field_facebook: true
+  field_festival_name: true
+  field_files: true
+  field_galeries: true
+  field_logo: true
+  field_no_result: true
+  field_online_flipthrough: true
+  field_pdf_programme: true
+  field_shows: true
+  field_sidebar_image: true
+  field_sounds: true
+  field_useful_links: true
+  field_videos: true
+  langcode: true
+  links: true
+  sharethis: true

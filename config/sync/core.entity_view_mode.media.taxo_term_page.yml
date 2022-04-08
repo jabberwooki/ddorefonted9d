@@ -1,0 +1,10 @@
+uuid: 5e247932-d770-4f1f-8e5b-664a839db71d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.taxo_term_page
+label: 'Page taxo'
+targetEntityType: media
+cache: true

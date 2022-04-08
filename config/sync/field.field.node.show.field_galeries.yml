@@ -1,0 +1,29 @@
+uuid: d5bfef22-b540-42ea-857d-849ff1f2e719
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_galeries
+    - media.type.gallery
+    - node.type.show
+id: node.show.field_galeries
+field_name: field_galeries
+entity_type: node
+bundle: show
+label: Galeries
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

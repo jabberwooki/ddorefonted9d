@@ -1,0 +1,23 @@
+uuid: 81a7ee97-c33c-4e05-ba7e-ab0ff0104492
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minimum_age
+    - node.type.show
+id: node.show.field_minimum_age
+field_name: field_minimum_age
+entity_type: node
+bundle: show
+label: 'A partir de '
+description: 'Par défaut, l''unité de l''âge est l''année. Pour indiquer que l''âge minimum est de 6 mois, renseignez 0.5, pour 3 mois renseignez 0.25 et 0.75 pour 9 mois.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

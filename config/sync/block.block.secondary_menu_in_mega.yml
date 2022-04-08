@@ -1,0 +1,25 @@
+uuid: 6b39a14f-e566-4e48-bfcc-adbc0511f45f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - ddo
+id: secondary_menu_in_mega
+theme: ddo
+region: mega_menu_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: 'Navigation secondaire'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

@@ -1,0 +1,42 @@
+uuid: f8081cec-5718-4497-9061-22261f9ce3fa
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_reservation
+field_name: field_reservation
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: prochainement
+    -
+      value: '2'
+      label: 'url billetterie'
+    -
+      value: '3'
+      label: complet
+    -
+      value: '4'
+      label: annulé
+    -
+      value: '5'
+      label: passé
+    -
+      value: '7'
+      label: Externalisé
+    -
+      value: '8'
+      label: Gratuit
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: da6032e4-f0ba-4fae-894a-ab8f97722e5c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.show
+  module:
+    - text
+id: node.show.field_price
+field_name: field_price
+entity_type: node
+bundle: show
+label: Tarif
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

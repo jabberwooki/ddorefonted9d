@@ -1,0 +1,132 @@
+uuid: b2a3293a-ad8e-4cdc-8c19-644ad7611c1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.entrance.body
+    - field.field.node.entrance.field_geolocation
+    - node.type.entrance
+  module:
+    - geofield_map
+    - path
+    - text
+id: node.entrance.default
+targetEntityType: node
+bundle: entrance
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_geolocation:
+    type: geofield_map
+    weight: 3
+    region: content
+    settings:
+      html5_geolocation: false
+      default_value:
+        lat: !!float 0
+        lon: !!float 0
+      map_library: leaflet
+      map_google_api_key: ''
+      map_google_places:
+        places_control: false
+        places_additional_options: ''
+      map_dimensions:
+        width: 100%
+        height: 450px
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      zoom_level: 5
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      click_to_find_marker: false
+      click_to_place_marker: false
+      hide_coordinates: false
+      geoaddress_field:
+        field: '0'
+        hidden: false
+        disabled: true
+      map_geocoder:
+        control: 0
+        settings:
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          options: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

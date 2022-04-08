@@ -1,0 +1,11 @@
+uuid: 26cacd30-902b-4f07-8e38-74de345d709e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.show
+id: node.show
+target_entity_type_id: node
+target_bundle: show
+default_langcode: site_default
+language_alterable: false

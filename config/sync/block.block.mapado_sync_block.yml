@@ -1,0 +1,20 @@
+uuid: 03fd7d2b-5f53-4f65-84b9-8bb47a03a3d2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ddo_mapado
+  theme:
+    - ddo
+id: mapado_sync_block
+theme: ddo
+region: header
+weight: 0
+provider: null
+plugin: mapado_sync_block
+settings:
+  id: mapado_sync_block
+  label: 'Mapado synchronization block'
+  label_display: '0'
+  provider: ddo_mapado
+visibility: {  }

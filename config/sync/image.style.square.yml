@@ -1,0 +1,26 @@
+uuid: ffca539d-1f2f-4200-9ba0-4c8687f4f658
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.square_image
+  module:
+    - crop
+name: square
+label: 'Image carrée'
+effects:
+  da99a4d7-a346-4a17-bdc6-4cf6ac50b6ae:
+    uuid: da99a4d7-a346-4a17-bdc6-4cf6ac50b6ae
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square_image
+      automatic_crop_provider: null
+  cf749b53-d6c4-4eff-a084-f3b3a3652c41:
+    uuid: cf749b53-d6c4-4eff-a084-f3b3a3652c41
+    id: image_scale
+    weight: 2
+    data:
+      width: 768
+      height: null
+      upscale: true

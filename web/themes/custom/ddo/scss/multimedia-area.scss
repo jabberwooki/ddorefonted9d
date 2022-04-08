@@ -1,0 +1,58 @@
+/* La page de l'espace multimédia */
+body.page-view-multimedia-area {
+  .view-header {
+    h2 {
+      @include special_underline(black, map-get($theme-colors, "secondary"));
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+  }
+  .form-select.bef-links {
+    background-image: none;
+    margin: 20px 0;
+    padding: 0;
+    border: 0;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0 -10px !important;
+      padding: 0!important;
+      > li {
+        margin: 0;
+        padding: 0;
+        > a {
+          @include black_sidebar();
+          margin: 5px 10px;
+          font-weight: bold;
+          padding: 3px 10px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .view-content.row {
+    display: flex;
+    justify-content: flex-start;
+    @include media-breakpoint-down(md) {
+      .field--name-media-name,
+      .field--name-thumbnail{
+        text-align: center;
+      }
+
+    }
+    margin: 0 -0.5%;
+    > div {
+      @include media-breakpoint-up(md) {
+        flex-basis: 15.833333333%;
+        margin: 0 0.4%;
+      }
+      @include media-breakpoint-down(md) {
+        flex-basis: 99.2%;
+        margin: 0 0.4%;
+      }
+
+    }
+  }
+}

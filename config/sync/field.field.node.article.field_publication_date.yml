@@ -1,0 +1,26 @@
+uuid: 26b12190-5dd7-4c17-aa95-3b421727097c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.article
+  module:
+    - datetime_range
+id: node.article.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: article
+label: 'Date de parution'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    default_end_date_type: relative
+    default_end_date: '+30 days'
+default_value_callback: ''
+settings: {  }
+field_type: daterange

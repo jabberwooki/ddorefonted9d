@@ -1,0 +1,29 @@
+uuid: 95df5766-3166-47e5-a8e3-a448a73622b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.documentation
+    - taxonomy.vocabulary.espace_pro
+id: node.documentation.field_section
+field_name: field_section
+entity_type: node
+bundle: documentation
+label: Rubrique
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      espace_pro: espace_pro
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

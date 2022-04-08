@@ -1,0 +1,21 @@
+uuid: 700cd03c-5d66-466c-a5f9-75da238fa108
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_festival_name
+    - node.type.festival
+  module:
+    - options
+id: node.festival.field_festival_name
+field_name: field_festival_name
+entity_type: node
+bundle: festival
+label: 'Nom du festival'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 060c09e3-7ca6-4173-af70-5109e335140b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entrance
+    - node.type.show
+  module:
+    - options
+id: node.show.field_entrance
+field_name: field_entrance
+entity_type: node
+bundle: show
+label: Entrée
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,24 @@
+uuid: 50939637-0d55-4dd0-bb68-420d5f56161e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - comment
+    - media
+    - search
+    - system
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'authenticated user'
+weight: 5
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'change own username'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use advanced search'
+  - 'view media'

@@ -1,0 +1,10 @@
+uuid: 6b8f7194-5ca4-4ecd-9231-07c394757b10
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.front_block_mobile
+label: 'Bloc accueil mobile'
+targetEntityType: node
+cache: true

@@ -1,0 +1,8 @@
+uuid: d2676604-b654-4647-8952-6f922a51b636
+langcode: fr
+status: true
+dependencies: {  }
+id: ddofooter2
+label: 'Pied de page DDO 2'
+description: ''
+locked: false

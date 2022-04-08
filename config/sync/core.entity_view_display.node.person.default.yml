@@ -1,0 +1,108 @@
+uuid: f5642821-83e8-425c-8da8-b1f468a9f58d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.person.field_person_img1
+    - field.field.node.person.field_person_img2
+    - field.field.node.person.field_person_txt1
+    - field.field.node.person.field_person_txt2
+    - field.field.node.person.field_person_txt3
+    - field.field.node.person.field_poles
+    - node.type.person
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      content:
+        - langcode
+        - sharethis
+        - links
+        - field_person_img1
+        - field_person_img2
+        - field_person_txt1
+        - field_person_txt2
+        - field_person_txt3
+        - field_poles
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  field_person_img1:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_person_img2:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_person_txt1:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_person_txt2:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_person_txt3:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_poles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  langcode: true

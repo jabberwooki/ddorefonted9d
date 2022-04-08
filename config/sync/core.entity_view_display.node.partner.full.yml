@@ -1,0 +1,93 @@
+uuid: 315aa9c2-8a62-4bff-b961-cdce7ef4285a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.partner.body
+    - field.field.node.partner.field_logo
+    - field.field.node.partner.field_partner_type
+    - field.field.node.partner.field_website
+    - image.style.medium
+    - node.type.partner
+  module:
+    - ds
+    - link
+    - media
+    - options
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - node_title
+        - field_logo
+        - field_partner_type
+        - field_website
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.partner.full
+targetEntityType: node
+bundle: partner
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: ds_content
+  field_logo:
+    type: media_thumbnail
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_partner_type:
+    type: list_key
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_website:
+    type: link_separate
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+hidden:
+  langcode: true
+  links: true
+  sharethis: true

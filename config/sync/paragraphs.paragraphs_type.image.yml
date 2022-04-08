@@ -1,0 +1,10 @@
+uuid: 5d427c8a-ebd4-43b0-80b8-50a6d4a2b93d
+langcode: fr
+status: true
+dependencies: {  }
+id: image
+label: 'Image bandeau haut'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

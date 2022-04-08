@@ -1,0 +1,33 @@
+uuid: bccbda55-991a-4a13-8c2b-296d031ef9d7
+langcode: fr
+status: false
+dependencies:
+  module:
+    - language
+    - node
+id: festival_page
+label: 'Page Festival'
+type: 'canonical_entities:node'
+pattern: 'spectacles/[node:field_festival_name]'
+selection_criteria:
+  b61bf835-9cf4-48a7-965c-a4490f6e8c25:
+    id: node_type
+    negate: false
+    uuid: b61bf835-9cf4-48a7-965c-a4490f6e8c25
+    context_mapping:
+      node: node
+    bundles:
+      festival: festival
+  7d927288-6c65-4bad-be22-5cf788e4f01a:
+    id: language
+    negate: false
+    uuid: 7d927288-6c65-4bad-be22-5cf788e4f01a
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      fr: fr
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language

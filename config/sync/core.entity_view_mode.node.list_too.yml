@@ -1,0 +1,10 @@
+uuid: 37c8c139-559f-4076-8a2d-551ce251c7ce
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.list_too
+label: 'Liste aussi'
+targetEntityType: node
+cache: true

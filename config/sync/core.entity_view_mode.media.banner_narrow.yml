@@ -1,0 +1,10 @@
+uuid: b72b7946-5ae4-4153-92ac-621e5043a228
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.banner_narrow
+label: 'Bandeau étroit'
+targetEntityType: media
+cache: true

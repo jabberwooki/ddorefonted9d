@@ -1,0 +1,116 @@
+uuid: 2f55b381-1099-4ea5-a609-d07e3e05fee3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_banner_image
+    - field.field.node.article.field_edition_date
+    - field.field.node.article.field_galeries
+    - field.field.node.article.field_more_infos_link
+    - field.field.node.article.field_new_window
+    - field.field.node.article.field_publication_date
+    - field.field.node.article.field_sidebar_image
+    - field.field.node.article.field_slideshow
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_target_url
+    - field.field.node.article.field_themes
+    - field.field.node.article.field_videos
+    - node.type.article
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - node_title
+        - field_banner_image
+        - body
+        - field_target_url
+        - field_new_window
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+_core:
+  default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_banner_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_new_window:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: ds_content
+  field_target_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+hidden:
+  comment: true
+  field_edition_date: true
+  field_galeries: true
+  field_more_infos_link: true
+  field_publication_date: true
+  field_sidebar_image: true
+  field_slideshow: true
+  field_tags: true
+  field_themes: true
+  field_videos: true
+  langcode: true
+  links: true
+  sharethis: true

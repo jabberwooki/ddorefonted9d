@@ -1,0 +1,21 @@
+uuid: 27950692-6f0a-48d3-9551-20b6f66fd8b4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geolocalisation
+    - taxonomy.vocabulary.show_locations
+  module:
+    - geofield
+id: taxonomy_term.show_locations.field_geolocalisation
+field_name: field_geolocalisation
+entity_type: taxonomy_term
+bundle: show_locations
+label: Geolocalisation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

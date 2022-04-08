@@ -1,0 +1,85 @@
+uuid: 310d0af6-6dd8-4253-b96a-5199cb55aee0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.image.field_authors
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_tags
+    - media.type.image
+  module:
+    - ds
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - media_name
+        - field_media_image
+        - field_authors
+        - field_tags
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: h2
+          class: ''
+          link: 0
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.full
+targetEntityType: media
+bundle: image
+mode: full
+content:
+  field_authors:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,28 @@
+uuid: cdc10016-d265-4047-82a0-45e2dbe9af00
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shows
+    - node.type.show
+id: node.show.field_shows
+field_name: field_shows
+entity_type: node
+bundle: show
+label: 'Vous aimerez aussi'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      show: show
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

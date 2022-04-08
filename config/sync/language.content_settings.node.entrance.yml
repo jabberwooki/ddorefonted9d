@@ -1,0 +1,11 @@
+uuid: 7275d15f-3bca-40fb-984f-a4ab52f97ed3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.entrance
+id: node.entrance
+target_entity_type_id: node
+target_bundle: entrance
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,21 @@
+uuid: 24254ecb-a77f-4b27-a9f1-caf9e6d6a69d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media_remote_audio
+_core:
+  default_config_hash: YPXBY94qhKKNyXxbhYIBM4Ob6hcnlZDTJmnvamY-R8o
+id: remote_audio
+label: 'Remote audio'
+description: 'A remotely hosted audio file from SoundCloud or Spotify.'
+source: 'oembed:audio'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_oembed_audio
+  thumbnails_directory: 'public://oembed_thumbnails'
+  providers: {  }
+field_map:
+  title: name
+  author_name: field_authors

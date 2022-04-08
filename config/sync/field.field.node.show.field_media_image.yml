@@ -1,0 +1,29 @@
+uuid: 98cd3042-9c9b-4109-80c3-50b30fa93e80
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_image
+    - media.type.image
+    - node.type.show
+id: node.show.field_media_image
+field_name: field_media_image
+entity_type: node
+bundle: show
+label: 'Photo du spectacle'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

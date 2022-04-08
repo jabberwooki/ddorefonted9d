@@ -1,0 +1,21 @@
+uuid: bc94946d-f6fe-4307-9305-b68b1b2cce15
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coproduction
+    - node.type.show
+  module:
+    - text
+id: node.show.field_coproduction
+field_name: field_coproduction
+entity_type: node
+bundle: show
+label: Coproducteurs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

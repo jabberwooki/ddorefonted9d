@@ -1,0 +1,22 @@
+uuid: e2fb9947-a6a8-4ad4-9959-1f1dfb424e99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.rentable_place
+id: node.rentable_place.promote
+field_name: promote
+entity_type: node
+bundle: rentable_place
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,809 @@
+<?php
+/*
+ * Ce module est le portage en Drupal 9 du module domainedo_mapado.module,
+ * contenu dans la feature domainedo_mapado de la version Drupal 7 du site web du domaine d'O.
+ *
+ * Seul le fichier .module est porté en D9, les champs "Mapado" d'un node Spectacle
+ * étant maintenant gérés par le mécanisme d'import/export de configuration Drupal 9.
+ * Ces 3 champs sont les suivants :
+ * - field_mapado_apislug
+ * - field_mapado_ticketing
+ * - field_mapado_dates_ids
+ *
+ * Les fonctions implémentées dans la version D7 étaient les suivantes :
+ *
+ * - domainedo_mapado_form_show_node_form_alter()
+ * - domainedo_mapado_get_data_for_mapado()
+ * - domainedo_mapado_node_postinsert()
+ * - domainedo_mapado_node_postupdate()
+ * - domainedo_mapado_node_postdelete()
+ * - domainedo_mapado_node_view()
+ * - domainedo_mapado_send_event_date_request_to_mapado()
+ * - domainedo_mapado_send_event_date_request_to_mapado()
+ * - changeReservationButtonToShowView()
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
+
+function ddo_mapado_form_node_show_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Mise en readonly des 3 champs Mapado.
+//  $form['field_mapado_apislug']['#disabled'] = true;
+//  $form['field_mapado_dates_ids']['#disabled'] = true;
+//  $form['field_mapado_ticketing']['#disabled'] = true;
+}
+
+function ddo_mapado_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Si on est dans une page de création, modification ou suppression de spectacle,
+  // il faut avertir le rédacteur du statut de la synchronisation Mapado (activée/désactivée)
+  if (in_array($form_id, ['node_show_form','node_show_edit_form', 'node_show_delete_form'])) {
+    // On récupère le code HTML du bloc "Mapado synchronization".
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance('mapado_sync_block', []);
+    $render_array = $plugin_block->build();
+    $block_markup = \Drupal::service('renderer')->render($render_array);
+
+    // On place ce code HTML en tout début de formulaire
+    $form['#prefix'] = $block_markup;
+    // et juste au dessus du bouton Enregistrer|Supprimer.
+    $form['actions']['submit']['#prefix'] = $block_markup;
+
+    // Si on est dans le formulaire de suppression, on ne garde que le code en tête de formulaire.
+    // Pas besoin d'afficher 2 fois le statut à quelques centimètres d'écart.
+    if ($form_id == 'node_show_delete_form') {
+      unset($form['actions']['submit']['#prefix']);
+    }
+    // Et si on est dans les formulaires d'ajout ou modif, on rend les champs Mapado accessibles en lecture seule.
+    // C'est la synchronisation DDO <=> MAPADO seule qui gère le contenu de ces champs.
+    else {
+      $form['field_mapado_apislug']['#disabled'] = true;
+      $form['field_mapado_dates_ids']['#disabled'] = true;
+      $form['field_mapado_ticketing']['#disabled'] = true;
+    }
+  }
+}
+
+/**
+ * Récupère les données d'un node spectacle à envoyer à Mapado.
+ *
+ * @param NodeInterface $node
+ * @return array Tableau contenant les données à envoyer à Mapado.
+ *
+ */
+function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
+  $is_logger_on = false;
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
+  }
+
+  $show_data = array();
+  $is_watchdog_on = true;
+
+  ////////////////////////////// 1 - Nom de l'événement (title -> title) ///////////////////////////////////////////////
+  $show_data['title'] = $node->getTitle();
+
+  ////////////////////////////// 2 et 3 - Lieu de l'événement et Ville /////// /////////////////////////////////////////
+  //
+  // On suppose que seuls les spectacles ayant lieu au domaine d'O (intra-muros) peuvent avoir plusieurs lieux.
+  // Pour les autres, si une meme représentation a lieu à 2 endroits différents, alors ce sont des spectacles différents.
+  // La logique est la suivante :
+  //
+  // Si intra-muros alors
+  //     on récupère le ou les lieux et on récupère les données suivantes :
+  //     $place = Domaine d'O - Lieu 1, lieu 2...
+  //     $city = Montpellier
+  // Sinon
+  //     on récupère le lieu unique et on le découpe pour avoir :
+  //     $place = lieu dans la ville
+  //     $ville = ville indiquée
+  // A NOTER : Il est important de saisir les termes du vocabulaire 'Lieux de spectacle'
+  // dans le bon ordre : ville - lieu
+  // et non l'inverse.
+  //
+  // Coté Mapado, la logique est la suivante (on ne peut pas la modifier) :
+  //
+  // Si "place" ET "city" ne sont pas renseignés alors
+  //     Mapado affiche "Domaine d'O - Montpellier" (qui je suppose est la valeur affichée de "venue":"/v1/venues/391")
+  //     sur la liste des évenements, visible de l'admin mapado seulement
+  //     ainsi que sur la page d'achat de billets, visible des internautes.
+  // Sinon
+  //     Mapado affiche "place - ville" sur la liste des événements
+  //     Mais n'affiche que ...
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Qu'il y ait un ou plusieurs lieux, le code suivant retourne un seul tid, celui du premier lieu s'il y en a plusieurs.
+  $location_tid = $node->get('field_location')->target_id;
+
+  // On vérifie si c'est un spectacle INTRAMUROS ou EXTRAMUROS en récupérant le parent du lieu.
+  $parent = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadParents($location_tid);
+  $parent = reset($parent)->getName();
+
+  // Si c'est au domaine d'O
+  if (strtoupper($parent) == 'INTRAMUROS') {
+    $is_intramuros = true;
+    // S'il y a plus d'un lieu, on récupère aussi les autres noms de lieu
+    if (count($node->get('field_location')) > 1) {
+      $location_names = array();
+      foreach ($node->get('field_location')->getValue() as $item) {
+        $location_names[] = \Drupal::service('entity_type.manager')
+          ->getStorage('taxonomy_term')->load($item['target_id'])->getName();
+      }
+      $location = implode(', ', $location_names);
+    }
+    else {
+      $location = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->load($location_tid);
+      $location = $location->getName();
+    }
+    $show_data['place'] = 'Domaine d\'O - ' . $location;
+    $show_data['city'] = 'Montpellier';
+  }
+  // Et si c'est ailleurs qu'au domaine d'O
+  elseif (strtoupper($parent) == 'EXTRAMUROS') {
+    $is_intramuros = false;
+    $location = \Drupal::service('entity_type.manager')
+      ->getStorage('taxonomy_term')->load($location_tid)->getName();
+
+    // On vérifie avec quoi le rédacteur a séparé la ville et le lieu ( tiret ou virgule)
+    // dans les termes de taxonomie extramuros.
+    if (strpos($location, ',')) {
+      $show_address = explode(',', $location);
+    }
+    else {
+      $show_address = explode(' - ', $location);
+    }
+    $city = trim($show_address[0]);
+    $place = trim($show_address[1]);
+    $show_data['place'] = $place;
+    $show_data['city'] = $city;
+  }
+
+  ////////////////////////////// 4 - Description (description -> description) //////////////////////////////////////////
+  $description = $node->body->getValue();
+  $description = reset($description);
+  if (!empty($description['summary'])) {
+    $description= strip_tags($description['summary']);
+  }
+  else {
+    $description = substr(strip_tags($description['value']), 0, 200) . '...';
+  }
+  $show_data['description'] = $description;
+
+  // Version 2 (2019) : Lorsque ce n'est pas un spectacle intra-muros,
+  // il faut préciser la ville et le lieu dans le texte de la description.
+  if (!$is_intramuros) {
+    $show_data['description'] = 'LIEU : ' . $city . " - " . $place . "." . "\n"
+      . $show_data['description'];
+  }
+
+  ////////////////////////////// 5 - Type de spectacle (field_show_type -> ???) ////////////////////////////////////////
+  $show_type = \Drupal::service('entity_type.manager')
+      ->getStorage('taxonomy_term')->load($node->field_show_type->target_id)->getName();
+  $show_data['showType'] = $show_type;
+
+  ////////////////////////////// 6 - Photo du spectacle (field_media_image) ////////////////////////////////////////////
+  if (isset($node->field_media_image->target_id)) {
+    $image_uri = $node->field_media_image->entity->field_media_image->entity->getFileUri();
+    $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
+
+    // Contrainte pour les tests en local : il faut utiliser une image déjà présente sur la prod.
+    // Si je teste depuis mon dev local, le serveur d'images Mapado ne pourra pas me voir.
+    // Donc je change pour l'url du serveur de prod qui, lui, sera accessible par Mapado.
+    $host = $_SERVER['HTTP_HOST'];
+    if (strpos($host, ".localhost") !== false) {
+      $image_url = str_replace($host, 'www.domainedo.fr', $image_url);
+    }
+    $show_data['imageUrl'] = $image_url;
+  }
+
+  ////////////////////////////// 7 - Interprète (field_by -> performer) ////////////////////////////////////////////////
+  $structures = $node->field_by->getValue();
+
+  $structure_titles = array();
+  foreach ($node->field_by->getValue() as $item) {
+    $structure_titles[] = \Drupal::service('entity_type.manager')
+      ->getStorage('node')->load($item['target_id'])->getTitle();
+  }
+  $structure_titles_string = implode(' / ', $structure_titles);
+  $show_data['performer'] = $structure_titles_string;
+
+  ////////////////////////////// 8 - Festival (field_festival -> ???) ////////////////////////////////////////////////
+  // Festival (field_festival -> ??? pas encore disponible).
+  if (isset($node->field_festival->target_id)) {
+    $festival_title = \Drupal::service('entity_type.manager')
+      ->getStorage('node')->load($node->field_festival->target_id)->getTitle();
+    $show_data['festival'] = trim($festival_title);
+  }
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin' );
+  }
+
+  return $show_data;
+}
+
+function ddo_mapado_is_sync_enabled() {
+  $config = \Drupal::config('ddo_mapado.settings');
+  if ($config->get('enable_sync')) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Implémente hoo_ENTITY_TYPE_insert().
+ *
+ * Crée l'événement Mapado (et ses dates) correspondant au spectacle venant d'être créé.
+ *
+ * @param EntityInterface $entity
+ * @return void
+ * @throws Exception
+ */
+function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  $is_logger_on = false;
+
+  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
+    }
+
+    // Création de l'événement sur Mapado
+    $url = 'https://ticketing.mapado.net/v1/ticketings?fields=@id,title,slug,unlimitedStock';
+    // Envoi d'une requete de création (POST) à Mapado via l'API Ticketing (https://ticketing.mapado.net/doc.html).
+    $request_result = ddo_mapado_send_request_to_ticketing_api($url, 'POST', $entity);
+
+    // Ensuite on récupère la valeur des champs Mapado "slug"  et "@id".
+    $result_data = get_object_vars(json_decode($request_result));
+    if ($result_data) {
+      $slug = $result_data['slug'];
+      $ticketing = $result_data['@id'];
+
+      if ($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("slug = {$slug}");
+      \Drupal::logger('ddo_mapado')->info("ticketing = {$ticketing}");
+      }
+
+      // Insertion de la valeur $slug dans la table correspondant au champ field_mapado_apislug
+      $query = \Drupal::database()->insert('node__field_mapado_apislug');
+      $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_apislug_value']);
+      $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', 0, $slug]);
+      $query->execute();
+
+      // Insertion de la valeur ticketing dans la table correspondant au champ field_mapado_ticketing
+      $query = \Drupal::database()->insert('node__field_mapado_ticketing');
+      $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_ticketing_value']);
+      $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', 0, $ticketing]);
+      $query->execute();
+
+      // Une fois qu'on a l'identifiant Mapado, on s'occupe ensuite de créer les dates de ce spectacle dans Mapado.
+      // Pour chaque date du spectacle, on envoie une requete POST a l'API ticketing, au endpoint /v1/event_dates.
+      $url = 'https://ticketing.mapado.net/v1/event_dates?fields=@id,createdAt,startDate,endDate';
+      $dates = $entity->get('field_dates')->getValue();
+      $counter = 0;
+
+      foreach ($dates as $date) {
+        $data = array(
+          'ticketing' => $ticketing,
+          'startDate' => $date['value']
+        );
+        $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'POST', $data);
+        $result_data = get_object_vars(json_decode($request_result));
+
+        if ($result_data) {
+          $query = \Drupal::database()->insert('node__field_mapado_dates_ids');
+          $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_dates_ids_value']);
+          $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', $counter++, $result_data['@id']]);
+          $query->execute();
+        }
+      }
+    }
+
+    if ($is_logger_on) {
+      $message = "L'événement Mapado {$entity->id()}, de type {$bundle}, a été créée";
+      \Drupal::logger('ddo_mapado')->info($message);
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin');
+    }
+  }
+}
+
+/**
+ * Implémente hook_ENTITY_TYPE_update().
+ *
+ * Met à jour l'événement Mapado correspondant au spectacle venant d'être modifié.
+ *
+ * @param EntityInterface $entity
+ * @return void
+ */
+function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
+  $is_logger_on = false;
+
+  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
+    }
+
+    // On ne lance une mise à jour côté Mapado que si les données Drupal attendues par Mapado ont changé.
+    $original_mapado_data = ddo_mapado_get_data_for_mapado($entity->original);
+    $current_mapadao_data = ddo_mapado_get_data_for_mapado($entity);
+
+    if(!empty(array_diff($original_mapado_data,$current_mapadao_data))) {
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_mapado')->info("Les données pour Mapado ont changé.");
+      }
+
+      // Prépartion d'une requête PUT
+      $ticketing = $entity->field_mapado_ticketing->value;
+      $url = 'https://ticketing.mapado.net' . $ticketing . '?fields=@id,title,imageList,slug';
+      // Envoi de la requête de mise à jour de l'événement Mapado.
+      $request_result = ddo_mapado_send_request_to_ticketing_api($url, 'PUT', $entity);
+      $result_data = get_object_vars(json_decode($request_result));
+    }
+    else {
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_mapado')->info("Les données pour Mapado n'ont pas changé.");
+      }
+    }
+
+    // Idem pour les dates.
+    // On récupère les dates avant modif et les dates après modif.
+    $original_drupal_dates = array_map(
+      function($element) { return $element['value'];},
+      $entity->original->field_dates->getValue()
+    );
+    $drupal_dates = array_map(
+      function($element) { return $element['value'];},
+      $entity->field_dates->getValue()
+    );
+
+    // Mais on ne fait une mise à jour Mapado que si les dates ont changé.
+    // c'est-à-dire si des dates ont été ajoutées ou supprimées
+    // ou bien, avec un même nombre de dates, si certaines dates ont changé
+    if ((count($original_drupal_dates) <> count($drupal_dates)) || !empty(array_diff($original_drupal_dates, $drupal_dates))) {
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_mapado')->info("Les dates ont changé.");
+      }
+
+      // Le plus simple est de se débarrasser des dates dans Mapado
+      // ainsi que des identifiants de date Mapado dans Drupal.
+      $original_mapado_dates_ids = array_map(
+        function($element) { return $element['value'];},
+        $entity->original->field_mapado_dates_ids->getValue()
+      );
+      foreach ($original_mapado_dates_ids as $date) {
+        $url = 'https://ticketing.mapado.net' . $date . '?fields=@id';
+        $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'DELETE');
+
+        $query = \Drupal::database()->delete('node__field_mapado_dates_ids');
+        $query->condition('bundle', 'show');
+        $query->condition('entity_id', $entity->id());
+        $query->condition('field_mapado_dates_ids_value', $date);
+        $query->execute();
+      }
+
+      // Puis on s'occupe ensuite de re-créer les dates modifiées de ce spectacle dans Mapado.
+      // Pour chaque date du spectacle, on envoie une requete POST a l'API ticketing, au endpoint /v1/event_dates.
+      $url = 'https://ticketing.mapado.net/v1/event_dates?fields=@id,createdAt,startDate,endDate';
+      $counter = 0;
+
+      foreach ($drupal_dates as $date) {
+        $data = array(
+          'ticketing' => $entity->field_mapado_ticketing->value,
+          'startDate' => $date
+        );
+        $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'POST', $data);
+        $result_data = get_object_vars(json_decode($request_result));
+
+        if ($result_data) {
+          \Drupal::logger('ddo_mapado')->info("Id de date récupéré = {$result_data['@id']}");
+          $query = \Drupal::database()->insert('node__field_mapado_dates_ids');
+          $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_dates_ids_value']);
+          $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', $counter++, $result_data['@id']]);
+          $query->execute();
+        }
+      }
+    }
+    else {
+      if ($is_logger_on) {
+        \Drupal::logger('ddo_mapado')->info("Les dates n'ont pas changé.");
+      }
+    }
+
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin');
+    }
+  }
+}
+
+/**
+ * Implémente hook_ENTITY_TYPE_delete().
+ *
+ * Supprime l'événement Mapado corespondant au spectacle venant d'être supprimé.
+ *
+ * @param EntityInterface $entity
+ * @return void
+ */
+function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  $is_logger_on = false;
+
+  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+    if ($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
+    }
+
+    // Envoi d'une requête de suppression à Mapado.
+    //$url = 'https://api.mapado.net/v2/activities/' . $node->field_mapado_apislug['und'][0]['value'] .'.json?fields=trashStatus';
+    $slug = $entity->field_mapado_apislug->value;
+    $ticketingId = substr($slug, 0, strpos($slug, '-'));
+    $url = 'https://ticketing.mapado.net/v1/ticketings/' . $ticketingId . '?fields=id,title';
+    $request_result = ddo_mapado_send_request_to_ticketing_api($url, 'DELETE', $entity);
+
+    if ($is_logger_on) {
+//      $message = "L'événement Mapado {$ticketingId} a été supprimé.";
+//      \Drupal::logger('ddo_mapado')->info($message);
+      \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin' );
+    }
+  }
+}
+
+/**
+ * Implémente hook_entity_bundle_field_info().
+ *
+ * @param EntityTypeInterface $entity_type
+ * @param $bundle
+ * @param array $base_field_definitions
+ * @return array $fields
+ */
+function ddo_mapado_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $fields = [];
+  if ($entity_type->id() == 'node') {
+    if ($bundle == 'show') {
+      $fields['mapado_url'] = BaseFieldDefinition::create('link')
+        ->setLabel(t('URL Mapado'))
+        ->setComputed(TRUE)
+        ->setClass('\Drupal\ddo_mapado\MapadoUrlComputed')
+        ->setDisplayConfigurable('view', TRUE);
+    }
+  }
+
+  return $fields;
+}
+
+
+
+/**
+ * Implémente hook_ENTITY-TYPE_view().
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ * @param EntityViewDisplayInterface $display
+ * @param $view_mode
+ * @return void
+ */
+function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getType() == 'show') {
+    $is_on_sale = TRUE;
+
+    // Recul de la date courante de 4 heures pour permettre aux internautes d'acheter alors que le spectacle est en cours.
+    $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+
+    // On vérifie s'il y a au moins une date de spectacle dans le futur. On arrête la boucle dès qu'on en trouve une.
+    $coming_date = false;
+    foreach ($entity->field_dates->getValue() as $item) {
+      if($item['value'] > $today) {
+        $coming_date = true;
+        break;
+      }
+    }
+
+    // S'il n'y en a pas, le spectacle n'est plus en vente.
+    if (!$coming_date) {
+      $is_on_sale = FALSE;
+    }
+    // sinon, on vérifie qu'il existe sur Mapado et qu'il y est en vente.
+    elseif (isset($entity->field_mapado_ticketing->value)) {
+      $url = 'https://ticketing.mapado.net'
+        . $entity->field_mapado_ticketing->value
+        . '?fields=@id,title,slug,isOnSale,availabilityStatus,sellingDeviceData{hasTicketPriceOnSale,sellingDevice{name}}';
+      $request_result = ddo_mapado_send_request_to_ticketing_api($url);
+      $result_data = json_decode($request_result);
+
+      // La variable isOnSale passe à TRUE dès qu'on met une séance en vente sur Mapado,
+      // meme si celle-ci n'a pas encore de tarif associé.
+      // Donc il est insuffisant de tester isOnSale.
+      // Il faut tester directement la variable availabilityStatus qui prend les valeurs suivantes :
+      // - si aucune séance en vente ->  pastOrClosed
+      // - si séance en vente, mais pas encore de tarif -> noTicketPrice
+      // - si séance en vente avec tarif -> onSale
+      // -si tout vendu -> soldOut (cas à vérifier auprès de Mapado).
+      // On teste donc si  availabilityStatus vaut "onSale".
+
+      // S'il n'est pas en vente sur Mapado,
+      if (!isset($result_data->availabilityStatus) || $result_data->availabilityStatus != 'onSale') {
+        $is_on_sale = FALSE;
+      }
+      // sinon il faut vérifier qu'il y a vente sur le canal domainedo (canal correspondant au site web).
+      else {
+        $has_price = false;
+        foreach ($result_data->sellingDeviceData as $item) {
+          if ($item->sellingDevice->name == 'domainedo' && $item->hasTicketPriceOnSale) {
+            $has_price = true;
+          }
+        }
+        if (!$has_price) {
+          $is_on_sale = FALSE;
+        }
+      }
+    }
+    else {
+      $is_on_sale = false;
+    }
+// A GARDER POUR TESTS
+//$is_on_sale = false;
+//$is_on_sale = true;
+
+    // Valuers du champ Réservation :
+    // prochainement = 1
+    // url billetterie = 2
+    // complet = 3
+    // annulé = 4
+    // passé = 5
+    // externalisé = 7
+    // gratuit = 8
+    $reservation_value = $entity->field_reservation->value;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Le bouton RESERVER doit pointer soit vers la billetterie soit vers la fiche Spectacle.
+    // Les deux version de ce bouton sont générées dans le champ calculé $build['mapado_url'].
+    // (Voir web/modules/custom/ddo_mapado/src/MapadoUrlComputed.php)
+    // $build['mapado_url'][0] contient l'url vers la fiche spectacle
+    // $build['mapado_url'][1] contient l'url vers la billetterie
+    // A partir de ça, et en fonction de la valeur de $is_on_sale et du $view_mode,
+    // on agit sur l'un, l'autre ou les deux urls.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Si le spectacle n'est pas en vente, ou bien externalisé (7) ou gratuit (8),
+    // on ne garde que le lien vers la fiche spectacle dans le teaser
+    // on ne garde aucun des deux liens dans la fiche spectacle
+    if (!$is_on_sale || in_array($reservation_value, [7,8])) {
+      if ($view_mode == 'teaser') {
+        unset($build['mapado_url'][1]);
+      }
+      elseif ($view_mode == 'full') {
+        unset($build['mapado_url']);
+      }
+    }
+    // Et si le spectacle en vente sur Mapado,
+    // on ne garde que le lien vers la billetterie dans le teaser comme dans la fiche spectacle.
+    else {
+        unset($build['mapado_url'][0]);
+    }
+
+    // Désactivation du cache pour voir le bouton changer d'url.
+    $build['#cache']['max-age'] = 0;
+    \Drupal::service('page_cache_kill_switch')->trigger();
+  }
+}
+
+function ddo_mapado_node_view_alter(array &$build, $entity, $display) {
+
+}
+
+function ddo_mapado_send_event_date_request_to_mapado($url, $method='POST', $data=NULL) {
+  $is_logger_on = false;
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
+
+    $message = "Requête {$method} (ligne " . __LINE__ . ")";
+    \Drupal::logger('ddo_mapado')->info($message);
+  }
+
+  // On commence à préparer la requete.
+  $ch = curl_init($url);
+  $headers = array();
+  $headers[] = "Authorization: Bearer ZWZkYTFmZWJmNTJhNDM4Y2Y2MTc1ZGMzZDQ1MTg0Nzk1ZjNiYTk2ZDFhZTc5YzIxODZiMjQwNDg1YTM0ODgzYg";
+
+  if ($method == 'GET') {
+    // On peut en avoir besoin un jour.
+  }
+  elseif ($method == 'POST') {
+    // --------- Ajout 2020-12-11 ----------------------------------------------
+    // Gestion du stock de places.
+    // Suite à un bug découvert par Mapado dans leur API,
+    // il faut spécifier que le nombre de places est illimité.
+    // (unlimitedStock ne peut pas etre égal à FALSE et totalStock à NULL - voir échanges email du 9, 11 et 11 déc 2020)
+    $data['unlimitedStock'] = true;
+    // --------- Fin de Ajout 2020-12-11 ---------------------------------------
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    $headers[] = "Content-Type: application/json";
+  }
+  elseif ($method == 'PUT') {
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    $headers[] = "Content-Type: application/json";
+  }
+  elseif ($method == 'DELETE') {
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+  }
+
+  // On finit de préparer la requete.
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
+
+  // Puis on l'exécute.
+  $result = curl_exec($ch);
+
+  if (curl_errno($ch)) {
+    $message = "Curl error (ligne " . __LINE__ . ") : " . curl_error($ch);
+  }
+  else {
+    $result_string = serialize($result);
+    $message = "Date {$method} request result (ligne " . __LINE__ . ") : {$result_string}";
+  }
+  curl_close ($ch);
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info($message);
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin' );
+  }
+
+  return $result;
+}
+
+function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=null) {
+  $is_logger_on = false;
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
+
+    $message = "Requête {$method} (ligne " . __LINE__ . ")";
+    \Drupal::logger('ddo_mapado')->info($message);
+  }
+
+  ////////////////////////////////////// 0 - DÉBUT DE PRÉPARATION DE LA REQUÊTE ////////////////////////////////////////
+  $ch = curl_init($url);
+  $headers = array();
+  $headers[] = "Authorization: Bearer ZWZkYTFmZWJmNTJhNDM4Y2Y2MTc1ZGMzZDQ1MTg0Nzk1ZjNiYTk2ZDFhZTc5YzIxODZiMjQwNDg1YTM0ODgzYg";
+
+  ///////////////////////////////////////////////// 1 - LECTURE SEULE //////////////////////////////////////////////////
+  if ($method == 'GET') {
+    // Rien à faire de particulier, c'est la méthode par défaut de la librairie PHP cURL.
+    // L'url doit contenir l'identifiant Mapado de la ressource ticketing à lire.
+  }
+
+  ///////////////////////////////////////////// 2 - CREATION, MODIFICATION /////////////////////////////////////////////
+  elseif ($method == 'POST' || $method == 'PUT') {
+    if($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("Dans POST || PUT (ligne " . __LINE__ . ")" );
+    }
+    // 2.0 - On récupère d'abord les données Drupal
+    $data = ddo_mapado_get_data_for_mapado($node);
+    if($is_logger_on) {
+      \Drupal::logger('ddo_mapado')->info("imageUrl = {$data['imageUrl']} (ligne " . __LINE__ . ")" );
+    }
+
+    // 2.1 - Envoi préalable de l'image, s'il y en a une, sur img.mapado.net et récupération de son imagePath
+    if (isset($data['imageUrl'])) {
+      $ch2 = curl_init();
+      curl_setopt($ch2, CURLOPT_URL, "https://legacy.mapado.com/image/upload/?width=160&height=100");
+      curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch2, CURLOPT_POSTFIELDS, "url=" . $data['imageUrl']);
+      curl_setopt($ch2, CURLOPT_POST, 1);
+      curl_setopt($ch2, CURLOPT_ENCODING, 'gzip, deflate');
+
+      $headers2 = array();
+      //$headers2[] = "Origin: https://www.mapado.com";
+      $headers2[] = "Content-Type: application/x-www-form-urlencoded";
+      $headers2[] = "Accept: */*";
+      //$headers2[] = "Referer: https://www.mapado.com/create-activity";
+      //$headers2[] = "X-Requested-With: XMLHttpRequest";
+      //$headers2[] = "Connection: keep-alive";
+      curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers2);
+      $result = curl_exec($ch2);
+
+      $imagePath = '';
+      if (curl_errno($ch2)) {
+        $message = "Curl error: (ligne " . __LINE__ . ")" . curl_error($ch2);
+        \Drupal::logger('ddo_mapado')->info($message);
+      } else {
+        $decoded_result = json_decode($result);
+        // On récupère la valeur de imagePath
+        $imagePath = $decoded_result->imagePath;
+
+        if($is_logger_on) {
+          \Drupal::logger('ddo_mapado')->info("imagePath = {$decoded_result->imagePath} (ligne " . __LINE__ . ")" );
+        }
+      }
+      curl_close($ch2);
+
+      // On ajoute imagePath aux données à l'aide de mediaList
+      // Voir documentation API Ticketing : https://ticketing.mapado.net/doc.html#operation/postTicketingCollection
+      $data['mediaList'] = array(
+        array(
+          'imageType' => 'image',
+          'path' => $imagePath
+        ),
+      );
+      // Puis on supprime "imageUrl" des données (ce champ est inconnu de l'API).
+      unset($data['imageUrl']);
+    }
+
+    // 2.2 - Si CRÉATION, il faut ajouter les données Mapado utiles.
+    if ($method == 'POST') {
+      \Drupal::logger('ddo_mapado')->info("Dans POST (ligne " . __LINE__ . ")" );
+      curl_setopt($ch, CURLOPT_POST, 1);
+      // Rattachement au portefeuille domaine d'O. D'après la doc de l'API, c'est le seul champ obligatoire.
+      $data['wallet'] = '/v1/wallets/858';
+      // Si on laisse 'permanent' à true (valeur defaut), on ne pourra pas y rattacher de dates.
+      // Explication fournie par Julien Deniau (rien dans la doc de l'API).
+      $data['permanent'] = false;
+      // Bien que non indiqué dans la doc, timezone est obligatoire, sinon "Internal Server Error".
+      $data['timezone'] = 'Europe/Paris';
+      // Lieu (Domaine d'O)
+      //$data['venue'] = '/v1/venues/391';
+      // Ville
+      $data['city'] = 'Montpellier';
+    }
+    // sinon MODIFICATION
+    elseif ($method == 'PUT') {
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    }
+
+    // 2.3 - On finit de préparer la requete en écriture.
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    $headers[] = "Content-Type: application/json";
+  }
+
+  ////////////////////////////////////////////////// 3 - SUPPRESSION ///////////////////////////////////////////////////
+  elseif ($method == 'DELETE') {
+    // Pas grand chose à faire là non plus, à part dire qu'on lance une requete de suppression.
+    // L'url doit contenir l'identifiant Mapado de la ressource ticketing à supprimer.
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+  }
+
+  /////////////////////////////////////// 4 - FIN DE PRÉPARATION DE LA REQUÊTE  ////////////////////////////////////////
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info("Requête prête (ligne " . __LINE__ . ")" );
+  }
+
+  /////////////////////////////////////////// 5 - EXÉCUTION DE LA REQUÊTE  /////////////////////////////////////////////
+  $result = curl_exec($ch);
+
+  if (curl_errno($ch)) {
+    $message = "Requête {$method} en erreur (ligne " . __LINE__ . ") : " . curl_error($ch);
+  }
+  else {
+    $message = "Requête {$method} vers Mapadao exécutée (ligne " . __LINE__ . ")";
+  }
+  curl_close ($ch);
+
+  if ($is_logger_on) {
+    \Drupal::logger('ddo_mapado')->info($message);
+    \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin' );
+  }
+
+  return $result;
+}
+
+function ddo_mapado_theme($existing, $type, $theme, $path) {
+  return [
+    'ddo_mapado_block' => [
+      'variables' => [
+        'block_title' => NULL,
+        'sync_enabled' => NULL,
+        'mapado_class' => NULL,
+      ],
+    ],
+  ];
+}

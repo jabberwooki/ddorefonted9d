@@ -1,0 +1,10 @@
+festivalmodal:
+  version: 1.0
+  css:
+    theme:
+      css/festival_modal.css: {}
+  js:
+    js/festival_modal.js: {}
+  dependencies:
+    - core/jquery
+#    - core/drupal.dialog.ajax

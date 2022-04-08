@@ -1,0 +1,10 @@
+uuid: 411ae99a-b950-4423-84e7-68210db7876d
+langcode: fr
+status: true
+dependencies: {  }
+id: structures_shows
+label: 'Structures - Spectacles'
+enabled: true
+first_field: field_shows
+second_field: field_by
+bundles: {  }

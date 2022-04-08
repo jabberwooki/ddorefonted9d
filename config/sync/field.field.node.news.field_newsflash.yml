@@ -1,0 +1,23 @@
+uuid: 7f774971-d950-440d-8272-d7a6b76ae1e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_newsflash
+    - node.type.news
+id: node.news.field_newsflash
+field_name: field_newsflash
+entity_type: node
+bundle: news
+label: 'Visible en flash info'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

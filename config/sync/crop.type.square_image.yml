@@ -1,0 +1,12 @@
+uuid: c7707a1b-a741-4758-a1b5-921704adbde8
+langcode: fr
+status: true
+dependencies: {  }
+label: 'Image carrée'
+id: square_image
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: 768
+soft_limit_height: 768
+hard_limit_width: null
+hard_limit_height: null

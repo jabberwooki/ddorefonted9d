@@ -1,0 +1,29 @@
+uuid: 869d6ca5-e1a7-461e-9937-a93bb2f7efa9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_structure_type
+    - node.type.structure
+    - taxonomy.vocabulary.structure_types
+id: node.structure.field_structure_type
+field_name: field_structure_type
+entity_type: node
+bundle: structure
+label: 'Type de structure'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      structure_types: structure_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

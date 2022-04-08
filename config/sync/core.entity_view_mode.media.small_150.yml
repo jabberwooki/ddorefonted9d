@@ -1,0 +1,10 @@
+uuid: bab23967-ca0a-463a-84e4-a33ac8cde1a0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.small_150
+label: 'Petit 150'
+targetEntityType: media
+cache: true

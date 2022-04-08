@@ -1,0 +1,8 @@
+uuid: 10d20d86-500d-4d4e-a593-5f43f1a5c0ab
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Types de public'
+vid: audience_types
+description: ''
+weight: 0

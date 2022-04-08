@@ -1,0 +1,17 @@
+uuid: ed30effd-8b64-43d2-87ee-86a949b4fd5a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Lieu à la location'
+type: rentable_place
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

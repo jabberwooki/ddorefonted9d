@@ -1,0 +1,33 @@
+uuid: 148acef6-9fc3-477a-9621-367bbf75c3fb
+langcode: fr
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: show_page
+label: 'Page Spectacle'
+type: 'canonical_entities:node'
+pattern: 'spectacles/tous-les-spectacles/[node:title]'
+selection_criteria:
+  77f305de-7593-4ae9-8917-d978a58c7ec1:
+    id: node_type
+    negate: false
+    uuid: 77f305de-7593-4ae9-8917-d978a58c7ec1
+    context_mapping:
+      node: node
+    bundles:
+      show: show
+  da7f9058-a8e0-4bbc-ab9d-10e9a7a6b283:
+    id: language
+    negate: false
+    uuid: da7f9058-a8e0-4bbc-ab9d-10e9a7a6b283
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      fr: fr
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,8 @@
+uuid: 5be995d6-5ec4-4e38-9094-0c01d1e12bf1
+langcode: fr
+status: true
+dependencies: {  }
+name: Authors
+vid: scald_authors
+description: 'Scald authors vocabulary'
+weight: -5

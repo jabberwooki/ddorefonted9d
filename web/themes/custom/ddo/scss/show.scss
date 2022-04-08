@@ -1,0 +1,503 @@
+/* Teaser de spectacle */
+.teaser-show {
+  position: relative;
+  margin-bottom: 30px;
+
+  .link-img-teaser-show {
+    display: block;
+    min-height: 425px;
+
+    .field--type-entity-reference {
+      margin: 0;
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .festival-teaser-show {
+    @include black_sidebar();
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+
+  .teaser-location {
+    display: none;
+
+    &.extramuros {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      &:before {
+        @extend %icon-fontello;
+        content: "\e879";
+        color: map-get($theme-colors, "secondary");
+        font-size: 2.5rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  /* pour la mise en pages des spectacles "vous aimeres aussi" */
+  .field--type-image {
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  .bottom-info-teaser-show {
+    width: 100%;
+    padding: 0 15px 10px 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent, black);
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .h3-teaser {
+      text-transform: uppercase;
+      font-weight: bold !important;
+      font-size: 1.5em;
+      padding-bottom: 9px;
+      display: block;
+      font-style: normal;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .field--name-body {
+      max-height: 84px;
+      overflow: hidden;
+    }
+
+    .field--name-field-dates {
+      margin-top: 50px;
+
+      > div {
+        @include special_underline(white, map-get($theme-colors, "secondary"));
+      }
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    .field--name-body {
+      font-size: 0.875em;
+    }
+
+    .bottom-buttons-teaser-show {
+      display: flex;
+      justify-content: space-between;
+
+      .link-details-teaser-show {
+        @include custom_button(map-get($theme-colors, "secondary"), white, white, map-get($theme-colors, "secondary"), map-get($theme-colors, "secondary"));
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.813em;
+        border-radius: 0;
+        border: 1px solid;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: map-get($theme-colors, "secondary");
+          color: white !important;
+        }
+      }
+
+      .link-book-teaser-show {
+        @include button_book_show();
+      }
+    }
+  }
+
+  &:hover {
+    transform: translate3d(0, -4px, 0);
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    box-shadow: 1px 1px 12px #555;
+  }
+}
+
+/* Spécifique à la page d'accueil */
+.more-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  a {
+    padding: 15px 15px 15px 20px;
+    border: 2px solid map-get($theme-colors, "secondary");
+    display: table;
+    margin: 0 auto;
+    color: map-get($theme-colors, "secondary");
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+
+    &:hover {
+      background-color: map-get($theme-colors, "secondary");
+      color: white;
+    }
+  }
+}
+
+/* Contenu complet de spectacle*/
+
+.node--type-show {
+  #wrap-full-show {
+    .div-image-style-banner {
+      position: relative;
+      display: block;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 50%;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+        visibility: visible;
+        width: 100%;
+      }
+
+      .field--type-entity-reference {
+        float: none;
+        margin: 0 !important;
+      }
+
+      .field--type-image {
+        float: none;
+        margin: 0 !important;
+
+        img {
+          float: none;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+      }
+
+      .field--name-field-authors {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        @include black_sidebar();
+      }
+    }
+
+    .wrapper-over-img-abs {
+      position: relative;
+
+      .group-text-over-img-abs {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+
+        .field--name-field-festival {
+          @include black_sidebar();
+          display: inline-block;
+        }
+
+        .field--name-field-dates {
+          .field__item {
+            @include special_underline(white, darken(map-get($theme-colors, "secondary"), 20%), 40%);
+          }
+
+          margin-top: 10px;
+        }
+
+        h2 {
+          text-transform: uppercase;
+          font-size: 2.25rem;
+          color: white;
+          margin-bottom: 10px;
+          margin-top: 0;
+          font-style: normal;
+          font-weight: 800;
+        }
+
+        .field--name-field-subtitle {
+          color: white;
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+    .link-book-teaser-show {
+      @include button_book_show();
+      margin-top: -3px;
+      margin-bottom: 7px;
+    }
+    .row-anchor-full-show {
+      background-color: $gray-300;
+      padding: 10px 0 0 0;
+      margin-bottom: 20px;
+
+      .row {
+        align-items: center;
+
+        .anchor-show-full {
+          text-transform: uppercase;
+          color: #000;
+          text-decoration: none;
+          display: inline-block;
+          padding-right: 30px;
+          font-style: normal;
+          font-weight: 800;
+
+          &:hover {
+            color: map-get($theme-colors, "secondary");
+          }
+        }
+
+        #col-book-show {
+          @include media-breakpoint-down(md) {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 20px 0;
+          }
+          #book-show {
+            @include button_book_show();
+          }
+        }
+        #col-short-links-show {
+          @include media-breakpoint-down(md) {
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            a {
+              padding: 10px 0;
+              flex-basis: 50% !important;
+            }
+          }
+        }
+      }
+    }
+    /* Colonne de gauche sur grand écran */
+    .show-main-information {
+      .field__label {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 800;
+        margin: 20px 0 10px 0;
+      }
+
+      .field-by-or-from {
+        display: flex;
+
+        .field-by-or-from-label {
+          font-weight: bold;
+        }
+
+        margin-bottom: 20px;
+      }
+
+      .share-social-buttons {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        a.icon-twitter {
+          @include social-icon("\e800", #1C9BF0, 2rem);
+        }
+
+        a.icon-facebook {
+          @include social-icon("\e801", #4064AC, 2rem);
+        }
+      }
+
+      .field--name-field-shows {
+        border: 3px solid red;
+
+
+      }
+    }
+
+    /* Colonne de droite  sur grand écran */
+    .show-aside-information {
+      .wrapper-field {
+        margin-bottom: 15px;
+      }
+
+      .field__label {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 800;
+      }
+
+
+      .title-all-show-dates {
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 800;
+        margin-left: -5px;
+
+        &:before {
+          @extend %icon-fontello;
+          content: "\e807";
+          color: map-get($theme-colors, "secondary");
+        }
+      }
+
+      .section-further-information {
+        background-color: map-get($theme-colors, "secondary");
+        font-size: 0.876rem;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: white;
+
+        .field {
+          margin-bottom: 20px;
+          display: flex;
+
+          .field__label {
+            padding-right: 10px;
+
+            &:after {
+              position: relative;
+              right: -5px;
+              content: ":";
+              display: inline;
+            }
+          }
+
+          &.field--name-field-restauration {
+            flex-direction: column;
+          }
+        }
+
+        .field__item {
+          a {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .field--name-field-additional-info {
+        border: 2px solid #F74E2D;
+        padding: 15px;
+      }
+    }
+  }
+
+}
+/* Page de vue de tous les spectacles */
+body.page-view-shows {
+  .under-featured-top-all-shows {
+    background: url(../images/bg/bg_all_shows.gif) repeat-y 50% 0;
+    @include media-breakpoint-down(md) {
+      background-image: none;
+    }
+    .div-calendar-all-shows {
+      @include media-breakpoint-down(md) {
+       justify-content: center;
+       align-items: center;
+        padding: 30px 0;
+        background-color: map-get($theme-colors, "secondary");;
+      }
+    }
+    .title-calendar {
+      color: #fff;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 800 !important;
+    }
+    .form-item-field-festival-target-id {
+      > label {
+        color: #000;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 40px 0 30px 0;
+        font-style: normal;
+        font-weight: 800;
+      }
+    }
+    .bef-links {
+      background-color: transparent;
+      background-image: none;
+      border: 0;
+      ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        margin: 0 0 0 -15px;
+        padding: 0;
+        li {
+          a {
+            @include black_sidebar();
+            display: inline-block;
+            color: white;
+            font-size: 0.875em;
+            text-transform: uppercase;
+            margin: 0 20px 0 0;
+            padding: 3px 10px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    #edit-field-show-type-target-id--2--wrapper {
+      legend {
+        display: none;
+      }
+      .form-radios {
+        display: flex;
+        flex-wrap: wrap;
+        label {
+          margin-right: 15px;
+        }
+      }
+    }
+    .js-form-item-field-minimum-age-value {
+      display: flex;
+      align-items: center;
+      select {
+        width: 150px;
+        margin-left: 5px;
+      }
+    }
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 45px;
+      button {
+        background-color: map-get($theme-colors, "secondary");
+        @include button_book_show();
+        margin: 0 5px;
+      }
+    }
+    margin-bottom: 40px;
+  }
+
+}

@@ -1,0 +1,27 @@
+uuid: 839cef53-a147-4313-ad9d-9a4a3f4091d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.taxo_term_page
+    - field.field.paragraph.references.field_references
+    - paragraphs.paragraphs_type.references
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions: {  }
+id: paragraph.references.taxo_term_page
+targetEntityType: paragraph
+bundle: references
+mode: taxo_term_page
+content: {  }
+hidden:
+  field_references: true

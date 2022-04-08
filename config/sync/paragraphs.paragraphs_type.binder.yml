@@ -1,0 +1,10 @@
+uuid: a5e182d8-4620-4556-bd84-e2a11944d8ef
+langcode: fr
+status: true
+dependencies: {  }
+id: binder
+label: 'Classeur de documents'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

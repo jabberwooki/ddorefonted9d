@@ -1,0 +1,85 @@
+uuid: 6516e77d-cbba-458a-ab7e-aaa0fb965c68
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_audio.field_authors
+    - field.field.media.remote_audio.field_media_oembed_audio
+    - field.field.media.remote_audio.field_tags
+    - media.type.remote_audio
+  module:
+    - media
+    - path
+_core:
+  default_config_hash: VctvK1j5-PsbuElFcAmCBsVzzCn5Ta2kUhRP5LIPCqM
+id: media.remote_audio.default
+targetEntityType: media
+bundle: remote_audio
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_authors:
+    type: entity_reference_autocomplete
+    weight: 101
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_oembed_audio:
+    type: oembed_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete
+    weight: 102
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  name: true

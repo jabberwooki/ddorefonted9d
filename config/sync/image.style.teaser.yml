@@ -1,0 +1,26 @@
+uuid: f5d4263a-080a-4b6b-a7f4-630083b28729
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.teaser
+  module:
+    - crop
+name: teaser
+label: Accroche
+effects:
+  9d2dd76d-6984-4619-88d7-41af403b6949:
+    uuid: 9d2dd76d-6984-4619-88d7-41af403b6949
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: teaser
+      automatic_crop_provider: null
+  6f951345-e4d7-409b-8781-6fc85d8c3855:
+    uuid: 6f951345-e4d7-409b-8781-6fc85d8c3855
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: null
+      upscale: true

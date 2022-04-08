@@ -1,0 +1,94 @@
+/* News full content */
+body.node--type-news,
+body.node--type-article {
+  .div-image-style-banner {
+    position: relative;
+    display: block;
+    &:after {
+      content: "";
+      display: block;
+      height: 50%;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+      visibility: visible;
+      width: 100%;
+    }
+  }
+  .wrapper-over-img-abs {
+    position: relative;
+    .group-text-over-img-abs {
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      .field--name-node-title {
+        @include media-breakpoint-down(md) {
+          font-size: 1.4rem;
+        }
+        font-size: 2.25rem;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 0.625rem;
+        margin-top: 0;
+        font-style: normal;
+        font-weight: 800;
+      }
+    }
+  }
+  .image-style-_-2-image {
+    max-width: 45% !important;
+    float: right;
+    margin: 0 0 30px 5%;
+  }
+  .field--name-field-videos {
+    max-width: 45% !important;
+    float: right;
+    margin: 0 0 30px 5%;
+    /* padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+    iframe {
+      max-height: 200px!important;
+    }
+
+  }
+}
+
+/* News page zoom sur top */
+.zoom-news-top {
+  margin-bottom: 30px;
+  a.link-zoom {
+    h3 {
+      color: map-get($theme-colors,"secondary");
+      font-size: 1.75rem;
+      text-decoration: none;
+      line-height: 1.2em;
+      margin-top: 20px;
+      display: block;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &:hover {
+      opacity: 0.5;
+      text-decoration: none !important;
+    }
+  }
+}
+.zoom-news-bottom {
+  a.link-zoom {
+    h3 {
+      color: map-get($theme-colors,"secondary");
+      font-size: 1.25rem;
+      text-decoration: none;
+      margin-top: 20px;
+      display: block;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}
+

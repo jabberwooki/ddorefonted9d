@@ -1,0 +1,14 @@
+uuid: 5db86d9a-37e4-44b6-b821-a005fdf6c95e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.location
+  module:
+    - user
+id: user_add_role_action.location
+label: 'Ajouter le rôle location aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: location

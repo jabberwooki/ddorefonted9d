@@ -1,0 +1,96 @@
+uuid: b8cd3165-bb1d-41e5-92c0-086e76b1530a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.rentable_place.body
+    - field.field.node.rentable_place.field_contact
+    - field.field.node.rentable_place.field_gallery
+    - field.field.node.rentable_place.field_media_image
+    - node.type.rentable_place
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - sharethis
+        - links
+        - node_title
+        - body
+        - field_gallery
+        - field_contact
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.rentable_place.full
+targetEntityType: node
+bundle: rentable_place
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  field_contact:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: renting_contact
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: ds_content
+  field_gallery:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 4
+    region: ds_content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+hidden:
+  field_media_image: true
+  langcode: true

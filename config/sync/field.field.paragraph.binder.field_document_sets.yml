@@ -1,0 +1,43 @@
+uuid: aef698cc-aee3-4f88-aae6-92d6f17e43b8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_sets
+    - paragraphs.paragraphs_type.binder
+    - paragraphs.paragraphs_type.documents
+  module:
+    - entity_reference_revisions
+id: paragraph.binder.field_document_sets
+field_name: field_document_sets
+entity_type: paragraph
+bundle: binder
+label: 'Groupes de documents'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      documents: documents
+    negate: 0
+    target_bundles_drag_drop:
+      binder:
+        weight: 3
+        enabled: false
+      documents:
+        weight: 4
+        enabled: true
+      galleries:
+        weight: 8
+        enabled: false
+      image:
+        weight: 9
+        enabled: false
+      references:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

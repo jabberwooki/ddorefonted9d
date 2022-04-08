@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ * JE ME SERS DE CE TWIG POUR INFO FLASH !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+
+{% if content.field_target_url.0 is empty or content.field_target_url.0 == "" %}
+  {% set url_destination = path('entity.node.canonical', {'node': content['#node'].id()  }) %}
+{% else %}
+  {% set url_destination = field_target_url.0 %}
+{% endif %}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+<section class="zoom-news">
+
+  <a class="link-zoom" href="{{ url_destination }}">
+    <div>{{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, 'square', {responsive: true}) }}</div>
+  </a>
+  <a class="link-zoom" href="{{ url_destination }}">
+    <h3>{{ node.label }}</h3>
+  </a>
+  {{ content.body }}
+
+
+</section>
+
+
+</{{ ds_content_wrapper }}>

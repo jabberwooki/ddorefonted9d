@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+ {# {{ ds_content }} #}
+
+<div class="top-festival row">
+  <div class="col-md-7">
+    {{ drupal_image(node.field_poster.entity.field_media_image.entity.uri.value, 'currently', {responsive: true}) }}
+  </div>
+  <aside class="col-md-5">
+    <div class="aside-insert">
+      {{ content.node_title }}
+      {% if not field_shows is empty and field_shows[0] is not empty %}
+        <a href="#shows" class="link-to-shows">Voir les spectacles et réserver</a>
+      {% endif %}
+      {% if not field_pdf_programme is empty and not node.field_pdf_programme.entity.name.value is empty %}
+        <a class="link-to-programme"
+           href="{{ file_url(node.field_pdf_programme.entity.field_media_document.entity.fileuri) }}" target="_blank">
+          {{ node.field_pdf_programme.entity.name.value }}
+        </a>
+      {% endif %}
+      {% if not field_files is empty  %}
+        {{ field_files }}
+      {% endif %}
+      {% if not field_online_flipthrough is empty and not node.field_online_flipthrough.0 is empty %}
+        <a class="link-flipthrough"
+           href="{{ node.field_online_flipthrough.0.url }}" target="_blank">
+          Feuilleter le programme
+        </a>
+      {% endif %}
+      {% if not field_archives is empty and not node.field_archives.0 is empty %}
+        <a class="link-archives"
+           href="{{ node.field_archives.0.url }}" target="_blank">
+          Voir les archives
+        </a>
+      {% endif %}
+      {% if not field_facebook is empty and not node.field_facebook.0 is empty %}
+        <a class="link-facebook"
+           href="{{ node.field_facebook.0.url }}" target="_blank">
+          Facebook
+        </a>
+      {% endif %}
+    </div>
+  </aside>
+</div>
+<div class="row main-festival">
+  <div class="col">
+    {{ body }}
+  </div>
+</div>
+<div class="row">
+  <div class="col" id="shows">
+    {{ field_shows }}
+  </div>
+</div>
+
+
+</{{ ds_content_wrapper }}>

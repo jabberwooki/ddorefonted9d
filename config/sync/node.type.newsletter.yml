@@ -1,0 +1,17 @@
+uuid: 2538ac96-e0b2-4421-9af6-30bb6b95ec08
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Lettre d''info'
+type: newsletter
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

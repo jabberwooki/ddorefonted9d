@@ -1,0 +1,12 @@
+uuid: 306143f6-ea2c-43f9-a7b1-fa0244ab69af
+langcode: fr
+status: true
+dependencies: {  }
+label: 'Image 3/2'
+id: 3_2_image
+description: ''
+aspect_ratio: '3:2'
+soft_limit_width: 780
+soft_limit_height: 517
+hard_limit_width: null
+hard_limit_height: null

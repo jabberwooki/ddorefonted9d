@@ -1,0 +1,19 @@
+uuid: 6b516ffa-ca2b-4d9d-b34d-308c3b1029e8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_online_flipthrough
+field_name: field_online_flipthrough
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

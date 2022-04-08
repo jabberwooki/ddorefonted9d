@@ -1,0 +1,10 @@
+uuid: 0b991c31-0bd0-4fea-9ab8-6fbd4d93834a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.currently
+label: 'En ce moment'
+targetEntityType: node
+cache: true

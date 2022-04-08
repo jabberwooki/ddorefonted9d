@@ -1,0 +1,10 @@
+uuid: 7f0a4bfb-bd9a-438f-a642-767b413356a1
+langcode: fr
+status: true
+dependencies: {  }
+id: documents
+label: 'Groupe de documents'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

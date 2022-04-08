@@ -1,0 +1,26 @@
+uuid: 38ea2e0f-84c2-41e6-8247-46e8d34f9005
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.galleries.field_gallery
+    - paragraphs.paragraphs_type.galleries
+  module:
+    - ds
+id: paragraph.galleries.default
+targetEntityType: paragraph
+bundle: galleries
+mode: default
+content:
+  field_gallery:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 0
+    region: content
+hidden: {  }

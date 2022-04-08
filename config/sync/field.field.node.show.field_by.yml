@@ -1,0 +1,29 @@
+uuid: dce1cf87-5e31-4b40-b7a2-eaf35b07599c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_by
+    - node.type.show
+    - node.type.structure
+id: node.show.field_by
+field_name: field_by
+entity_type: node
+bundle: show
+label: Par
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      structure: structure
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

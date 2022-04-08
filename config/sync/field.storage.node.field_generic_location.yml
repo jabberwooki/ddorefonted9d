@@ -1,0 +1,21 @@
+uuid: adf66f8d-dff7-4412-9f32-183d4601acea
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_generic_location
+field_name: field_generic_location
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

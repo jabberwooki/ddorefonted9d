@@ -1,0 +1,17 @@
+uuid: 882b1994-c4c2-4d79-a1d7-2ef99efa31b2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Entrée
+type: entrance
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

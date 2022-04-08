@@ -1,0 +1,29 @@
+uuid: 24efc140-633c-45b1-a1d4-a666d8d6046f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_documents
+    - media.type.document
+    - paragraphs.paragraphs_type.documents
+id: paragraph.documents.field_documents
+field_name: field_documents
+entity_type: paragraph
+bundle: documents
+label: 'Médias document'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

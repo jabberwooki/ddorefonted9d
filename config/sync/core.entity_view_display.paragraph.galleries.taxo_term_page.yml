@@ -1,0 +1,15 @@
+uuid: 4a7091a1-ee52-4d3b-8d85-5dc968b31d12
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.taxo_term_page
+    - field.field.paragraph.galleries.field_gallery
+    - paragraphs.paragraphs_type.galleries
+id: paragraph.galleries.taxo_term_page
+targetEntityType: paragraph
+bundle: galleries
+mode: taxo_term_page
+content: {  }
+hidden:
+  field_gallery: true

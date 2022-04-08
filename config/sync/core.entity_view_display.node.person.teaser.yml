@@ -1,0 +1,104 @@
+uuid: 9381ff8a-3ef4-47f0-b685-5d2c78c14fb5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.field_person_img1
+    - field.field.node.person.field_person_img2
+    - field.field.node.person.field_person_txt1
+    - field.field.node.person.field_person_txt2
+    - field.field.node.person.field_person_txt3
+    - field.field.node.person.field_poles
+    - node.type.person
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - node_title
+        - field_person_img1
+        - field_person_img2
+        - field_person_txt1
+        - field_person_txt2
+        - field_person_txt3
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  field_person_img1:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_person_img2:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_person_txt1:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  field_person_txt2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: ds_content
+  field_person_txt3:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: ds_content
+hidden:
+  field_poles: true
+  langcode: true
+  links: true
+  sharethis: true

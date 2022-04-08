@@ -1,0 +1,10 @@
+uuid: b2b056f3-b4ec-4f72-8a67-b667308f43a3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.documentation_page
+label: 'Page Documentation'
+targetEntityType: paragraph
+cache: true

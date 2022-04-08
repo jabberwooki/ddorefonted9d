@@ -1,0 +1,461 @@
+uuid: b78a5505-5c3b-403b-8b5a-1cfb1a6fff1e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.show.body
+    - field.field.node.show.field_additional_info
+    - field.field.node.show.field_by
+    - field.field.node.show.field_casting
+    - field.field.node.show.field_casting_link
+    - field.field.node.show.field_coming_soon
+    - field.field.node.show.field_coproduction
+    - field.field.node.show.field_currently
+    - field.field.node.show.field_dates
+    - field.field.node.show.field_display_age
+    - field.field.node.show.field_duration
+    - field.field.node.show.field_entrance
+    - field.field.node.show.field_festival
+    - field.field.node.show.field_from
+    - field.field.node.show.field_full
+    - field.field.node.show.field_galeries
+    - field.field.node.show.field_galleries_link
+    - field.field.node.show.field_generic_location
+    - field.field.node.show.field_location
+    - field.field.node.show.field_mapado_apislug
+    - field.field.node.show.field_mapado_dates_ids
+    - field.field.node.show.field_mapado_ticketing
+    - field.field.node.show.field_media_image
+    - field.field.node.show.field_media_thumbnail
+    - field.field.node.show.field_minimum_age
+    - field.field.node.show.field_offline
+    - field.field.node.show.field_partnerships
+    - field.field.node.show.field_price
+    - field.field.node.show.field_production
+    - field.field.node.show.field_proposed_by
+    - field.field.node.show.field_reimbursement
+    - field.field.node.show.field_reservation
+    - field.field.node.show.field_restauration
+    - field.field.node.show.field_show_type
+    - field.field.node.show.field_shows
+    - field.field.node.show.field_sounds
+    - field.field.node.show.field_sounds_link
+    - field.field.node.show.field_subtitle
+    - field.field.node.show.field_ticketing_url
+    - field.field.node.show.field_top_link
+    - field.field.node.show.field_videos
+    - field.field.node.show.field_videos_link
+    - node.type.show
+  module:
+    - ddo_utils
+    - ds
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - sharethis
+        - links
+        - node_title
+        - field_subtitle
+        - field_dates
+        - field_generic_location
+        - field_location
+        - field_festival
+        - field_proposed_by
+        - field_from
+        - field_by
+        - field_media_image
+        - body
+        - field_casting
+        - field_production
+        - field_coproduction
+        - field_partnerships
+        - field_duration
+        - field_price
+        - field_entrance
+        - field_minimum_age
+        - field_restauration
+        - field_additional_info
+        - field_reservation
+        - field_ticketing_url
+        - mapado_url
+        - field_coming_soon
+        - field_full
+        - field_reimbursement
+        - field_offline
+        - field_galeries
+        - field_videos
+        - field_sounds
+        - field_shows
+        - field_casting_link
+        - field_galleries_link
+        - field_videos_link
+        - field_sounds_link
+        - field_top_link
+        - langcode
+        - field_display_age
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: ''
+          class: ''
+id: node.show.full
+targetEntityType: node
+bundle: show
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: ds_content
+  field_additional_info:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: ds_content
+  field_by:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: ds_content
+  field_casting:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: ds_content
+  field_casting_link:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 34
+    region: ds_content
+  field_coming_soon:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 26
+    region: ds_content
+  field_coproduction:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: ds_content
+  field_dates:
+    type: datetime_ddo
+    label: hidden
+    settings:
+      timezone_override: ''
+      single_date_format: show_date
+      range_date_format: show_date_short
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 4
+    region: ds_content
+  field_display_age:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 40
+    region: ds_content
+  field_duration:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: ds_content
+  field_entrance:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: ds_content
+  field_festival:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: ds_content
+  field_from:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: ds_content
+  field_full:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 27
+    region: ds_content
+  field_galeries:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 30
+    region: ds_content
+  field_galleries_link:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 35
+    region: ds_content
+  field_generic_location:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: ds_content
+  field_location:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: ds_content
+  field_media_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings: {  }
+    weight: 11
+    region: ds_content
+  field_minimum_age:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 20
+    region: ds_content
+  field_offline:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 29
+    region: ds_content
+  field_partnerships:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: ds_content
+  field_price:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: ds_content
+  field_production:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: ds_content
+  field_proposed_by:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: ds_content
+  field_reimbursement:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
+    region: ds_content
+  field_reservation:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: ds_content
+  field_restauration:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: ds_content
+  field_shows:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 33
+    region: ds_content
+  field_sounds:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 32
+    region: ds_content
+  field_sounds_link:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 37
+    region: ds_content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  field_ticketing_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 24
+    region: ds_content
+  field_top_link:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 38
+    region: ds_content
+  field_videos:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: node_content
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 31
+    region: ds_content
+  field_videos_link:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 36
+    region: ds_content
+  langcode:
+    type: language
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 39
+    region: ds_content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  mapado_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 25
+    region: ds_content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+hidden:
+  field_currently: true
+  field_mapado_apislug: true
+  field_mapado_dates_ids: true
+  field_mapado_ticketing: true
+  field_media_thumbnail: true
+  field_show_type: true

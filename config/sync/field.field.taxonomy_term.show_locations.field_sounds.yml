@@ -1,0 +1,29 @@
+uuid: d9c53567-4db2-4f56-8695-30bdb98733ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_sounds
+    - media.type.remote_audio
+    - taxonomy.vocabulary.show_locations
+id: taxonomy_term.show_locations.field_sounds
+field_name: field_sounds
+entity_type: taxonomy_term
+bundle: show_locations
+label: Sons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_audio: remote_audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

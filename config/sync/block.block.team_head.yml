@@ -1,0 +1,27 @@
+uuid: dd684d23-7dee-4995-a00c-fc0c8c1a2bd8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.team_head
+  module:
+    - simple_block
+    - system
+  theme:
+    - ddo
+id: team_head
+theme: ddo
+region: content
+weight: -14
+provider: null
+plugin: 'simple_block:team_head'
+settings:
+  id: 'simple_block:team_head'
+  label: 'Entête équipe'
+  label_display: '0'
+  provider: simple_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /domaine-do/equipe

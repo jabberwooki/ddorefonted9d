@@ -1,0 +1,23 @@
+uuid: 49d2fb89-ff35-4604-8ebe-62f7524506c5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slideshow
+    - node.type.news
+id: node.news.field_slideshow
+field_name: field_slideshow
+entity_type: node
+bundle: news
+label: 'Visibile dans le diaporama'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

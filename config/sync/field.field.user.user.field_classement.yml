@@ -1,0 +1,21 @@
+uuid: 36f87798-6380-47e2-9b9f-7eadf92d456a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_classement
+  module:
+    - options
+    - user
+id: user.user.field_classement
+field_name: field_classement
+entity_type: user
+bundle: user
+label: Classement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

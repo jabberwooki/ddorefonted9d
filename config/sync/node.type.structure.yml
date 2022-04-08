@@ -1,0 +1,17 @@
+uuid: ab26330f-e3e3-4f09-86a8-69575663f3d7
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Structure
+type: structure
+description: 'Une structure est une association de professionnels du spectacle. Cela peut être une compagnie, un groupe, un ensemble, un artiste seul.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

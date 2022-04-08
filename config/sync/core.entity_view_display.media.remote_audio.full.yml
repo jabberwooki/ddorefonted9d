@@ -1,0 +1,84 @@
+uuid: b106f631-c23b-4a71-ba3b-a61941763e53
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.remote_audio.field_authors
+    - field.field.media.remote_audio.field_media_oembed_audio
+    - field.field.media.remote_audio.field_tags
+    - media.type.remote_audio
+  module:
+    - ds
+    - media
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - media_name
+        - field_media_oembed_audio
+        - field_authors
+        - field_tags
+    fields:
+      media_name:
+        plugin_id: media_name
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: xutQOAHcT8pQ9zK86II4rSxfYfLJhH53bpMeJuQ6nZw
+id: media.remote_audio.full
+targetEntityType: media
+bundle: remote_audio
+mode: full
+content:
+  field_authors:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 2
+    region: ds_content
+  field_media_oembed_audio:
+    type: oembed
+    label: visually_hidden
+    settings:
+      max_width: 937
+      max_height: 0
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 3
+    region: ds_content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

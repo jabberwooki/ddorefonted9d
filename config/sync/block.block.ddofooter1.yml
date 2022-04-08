@@ -1,0 +1,25 @@
+uuid: 379a35bc-53b3-4965-8444-b93caca54003
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.ddofooter1
+  module:
+    - system
+  theme:
+    - ddo
+id: ddofooter1
+theme: ddo
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:ddofooter1'
+settings:
+  id: 'system_menu_block:ddofooter1'
+  label: 'Pied de page DDO 1'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

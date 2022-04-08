@@ -1,0 +1,10 @@
+uuid: e4d60b66-6ec7-46fb-8149-5594d19d55a9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.slideshow
+label: Diaporama
+targetEntityType: node
+cache: true

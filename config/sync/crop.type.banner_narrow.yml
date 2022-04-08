@@ -1,0 +1,12 @@
+uuid: 26a1ad9e-158d-4c1a-bc5a-073262a14147
+langcode: fr
+status: true
+dependencies: {  }
+label: 'Bandeau étroit'
+id: banner_narrow
+description: ''
+aspect_ratio: '1935:377'
+soft_limit_width: 1935
+soft_limit_height: 377
+hard_limit_width: null
+hard_limit_height: null

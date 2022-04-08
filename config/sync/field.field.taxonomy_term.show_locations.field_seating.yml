@@ -1,0 +1,23 @@
+uuid: 964d02db-5d6a-48b0-88c4-7dd8a46a7346
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_seating
+    - taxonomy.vocabulary.show_locations
+id: taxonomy_term.show_locations.field_seating
+field_name: field_seating
+entity_type: taxonomy_term
+bundle: show_locations
+label: Jauge
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

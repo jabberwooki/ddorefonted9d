@@ -1,0 +1,13 @@
+uuid: 79fde7bc-2a70-41ab-aba0-4141878b71af
+langcode: fr
+status: true
+dependencies: {  }
+id: festivals_shows
+label: 'Festivals - Spectacles'
+enabled: true
+first_field: field_shows
+second_field: field_festival
+bundles:
+  node:
+    - festival
+    - show

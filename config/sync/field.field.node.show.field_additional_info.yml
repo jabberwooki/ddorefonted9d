@@ -1,0 +1,21 @@
+uuid: d329bfb1-acc7-4655-81ec-5594f15e4bcd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_info
+    - node.type.show
+  module:
+    - text
+id: node.show.field_additional_info
+field_name: field_additional_info
+entity_type: node
+bundle: show
+label: 'Infos supplémentaires'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

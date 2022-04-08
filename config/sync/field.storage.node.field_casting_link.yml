@@ -1,0 +1,20 @@
+uuid: b9a6539c-0820-4ccc-8935-57af5ce1f960
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_casting_link
+field_name: field_casting_link
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

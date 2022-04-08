@@ -1,0 +1,26 @@
+uuid: d001f642-9e5b-4fe7-a3ec-2478b4a75519
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.banner_narrow
+  module:
+    - crop
+name: banner_narrow
+label: 'Bandeau étroit'
+effects:
+  05786bcf-1caa-47b7-b5b0-699e3be21884:
+    uuid: 05786bcf-1caa-47b7-b5b0-699e3be21884
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_narrow
+      automatic_crop_provider: null
+  d1a6789d-407c-419a-a300-f91f853883b4:
+    uuid: d1a6789d-407c-419a-a300-f91f853883b4
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 377
+      upscale: true

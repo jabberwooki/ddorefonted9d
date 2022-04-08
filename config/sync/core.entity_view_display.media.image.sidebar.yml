@@ -1,0 +1,44 @@
+uuid: cd8fac82-77a5-481d-b7c3-f92420ce8080
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.sidebar
+    - field.field.media.image.field_authors
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_tags
+    - image.style.3_2_image
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.sidebar
+targetEntityType: media
+bundle: image
+mode: sidebar
+content:
+  field_authors:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: 3_2_image
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

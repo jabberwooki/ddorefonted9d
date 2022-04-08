@@ -1,0 +1,22 @@
+uuid: 2f3038c4-42b0-4627-9367-abfeebb19a93
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ddo
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: ddo_content
+theme: ddo
+region: content
+weight: -10
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

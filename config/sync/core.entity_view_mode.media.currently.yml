@@ -1,0 +1,10 @@
+uuid: 0039d967-970b-4b94-b136-7e800f49a327
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.currently
+label: 'En ce moment'
+targetEntityType: media
+cache: true

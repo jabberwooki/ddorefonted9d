@@ -1,0 +1,17 @@
+uuid: 10346c40-51b4-4bb8-9cb2-a9a48f192110
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Evénement
+type: news
+description: 'News pour le domaine d''o'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

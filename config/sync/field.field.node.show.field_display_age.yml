@@ -1,0 +1,23 @@
+uuid: 4c1ac981-90fe-4ab0-9e79-b063331ab22b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_age
+    - node.type.show
+id: node.show.field_display_age
+field_name: field_display_age
+entity_type: node
+bundle: show
+label: 'Afficher l''âge sur la fiche spectacle'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

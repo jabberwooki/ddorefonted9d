@@ -1,0 +1,26 @@
+uuid: d93a9387-2fbd-4b9f-854e-2908eb2fb742
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.slideshow
+  module:
+    - crop
+name: slideshow
+label: Diaporama
+effects:
+  6f981d18-10a8-47c2-b622-f5921b42414f:
+    uuid: 6f981d18-10a8-47c2-b622-f5921b42414f
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: slideshow
+      automatic_crop_provider: null
+  61f6beb2-a9b2-4d28-bab1-5f101134fe04:
+    uuid: 61f6beb2-a9b2-4d28-bab1-5f101134fe04
+    id: image_scale
+    weight: 2
+    data:
+      width: 634
+      height: null
+      upscale: true

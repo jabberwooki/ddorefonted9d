@@ -1,0 +1,21 @@
+uuid: d0867227-d903-48de-9576-8fb765674481
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reimbursement
+    - node.type.show
+  module:
+    - text
+id: node.show.field_reimbursement
+field_name: field_reimbursement
+entity_type: node
+bundle: show
+label: Remboursement
+description: 'Texte d''explication des modalités de remboursement en cas d''annulation de spectacle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
