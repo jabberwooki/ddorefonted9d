@@ -15,48 +15,83 @@ settings:
     rows:
       -
         -
-          name: Formatting
+          name: Source
+          items:
+            - Source
+        -
+          name: 'Text Handling'
+          items:
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: 'Tools 1'
+          items:
+            - Undo
+            - Redo
+            - SpecialChar
+            - RemoveFormat
+        -
+          name: Media
+          items:
+            - DrupalImage
+            - DrupalMediaLibrary
+            - Table
+            - HorizontalRule
+            - '-'
+      -
+        -
+          name: 'Text Formatting'
           items:
             - Bold
             - Italic
+            - Underline
             - Strike
-            - Superscript
             - Subscript
-            - '-'
-            - RemoveFormat
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
+            - Superscript
         -
           name: Lists
           items:
             - BulletedList
             - NumberedList
-        -
-          name: Media
-          items:
             - Blockquote
-            - DrupalImage
-            - DrupalMediaLibrary
-            - Table
-            - HorizontalRule
+        -
+          name: 'Text Alignment'
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+      -
         -
           name: 'Block Formatting'
           items:
             - Format
             - Styles
         -
-          name: Tools
+          name: Color
+          items:
+            - TextColor
+            - BGColor
+        -
+          name: 'Tools 2'
           items:
             - ShowBlocks
-            - Source
+            - Maximize
   plugins:
     language:
       language_list: un
     stylescombo:
       styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
+    colorbutton:
+      colors: ''
 image_upload:
   status: true
   scheme: public
