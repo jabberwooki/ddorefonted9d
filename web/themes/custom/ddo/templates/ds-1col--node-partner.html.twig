@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+
+
+  <div class="row">
+    <div class="col-md-8">
+      {{ body }}
+    </div>
+    <div class="col-md-4">
+      {% if content.field_website.0 is empty or content.field_website.0 == "" %}
+        {{ field_logo }}
+      {% else %}
+        <a href="{{ node.field_website.0.url }}">
+          {{ field_logo }}
+        </a>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</{{ ds_content_wrapper }}>
