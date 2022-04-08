@@ -18,7 +18,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: ds_1col
+      id: ds_1col_wrapper
       library: null
       disable_css: false
       entity_classes: all_classes

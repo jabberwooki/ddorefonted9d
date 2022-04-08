@@ -158,8 +158,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  attachment_1:
-    id: attachment_1
+  attachment_partners_small:
+    id: attachment_partners_small
     display_title: 'Partenaires secondaires'
     display_plugin: attachment
     position: 3
