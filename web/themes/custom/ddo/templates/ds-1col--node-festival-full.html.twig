@@ -31,7 +31,7 @@
           {{ node.field_pdf_programme.entity.name.value }}
         </a>
       {% endif %}
-      {% if not field_files is empty  %}
+      {% if not field_files is empty %}
         {{ field_files }}
       {% endif %}
       {% if not field_online_flipthrough is empty and not node.field_online_flipthrough.0 is empty %}
@@ -59,6 +59,13 @@
   <div class="col">
     {{ body }}
   </div>
+
+  {% if  field_sidebar_image.0 is not empty or field_videos.0 is not empty %}
+    <div class="col">
+      {{ field_videos }}
+      {{ field_sidebar_image }}
+    </div>
+  {% endif %}
 </div>
 <div class="row">
   <div class="col" id="shows">
