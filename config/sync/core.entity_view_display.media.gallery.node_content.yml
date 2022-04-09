@@ -8,7 +8,7 @@ dependencies:
     - field.field.media.gallery.field_media_slideshow
     - field.field.media.gallery.field_tags
     - image.style.3_2_image
-    - image.style.slideshow
+    - image.style.large
     - media.type.gallery
   module:
     - ds
@@ -64,9 +64,9 @@ content:
     label: visually_hidden
     settings:
       caption:
-        field_authors: field_authors
-        field_tags: field_tags
-        title: title
+        field_authors: '0'
+        field_tags: '0'
+        title: '0'
         alt: '0'
       optionset: default
       class: ''
@@ -76,13 +76,15 @@ content:
       overlay: ''
       title: ''
       vanilla: false
-      icon: ''
       layout: ''
       view_mode: full
       cache: 0
       current_view_mode: node_content
       skin: split
       fx: ''
+      lazy: ''
+      loading: ''
+      preload: false
       style: column
       background: false
       box_caption: entity_title
@@ -90,13 +92,12 @@ content:
       box_media_style: ''
       responsive_image_style: ''
       box_style: ''
-      image_style: slideshow
+      image_style: large
       media_switch: slick_lightbox
       ratio: ''
       thumbnail_style: 3_2_image
+      _item: ''
       _uri: ''
-      breakpoints: {  }
-      sizes: ''
       grid_header: ''
       grid: ''
       grid_medium: ''
