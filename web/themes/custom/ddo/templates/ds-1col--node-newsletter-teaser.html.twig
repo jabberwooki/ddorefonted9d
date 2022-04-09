@@ -14,13 +14,21 @@
 <div class="newsletter-teaser">
   {{ field_media_image }}
   <div class="txt-over-newsletter-image">
-    {{ title_suffix.contextual_links }}
-    {{ field_mailchimp_url }}
-    {{ body }}
-    <div class="sending-date-nl"><span>Envoyée le : </span><span> {{ field_sending_date }}</span></div>
+    <div class="title-nl">
+      {{ field_mailchimp_url }}
+    </div>
+    <div class="body-nl">
+      {{ body }}
+    </div>
+    <div class="bottom-nl">
+
+      <div class="sending-date-nl"><span>Envoyée le : </span><span> {{ field_sending_date }}</span></div>
+    </div>
+
   </div>
 </div>
 
-  {# {{ ds_content }} #}
+
+{# {{ ds_content }} #}
 
 </{{ ds_content_wrapper }}>
