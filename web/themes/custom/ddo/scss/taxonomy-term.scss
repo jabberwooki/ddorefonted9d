@@ -51,4 +51,30 @@ body.page-view-taxonomy-term-copy {
   .content-with-banner-img {
     padding-top: 20px;
   }
+  /* Lieux de spectacle */
+  .field--name-field-ls-practical {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      li {
+        a {
+          font-weight: bold;
+          display: block;
+          text-decoration: underline;
+          color: map-get($theme-colors, "secondary");
+          text-decoration: none;
+          &:before {
+            @extend %icon-fontello;
+            content: "\e834";
+            font-size: 0.9rem;
+            color: black;
+            position: relative;
+            left: -5px;
+          }
+        }
+      }
+    }
+  }
+
 }
