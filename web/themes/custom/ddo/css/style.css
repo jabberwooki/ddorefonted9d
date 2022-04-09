@@ -14638,7 +14638,7 @@ body.node--type-festival .show-festival-title {
   font-style: normal;
   font-weight: 400;
 }
-body.node--type-festival .main-festival .field--name-body {
+body.node--type-festival .main-festival > * {
   margin-top: 30px;
 }
 
