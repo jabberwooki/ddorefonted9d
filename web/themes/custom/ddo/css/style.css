@@ -13057,6 +13057,7 @@ body.path-user .field--label-above .field__item {
   color: white;
 }
 #buttons-notification-subscribe #webpush {
+  display: none !important;
   margin-top: 3px;
   margin-right: 10px;
   font-size: 0.75rem;
