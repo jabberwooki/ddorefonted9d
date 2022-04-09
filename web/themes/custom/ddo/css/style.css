@@ -15377,9 +15377,6 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
 }
 
 .view-display-id-attachment_partners_small > div > .views-row {
-  display: flex;
-}
-.view-display-id-attachment_partners_small > div > .views-row > div {
   width: 25% !important;
 }
 
