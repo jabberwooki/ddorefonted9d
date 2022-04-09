@@ -28,12 +28,10 @@
   <div class="row">
     <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
       <div class="group-text-over-img-abs">
-
-        {{ field_videos }}
-        {% if field_videos is empty %}
-          {{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, '3_2_image', {responsive: true}) }}
+        {% if field_videos.0 is empty  %}
+          {{ field_sidebar_image }}
         {% endif %}
-
+        {{ field_videos }}
         {{ content.body }}
         {{ field_files }}
       </div>
