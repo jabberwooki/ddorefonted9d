@@ -1,3 +1,7 @@
+#mc-embedded-subscribe-form {
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+}
 .page-view-newsletters {
   .view-content.row {
     display: flex;
@@ -8,6 +12,7 @@
         flex-basis: 99%;
       }
       .newsletter-teaser {
+        min-height: 570px;
         position: relative;
         .field--type-image {
           float: none;
@@ -20,12 +25,27 @@
           position: absolute;
           bottom: 0;
           width: 100%;
-          min-height: 50%;
+          height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
           color: white !important;
           background: linear-gradient(transparent, black);
+          .title-nl {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 70%;
+            justify-content: flex-end;
+          }
+          .body-nl {
+            flex-basis: 20%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+          }
+          .bottom-nl {
+            flex-basis: 10%;
+          }
           > * {
             padding: 15px;
           }
