@@ -37,7 +37,9 @@ logo:
   use_default: 0
   path: themes/custom/ddo/images/logo-domaine-d-o.png
 favicon:
-  use_default: 1
+  use_default: 0
+  path: themes/custom/ddo/favicon.ico
+  mimetype: image/vnd.microsoft.icon
 bootstrap_barrio_source: '0'
 bootstrap_barrio_region_clean_top_header: 0
 bootstrap_barrio_region_class_top_header: row
@@ -102,3 +104,11 @@ bootstrap_barrio_google_fonts: ''
 bootstrap_barrio_bootstrap_icons: 0
 bootstrap_barrio_icons: ''
 bootstrap_barrio_table_head: ''
+bootstrap_barrio_region_clean_mega_menu: 0
+bootstrap_barrio_region_class_mega_menu: row
+bootstrap_barrio_region_clean_mega_menu_second: 0
+bootstrap_barrio_region_class_mega_menu_second: row
+bootstrap_barrio_region_clean_mega_menu_third: 0
+bootstrap_barrio_region_class_mega_menu_third: row
+bootstrap_barrio_region_clean_featured_top_large: 0
+bootstrap_barrio_region_class_featured_top_large: row
