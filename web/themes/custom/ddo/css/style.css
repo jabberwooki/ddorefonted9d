@@ -15344,6 +15344,11 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   }
 }
 
+#mc-embedded-subscribe-form {
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+}
+
 .page-view-newsletters .view-content.row {
   display: flex;
   justify-content: space-between;
@@ -15357,6 +15362,7 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   }
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser {
+  min-height: 570px;
   position: relative;
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .field--type-image {
@@ -15370,12 +15376,27 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   position: absolute;
   bottom: 0;
   width: 100%;
-  min-height: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   color: white !important;
   background: linear-gradient(transparent, black);
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .title-nl {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+  justify-content: flex-end;
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .body-nl {
+  flex-basis: 20%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .bottom-nl {
+  flex-basis: 10%;
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image > * {
   padding: 15px;
