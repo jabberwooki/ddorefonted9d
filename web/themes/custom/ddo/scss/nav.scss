@@ -39,6 +39,7 @@
   }
 
   #webpush {
+    display: none !important;
     margin-top: 3px;
     margin-right: 10px;
     @include secondary-icon-link("\e84a");

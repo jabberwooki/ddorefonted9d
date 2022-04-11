@@ -1,14 +1,3 @@
-## SASS
-La compilation du scss via gulp ne fonctionnant plus à partir de mars 2022, je complile le code de manière classique :
-Se rendre sur le répertoire racine du thème puis lancer :  sass --watch scss/import.scss css/style.css
-
-
-## SOUS MENUS
-Les sous-menu de gauche sont des blocs de menu qui sont issus des principaux menus. Attention, leur appel se trouve dans
-les fichiers twig et pour cacher certaines parties des menus, j'utilise un script : secondary_menu.js
-
-
-DEFAULT DRUPAL TXT
 Themes allow you to change the look and feel of your Drupal site. You can use
 themes contributed by others or create your own.
 

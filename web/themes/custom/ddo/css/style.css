@@ -8,7 +8,8 @@
   font-weight: normal;
   font-style: normal;
 }
-body.node--type-documentation .open-close .layout.layout--onecol div.layout__region > .field--name-field-title:after, body.node--type-festival .aside-insert .link-facebook:before, body.node--type-festival .aside-insert .link-archives:before, body.node--type-festival .aside-insert .link-flipthrough:before, body.node--type-festival .aside-insert .link-to-programme:before, body.node--type-festival .aside-insert .link-to-shows:before, #custom-home-slideshow #slideshow-control .control-button:before, .node--type-show #wrap-full-show .show-aside-information .title-all-show-dates:before, .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:before, .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:before, .teaser-show .teaser-location.extramuros:before, a.btn-calendar:before, #over-menus #search-block-form #close-search-form:before, #over-menus #custom-search-button:before, #over-menus #custom-mega-menu-button.close-menu-button:before, #over-menus #custom-mega-menu-button.open-menu-button:before, #buttons-notification-subscribe #webpush:before, #buttons-notification-subscribe #link-subscription:before, .nav-social a.icon-tripadvisor:before, .nav-social a.icon-youtube:before, .nav-social a.icon-twitter:before, .nav-social a.icon-facebook:before {
+body.node--type-documentation .open-close .layout.layout--onecol div.layout__region > .field--name-field-title:after, body.page-view-taxonomy-term .field--name-field-ls-practical ul li a:before,
+body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul li a:before, body.node--type-festival .aside-insert .link-facebook:before, body.node--type-festival .aside-insert .link-archives:before, body.node--type-festival .aside-insert .link-flipthrough:before, body.node--type-festival .aside-insert .link-to-programme:before, body.node--type-festival .aside-insert .link-to-shows:before, #custom-home-slideshow #slideshow-control .control-button:before, .node--type-show #wrap-full-show .show-aside-information .title-all-show-dates:before, .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:before, .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:before, .teaser-show .teaser-location.extramuros:before, a.btn-calendar:before, #over-menus #search-block-form #close-search-form:before, #over-menus #custom-search-button:before, #over-menus #custom-mega-menu-button.close-menu-button:before, #over-menus #custom-mega-menu-button.open-menu-button:before, #buttons-notification-subscribe #webpush:before, #buttons-notification-subscribe #link-subscription:before, .nav-social a.icon-tripadvisor:before, .nav-social a.icon-youtube:before, .nav-social a.icon-twitter:before, .nav-social a.icon-facebook:before {
   color: black;
   text-decoration: none;
   font-family: "fontello";
@@ -13057,6 +13058,7 @@ body.path-user .field--label-above .field__item {
   color: white;
 }
 #buttons-notification-subscribe #webpush {
+  display: none !important;
   margin-top: 3px;
   margin-right: 10px;
   font-size: 0.75rem;
@@ -14636,10 +14638,14 @@ body.node--type-festival .show-festival-title {
   font-style: normal;
   font-weight: 400;
 }
-body.node--type-festival .main-festival .field--name-body {
+body.node--type-festival .main-festival > * {
   margin-top: 30px;
 }
 
+body.page-view-taxonomy-term,
+body.page-view-taxonomy-term-copy {
+  /* Lieux de spectacle */
+}
 body.page-view-taxonomy-term .div-image-style-banner,
 body.page-view-taxonomy-term-copy .div-image-style-banner {
   position: relative;
@@ -14707,6 +14713,28 @@ body.page-view-taxonomy-term-copy .content-without-banner-img .wrapper-title-ter
 body.page-view-taxonomy-term .content-with-banner-img,
 body.page-view-taxonomy-term-copy .content-with-banner-img {
   padding-top: 20px;
+}
+body.page-view-taxonomy-term .field--name-field-ls-practical ul,
+body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+body.page-view-taxonomy-term .field--name-field-ls-practical ul li a,
+body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul li a {
+  font-weight: bold;
+  display: block;
+  text-decoration: underline;
+  color: #F74E2D;
+  text-decoration: none;
+}
+body.page-view-taxonomy-term .field--name-field-ls-practical ul li a:before,
+body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul li a:before {
+  content: "\e834";
+  font-size: 0.9rem;
+  color: black;
+  position: relative;
+  left: -5px;
 }
 
 .path-calendrier .view-display-id-page_month ul.js-pager__items {
@@ -15316,6 +15344,11 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   }
 }
 
+#mc-embedded-subscribe-form {
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
+}
+
 .page-view-newsletters .view-content.row {
   display: flex;
   justify-content: space-between;
@@ -15329,6 +15362,7 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   }
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser {
+  min-height: 570px;
   position: relative;
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .field--type-image {
@@ -15342,12 +15376,27 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   position: absolute;
   bottom: 0;
   width: 100%;
-  min-height: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   color: white !important;
   background: linear-gradient(transparent, black);
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .title-nl {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+  justify-content: flex-end;
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .body-nl {
+  flex-basis: 20%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image .bottom-nl {
+  flex-basis: 10%;
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image > * {
   padding: 15px;
@@ -15377,10 +15426,12 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
 }
 
 .view-display-id-attachment_partners_small > div > .views-row {
-  display: flex;
-}
-.view-display-id-attachment_partners_small > div > .views-row > div {
   width: 25% !important;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

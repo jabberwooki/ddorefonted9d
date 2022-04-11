@@ -545,7 +545,7 @@ display:
         filter_groups: false
       relationships: {  }
       use_ajax: false
-      group_by: false
+      group_by: true
       display_description: ''
       exposed_block: true
       display_extenders: {  }
