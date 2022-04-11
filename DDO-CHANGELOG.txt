@@ -1,5 +1,11 @@
 Domaine d'O 1.0.1 - 2021-04-08
 ----------------------------
+Dernières modifications avant mise en prod :
+css et templates (logo, notification, galeries, partenaires, géolocalisation, image et vidéos dans les zoom et pages festival) 
+vue 'Tous les spectacles' : ajout de l'aggrégation et tri sur champ Dates avec aggregation MINI pour supprimer les doublons d'affichage lorsqu'un spectacle a plusieurs dates
+
+Domaine d'O 1.0.1 - 2021-04-08
+----------------------------
 Rajout des fichiers default.settings.php et default.services.yml
 
 Domaine d'O 1.0 - 2021-04-08
