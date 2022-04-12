@@ -1,13 +1,21 @@
-Domaine d'O 1.0.1 - 2021-04-08
-----------------------------
+Domaine d'O 1.0.3 - 2022-04-12
+------------------------------
+Correction format de dates pour les spectacles + bouton calendrier d'acceuil
+
+Domaine d'O 1.0.3 - 2022-04-11
+------------------------------
+  * Modif du module Mapado : ajout d'un bloc if() dans MapadoUrlComputed.php pour supprimer le WSOD des anciens spectacles qui n'ont aucune valeur dans le champ field_ticketing_url.
+
+Domaine d'O 1.0.2 - 2022-04-11
+------------------------------
 Dernières modifications avant mise en prod :
-css et templates (logo, notification, galeries, partenaires, géolocalisation, image et vidéos dans les zoom et pages festival) 
+css et templates (logo, notification, galeries, partenaires, géolocalisation, image et vidéos dans les zoom et pages festival)
 vue 'Tous les spectacles' : ajout de l'aggrégation et tri sur champ Dates avec aggregation MINI pour supprimer les doublons d'affichage lorsqu'un spectacle a plusieurs dates
 
-Domaine d'O 1.0.1 - 2021-04-08
+Domaine d'O 1.0.1 - 2022-04-08
 ----------------------------
 Rajout des fichiers default.settings.php et default.services.yml
 
-Domaine d'O 1.0 - 2021-04-08
+Domaine d'O 1.0 - 2022-04-08
 ----------------------------
-Première version du site du domaine d'O avec D9 
+Première version du site du domaine d'O avec D9

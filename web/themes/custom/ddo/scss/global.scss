@@ -57,9 +57,16 @@ a.btn-calendar {
       color: white;
     }
   }
+  @include media-breakpoint-down(md) {
+    margin-left: 15px;
+    text-align: center;
+  }
 }
 .festival-access-calendar {
   @include festival_button();
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
 }
 
 /* Pagination */

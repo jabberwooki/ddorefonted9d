@@ -103,7 +103,7 @@
             {% set current_timezone = ("now" | date('e')) %}
             <ul class="list-unstyled">
               {% for date in node.field_dates %}
-                <li>{{ date.value | date_from_format("Y-m-d\\TH:i:s", "m/d/Y - H:i", "UTC", current_timezone)  }}</li>
+                <li>{{ date.value | date_from_format("Y-m-d\\TH:i:s", "d/m/Y - H:i", "UTC", current_timezone)  }}</li>
               {% endfor %}
             </ul>
           </section>
