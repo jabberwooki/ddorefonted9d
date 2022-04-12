@@ -13447,6 +13447,12 @@ a.btn-calendar:hover {
 a.btn-calendar:hover:before {
   color: white;
 }
+@media (max-width: 767.98px) {
+  a.btn-calendar {
+    margin-left: 15px;
+    text-align: center;
+  }
+}
 
 .festival-access-calendar {
   display: flex;
@@ -13486,6 +13492,11 @@ a.btn-calendar:hover:before {
 }
 .festival-access-calendar a .field--type-entity-reference {
   margin: 0;
+}
+@media (max-width: 767.98px) {
+  .festival-access-calendar {
+    text-align: center;
+  }
 }
 
 /* Pagination */
