@@ -29,7 +29,10 @@ class MapadoUrlComputed extends FieldItemList {
     );
 
     // Construction du lien vers la billetterie
-    $mapado_url = $entity->get('field_ticketing_url')->get(0)->getUrl()->getUri();
+    $mapado_url = 'https://domainedo.mapado.com/event/';
+    if ($entity->get('field_ticketing_url')->get(0)) {
+      $mapado_url = $entity->get('field_ticketing_url')->get(0)->getUrl()->getUri();
+    }
     $slug = $entity->field_mapado_apislug->value;
     $event_uri = $mapado_url . $slug;
     $link1 = array(
