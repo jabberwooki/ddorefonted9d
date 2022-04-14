@@ -1,3 +1,7 @@
+Domaine d'O 1.0.3 - 2022-04-12
+------------------------------
+Correction format de dates pour les spectacles + bouton calendrier d'acceuil
+
 Domaine d'O 1.0.3 - 2022-04-11
 ------------------------------
   * Modif du module Mapado : ajout d'un bloc if() dans MapadoUrlComputed.php pour supprimer le WSOD des anciens spectacles qui n'ont aucune valeur dans le champ field_ticketing_url.
