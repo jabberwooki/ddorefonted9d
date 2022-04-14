@@ -1,4 +1,8 @@
-Domaine d'O 1.0.3 - 2022-04-12
+Domaine d'O 1.0.5 - 2022-04-14
+------------------------------
+  * Modif du formateur de dates custom Dates DDO (datetime_ddo) : récup de la valeur timezone courante à l'aide de la fonction PHP date_default_timezone_get() pour corriger l'erreur d'affichage de l'heure.
+
+Domaine d'O 1.0.4 - 2022-04-12
 ------------------------------
 Correction format de dates pour les spectacles + bouton calendrier d'acceuil
 
@@ -19,3 +23,4 @@ Rajout des fichiers default.settings.php et default.services.yml
 Domaine d'O 1.0 - 2022-04-08
 ----------------------------
 Première version du site du domaine d'O avec D9
+
