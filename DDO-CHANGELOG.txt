@@ -1,5 +1,9 @@
 Domaine d'O 1.0.5 - 2022-04-14
 ------------------------------
+  * Ajout du répertoire /themes/custom/ddo/fonts/843877 après un republish sur https://www.typography.com/dashboard pour la gotham
+
+Domaine d'O 1.0.5 - 2022-04-14
+------------------------------
   * Modif du formateur de dates custom Dates DDO (datetime_ddo) : récup de la valeur timezone courante à l'aide de la fonction PHP date_default_timezone_get() pour corriger l'erreur d'affichage de l'heure.
 
 Domaine d'O 1.0.4 - 2022-04-12

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* IMPORTS */
-@import url(https://cloud.typography.com/6033676/6071012/css/fonts.css);
+@import "https://cloud.typography.com/6033676/6071012/css/fonts.css";
 @font-face {
   font-family: "fontello";
   src: url("/themes/custom/ddo/fontello/font/fontello.eot?22306761");
