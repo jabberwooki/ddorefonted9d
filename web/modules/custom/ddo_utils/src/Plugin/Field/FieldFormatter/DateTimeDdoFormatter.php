@@ -87,10 +87,13 @@ class DateTimeDdoFormatter extends DateTimeFormatterBase {
   protected function formatDate($date) {
     $single_date_format = $this->getSetting('single_date_format');
     $range_date_format = $this->getSetting('range_date_format');
-    $timezone = $this->getSetting('timezone_override') ?: $date->getTimezone()->getName();
+//    $timezone = $this->getSetting('timezone_override') ?: $date->getTimezone()->getName(); NE PAS SUPPRIMER
+    $timezone = date_default_timezone_get();
     return [
-      $this->dateFormatter->format($date->getTimestamp(), $single_date_format, '', $timezone != '' ? $timezone : NULL),
-      $this->dateFormatter->format($date->getTimestamp(), $range_date_format, '', $timezone != '' ? $timezone : NULL)
+//      $this->dateFormatter->format($date->getTimestamp(), $single_date_format, '', $timezone != '' ? $timezone : NULL), NE PAS SUPPRIMER
+      $this->dateFormatter->format($date->getTimestamp(), $single_date_format, '', $timezone),
+//      $this->dateFormatter->format($date->getTimestamp(), $range_date_format, '', $timezone != '' ? $timezone : NULL) NE PAS SUPPRIMER
+      $this->dateFormatter->format($date->getTimestamp(), $range_date_format, '', $timezone)
     ];
   }
 
