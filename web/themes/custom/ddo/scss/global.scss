@@ -109,3 +109,11 @@ picture {
   }
 }
 
+/* titles titres */
+.node--type-page,
+.node--type-news {
+  h2.field--name-node-title {
+    @include special_underline(white, map-get($theme-colors, "secondary"), 70%, 100%);
+  }
+}
+
