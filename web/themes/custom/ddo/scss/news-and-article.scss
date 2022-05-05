@@ -36,11 +36,16 @@ body.node--type-article {
       }
     }
   }
-  .image-style-_-2-image {
+  .field--name-field-sidebar-image {
+    float: right;
+    max-width: 45% !important;
+    margin: 0 0 30px 5%;
+  }
+  /*.image-style-_-2-image {
     max-width: 45% !important;
     float: right;
     margin: 0 0 30px 5%;
-  }
+  }*/
   .field--name-field-videos {
     max-width: 45% !important;
     float: right;
