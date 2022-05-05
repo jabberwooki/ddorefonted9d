@@ -13362,6 +13362,12 @@ body {
   font-weight: 400;
 }
 
+body #block-ddo-content a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #F74E2D;
+}
+
 .clear {
   clear: both;
 }
