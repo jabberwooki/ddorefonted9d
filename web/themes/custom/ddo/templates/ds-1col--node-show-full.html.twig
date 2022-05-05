@@ -19,6 +19,7 @@
     {% set media_uri = node.field_media_image|file_uri %}
     {% if media_uri is not null %}
       <picture>
+        <span class="media-author">{{ node.field_media_image.entity.field_authors[0].entity.label }}</span>
         <source media="(max-width: 992px)" srcset="{{ media_uri|image_style('square') }}">
         <source media="(min-width: 992px)" srcset="{{ media_uri|image_style('banner') }}">
         <img src="{{ media_uri|image_style('square') }}" alt="">
