@@ -56,6 +56,11 @@ body.node--type-article {
     }
 
   }
+  .media--type-gallery {
+    .field--name-media-name {
+      @include not_visible();
+    }
+  }
 }
 
 /* News page zoom sur top */
