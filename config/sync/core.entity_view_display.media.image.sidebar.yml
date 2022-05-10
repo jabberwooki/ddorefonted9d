@@ -10,6 +10,7 @@ dependencies:
     - image.style.3_2_image
     - media.type.image
   module:
+    - ds
     - image
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
@@ -22,8 +23,10 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     weight: 1
     region: content
   field_media_image:

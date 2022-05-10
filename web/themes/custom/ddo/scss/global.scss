@@ -3,6 +3,11 @@ body {
   font-style: normal;
   font-weight: 400;
 }
+body #block-ddo-content a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #F74E2D;
+}
 .clear {
   clear: both;
 }
@@ -88,3 +93,27 @@ ul.pagination {
     }
   }
 }
+
+/* Auteur des medias */
+picture {
+  position: relative;
+  display: block;
+  .media-author {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    color: #eeeeee;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+}
+
+/* titles titres */
+.node--type-page,
+.node--type-news {
+  h2.field--name-node-title {
+    @include special_underline(white, map-get($theme-colors, "secondary"), 70%, 100%);
+  }
+}
+

@@ -2,3 +2,13 @@
   display: flex;
   align-items: center;
 }
+.slide__description {
+  @include not_visible();
+}
+.field--name-field-media-oembed-video {
+  .field--name-field-authors,
+  .field--name-field-tags {
+    @include not_visible();
+  }
+}
+
