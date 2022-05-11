@@ -69,7 +69,7 @@
 @mixin black_sidebar() {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -77,16 +77,17 @@
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   a {
-    color: white;
+    color: white !important;
+    text-decoration: none !important;
   }
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: white !important;
+    color: black !important;
 
     a {
-      color: black;
+      color: black !important;
     }
   }
   .field--type-entity-reference {
