@@ -1,3 +1,10 @@
+Domaine d'O 1.0.8 - 2022-05-11
+------------------------------
+Ajout du critère de tri 'date du premier spectacle' dans le bloc Accès par festival.
+Modif de la vue Espace Multimédia : Ajout du mécanisme de tri, suppression de l'affichage du titre des galeries. 
+Modifications css pour la visibilité des liens.
+
+
 Domaine d'O 1.0.7 - 2022-05-10
 ------------------------------
   * Améliorations de la mise en page via des css, des modifications de templates et quelques exports de config (ckeditor et media)
