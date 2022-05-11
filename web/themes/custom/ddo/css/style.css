@@ -12976,49 +12976,61 @@ body.path-user .field--label-above .field__item {
     display: none;
   }
 }
+.nav-social a.icon-facebook {
+  text-decoration: none !important;
+}
 .nav-social a.icon-facebook:before {
   content: "\e801";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-facebook:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-facebook:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-twitter {
+  text-decoration: none !important;
 }
 .nav-social a.icon-twitter:before {
   content: "\e800";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-twitter:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-twitter:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-youtube {
+  text-decoration: none !important;
 }
 .nav-social a.icon-youtube:before {
   content: "\e802";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-youtube:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-youtube:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-tripadvisor {
+  text-decoration: none !important;
 }
 .nav-social a.icon-tripadvisor:before {
   content: "\f262";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-tripadvisor:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-tripadvisor:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
 }
 
 /* Boutons d'abonnement et de notification*/
@@ -13974,27 +13986,33 @@ picture .media-author {
   display: flex;
   align-items: center;
 }
+.node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter {
+  text-decoration: none !important;
+}
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:before {
   content: "\e800";
   font-size: 2rem;
-  color: #1C9BF0;
+  color: #1C9BF0 !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook {
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:before {
   content: "\e801";
   font-size: 2rem;
-  color: #4064AC;
+  color: #4064AC !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
 }
 .node--type-show #wrap-full-show .show-main-information .field--name-field-shows {
   border: 3px solid red;

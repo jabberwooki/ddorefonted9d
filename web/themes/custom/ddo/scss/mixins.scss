@@ -1,16 +1,17 @@
 /* Icônes sociales*/
 @mixin social-icon($charcode, $color: "black", $size: 1rem) {
+  text-decoration: none !important;
   &:before {
     @extend %icon-fontello;
     content: $charcode;
     font-size: $size;
-    color: $color;
+    color: $color !important;
   }
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:before {
-      color: map-get($theme-colors, "secondary");
+      color: map-get($theme-colors, "secondary") !important;
     }
   }
 }
