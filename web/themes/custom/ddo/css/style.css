@@ -13637,7 +13637,8 @@ picture .media-author {
   justify-content: flex-end;
 }
 .teaser-show .bottom-info-teaser-show a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .teaser-show .bottom-info-teaser-show a:hover {
   text-decoration: none;
@@ -13715,7 +13716,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .teaser-show .bottom-info-teaser-show .bottom-buttons-teaser-show .link-book-teaser-show:hover {
   background-color: white;
@@ -13887,7 +13889,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   margin-top: -3px;
   margin-bottom: 7px;
 }
@@ -13930,7 +13933,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .row-anchor-full-show .row #col-book-show #book-show:hover {
   background-color: white;
@@ -14105,7 +14109,8 @@ body.page-view-shows .under-featured-top-all-shows .bef-links ul li a {
   font-weight: 500;
   color: white;
   display: inline-block;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   font-size: 0.875em;
   text-transform: uppercase;
   margin: 0 20px 0 0;
@@ -14158,7 +14163,8 @@ body.page-view-shows .under-featured-top-all-shows .form-actions button {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   margin: 0 5px;
 }
 body.page-view-shows .under-featured-top-all-shows .form-actions button:hover {
@@ -14594,7 +14600,7 @@ body.node--type-festival .aside-insert h2.field--name-node-title, body.node--typ
   margin-bottom: 30px;
 }
 body.node--type-festival .aside-insert .link-to-shows {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14603,7 +14609,7 @@ body.node--type-festival .aside-insert .link-to-shows {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-to-shows:before {
   content: "\f291";
@@ -14616,7 +14622,7 @@ body.node--type-festival .aside-insert .link-to-shows:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-to-programme {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14625,7 +14631,7 @@ body.node--type-festival .aside-insert .link-to-programme {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-to-programme:before {
   content: "\e823";
@@ -14638,7 +14644,7 @@ body.node--type-festival .aside-insert .link-to-programme:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-flipthrough {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14647,7 +14653,7 @@ body.node--type-festival .aside-insert .link-flipthrough {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-flipthrough:before {
   content: "\e82f";
@@ -14660,7 +14666,7 @@ body.node--type-festival .aside-insert .link-flipthrough:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-archives {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14669,7 +14675,7 @@ body.node--type-festival .aside-insert .link-archives {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-archives:before {
   content: "\f0ae";
@@ -14682,7 +14688,7 @@ body.node--type-festival .aside-insert .link-archives:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-facebook {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14691,7 +14697,7 @@ body.node--type-festival .aside-insert .link-facebook {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-facebook:before {
   content: "\e801";
