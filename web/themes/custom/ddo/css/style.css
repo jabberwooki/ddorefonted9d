@@ -12976,49 +12976,61 @@ body.path-user .field--label-above .field__item {
     display: none;
   }
 }
+.nav-social a.icon-facebook {
+  text-decoration: none !important;
+}
 .nav-social a.icon-facebook:before {
   content: "\e801";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-facebook:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-facebook:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-twitter {
+  text-decoration: none !important;
 }
 .nav-social a.icon-twitter:before {
   content: "\e800";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-twitter:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-twitter:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-youtube {
+  text-decoration: none !important;
 }
 .nav-social a.icon-youtube:before {
   content: "\e802";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-youtube:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-youtube:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.nav-social a.icon-tripadvisor {
+  text-decoration: none !important;
 }
 .nav-social a.icon-tripadvisor:before {
   content: "\f262";
   font-size: 1rem;
-  color: "black";
+  color: "black" !important;
 }
 .nav-social a.icon-tripadvisor:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-social a.icon-tripadvisor:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
 }
 
 /* Boutons d'abonnement et de notification*/
@@ -13469,7 +13481,7 @@ a.btn-calendar:hover:before {
 .festival-access-calendar a {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -13477,7 +13489,7 @@ a.btn-calendar:hover:before {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   display: inline-block;
   color: white;
   font-size: 0.875em;
@@ -13487,14 +13499,15 @@ a.btn-calendar:hover:before {
   font-weight: 700;
 }
 .festival-access-calendar a a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .festival-access-calendar a:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 .festival-access-calendar a:hover a {
-  color: black;
+  color: black !important;
 }
 .festival-access-calendar a .field--type-entity-reference {
   margin: 0;
@@ -13577,7 +13590,7 @@ picture .media-author {
 .teaser-show .festival-teaser-show {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -13585,20 +13598,21 @@ picture .media-author {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   position: absolute;
   top: 5px;
   left: 15px;
 }
 .teaser-show .festival-teaser-show a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .teaser-show .festival-teaser-show:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 .teaser-show .festival-teaser-show:hover a {
-  color: black;
+  color: black !important;
 }
 .teaser-show .festival-teaser-show .field--type-entity-reference {
   margin: 0;
@@ -13637,7 +13651,8 @@ picture .media-author {
   justify-content: flex-end;
 }
 .teaser-show .bottom-info-teaser-show a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .teaser-show .bottom-info-teaser-show a:hover {
   text-decoration: none;
@@ -13715,7 +13730,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .teaser-show .bottom-info-teaser-show .bottom-buttons-teaser-show .link-book-teaser-show:hover {
   background-color: white;
@@ -13791,7 +13807,7 @@ picture .media-author {
   right: 5px;
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -13799,17 +13815,18 @@ picture .media-author {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
 }
 .node--type-show #wrap-full-show .div-image-style-banner .field--name-field-authors a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .div-image-style-banner .field--name-field-authors:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 .node--type-show #wrap-full-show .div-image-style-banner .field--name-field-authors:hover a {
-  color: black;
+  color: black !important;
 }
 .node--type-show #wrap-full-show .div-image-style-banner .field--name-field-authors .field--type-entity-reference {
   margin: 0;
@@ -13825,7 +13842,7 @@ picture .media-author {
 .node--type-show #wrap-full-show .wrapper-over-img-abs .group-text-over-img-abs .field--name-field-festival {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -13833,18 +13850,19 @@ picture .media-author {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   display: inline-block;
 }
 .node--type-show #wrap-full-show .wrapper-over-img-abs .group-text-over-img-abs .field--name-field-festival a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .wrapper-over-img-abs .group-text-over-img-abs .field--name-field-festival:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 .node--type-show #wrap-full-show .wrapper-over-img-abs .group-text-over-img-abs .field--name-field-festival:hover a {
-  color: black;
+  color: black !important;
 }
 .node--type-show #wrap-full-show .wrapper-over-img-abs .group-text-over-img-abs .field--name-field-festival .field--type-entity-reference {
   margin: 0;
@@ -13887,7 +13905,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   margin-top: -3px;
   margin-bottom: 7px;
 }
@@ -13930,7 +13949,8 @@ picture .media-author {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .row-anchor-full-show .row #col-book-show #book-show:hover {
   background-color: white;
@@ -13970,27 +13990,33 @@ picture .media-author {
   display: flex;
   align-items: center;
 }
+.node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter {
+  text-decoration: none !important;
+}
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:before {
   content: "\e800";
   font-size: 2rem;
-  color: #1C9BF0;
+  color: #1C9BF0 !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-twitter:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
+}
+.node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook {
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:before {
   content: "\e801";
   font-size: 2rem;
-  color: #4064AC;
+  color: #4064AC !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .node--type-show #wrap-full-show .show-main-information .share-social-buttons a.icon-facebook:hover:before {
-  color: #F74E2D;
+  color: #F74E2D !important;
 }
 .node--type-show #wrap-full-show .show-main-information .field--name-field-shows {
   border: 3px solid red;
@@ -14095,7 +14121,7 @@ body.page-view-shows .under-featured-top-all-shows .bef-links ul {
 body.page-view-shows .under-featured-top-all-shows .bef-links ul li a {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -14103,9 +14129,10 @@ body.page-view-shows .under-featured-top-all-shows .bef-links ul li a {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   display: inline-block;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   font-size: 0.875em;
   text-transform: uppercase;
   margin: 0 20px 0 0;
@@ -14114,14 +14141,15 @@ body.page-view-shows .under-featured-top-all-shows .bef-links ul li a {
   margin-bottom: 20px;
 }
 body.page-view-shows .under-featured-top-all-shows .bef-links ul li a a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 body.page-view-shows .under-featured-top-all-shows .bef-links ul li a:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 body.page-view-shows .under-featured-top-all-shows .bef-links ul li a:hover a {
-  color: black;
+  color: black !important;
 }
 body.page-view-shows .under-featured-top-all-shows .bef-links ul li a .field--type-entity-reference {
   margin: 0;
@@ -14158,7 +14186,8 @@ body.page-view-shows .under-featured-top-all-shows .form-actions button {
   background-color: #F74E2D;
   border: 1px solid #F74E2D;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   margin: 0 5px;
 }
 body.page-view-shows .under-featured-top-all-shows .form-actions button:hover {
@@ -14594,7 +14623,7 @@ body.node--type-festival .aside-insert h2.field--name-node-title, body.node--typ
   margin-bottom: 30px;
 }
 body.node--type-festival .aside-insert .link-to-shows {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14603,7 +14632,7 @@ body.node--type-festival .aside-insert .link-to-shows {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-to-shows:before {
   content: "\f291";
@@ -14616,7 +14645,7 @@ body.node--type-festival .aside-insert .link-to-shows:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-to-programme {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14625,7 +14654,7 @@ body.node--type-festival .aside-insert .link-to-programme {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-to-programme:before {
   content: "\e823";
@@ -14638,7 +14667,7 @@ body.node--type-festival .aside-insert .link-to-programme:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-flipthrough {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14647,7 +14676,7 @@ body.node--type-festival .aside-insert .link-flipthrough {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-flipthrough:before {
   content: "\e82f";
@@ -14660,7 +14689,7 @@ body.node--type-festival .aside-insert .link-flipthrough:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-archives {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14669,7 +14698,7 @@ body.node--type-festival .aside-insert .link-archives {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-archives:before {
   content: "\f0ae";
@@ -14682,7 +14711,7 @@ body.node--type-festival .aside-insert .link-archives:hover {
   opacity: 0.5;
 }
 body.node--type-festival .aside-insert .link-facebook {
-  color: white;
+  color: white !important;
   font-size: 0.688em;
   text-transform: uppercase;
   font-style: normal;
@@ -14691,7 +14720,7 @@ body.node--type-festival .aside-insert .link-facebook {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body.node--type-festival .aside-insert .link-facebook:before {
   content: "\e801";
@@ -15168,7 +15197,7 @@ body.node--type-documentation .div-image-style-banner .field--name-field-authors
   right: 5px;
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -15176,17 +15205,18 @@ body.node--type-documentation .div-image-style-banner .field--name-field-authors
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
 }
 body.node--type-documentation .div-image-style-banner .field--name-field-authors a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 body.node--type-documentation .div-image-style-banner .field--name-field-authors:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 body.node--type-documentation .div-image-style-banner .field--name-field-authors:hover a {
-  color: black;
+  color: black !important;
 }
 body.node--type-documentation .div-image-style-banner .field--name-field-authors .field--type-entity-reference {
   margin: 0;
@@ -15364,7 +15394,7 @@ body.page-view-multimedia-area .form-select.bef-links ul > li {
 body.page-view-multimedia-area .form-select.bef-links ul > li > a {
   display: block;
   background-color: #000000;
-  text-decoration: none;
+  text-decoration: none !important;
   margin: 0;
   padding: 0.3125rem;
   font-size: 0.6875rem;
@@ -15372,21 +15402,22 @@ body.page-view-multimedia-area .form-select.bef-links ul > li > a {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
-  color: white;
+  color: white !important;
   margin: 5px 10px;
   font-weight: bold;
   padding: 3px 10px;
   font-size: 0.9rem;
 }
 body.page-view-multimedia-area .form-select.bef-links ul > li > a a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 body.page-view-multimedia-area .form-select.bef-links ul > li > a:hover {
-  background-color: white;
-  color: black;
+  background-color: white !important;
+  color: black !important;
 }
 body.page-view-multimedia-area .form-select.bef-links ul > li > a:hover a {
-  color: black;
+  color: black !important;
 }
 body.page-view-multimedia-area .form-select.bef-links ul > li > a .field--type-entity-reference {
   margin: 0;
