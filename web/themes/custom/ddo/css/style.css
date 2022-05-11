@@ -14466,6 +14466,17 @@ body.node--type-news .field--name-field-videos iframe,
 body.node--type-article .field--name-field-videos iframe {
   max-height: 200px !important;
 }
+body.node--type-news .media--type-gallery .field--name-media-name,
+body.node--type-article .media--type-gallery .field--name-media-name {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  z-index: -1000;
+  user-select: none;
+}
 
 /* News page zoom sur top */
 .zoom-news-top {

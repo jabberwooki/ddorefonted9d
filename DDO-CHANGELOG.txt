@@ -1,4 +1,8 @@
-Domaine d'O 1.0.5 - 2022-04-14
+Domaine d'O 1.0.7 - 2022-05-10
+------------------------------
+  * Améliorations de la mise en page via des css, des modifications de templates et quelques exports de config (ckeditor et media)
+
+Domaine d'O 1.0.6 - 2022-04-14
 ------------------------------
   * Ajout du répertoire /themes/custom/ddo/fonts/843877 après un republish sur https://www.typography.com/dashboard pour la gotham
 
