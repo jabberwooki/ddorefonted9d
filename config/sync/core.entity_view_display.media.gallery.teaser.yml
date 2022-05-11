@@ -23,19 +23,7 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - media_name
         - thumbnail
-    fields:
-      media_name:
-        plugin_id: media_name
-        weight: 0
-        label: hidden
-        formatter: default
-        settings:
-          'link class': ''
-          wrapper: ''
-          class: ''
-          link: 0
 id: media.gallery.teaser
 targetEntityType: media
 bundle: gallery
@@ -48,7 +36,7 @@ content:
       image_link: content
       image_style: polaroid
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   created: true
