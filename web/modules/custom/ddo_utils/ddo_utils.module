@@ -172,6 +172,10 @@ function ddo_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) 
       $form['field_festival_name']['#disabled'] = true;
     }
   }
+  // Si c'est un spectacle, on retire le texte d'aide sur les formats HTML du champ Tarif.
+  elseif (in_array($form_id, ['node_show_form', 'node_show_edit_form'])) {
+    $form['#attached']['library'][] = 'ddo/show-form';
+  }
 }
 
 /**
