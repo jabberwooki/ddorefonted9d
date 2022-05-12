@@ -173,8 +173,8 @@ function ddo_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) 
     }
   }
   // Si c'est un spectacle, on retire le texte d'aide sur les formats HTML du champ Tarif.
-  elseif (in_array($form_id, ['node_show_form', 'node_show_edit_form'])) {
-    $form['#attached']['library'][] = 'ddo/show-form';
+  elseif (in_array($form_id, ['node_show_form', 'node_show_edit_form', 'node_news_form', 'node_news_edit_form', 'node_article_form', 'node_article_edit_form'])) {
+    $form['#attached']['library'][] = 'ddo/content-form-alter';
   }
 }
 
