@@ -1,3 +1,6 @@
+Domaine d'O 1.0.9 - 2022-05-12
+Hotfix : Css up pour la mise en forme des liens des newsletter
+
 Domaine d'O 1.0.8 - 2022-05-11
 ------------------------------
 Ajout du critère de tri 'date du premier spectacle' dans le bloc Accès par festival.
