@@ -15504,9 +15504,10 @@ body.page-view-multimedia-area .view-content.row .field--name-thumbnail {
   padding: 15px;
 }
 .page-view-newsletters .view-content.row > div.views-row .newsletter-teaser .txt-over-newsletter-image a {
-  color: #FFF;
+  color: #FFF !important;
   font-size: 1.8rem;
   text-transform: uppercase;
+  text-decoration: none !important;
   font-weight: 600;
   display: inline;
   max-width: 66%;
