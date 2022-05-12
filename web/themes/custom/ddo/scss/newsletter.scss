@@ -50,9 +50,10 @@
             padding: 15px;
           }
           a {
-            color: #FFF;
+            color: #FFF !important;
             font-size: 1.8rem;
             text-transform: uppercase;
+            text-decoration: none !important;
             @include special_underline(white, map-get($theme-colors, "secondary"));
           }
           .sending-date-nl {
