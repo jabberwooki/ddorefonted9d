@@ -14041,30 +14041,42 @@ picture .media-author {
   content: "\e807";
   color: #F74E2D;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled,
+.node--type-show #wrap-full-show .show-aside-information .show-full {
   background-color: #F74E2D;
   font-size: 0.876rem;
   padding: 15px;
   margin-bottom: 20px;
   color: white;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information .field {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information .field,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled .field,
+.node--type-show #wrap-full-show .show-aside-information .show-full .field {
   margin-bottom: 20px;
   display: flex;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information .field .field__label {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information .field .field__label,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled .field .field__label,
+.node--type-show #wrap-full-show .show-aside-information .show-full .field .field__label {
   padding-right: 10px;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information .field .field__label:after {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information .field .field__label:after,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled .field .field__label:after,
+.node--type-show #wrap-full-show .show-aside-information .show-full .field .field__label:after {
   position: relative;
   right: -5px;
   content: ":";
   display: inline;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information .field.field--name-field-restauration {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information .field.field--name-field-restauration,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled .field.field--name-field-restauration,
+.node--type-show #wrap-full-show .show-aside-information .show-full .field.field--name-field-restauration {
   flex-direction: column;
 }
-.node--type-show #wrap-full-show .show-aside-information .section-further-information .field__item a {
+.node--type-show #wrap-full-show .show-aside-information .section-further-information .field__item a,
+.node--type-show #wrap-full-show .show-aside-information .show-canceled .field__item a,
+.node--type-show #wrap-full-show .show-aside-information .show-full .field__item a {
   color: white;
   text-decoration: underline;
 }
