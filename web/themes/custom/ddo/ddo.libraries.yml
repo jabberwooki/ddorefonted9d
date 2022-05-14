@@ -41,10 +41,10 @@ technique:
   dependencies:
     - core/jquery
     - core/drupal
-show-form:
+content-form-alter:
   version: VERSION 1
   js:
-    js/show_form.js: {}
+    js/content_form_alter.js: {}
   dependencies:
     - core/jquery
     - core/drupal
