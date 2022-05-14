@@ -1,3 +1,7 @@
+Domaine d'O 1.0.10 - 2022-05-14
+Modif de ddo_utils : La suppression du texte d'aide sur les formats HTML est étendue au champ Lien plus d'infos, visible dans Article et Événement
+Css up pour la mise en forme des champs complet et annulé
+
 Domaine d'O 1.0.9 - 2022-05-12
 Hotfix : Css up pour la mise en forme des liens des newsletter
 
