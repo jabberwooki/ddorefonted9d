@@ -1,0 +1,22 @@
+uuid: c33d53cf-118f-45eb-b776-9aff2de1d74e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: gallery_page
+label: 'Page Galerie'
+type: 'canonical_entities:media'
+pattern: 'espace-multimedia/[media:name]'
+selection_criteria:
+  4206ad1b-9d45-4b23-9b61-747ae8c15917:
+    id: 'entity_bundle:media'
+    negate: false
+    uuid: 4206ad1b-9d45-4b23-9b61-747ae8c15917
+    context_mapping:
+      media: media
+    bundles:
+      gallery: gallery
+selection_logic: and
+weight: -5
+relationships: {  }
