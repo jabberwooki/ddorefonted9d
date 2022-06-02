@@ -52,18 +52,18 @@ settings:
             - Subscript
             - Superscript
         -
+          name: Align
+          items:
+            - JustifyCenter
+            - JustifyRight
+            - JustifyLeft
+            - JustifyBlock
+        -
           name: Lists
           items:
             - BulletedList
             - NumberedList
             - Blockquote
-        -
-          name: 'Text Alignment'
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
         -
           name: Linking
           items:

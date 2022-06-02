@@ -50,7 +50,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption style class=""> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class=""> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <p class="txt-intro txt-intro-grenadine txt-normal clearfix clear"> <u> <span style><br>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption style class=""> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class=""> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <u> <span style> <br> <p class="">'
       filter_html_help: true
       filter_html_nofollow: false
   blazy_filter:
