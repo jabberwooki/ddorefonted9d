@@ -14614,6 +14614,25 @@ body.node--type-page .content-without-banner-img .wrapper-title-term h2:hover, b
 body.node--type-page .content-with-banner-img {
   padding-top: 20px;
 }
+body.node--type-page .col-with-public figure {
+  position: relative;
+}
+body.node--type-page .col-with-public figure figcaption {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  color: #FFFFFF;
+  width: 94%;
+  padding: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, #000);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 body.node--type-festival #main-wrapper {
   background: url(../images/bg/bg_gray.gif);
@@ -15319,6 +15338,9 @@ body.node--type-documentation .field--name-field-references > .field__items > * 
   font-weight: 700;
 }
 
+body.page-view-user-admin-people .field--name-field-authors {
+  display: none;
+}
 body.page-view-user-admin-people .field--name-field-media-image {
   float: left;
   margin-right: 20px;
