@@ -25,7 +25,7 @@
       {{ field_media_image }}
     </a>
     <div class="show-age" data-age="{{ content.field_minimum_age.0 }}"></div>
-    {% if content.field_festival is empty %}
+    {% if not content.field_festival is empty %}
       <div class="festival-teaser-show">
         {{ content.field_festival }}
       </div>
