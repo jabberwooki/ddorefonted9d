@@ -121,4 +121,7 @@ picture {
     @include special_underline(white, map-get($theme-colors, "secondary"), 70%, 100%);
   }
 }
+.page-vocabulary-show-locations h2.field--name-name {
+  @include special_underline(white, map-get($theme-colors, "secondary"), 70%, 100%);
+}
 

@@ -13577,6 +13577,21 @@ picture .media-author {
   text-decoration: none !important;
 }
 
+.page-vocabulary-show-locations h2.field--name-name, .page-vocabulary-show-locations .field--name-name.h2 {
+  font-weight: 600;
+  display: inline;
+  max-width: 100%;
+  background-image: linear-gradient(transparent 70%, #F74E2D);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 1.5s;
+  background-size: 100% 100%;
+}
+.page-vocabulary-show-locations h2.field--name-name:hover, .page-vocabulary-show-locations .field--name-name.h2:hover {
+  text-decoration: none !important;
+}
+
 /* Teaser de spectacle */
 .teaser-show {
   position: relative;
@@ -14620,6 +14635,11 @@ body.node--type-page .content-without-banner-img .wrapper-title-term h2:hover, b
 body.node--type-page .content-with-banner-img {
   padding-top: 20px;
 }
+body.node--type-page .col-with-public {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 body.node--type-page .col-with-public figure {
   position: relative;
 }
@@ -14638,6 +14658,26 @@ body.node--type-page .col-with-public figure figcaption {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+body.node--type-page .col-with-public > div > div > div > a {
+  float: right;
+  border: 2px solid #F74E2D;
+  padding: 15px 15px 15px 20px;
+  display: table;
+  margin: 0 auto;
+  color: #F74E2D;
+  text-decoration: none;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  margin-right: 15px !important;
+}
+body.node--type-page .col-with-public > div > div > div > a:hover {
+  background-color: #F74E2D;
+  color: white !important;
 }
 
 body.node--type-festival #main-wrapper {
