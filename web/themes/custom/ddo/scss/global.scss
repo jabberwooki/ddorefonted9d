@@ -39,6 +39,11 @@ p.txt-normal {
   font-size: 0.875rem !important;
   line-height: 1.375rem;
 }
+blockquote {
+  font-style: italic !important;
+  font-weight: normal !important;
+  color: #F74E2D;
+}
 /* Boutons */
 .btn-more {
   @include custom_button(map-get($theme-colors, "secondary"),white, white, black,  map-get($theme-colors, "secondary"));
