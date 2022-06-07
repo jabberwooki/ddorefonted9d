@@ -15118,11 +15118,24 @@ body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul li a:before
 /* La page de présentation globale de la technique*/
 .page-vocabulary-espace-pro .node--view-mode-teaser {
   border: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-vocabulary-espace-pro .node--view-mode-teaser:after {
+  content: "" !important;
+  display: none !important;
+}
+.page-vocabulary-espace-pro .node--view-mode-teaser .btn-more-tech {
+  margin: 0 !important;
 }
 @media (min-width: 768px) {
   .page-vocabulary-espace-pro #row-technique-places {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
   }
   .page-vocabulary-espace-pro #row-technique-places > div {
     flex-basis: 32.2580645161%;
