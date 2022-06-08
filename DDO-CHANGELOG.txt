@@ -1,3 +1,6 @@
+Domaine d'O 1.0.11 - 2022-06-08
+CSS et templates : modifications de points mineurs de mise en page
+
 Domaine d'O 1.0.10 - 2022-05-14
 Modif de ddo_utils : La suppression du texte d'aide sur les formats HTML est étendue au champ Lien plus d'infos, visible dans Article et Événement
 Css up pour la mise en forme des champs complet et annulé
