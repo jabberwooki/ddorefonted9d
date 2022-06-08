@@ -17,12 +17,14 @@
 {% endif %}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
-  {{ title_suffix.contextual_links }}
+{{ title_suffix.contextual_links }}
 
 
 <a class="link-txt-teaser-currently" href="{{ url_destination }}">
   <section id="section-currently">
-    {{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, 'currently', {responsive: true}) }}
+    {% if node.field_banner_image.entity.field_media_image is not empty %}
+      {{ drupal_image(node.field_banner_image.entity.field_media_image.entity.uri.value, 'currently', {responsive: true}) }}
+    {% endif %}
     <div id="over-currently">
       {{ content.node_title }}
       <div class="clearfix"></div>

@@ -13419,6 +13419,12 @@ p.txt-normal {
   line-height: 1.375rem;
 }
 
+blockquote {
+  font-style: italic !important;
+  font-weight: normal !important;
+  color: #F74E2D;
+}
+
 /* Boutons */
 .btn-more {
   font-style: normal;
@@ -13568,6 +13574,21 @@ picture .media-author {
 .node--type-page h2.field--name-node-title:hover, .node--type-page .field--name-node-title.h2:hover,
 .node--type-news h2.field--name-node-title:hover,
 .node--type-news .field--name-node-title.h2:hover {
+  text-decoration: none !important;
+}
+
+.page-vocabulary-show-locations h2.field--name-name, .page-vocabulary-show-locations .field--name-name.h2 {
+  font-weight: 600;
+  display: inline;
+  max-width: 100%;
+  background-image: linear-gradient(transparent 70%, #F74E2D);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 1.5s;
+  background-size: 100% 100%;
+}
+.page-vocabulary-show-locations h2.field--name-name:hover, .page-vocabulary-show-locations .field--name-name.h2:hover {
   text-decoration: none !important;
 }
 
@@ -14614,6 +14635,50 @@ body.node--type-page .content-without-banner-img .wrapper-title-term h2:hover, b
 body.node--type-page .content-with-banner-img {
   padding-top: 20px;
 }
+body.node--type-page .col-with-public {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body.node--type-page .col-with-public figure {
+  position: relative;
+}
+body.node--type-page .col-with-public figure figcaption {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  color: #FFFFFF;
+  width: 94%;
+  padding: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, #000);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+body.node--type-page .col-with-public > div > div > div > a {
+  float: right;
+  border: 2px solid #F74E2D;
+  padding: 15px 15px 15px 20px;
+  display: table;
+  margin: 0 auto;
+  color: #F74E2D;
+  text-decoration: none;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  margin-right: 15px !important;
+}
+body.node--type-page .col-with-public > div > div > div > a:hover {
+  background-color: #F74E2D;
+  color: white !important;
+}
 
 body.node--type-festival #main-wrapper {
   background: url(../images/bg/bg_gray.gif);
@@ -15118,11 +15183,24 @@ body.page-view-taxonomy-term-copy .field--name-field-ls-practical ul li a:before
 /* La page de présentation globale de la technique*/
 .page-vocabulary-espace-pro .node--view-mode-teaser {
   border: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-vocabulary-espace-pro .node--view-mode-teaser:after {
+  content: "" !important;
+  display: none !important;
+}
+.page-vocabulary-espace-pro .node--view-mode-teaser .btn-more-tech {
+  margin: 0 !important;
 }
 @media (min-width: 768px) {
   .page-vocabulary-espace-pro #row-technique-places {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
   }
   .page-vocabulary-espace-pro #row-technique-places > div {
     flex-basis: 32.2580645161%;
@@ -15306,6 +15384,9 @@ body.node--type-documentation .field--name-field-references > .field__items > * 
   font-weight: 700;
 }
 
+body.page-view-user-admin-people .field--name-field-authors {
+  display: none;
+}
 body.page-view-user-admin-people .field--name-field-media-image {
   float: left;
   margin-right: 20px;
