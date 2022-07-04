@@ -934,3 +934,38 @@ function ddo_utils_node_view_alter(array &$build, EntityInterface $entity, Entit
     }
   }
 }
+
+function ddo_utils_build_festival_gallery($festival_id) {
+  $festival = \Drupal::service('entity_type.manager')->getStorage('node')->load(1646);
+//  dpm($festival);
+
+  $poster_mid = $festival->field_poster->target_id;
+  $title = $festival->getTitle();
+  $url_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $festival->id());
+  $plain_date = $festival->field_plain_date->value;
+
+//  dpm($poster_mid);
+//  dpm($title);
+//  dpm($url_alias);
+//  dpm($plain_date);
+
+  $cleaned_show_ids = array_map(
+    function ($item) {
+      return $item['target_id'];
+    },
+    $festival->get('field_shows')->getValue()
+  );
+//  dpm($cleaned_show_ids);
+
+  $shows = \Drupal::service('entity_type.manager')->getStorage('node')->loadMultiple($cleaned_show_ids);
+//  dpm($shows);
+
+
+  foreach ($shows as $key => $show) {
+//    dpm($key);
+    $url_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $show->id());
+//    print '<a href="/node/' . $show->id() . '">' . $show->getTitle() . '</a>';
+    print "<a href=\"$url_alias\">$show->getTitle()</a>";
+    print "\n";
+  }
+}
