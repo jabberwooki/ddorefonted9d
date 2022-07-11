@@ -29,6 +29,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  ddo_axeptio: 0
   ddo_mapado: 0
   ddo_migrate: 0
   ddo_utils: 0
