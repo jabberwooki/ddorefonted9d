@@ -115,7 +115,7 @@
             </ul>
           </section>
           <section class="section-further-information">
-            {% if not field_display_age is empty and field_display_age %}
+            {% if node.field_display_age.value %}
               <div class="wrapper-field d-flex align-items-center">
                 <div class="field__label">À partir de :&nbsp;</div>
                 {% if node.field_minimum_age.0.value == '0.25' %}
