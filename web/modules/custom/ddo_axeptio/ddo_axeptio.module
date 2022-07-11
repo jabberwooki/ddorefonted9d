@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\media\IFrameMarkup;
+
+function ddo_axeptio_preprocess_media_oembed_iframe(array &$variables) {
+  $axeptio_iframe_markup =
+    str_replace('src', 'data-requires-vendor-consent="youtube" data-src', (string) $variables['media'])
+    . '<div data-hide-on-vendor-consent="Youtube">
+        <button onclick="window.axeptioSDK.requestConsent(\'Youtube\')">
+            Pour visualiser la vidéo, vous devez accepter les cookies Youtube
+        </button>
+        </div>';
+
+  $variables['media'] = IFrameMarkup::create($axeptio_iframe_markup);
+}
