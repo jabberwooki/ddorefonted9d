@@ -1,3 +1,7 @@
+Hotfix nouveau-festival-renommage-festival - 2022-07-11
+-------------------------------------------------------
+  * Création du festival O'Millésimes et renommage du festival 'La Métro fait son cinéma' en 'Cinéma sous les étoiles'.
+
 Domaine d'O 1.0.12 - 2022-07-11
 -------------------------------
   * Mise à jour de sécurité 2022 1/3 : Drupal core passé de 9.3.9 à 9.4.2

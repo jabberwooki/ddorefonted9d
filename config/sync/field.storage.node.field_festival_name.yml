@@ -37,7 +37,7 @@ settings:
       label: 'Nuit Gitane'
     -
       value: cine-metropole
-      label: 'Ciné Métropole'
+      label: 'Cinéma sous les étoiles'
     -
       value: cirque-metropole
       label: 'Cirque Métropole'
@@ -50,6 +50,9 @@ settings:
     -
       value: montpellier-danse
       label: 'Montpellier Danse'
+    -
+      value: o-millesimes
+      label: 'O''Millésimes'
   allowed_values_function: ''
 module: options
 locked: false
