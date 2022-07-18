@@ -119,7 +119,6 @@ module:
   paragraphs: 11
   tvi: 15
   standard: 1000
-  eu_cookie_compliance: 1001
 theme:
   bartik: 0
   seven: 0

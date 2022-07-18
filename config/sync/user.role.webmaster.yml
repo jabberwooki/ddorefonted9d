@@ -31,7 +31,6 @@ dependencies:
     - contextual
     - ddo_mapado
     - draggableviews
-    - eu_cookie_compliance
     - file
     - filter
     - locale
@@ -64,7 +63,6 @@ permissions:
   - 'access toolbar'
   - 'administer blocks'
   - 'administer comments'
-  - 'administer eu cookie compliance popup'
   - 'administer mapado'
   - 'administer menu'
   - 'administer meta tags'
@@ -131,7 +129,6 @@ permissions:
   - 'delete own show content'
   - 'delete own structure content'
   - 'delete own video media'
-  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any document media'
