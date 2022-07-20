@@ -9,7 +9,7 @@
 
   Drupal.behaviors.ddo_slideshow = {
     attach: function (context, settings) {
-      console.log(`Dans home_slideshow !!!`);
+      // console.log(`Dans home_slideshow !!!`);
       const nb_slides = $("#custom-home-slideshow .view-content > .views-row").length;
       if (nb_slides && nb_slides > 1) {
         let ss_width = parseInt($("#custom-home-slideshow").width() + 1);

@@ -16,7 +16,7 @@
         // a single time.
         console.log(`ONCE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
       });*/
-      console.log(`Dans search.js !!!`);
+      // console.log(`Dans search.js !!!`);
       $("#close-search-form").on("click", function (event) {
         /*console.log(`Click sur la croix de suppression de la zone de recherche`);*/
         document.activeElement.blur();

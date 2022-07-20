@@ -9,7 +9,7 @@
 
   Drupal.behaviors.ddo_mega_menu = {
     attach: function (context, settings) {
-      console.log(`Dans mega_menu.js`);
+      // console.log(`Dans mega_menu.js`);
       $("#mega-menu").hide(0);
 
       // Gestion du click sur le bouton burger menu
