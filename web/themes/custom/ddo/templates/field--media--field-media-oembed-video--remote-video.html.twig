@@ -61,9 +61,14 @@
     {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
       {% set vendor = 'Vimeo' %}
     {% endif %}
+    <script type="text/css">
+    #axbutton {
+      border: 2px solid #F74E2D;
+    }
+    </script>
     <div data-hide-on-vendor-consent="{{ vendor }}">
-      <button onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
-        Accept {{ vendor }} cookie
+      <button style="border: 1px solid #F74E2D;" onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
+        Pour voir cette vidéo, cliquez ici pour accepter les cookies {{ vendor }}
       </button>
     </div>
     <!-- Fin de Gestion des cookies Axeptio : Bouton Call to action -->
