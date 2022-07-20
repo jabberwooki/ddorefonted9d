@@ -40,28 +40,34 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
 
-    <!-- Script Axeptio : Gestion cookies Youtube -->
-{#    <script type="text/javascript">#}
-{#      (_axcb = window._axcb || []).push(function(sdk) {#}
-{#        sdk.on('cookies:complete', function(choices){#}
-{#          document#}
-{#            .querySelectorAll('[data-hide-on-vendor-consent]')#}
-{#            .forEach(el => {#}
-{#              const vendor = el.getAttribute('data-hide-on-vendor-consent');#}
-{#              el.style.display = choices[vendor] ? 'none' : 'inherit';#}
-{#            });#}
-{#          document#}
-{#            .querySelectorAll('[data-requires-vendor-consent]')#}
-{#            .forEach(el => {#}
-{#              const vendor = el.getAttribute('data-requires-vendor-consent');#}
-{#              if (choices[vendor]) {#}
-{#                el.setAttribute('src', el.getAttribute('data-src'));#}
-{#              }#}
-{#            });#}
-{#        });#}
-{#      })#}
-{#    </script>#}
-    <!-- Fin de Script Axeptio : Gestion cookies Youtube -->
+    <!-- Script Axeptio : Gestion cookies vidéo -->
+    <script type="text/javascript">
+      (_axcb = window._axcb || []).push(function(sdk) {
+        sdk.on('cookies:complete', function(choices){
+          document
+            .querySelectorAll('[data-hide-on-vendor-consent]')
+            .forEach(el => {
+              const vendor = el.getAttribute('data-hide-on-vendor-consent');
+              el.style.display = choices[vendor] ? 'none' : 'inherit';
+            });
+
+          let oembedIframes = document.getElementsByClassName('media-oembed-content');
+          // console.log(oembedIframes);
+          for (oembedIframe of oembedIframes) {
+
+            let videoIframe = oembedIframe.contentWindow.document.querySelectorAll('[data-requires-vendor-consent]');
+            videoIframe.forEach(el => {
+
+              let vendor = el.getAttribute('data-requires-vendor-consent');
+              if (choices[vendor]) {
+                el.setAttribute('src', el.getAttribute('data-src'));
+              }
+            });
+          }
+        });
+      })
+    </script>
+    <!-- Fin de Script Axeptio : Gestion cookies vidéo -->
 
   </head>
   <body{{ attributes.addClass(body_classes) }}>
@@ -73,21 +79,21 @@
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
 
-      <!-- Intégration du widget Axeptio -->
-      <script>
-        window.axeptioSettings = {
-          clientId: "62cbf4e10c4977698aac94e0",
-          cookiesVersion: "domainedo-fr-1.0",
-          // userCookiesDomain: "domainedo.fr",
-        };
+    <!-- Intégration du widget Axeptio -->
+    <script>
+      window.axeptioSettings = {
+        clientId: "62c30797a5b0348da287a4f7",
+        cookiesVersion: "domainedo-fr-1.1",
+        userCookiesDomain: "domainedo.fr",
+      };
 
-        (function(d, s) {
-          var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-          e.async = true; e.src = "//static.axept.io/sdk.js";
-          t.parentNode.insertBefore(e, t);
-        })(document, "script");
-      </script>
-      <!-- Fin de Intégration du widget Axeptio -->
+      (function(d, s) {
+        var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+        e.async = true; e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
+      })(document, "script");
+    </script>
+    <!-- Fin de Intégration du widget Axeptio -->
 
   </body>
 </html>
