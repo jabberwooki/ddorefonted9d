@@ -54,19 +54,19 @@
 
 <div{{ attributes.addClass(classes, 'field__items') }}>
   {% for item in items %}
+
+    <!-- Gestion des cookies Axeptio : Bouton Call to action -->
     {% if 'youtu.be' in item.content['#attributes']['src'] %}
       {% set vendor = 'Youtube' %}
     {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
       {% set vendor = 'Vimeo' %}
     {% endif %}
-
-
     <div data-hide-on-vendor-consent="{{ vendor }}">
       <button onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
         Accept {{ vendor }} cookie
       </button>
     </div>
-    /* Fin de Gestion des cookies Axeptio : Bouton Call to action */
+    <!-- Fin de Gestion des cookies Axeptio : Bouton Call to action -->
 
     <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
   {% endfor %}
