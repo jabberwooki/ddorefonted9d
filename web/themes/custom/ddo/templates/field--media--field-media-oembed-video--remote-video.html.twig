@@ -61,19 +61,20 @@
     {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
       {% set vendor = 'Vimeo' %}
     {% endif %}
-    <script type="text/css">
-    #axbutton {
-      border: 2px solid #F74E2D;
-    }
-    </script>
-    <div data-hide-on-vendor-consent="{{ vendor }}">
-      <button style="border: 1px solid #F74E2D;" onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
-        Pour voir cette vidéo, cliquez ici pour accepter les cookies {{ vendor }}
-      </button>
-    </div>
+
     <!-- Fin de Gestion des cookies Axeptio : Bouton Call to action -->
 
-    <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+    <div style="border: 1px solid #cccccc; background-color: whitesmoke; color: #F74E2D;" {{ item.attributes.addClass('field__item') }}>
+      <!-- Bouton d'acceptation des cookies vidéo -->
+      <div data-hide-on-vendor-consent="{{ vendor }}">
+        <button style="border: 1px solid; margin-top: 1em; margin-left: 1em; font-size: 85%;" onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
+          Pour voir cette vidéo, cliquez ici pour accepter les cookies {{ vendor }}
+        </button>
+      </div>
+
+      <!-- Code Drupal générant l'iframe video -->
+      {{ item.content }}
+    </div>
   {% endfor %}
 </div>
 
