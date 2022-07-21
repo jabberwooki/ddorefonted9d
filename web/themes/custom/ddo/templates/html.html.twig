@@ -77,7 +77,7 @@
     <!-- Fin du Script Axeptio : gestion du consentement des cookies vidéo -->
 
     <!-- Matomo -->
-    {% set site_url = url("<current>") %}
+    {% set site_url = url("<current>")['#markup']|render|render %}
     {%  if 'www.domainedo.fr' in site_url %}
       <script>
         var _paq = window._paq = window._paq || [];
@@ -106,8 +106,10 @@
           g.async=true; g.src='//cdn.matomo.cloud/domainedo.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
         })();
       </script>
-    {% else %}
+    {% elseif 'www.domainedod9d.localhost' in site_url %}
       <!-- Pas de code de tracking sur instance locale de développement -->
+    {% else %}
+      <!-- Je n'ai rien trouvé à dire -->
     {% endif %}
     <!-- End Matomo Code -->
   </head>
@@ -116,6 +118,7 @@
       {{ 'Skip to main content'|t }}
     </a>
     {{ page_top }}
+    {{ site_url }}
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
