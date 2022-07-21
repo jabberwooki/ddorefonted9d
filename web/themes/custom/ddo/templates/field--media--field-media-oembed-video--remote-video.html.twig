@@ -54,23 +54,28 @@
 
 <div{{ attributes.addClass(classes, 'field__items') }}>
   {% for item in items %}
-
-    <!-- Gestion des cookies Axeptio : Bouton Call to action -->
-    {% if 'youtu.be' in item.content['#attributes']['src'] %}
-      {% set vendor = 'Youtube' %}
-    {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
-      {% set vendor = 'Vimeo' %}
-    {% endif %}
-
-    <!-- Fin de Gestion des cookies Axeptio : Bouton Call to action -->
-
     <div style="border: 1px solid #cccccc; background-color: whitesmoke; color: #F74E2D;" {{ item.attributes.addClass('field__item') }}>
-      <!-- Bouton d'acceptation des cookies vidéo -->
-      <div data-hide-on-vendor-consent="{{ vendor }}">
-        <button style="border: 1px solid; margin-top: 1em; margin-left: 1em; font-size: 85%;" onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
-          Pour voir cette vidéo, cliquez ici pour accepter les cookies {{ vendor }}
-        </button>
-      </div>
+      <!-- Gestion des cookies Axeptio.
+      On n'agit que si la gestion des cookies est activée
+      Par défaut, le module ddo_axeptio est configuré avec la gestion des cookies activée.
+      On peut la désactiver localement dans settings.local.php
+      en passant la variable $config['ddo_axeptio.settings']['cookies_control'] à FALSE. -->
+      {% if drupal_config('ddo_axeptio.settings', 'cookies_control') %}
+        <!-- Détermination du fournisseur vidéo -->
+        {% if 'youtu.be' in item.content['#attributes']['src'] %}
+          {% set vendor = 'Youtube' %}
+        {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
+          {% set vendor = 'Vimeo' %}
+        {% endif %}
+
+        <!-- Bouton d'acceptation des cookies vidéo -->
+        <div data-hide-on-vendor-consent="{{ vendor }}">
+          <button style="border: 1px solid; margin-top: 1em; margin-left: 1em; font-size: 85%;" onclick="window.axeptioSDK.requestConsent('{{ vendor }}')">
+            Pour voir cette vidéo, cliquez ici pour accepter les cookies {{ vendor }}
+          </button>
+        </div>
+      {% endif %}
+      <!-- Fin de Gestion des cookies Axeptio -->
 
       <!-- Code Drupal générant l'iframe video -->
       {{ item.content }}
