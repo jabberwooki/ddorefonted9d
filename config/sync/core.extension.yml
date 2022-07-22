@@ -29,6 +29,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  ddo_axeptio: 0
   ddo_mapado: 0
   ddo_migrate: 0
   ddo_utils: 0
@@ -118,7 +119,6 @@ module:
   paragraphs: 11
   tvi: 15
   standard: 1000
-  eu_cookie_compliance: 1001
 theme:
   bartik: 0
   seven: 0

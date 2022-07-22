@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\media\IFrameMarkup;
+
+function ddo_axeptio_preprocess_media_oembed_iframe(array &$variables) {
+
+  // Gestion des cookies Axeptio : modification du code HTML de l'iframe video pour obtenir le consentement contextuel
+//   On n'agit que si la gestion des cookies est activée
+//   Par défaut, le module ddo_axeptio est configuré avec la gestion des cookies activée.
+//   On peut la désactiver localement dans settings.local.php
+//   en passant la variable $config['ddo_axeptio.settings']['cookies_control'] à FALSE.
+  $ddo_axeptio_config = \Drupal::config('ddo_axeptio.settings');
+  $cookies_control = $ddo_axeptio_config->get('cookies_control');
+
+  if ($cookies_control) {
+    $axeptio_iframe_markup = str_replace(
+      'src',
+      'data-requires-vendor-consent="' . ucfirst(strtolower($variables['resource']->getProvider()->getName())) . '" data-src',
+      (string)$variables['media']
+    );
+
+    $variables['media'] = IFrameMarkup::create($axeptio_iframe_markup);
+  }
+}
+

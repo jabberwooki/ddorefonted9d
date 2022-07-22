@@ -91,7 +91,6 @@
         "drupal/draggableviews": "^2.0",
         "drupal/ds": "^3.12",
         "drupal/easy_install": "^10.5",
-        "drupal/eu_cookie_compliance": "^1.14",
         "drupal/field_group": "^3.1",
         "drupal/geofield": "^1.31",
         "drupal/geofield_map": "^2.68",
