@@ -1,3 +1,32 @@
+Domaine d'O 1.1 - 2020-07-22
+----------------------------
+  * Modif de html.htlm.twig : suppression d'un affichage test oublié.
+  * Modif du template html.html.twig : correction du code d'insertion du script Matomo en fonction du type d'instance.
+  * Ajout du code de tracking Matomo.
+  * Modif ddo_axeptio : variable cookies_control=1 remplacé par cookies_control=true, suppression de l'encadré gris des vidéos non lisibles pour cause de mauvais cadrage dans les pages autres que les pages spectacle.
+  * Modif du module custom ddo_axeptio : ajout d'une configuration (ddo_axeptio.settings) avec la variable cookies_control avec la valeur 1. Permet de désactiver la gestion des cookies en local (voir fichier settings.local.php).
+  * Modification du template twig des videos pour inclure le bouton d'acceptation dans le div du champ (au lieu de au dessus) et pour ajouter un bord et une coleur de fond au champ vidéo.
+  * Modification du texte dans le <button> d'acceptation des cookies vidéo.
+  * Correction de la syntaxe erronée des commentaires Axeptio dans le template twig des videos.
+  * Mise en place du consentement contextuel pour la lecture des vidéos.
+  * Suppression des console.log() oubliés dans des fichiers .js
+  * Désactivation et désinstallation du module contrib eu_cookie_compliance.
+  * Ajout de l'activation du module ddo_axeptio, oubliée dans le commit précédent.
+  * Création du module custom ddo_axeptio pour gérer le consentement des cookies video.
+  * Modif de html.htlm.twig : suppression d'un affichage test oublié.
+  * Modif du template html.html.twig : correction du code d'insertion du script Matomo en fonction du type d'instance.
+  * Ajout du code de tracking Matomo.
+  * Modif ddo_axeptio : variable cookies_control=1 remplacé par cookies_control=true, suppression de l'encadré gris des vidéos non lisibles pour cause de mauvais cadrage dans les pages autres que les pages spectacle.
+  * Modif du module custom ddo_axeptio : ajout d'une configuration (ddo_axeptio.settings) avec la variable cookies_control avec la valeur 1. Permet de désactiver la gestion des cookies en local (voir fichier settings.local.php).
+  * Modification du template twig des videos pour inclure le bouton d'acceptation dans le div du champ (au lieu de au dessus) et pour ajouter un bord et une coleur de fond au champ vidéo.
+  * Modification du texte dans le <button> d'acceptation des cookies vidéo.
+  * Correction de la syntaxe erronée des commentaires Axeptio dans le template twig des videos.
+  * Mise en place du consentement contextuel pour la lecture des vidéos.
+  * Suppression des console.log() oubliés dans des fichiers .js
+  * Désactivation et désinstallation du module contrib eu_cookie_compliance.
+  * Ajout de l'activation du module ddo_axeptio, oubliée dans le commit précédent.
+  * Création du module custom ddo_axeptio pour gérer le consentement des cookies video.
+
 Hotfix nouveau-festival-renommage-festival - 2022-07-11
 -------------------------------------------------------
   * Création du festival O'Millésimes et renommage du festival 'La Métro fait son cinéma' en 'Cinéma sous les étoiles'.
