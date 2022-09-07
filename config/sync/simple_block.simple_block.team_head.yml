@@ -7,5 +7,5 @@ dependencies:
 id: team_head
 title: 'Entête équipe'
 content:
-  value: "<h3>JEAN-CLAUDE FALL</h3>\r\n<p>Président de l'EPIC du Domaine d'O</p>\r\n\r\n<h3>THIERRY NÉGROU</h3>\r\n<p>Directeur du Domaine d'O</p>\r\n"
+  value: "<h3>MICHAËL DELAFOSSE</h3>\r\n\r\n<p>Président de l'EPIC du Domaine d'O</p>\r\n\r\n<h3>THIERRY NÉGROU</h3>\r\n\r\n<p>Directeur du Domaine d'O</p>\r\n"
   format: full_html
