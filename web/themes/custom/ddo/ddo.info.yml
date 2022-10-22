@@ -1,12 +1,14 @@
-name: Domaine d'O
+name: Domaine d'O v2
 type: theme
-description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
+description: "Domaine d'O Barrio SASS SubTheme."
 # version: VERSION
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
+
 ckeditor_stylesheets:
   - css/style.css
+
 libraries:
   - ddo/global-styling
 libraries-override:
@@ -39,7 +41,7 @@ regions:
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
 
-# Information added by Drupal.org packaging script on 2021-10-11
-version: '5.0.5'
+# Information added by Drupal.org packaging script on 2022-08-14
+version: '5.0.6'
 project: 'ddo'
-datestamp: 1633918678
+datestamp: 1660517237
