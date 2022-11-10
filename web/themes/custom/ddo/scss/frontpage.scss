@@ -51,6 +51,9 @@
   #section-currently {
     position: relative;
     display: inline-table;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
 
     #over-currently {
       position: absolute;

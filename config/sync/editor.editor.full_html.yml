@@ -86,8 +86,6 @@ settings:
             - ShowBlocks
             - Maximize
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
     colorbutton:

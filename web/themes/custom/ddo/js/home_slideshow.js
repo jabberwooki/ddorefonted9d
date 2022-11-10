@@ -27,10 +27,10 @@
         const slide_titles = $(".zoom-img-and-title h3");
 
         // Positionnement du titre
-
-        slide_titles.each(function () {
-          $(this).css("top", `${img_height - 53}px`);
-        })
+        // slide_titles.each(function () {
+        //   $(this).css("top", `${img_height - 53}px`);
+        // })
+        positionTitleSpans(img_height, slide_titles);
 
         // Gestion des clics sur les boutons
         previous_button.on("click", function () {
@@ -62,12 +62,26 @@
           img_height = parseInt(($("#custom-home-slideshow .field__item").first().width() / 1.439534884) + 1);
           all_slides.width(ss_width * nb_slides);
           $("#custom-home-slideshow .view-content > .views-row").width(ss_width);
-          slide_titles.each(function () {
-            $(this).css("top", `${img_height - 53}px`);
-          })
+
+          // slide_titles.each(function () {
+          //   $(this).css("top", `${img_height - 53}px`);
+          // })
+          positionTitleSpans(img_height, slide_titles);
         });
       }
 
+      function positionTitleSpans(img_height, slide_titles) {
+        slide_titles.each(function () {
+          // $(this).css("top", `${img_height - 53}px`);
+          let title_span = $(this).find('span');
+          let span_height = parseInt(title_span.height());
+          let title_span_padding_top =  parseInt(title_span.css('padding-top'));
+          // console.log(img_height);
+          // console.log(span_height);
+          // console.log(title_span_padding_top);
+          $(this).css("top", `${img_height - (span_height + title_span_padding_top)}px`);
+        })
+      }
     }
   };
 

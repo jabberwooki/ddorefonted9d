@@ -1,3 +1,14 @@
+Domaine d'O 1.2 - 2020-11-10
+----------------------------
+  * Mise à jour de sécurité trimestre 3 (2/3).
+  * Modif du champ Vidéos (field_videos) pour Article et Événement : en plus des médias Remote video, il est maintenant possible d'ajouter des médias Video (donc locales).
+  * Demande de support Marion : Suppression du bloc 'En ce moment' et affichage du bloc 'Zoom sur' sur les mobiles. Intégration graphique du bloc 'Zoom sur' sur les mobiles.
+  * Mise à jour des thèmes bootstrap_barrio et bootstrap_sass puis reconstruction du thème custom ddo. Abandon de l'usage de la libraire Bootstrap placée dans le dossier du thème par Yvan Douenel. Réutilisation de la librairie Bootstrap disponible dans le dossier vendor après 'npm install'.
+  * Activation et paramétrage du module metatag_open_graph.
+  * Modif du Simple Bloc team_head : Copie de la modif effectuée par Marion Brunel directement sur le site de prod (Jean-Claude Fall remplacé par Michael Delafosse).
+  * Modif du paramétrage de CKEditor : désactivation du filtre 'Limiter les balises HTML autorisées et corriger les fautes de HTML' pour le bon fonctionnement du plugin colorbutton.
+  * Modif du template field--media--field-media-oembed-video--remote-video.html.twig : remplacement de 'youtu.be' par 'youtu' et de 'vimeo.com' par 'vimeo'.
+
 Domaine d'O 1.1 - 2020-07-22
 ----------------------------
   * Modif de html.htlm.twig : suppression d'un affichage test oublié.

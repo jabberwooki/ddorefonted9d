@@ -1,8 +1,8 @@
 #custom-home-slideshow {
   position: relative;
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
+  //@include media-breakpoint-down(md) {
+  //  display: none;
+  //}
 
   div.content {
     --bs-gutter-x: 0 !important;
@@ -46,6 +46,9 @@
                 font-weight: 700;
                 padding-right: 120px;
                 font-size: 1.5rem;
+                @include media-breakpoint-down(md) {
+                  font-size: 1.0rem;
+                }
                 > span {
                   display: table;
                   padding: 5px 5px 0 20px;
@@ -54,8 +57,12 @@
                   background-color: rgba(0, 0, 0, 0.2);
                   margin-bottom: 10px;
                   font-size: 2.5rem;
+                  @include media-breakpoint-down(md) {
+                    font-size: 1.5rem;
+                  }
                 }
               }
+
 
               .btn-more {
                 position: absolute;

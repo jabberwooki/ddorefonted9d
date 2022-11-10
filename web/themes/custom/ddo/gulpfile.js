@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-sass')(require('sass')),
   sourcemaps = require('gulp-sourcemaps'),
   $ = require('gulp-load-plugins')(),
   cleanCss = require('gulp-clean-css'),
@@ -8,16 +8,16 @@ let gulp = require('gulp'),
   autoprefixer = require('autoprefixer'),
   postcssInlineSvg = require('postcss-inline-svg'),
   browserSync = require('browser-sync').create()
-pxtorem = require('postcss-pxtorem'),
-  postcssProcessors = [
-    postcssInlineSvg({
+  pxtorem = require('postcss-pxtorem'),
+	postcssProcessors = [
+		postcssInlineSvg({
       removeFill: true,
       paths: ['./node_modules/bootstrap-icons/icons']
     }),
-    pxtorem({
-      propList: ['font', 'font-size', 'line-height', 'letter-spacing', '*margin*', '*padding*'],
-      mediaQuery: true
-    })
+		pxtorem({
+			propList: ['font', 'font-size', 'line-height', 'letter-spacing', '*margin*', '*padding*'],
+			mediaQuery: true
+		})
   ];
 
 const paths = {
@@ -36,7 +36,7 @@ const paths = {
 }
 
 // Compile sass into CSS & auto-inject into browsers
-function styles() {
+function styles () {
   return gulp.src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -67,17 +67,18 @@ function styles() {
 }
 
 // Move the javascript files into our js folder
-function js() {
+function js () {
   return gulp.src([paths.js.bootstrap, paths.js.popper, paths.js.barrio])
     .pipe(gulp.dest(paths.js.dest))
     .pipe(browserSync.stream())
 }
 
 // Static Server + watching scss/html files
-function serve() {
+function serve () {
   browserSync.init({
-    proxy: 'http://local.ddod9.my',
+    proxy: 'http://www.domainedod9d.localhost',
   })
+
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 

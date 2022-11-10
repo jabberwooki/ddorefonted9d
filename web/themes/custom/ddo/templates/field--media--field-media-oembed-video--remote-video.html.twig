@@ -62,9 +62,10 @@
       en passant la variable $config['ddo_axeptio.settings']['cookies_control'] à FALSE. -->
       {% if drupal_config('ddo_axeptio.settings', 'cookies_control') %}
         <!-- Détermination du fournisseur vidéo -->
-        {% if 'youtu.be' in item.content['#attributes']['src'] %}
+        {{ item.content }}
+        {% if 'youtu' in item.content['#attributes']['src'] %}
           {% set vendor = 'Youtube' %}
-        {% elseif 'vimeo.com' in item.content['#attributes']['src'] %}
+        {% elseif 'vimeo' in item.content['#attributes']['src'] %}
           {% set vendor = 'Vimeo' %}
         {% endif %}
 
