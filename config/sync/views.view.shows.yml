@@ -255,7 +255,7 @@ display:
                 select_all_none_nested: false
                 display_inline: true
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
         area:
