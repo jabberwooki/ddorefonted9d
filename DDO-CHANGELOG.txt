@@ -1,3 +1,9 @@
+Domaine d'O 1.4 - 2022-12-08
+----------------------------
+  * Mise à jour de sécurité trimestre 4 (3/3) + améliorations (cf changelog).
+  * Mise à jour de module non supporté : media_library_edit 8.x-3.2 -> 3.0.1
+  * Modif Article et Événement : Champ Image bandeau haut (field_banner_image) rendu obligatoire.
+
 Domaine d'O 1.3 - 2022-12-05
 ----------------------------
   * Install et activation du module Redis.
