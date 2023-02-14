@@ -171,7 +171,7 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
     $description= strip_tags($description['summary']);
   }
   else {
-    $description = substr(strip_tags($description['value']), 0, 200) . '...';
+    $description = substr(strip_tags($description['value']), 0, 500) . '...';
   }
   $show_data['description'] = $description;
 
