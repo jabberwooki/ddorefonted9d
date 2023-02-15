@@ -235,14 +235,13 @@ display:
               secondary_open: false
             filter:
               field_festival_target_id:
-                plugin_id: bef_links
+                plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
-                select_all_none: false
               field_show_type_target_id:
                 plugin_id: bef
                 advanced:
@@ -254,6 +253,12 @@ display:
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: true
+              field_minimum_age_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
       cache:
         type: tag
         options: {  }
