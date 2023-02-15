@@ -2403,9 +2403,9 @@ display:
         filter_groups: false
       group_by: true
       display_description: ''
-      use_more: false
+      use_more: true
       use_more_always: true
-      use_more_text: 'Voir tous les spectacles'
+      use_more_text: 'Voir page Spectacles'
       link_display: custom_url
       link_url: /spectacles/tous-les-spectacles
       display_extenders: {  }
