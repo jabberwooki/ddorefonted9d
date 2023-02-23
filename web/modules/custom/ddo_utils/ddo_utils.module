@@ -894,6 +894,7 @@ function ddo_utils_node_view_alter(array &$build, EntityInterface $entity, Entit
 
       //////////////// GESTION DE LA VALEUR DU CHAMP RESERVATION /////////////////
       // Valeurs du champ Réservation :
+      // entrée libre = 0
       // prochainement = 1
       // url billetterie = 2
       // complet = 3

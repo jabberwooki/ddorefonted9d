@@ -52,22 +52,25 @@
 {#          Réserver#}
 {#        </a>#}
 
-{#
-        On affiche l'un, l'autre ou aucun des deux boutons RESERVER
-        en fonction de ce qui est évalué dans le hook ddo_mapado_node_view().
-#}
-        {% if not mapado_url.0 is empty %}
-          <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.0.uri }}">
-            {{ node.mapado_url.0.title }}
-          </a>
-        {% endif %}
+        {% if node.field_reservation.0.value == 0 %}
+          {# Si entrée libre, on affiche cette info à la place du bouton RESERVER, #}
+          <span class="free-access text-secondary">Entrée libre</span>
+        {% else %}
+          {# sinon, on affiche l'un, l'autre ou aucun des deux boutons RESERVER en fonction de ce qui est évalué dans le hook ddo_mapado_node_view().#}
 
-        {% if not mapado_url.1 is empty %}
-          <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.1.uri }}">
-            {{ node.mapado_url.1.title }}
-          </a>
-        {% endif %}
+          {% if not mapado_url.0 is empty %}
+            <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.0.uri }}">
+              {{ node.mapado_url.0.title }}
+            </a>
+          {% endif %}
 
+          {% if not mapado_url.1 is empty %}
+            <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.1.uri }}">
+              {{ node.mapado_url.1.title }}
+            </a>
+          {% endif %}
+
+        {% endif %}
       </div>
     </div>
   </article>

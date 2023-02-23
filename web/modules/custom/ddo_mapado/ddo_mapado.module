@@ -548,6 +548,7 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
 //$is_on_sale = true;
 
     // Valuers du champ Réservation :
+    // entrée libre = 0
     // prochainement = 1
     // url billetterie = 2
     // complet = 3
