@@ -7,8 +7,9 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.ddo_calendar = {
     attach: function (context, settings) {
+      console.log('avant .once');
       $(document, context).once('ddo_calendar').each(function () {
-        console.log("dans ddo_calendar");
+        // console.log("dans ddo_calendar");
         var container_points;
         let container_all_shows;
         var container_shows;
