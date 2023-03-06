@@ -1,3 +1,21 @@
+Domaine d'O 1.5 - 2023-03-06
+----------------------------
+  * COPIL 1 - Tâche 17 : Correction du bug Calendrier 'Affichage très étroit'.
+  * COPIL 1 - Tâche 16 : Désactivation des onglets Jour, Semaine et Année dans le calendrier.
+  * COPIL 1 - Tâche 15 : Création de la fonctionnalité 'Entrée libre'.
+  * COPIL 1 - Tâche 12 : Création du mode d'affichage de media 'Corps de texte' pour inclusion d'images dans les champs body.
+  * COPIL 1 - Tâche 14 : Dans une page Événement, la marge inférieure de l'image colonne latérale est passée de 1 à 0.3rem et la taille de police du champ Auteurs (crédits photo) est réduit à 80%.
+  * COPIL 1 - Tâche 13 : Ajout du champ Auteurs (crédits photo) sur l'image bandeau haut des nodes Article et Événement.
+  * COPIL 1 - Tâche 4bis : Dans la age Spectacles, les vignettes sont listées par 4 au lieu de 3.
+  * COPIL 1 - Tâche 4 suite : En page d'accueil, remise en place du lien de bas de liste mais nouvel intitulé 'Voir page Spectacles'.
+  * COPIL 1 - Tâche 11 : Paramétrage de la Balise Open Graphp URL de l'image complétée pour prendre en compte les images dans Article et Événement.
+  * COPIL 1 - Tâche 8 : Suppression picto Tripadvisor - Tâche 9 : Ajout picto Instagram - Tâche 10 : Augmentation taille pictos.
+  * COPIL 1 - Tâche 7 : Champs Photo du spectacle et Vignette du spectacle rendus obligatoires dans le formulaire Spectacle.
+  * COPIL 1 - Tâche 6 : Champ Festivals passé de liste à select dasn filtres exposés de la page Spectacles.
+  * COPIL 1 - Tâche 4 : En page d'accueil les spectacles sont affichés 4 par 4 - Tâche 5 : Plus de pagination, on affiche tout.
+  * COPIL 1 - Tâche 2 : Taille du champ Description envoyé à Mapado passée de 200 à 500 caractères.
+  * COPIL 1 -  Tâche 1 : Bouton Abonnement remplacé par bouton Billetterie.
+
 Domaine d'O 1.4 - 2022-12-08
 ----------------------------
   * Mise à jour de sécurité trimestre 4 (3/3) + améliorations (cf changelog).
