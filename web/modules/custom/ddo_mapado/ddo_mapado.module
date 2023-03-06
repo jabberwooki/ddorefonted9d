@@ -171,7 +171,7 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
     $description= strip_tags($description['summary']);
   }
   else {
-    $description = substr(strip_tags($description['value']), 0, 200) . '...';
+    $description = substr(strip_tags($description['value']), 0, 500) . '...';
   }
   $show_data['description'] = $description;
 
@@ -548,6 +548,7 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
 //$is_on_sale = true;
 
     // Valuers du champ Réservation :
+    // entrée libre = 0
     // prochainement = 1
     // url billetterie = 2
     // complet = 3

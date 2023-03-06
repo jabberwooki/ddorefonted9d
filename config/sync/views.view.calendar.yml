@@ -260,6 +260,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
+      enabled: false
       fields:
         field_dates:
           id: field_dates
@@ -1169,6 +1170,7 @@ display:
     display_plugin: page
     position: 2
     display_options:
+      enabled: false
       fields:
         field_dates:
           id: field_dates
@@ -1415,6 +1417,7 @@ display:
     display_plugin: page
     position: 4
     display_options:
+      enabled: false
       fields:
         title:
           id: title

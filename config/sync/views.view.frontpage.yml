@@ -2166,10 +2166,9 @@ display:
     display_options:
       title: 'Spectacles à venir'
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 9
       cache:
         type: tag
         options: {  }
@@ -2353,7 +2352,7 @@ display:
         type: grid
         options:
           uses_fields: false
-          columns: 3
+          columns: 4
           automatic_width: true
           alignment: horizontal
           row_class_custom: ''
@@ -2406,7 +2405,7 @@ display:
       display_description: ''
       use_more: true
       use_more_always: true
-      use_more_text: 'Voir tous les spectacles'
+      use_more_text: 'Voir page Spectacles'
       link_display: custom_url
       link_url: /spectacles/tous-les-spectacles
       display_extenders: {  }

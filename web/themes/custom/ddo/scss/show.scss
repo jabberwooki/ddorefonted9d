@@ -122,6 +122,9 @@
           color: white !important;
         }
       }
+      .free-access {
+        @include free_access();
+      }
 
       .link-book-teaser-show {
         @include button_book_show();
@@ -249,6 +252,11 @@
       @include button_book_show();
       margin-top: -3px;
       margin-bottom: 7px;
+    }
+    .free-access {
+      @include free_access();
+      display: inline-block;
+      margin-bottom: 0.4375rem;
     }
     .row-anchor-full-show {
       background-color: $gray-300;

@@ -12,19 +12,18 @@
   margin-top: 3px;
 
   a.icon-facebook {
-    @include social-icon("\e801");
+    @include social-icon("\e801", "black", 1.5rem);
+  }
+  a.icon-instagram {
+    @include social-icon("\f32d", "black", 1.5rem);
   }
 
   a.icon-twitter {
-    @include social-icon("\e800");
+    @include social-icon("\e800", "black", 1.5rem);
   }
 
   a.icon-youtube {
-    @include social-icon("\e802");
-  }
-
-  a.icon-tripadvisor {
-    @include social-icon("\f262");
+    @include social-icon("\e802", "black", 1.5rem);
   }
 }
 

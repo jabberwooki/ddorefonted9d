@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.body_embeded
     - core.entity_view_mode.media.currently
     - core.entity_view_mode.media.media_library
     - core.entity_view_mode.media.original
@@ -50,7 +51,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption style class=""> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class=""> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <u> <span style> <br> <p class=" txt-intro txt-intro-grenadine txt-normal clear"> <h1> <h2>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption style class> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <u> <span style> <br> <p class=" txt-intro txt-intro-grenadine txt-normal clear"> <h1> <h2>'
       filter_html_help: true
       filter_html_nofollow: false
   blazy_filter:
@@ -108,6 +109,7 @@ filters:
     settings:
       default_view_mode: default
       allowed_view_modes:
+        body_embeded: body_embeded
         currently: currently
         media_library: media_library
         original: original

@@ -112,6 +112,16 @@
   }
 }
 
+/* Etiquette "Entrée libre" */
+@mixin free_access() {
+  font-size: 0.813em;
+  text-transform: uppercase;
+  border: 1px solid;
+  padding: 0.375rem 0.750rem;
+  background-color: white;
+  color: forestgreen!important;
+}
+
 /* Bouton custom :  en savoir plus ou plus d'info ...*/
 @mixin custom_button( $font_color, $bg_color, $font_color_hover, $bg_color_hover, $border-color:transparent) {
   font-style: normal;

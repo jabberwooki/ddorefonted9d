@@ -1,0 +1,10 @@
+uuid: 959c8a29-098a-45be-8ceb-d7539343d6df
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.body_embeded
+label: 'Corps de texte'
+targetEntityType: media
+cache: true

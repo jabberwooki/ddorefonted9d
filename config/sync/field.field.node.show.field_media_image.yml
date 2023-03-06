@@ -12,7 +12,7 @@ entity_type: node
 bundle: show
 label: 'Photo du spectacle'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

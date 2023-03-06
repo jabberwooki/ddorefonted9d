@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: '0'
+      label: 'entrée libre'
+    -
       value: '1'
       label: prochainement
     -

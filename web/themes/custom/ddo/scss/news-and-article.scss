@@ -15,6 +15,13 @@ body.node--type-article {
       visibility: visible;
       width: 100%;
     }
+    span.media-author {
+      position: absolute;
+      right: 0;
+      padding: 0 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
   .wrapper-over-img-abs {
     position: relative;
@@ -40,6 +47,14 @@ body.node--type-article {
     float: right;
     max-width: 45% !important;
     margin: 0 0 30px 5%;
+    .field--name-field-media-image {
+      img {
+        margin-bottom: 0.3em;
+      }
+    }
+    .field--name-field-authors {
+      font-size: 80%;
+    }
   }
   /*.image-style-_-2-image {
     max-width: 45% !important;
