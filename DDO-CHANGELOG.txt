@@ -1,3 +1,9 @@
+Domaine d'O 1.6 - 2023-03-27
+----------------------------
+  * Mises à jour de sécurité du noyau Drupal (9.4.8 -> 9.5.7), du module contrib cer (4.0.0-alpha3 -> 5.0.0-beta2)
+    et, involontairement mise à jour de tous les autres modules, hors mise à jour de sécurité.
+  * Modif Mapado : changement de l'url du serveur d'images (legacy.mapado.com remplacé par media-upload.mapado.net).
+
 Domaine d'O 1.5 - 2023-03-06
 ----------------------------
   * COPIL 1 - Tâche 17 : Correction du bug Calendrier 'Affichage très étroit'.
