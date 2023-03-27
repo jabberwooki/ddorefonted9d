@@ -84,7 +84,7 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
   }
 
   $show_data = array();
-  $is_watchdog_on = true;
+  $is_watchdog_on = false;
 
   ////////////////////////////// 1 - Nom de l'événement (title -> title) ///////////////////////////////////////////////
   $show_data['title'] = $node->getTitle();
@@ -694,7 +694,8 @@ function ddo_mapado_send_request_to_ticketing_api($url, $method='GET', $node=nul
     // 2.1 - Envoi préalable de l'image, s'il y en a une, sur img.mapado.net et récupération de son imagePath
     if (isset($data['imageUrl'])) {
       $ch2 = curl_init();
-      curl_setopt($ch2, CURLOPT_URL, "https://legacy.mapado.com/image/upload/?width=160&height=100");
+//      curl_setopt($ch2, CURLOPT_URL, "https://legacy.mapado.com/image/upload/?width=160&height=100");
+      curl_setopt($ch2, CURLOPT_URL, "https://media-upload.mapado.net/upload?width=160&height=100");
       curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch2, CURLOPT_POSTFIELDS, "url=" . $data['imageUrl']);
       curl_setopt($ch2, CURLOPT_POST, 1);
