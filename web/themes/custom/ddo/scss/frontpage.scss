@@ -11,9 +11,9 @@
   background-color: map-get($theme-colors, "secondary");
   margin-bottom: 10px;
 
-  > * > * {
-    padding-top: 20px;
-  }
+  //> * > * {
+  //  padding-top: 20px;
+  //}
 
   h2 {
     font-size: 1.5em;
@@ -41,6 +41,9 @@
 
   .node--view-mode-teaser {
     border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
   }
 }
 

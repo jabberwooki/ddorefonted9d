@@ -16,6 +16,7 @@
 @import "mixins";
 // barrio
 //@import "barrio";
+$barrio_path_images: "../images";
 @import "../../../contrib/bootstrap_barrio/scss/barrio";
 
 @import "nav";
