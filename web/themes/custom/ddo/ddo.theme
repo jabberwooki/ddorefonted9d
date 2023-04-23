@@ -72,3 +72,47 @@ function ddo_preprocess_menu_local_tasks(&$variables) {
     $variables['primary'] = $ordered_tabs;
   }
 }
+
+function ddo_preprocess_views_view(&$variables) {
+  if ($variables['id'] == 'calendar') {
+    // Impossible de comprendre pourquoi certains items du calendrier apparaissent parfois en double.
+    // Le code ci-dessous passe en revue les données de chaque jour du mois affiché et élimine les doublons.
+    foreach ($variables['rows']['#rows'] as $key1 => $row) {
+      // La ligne d'index 0 ($key1=0) contient seulement les noms des jours, on ne la traite pas.
+      if ($key1 > 0) {
+        // On passe en revue chaque jour de la semaine
+        // $row['data'][0] contient la date du jour, on n'y touche pas.
+        // $row['data'][1] contient les items à afficher dans le jour, c'est ça qu'il faut traiter.
+        foreach ($row['data'][1]['#inner'] as $key2 => $inner) {
+          // $inner['#item']['entry'] est soit une chaîne vide, soit un tableau.
+          // On ne s'occupe que des tableaux.
+          if (is_array($inner['#item']['entry'])) {
+            // On ne traite pas non plus les derniers jours du mois précédent et les premiers jours du mois suivant
+            // qui sont affichés dans la grille du mois en cours mais vides. Ils sont affichés en grisé et sont vides.
+            // On les détecte grâce au nom du thème utilisé (calendar_empty_day) pour les afficher.
+            if ($inner['#item']['entry'][0]['#theme'] == 'calendar_empty_day') {
+              continue;
+            }
+            // S'il n'y a qu'une seule donnée (sizeof=1), forcément y a pas de doublon, donc on ne traite pas.
+            if (sizeof($inner['#item']['entry']) > 1) {
+              // On stocke les infos nid et field_start_date des items à afficher dans le tableau $day_data
+              // ce qui va permettre de tester s'ils sont présents plusieurs fois.
+              $day_data = [];
+
+              foreach ($inner['#item']['entry'] as $key3 => $item) {
+                $nid_date = $item['#item']->getEntityId() . '-' . $item['#item']->getStartDate()->getTimestamp();
+
+                if (in_array($nid_date, $day_data)) {
+                  unset($variables['rows']['#rows'][$key1]['data'][1]['#inner'][$key2]['#item']['entry'][$key3]);
+                }
+                else {
+                  $day_data[] = $item['#item']->getEntityId() . '-' . $item['#item']->getStartDate()->getTimestamp();
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
