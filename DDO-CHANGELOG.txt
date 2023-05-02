@@ -1,3 +1,12 @@
+Domaine d'O 1. - 2023-05-02
+----------------------------
+  * Modif CSS des flash info : Titre, résumé, éventuellement corps de texte sont maintenant affichés en blanc.
+  * Modif paramètres régionaux : Premier jour de la semaine passé de Dimanche à Lundi.
+  * Correction du problème d'affichage d'une heure unique (la première de la journée) pour les spectacles Saperlipopette ayant plusieurs représentations dans une même journée. Copie du plugin de vue Calendar.php dans ddo_utils et modif de ce plugin.
+  * Debug doublons dans calendrier des spectacles : implémentation de ddo_preprocess_views_view() pour détecter et éliminier  manuellement les éventuels doublons.
+  * Amélioration de l'affichage du block INFO FLASH.
+  * Export oublié de la bd après mise à jour de sécurité (voir commits précédents).
+
 Domaine d'O 1.6 - 2023-03-27
 ----------------------------
   * Mises à jour de sécurité du noyau Drupal (9.4.8 -> 9.5.7), du module contrib cer (4.0.0-alpha3 -> 5.0.0-beta2)
