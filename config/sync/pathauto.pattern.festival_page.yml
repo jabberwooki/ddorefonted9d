@@ -11,7 +11,7 @@ type: 'canonical_entities:node'
 pattern: 'spectacles/[node:field_festival_name]'
 selection_criteria:
   b61bf835-9cf4-48a7-965c-a4490f6e8c25:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: b61bf835-9cf4-48a7-965c-a4490f6e8c25
     context_mapping:
