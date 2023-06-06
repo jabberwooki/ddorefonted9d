@@ -1,4 +1,8 @@
-Domaine d'O 1. - 2023-05-02
+Domaine d'O 1.8 - 2023-06-06
+----------------------------
+  * Mises à jour de sécurité 2023-T2 : Drupal core 9.5.7 -> 9.5.9, admin_toolbar 3.3.0 -> 3.4.1
+
+Domaine d'O 1.7 - 2023-05-02
 ----------------------------
   * Modif CSS des flash info : Titre, résumé, éventuellement corps de texte sont maintenant affichés en blanc.
   * Modif paramètres régionaux : Premier jour de la semaine passé de Dimanche à Lundi.
