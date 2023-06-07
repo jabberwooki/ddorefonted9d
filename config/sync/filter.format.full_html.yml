@@ -77,10 +77,10 @@ filters:
       optionset: default
       layout: ''
       skin: ''
-      loading: ''
-      preload: false
       background: false
       box_media_style: ''
+      loading: ''
+      preload: false
       box_style: ''
       image_style: ''
       media_switch: ''
