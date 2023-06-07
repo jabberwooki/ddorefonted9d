@@ -1,3 +1,17 @@
+Domaine d'O 1.9 - 2023-06-07
+----------------------------
+  * Préparation passage à Drupal 10 : désactivation du module contrib migrate_plus (action oubliée dans les désactivations précédentes des modules de migration ).
+  * Réactivation des modules de migration contrib et custom précédemment supprimés pour cause d'erreur au déploiement en recette.
+  * Préparation passage à Drupal 10 : Désactivation des modules noyau de migration (migrate, migrate_drupal et migrate_drupal_ui), suppression des modules contrib de migration (migrate_tools, migrate_plus, migrate_upgrade, migrate_source_scald et migrate_devel) et suppression du module custom ddo_migrate.
+  * Préparation passage à Drupal 10 : Mise en compatibilité du module custom ddo_utils. Remplacement des dpm() par des \Drupal::logger(), ajout de ->accessCheck().
+  * Préparation passage à Drupal 10 : Dans le plugin de vue personnalisé 'src/Plugin/views/style/Calendar.php', remplacement de la fonction obsolète debug() par la fonction dump().
+  * Préparation passage à Drupal 10 : Les modules custom ddo_axeptio, ddo_mapado et ddo_migrate sont compatibles D10. Ils leur manquait juste la déclaration 'core_version_requirement: ^8 || ^9  || ^10'.
+  * Préparation passage à Drupal 10 : Désinstallation des modules du noyau color, quickedit et rdf. Désactivation du thème Seven, activation du thème Claro.
+  * Préparation passage à Drupal 10 :  Suppression des modules contrib easy_install et google_analytics non utilisés.
+  * Préparation passage à Drupal 10 : Ajout du module upgrade_status. Déclaré dans ['config_exclude_modules'] du fichier settings.local.php de l'instance de dev pour ne pas l'activer ailleurs qu'en dev.
+  * Mofif de config du format Full HTML : modif de l'ordre des variables dans le fichier filter.format.full_html.yml (dû à la mise à jour du noyau de la veille ?).
+  * Ajout/Modif de fichiers de config de blocs pour la langue anglaise (dû à la mise à jour du noyau de la veille ?).
+
 Domaine d'O 1.8 - 2023-06-06
 ----------------------------
   * Mises à jour de sécurité 2023-T2 : Drupal core 9.5.7 -> 9.5.9, admin_toolbar 3.3.0 -> 3.4.1
