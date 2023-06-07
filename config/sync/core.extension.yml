@@ -15,7 +15,6 @@ module:
   calendar_datetime: 0
   cer: 0
   ckeditor: 0
-  color: 0
   colorbutton: 0
   colordialog: 0
   comment: 0
@@ -86,8 +85,6 @@ module:
   panelbutton: 0
   path: 0
   path_alias: 0
-  quickedit: 0
-  rdf: 0
   rebuild_cache_access: 0
   redirect: 0
   redis: 0
@@ -122,8 +119,7 @@ module:
   tvi: 15
   standard: 1000
 theme:
-  bartik: 0
-  seven: 0
   bootstrap_barrio: 0
   ddo: 0
+  claro: 0
 profile: standard
