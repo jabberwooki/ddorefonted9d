@@ -1,0 +1,283 @@
+uuid: f57251dd-5b11-4394-89fd-a8a17303613d
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_node_complete_show
+migration_tags:
+  - 'Drupal 7'
+  - 'DDO migrations'
+  - 'DDO nodes'
+  - Content
+migration_group: ddo_migrate
+label: 'Node (Spectacle)'
+source:
+  plugin: d7_node
+  node_type: show
+process:
+  nid: nid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: timestamp
+  promote: field_promoted
+  sticky: sticky
+  body: body
+  field_additional_info: field_additional_infos
+  field_ticketing_url:
+    plugin: sub_process
+    source: field_boxoffice_url
+    process:
+      uri: url
+      title:
+        plugin: default_value
+        default_value: 'Réserver'
+      options: attributes
+  field_ticketing_url/options: field_boxoffice_url/attributes
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_by:
+#    plugin: sub_process
+#    source: field_by
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_structure
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
+#  field_by:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_structure
+#    source: field_by
+  field_by:
+    plugin: sub_process
+    source: field_by
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_structure
+        source: target_id # The key used in D7
+  field_casting: field_casting
+  field_coming_soon: field_coming_soon
+  field_coproduction: field_coproduction
+  field_duration: field_duration
+  field_entrance: field_entrance
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_festival:
+#    plugin: sub_process
+#    source: field_festival
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_festival
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
+#  field_festival:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_festival
+#    source: field_festival
+  field_festival:
+    plugin: sub_process
+    source: field_festival
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_festival
+        source: target_id # The key used in D7
+  field_from: field_from
+  field_full: field_full
+  field_location:
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_show_locations
+    source: field_location
+  field_price: field_price
+  field_production: field_production
+#  field_promoted: field_promoted
+
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_proposed_by:
+#    plugin: sub_process
+#    source: field_proposed_by
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration:
+#          - ddo_d7_node_complete_festival
+#          - ddo_d7_node_complete_programmer
+#          - ddo_d7_node_complete_structure
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
+#  field_proposed_by:
+#    plugin: migration_lookup
+#    migration:
+#      - ddo_d7_node_complete_festival
+#      - ddo_d7_node_complete_programmer
+#      - ddo_d7_node_complete_structure
+#    source: field_proposed_by
+  field_proposed_by:
+    plugin: sub_process
+    source: field_proposed_by
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration:
+          - ddo_d7_node_complete_festival
+          - ddo_d7_node_complete_programmer
+          - ddo_d7_node_complete_structure
+        source: target_id # The key used in D7
+  field_reimbursement: field_reimbursement
+  field_reservation: field_reservation
+  field_galeries:
+    plugin: sub_process
+    source: field_scald_gallery
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_gallery
+        source: sid
+  field_media_image:
+    plugin: sub_process
+    source: field_scald_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_videos:
+    plugin: sub_process
+    source: field_scald_video
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_video
+        source: sid
+  field_dates:
+    plugin: sub_process
+    source: field_show_dates
+    process:
+      value:
+        plugin: format_date
+        from_format: 'Y-m-d\TH:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+        source: value
+  field_show_type:
+    plugin: migration_lookup
+    migration: ddo_d7_taxonomy_term_show_types
+    source: field_show_type
+  field_subtitle: field_subtitle
+  field_media_thumbnail:
+    plugin: sub_process
+    source: field_thumbnail
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ddo_d7_scald_image
+        source: sid
+  field_currently: field_zoom
+  field_partnerships: field_partenariats
+  field_restauration: field_restauration
+  field_generic_location: field_lieu_generique
+# Définition trop complexe.
+# Remplacée par la définition qui suit celle-ci.
+#  field_shows:
+#    plugin: sub_process
+#    source: field_linked_shows
+#    process:
+#      target_id:
+#        -
+#          plugin: migration_lookup
+#          migration: ddo_d7_node_complete_show
+#          source: target_id
+#        -
+#          plugin: callback
+#          callable: array_shift
+#  field_shows:
+#    plugin: migration_lookup
+#    migration: ddo_d7_node_complete_show
+#    source: field_linked_shows
+  field_shows:
+    plugin: sub_process
+    source: field_linked_shows
+    process:
+      target_id: # The key used in D8+
+        plugin: migration_lookup
+        migration: ddo_d7_node_complete_show
+        source: target_id # The key used in D7
+  field_offline: field_offline
+  field_mapado_apislug: field_mapado_apislug
+  field_mapado_dates_ids: field_mapado_dates_ids
+  field_mapado_ticketing: field_mapado_ticketing
+  field_display_age: field_show_dump_age
+  field_minimum_age: field_minimum_age
+  field_galleries_link:
+    plugin: sub_process
+    source: field_photos_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#galleries">Photos</a>'
+      format:
+        plugin: default_value
+        default_value: 'full_html'
+  field_videos_link:
+    plugin: sub_process
+    source: field_video_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#videos">Vidéos</a>'
+      format:
+        plugin: default_value
+        default_value: 'full_html'
+  field_sounds_link:
+    plugin: sub_process
+    source: field_sound_link
+    process:
+      value:
+        plugin: default_value
+        default_value: '<a href="#sounds">Sons</a>'
+      format:
+        plugin: default_value
+        default_value: 'full_html'
+  field_casting_link: field_casting_link
+  field_top_link: field_back_to_top_link
+  field_metatag:
+    plugin: d7_metatag_entities
+    source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:node'
+  default_bundle: show
+migration_dependencies:
+  required:
+    - ddo_d7_user
+    - ddo_d7_node_complete_structure
+    - ddo_d7_node_complete_festival
+    - ddo_d7_node_complete_programmer
+    - ddo_d7_taxonomy_term_show_locations
+    - ddo_d7_taxonomy_term_show_types
+    - ddo_d7_scald_gallery
+    - ddo_d7_scald_image
+    - ddo_d7_scald_video
+    - ddo_language
+  optional:
+    - ddo_d7_field_instance
+    - ddo_d7_comment_field_instance
+    - ddo_d7_metatag_field_node
+    - ddo_d7_metatag_field_instance_node_show
+    - ddo_d7_metatag_field_instance_widget_settings_node_show

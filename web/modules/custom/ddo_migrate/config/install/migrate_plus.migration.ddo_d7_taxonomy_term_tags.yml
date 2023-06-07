@@ -1,0 +1,93 @@
+uuid: 73a19131-08a9-47ee-aa1e-dfc5d36f5858
+langcode: fr
+status: true
+dependencies: {  }
+id: ddo_d7_taxonomy_term_tags
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - 'DDO migrations'
+  - 'DDO terms'
+  - Content
+migration_group: ddo_migrate
+label: 'Taxonomy terms (Tags)'
+source:
+  plugin: d7_taxonomy_term
+  bundle: tags
+process:
+  tid:
+    -
+      plugin: get
+      source: tid
+  vid:
+    -
+      plugin: migration_lookup
+      migration: ddo_d7_taxonomy_vocabulary
+      source: vid
+  name:
+    -
+      plugin: get
+      source: name
+  description/value:
+    -
+      plugin: get
+      source: description
+  description/format:
+    -
+      plugin: get
+      source: format
+  weight:
+    -
+      plugin: get
+      source: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration:
+        - ddo_d7_taxonomy_term_tags
+        - ddo_d7_taxonomy_term_scald_authors
+        - ddo_d7_taxonomy_term_scald_tags
+        - ddo_d7_taxonomy_term_audience_types
+        - ddo_d7_taxonomy_term_show_locations
+        - ddo_d7_taxonomy_term_show_types
+        - ddo_d7_taxonomy_term_structure_types
+        - ddo_d7_taxonomy_term_espace_pro
+        - ddo_d7_taxonomy_term_poles
+        - ddo_d7_taxonomy_term_thematique_article
+        - ddo_d7_taxonomy_term_webpush_topics
+  parent:
+    -
+      plugin: default_value
+      default_value: 0
+      source: '@parent_id'
+  forum_container:
+    -
+      plugin: get
+      source: is_container
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  langcode:
+    -
+      plugin: get
+      source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: tags
+migration_dependencies:
+  required:
+    - ddo_d7_taxonomy_vocabulary
+  optional:
+    - ddo_d7_field_instance
+    - ddo_d7_taxonomy_vocabulary
