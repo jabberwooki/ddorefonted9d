@@ -30,7 +30,6 @@ module:
   dblog: 0
   ddo_axeptio: 0
   ddo_mapado: 0
-  ddo_migrate: 0
   ddo_utils: 0
   devel: 0
   devel_kint_extras: 0
@@ -70,14 +69,7 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0
-  migrate: 0
-  migrate_devel: 0
-  migrate_drupal: 0
-  migrate_drupal_ui: 0
   migrate_plus: 0
-  migrate_source_scald: 0
-  migrate_tools: 0
-  migrate_upgrade: 0
   mysql: 0
   node: 0
   options: 0
