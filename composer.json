@@ -218,5 +218,8 @@
                 "How to integrate Color Dialog with Color Button module (plugin)": "https://www.drupal.org/files/issues/2019-11-26/colorbutton-color-dialog-integration-3033682-5.patch"
             }
         }
+    },
+    "require-dev": {
+        "drupal/upgrade_status": "4.x-dev"
     }
 }
