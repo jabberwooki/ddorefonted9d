@@ -521,11 +521,11 @@ class Calendar extends StylePluginBase {
   public function render() {
     // @todo Move to $this->validate()
     if (empty($this->view->rowPlugin) || !$this->hasCalendarRowPlugin()) {
-      debug('\Drupal\calendar\Plugin\views\style\CalendarStyle: The calendar row plugin is required when using the calendar style, but it is missing.');
+      dump('\Drupal\calendar\Plugin\views\style\CalendarStyle: The calendar row plugin is required when using the calendar style, but it is missing.');
       return;
     }
     if (!$argument = CalendarHelper::getDateArgumentHandler($this->view)) {
-      debug('\Drupal\calendar\Plugin\views\style\CalendarStyle: A calendar date argument is required when using the calendar style, to add a date argument in a view, please go to Advanced > Contextual Filters on the views configuration panel.');
+      dump('\Drupal\calendar\Plugin\views\style\CalendarStyle: A calendar date argument is required when using the calendar style, to add a date argument in a view, please go to Advanced > Contextual Filters on the views configuration panel.');
       return;
     }
 

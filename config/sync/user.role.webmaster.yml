@@ -39,7 +39,6 @@ dependencies:
     - node
     - paragraphs
     - path
-    - quickedit
     - rebuild_cache_access
     - redirect
     - sharethis
@@ -57,7 +56,6 @@ permissions:
   - 'access contextual links'
   - 'access draggableviews'
   - 'access files overview'
-  - 'access in-place editing'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access toolbar'

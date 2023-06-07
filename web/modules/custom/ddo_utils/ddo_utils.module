@@ -195,6 +195,7 @@ function ddo_utils_festival_form_validate($form, FormStateInterface &$form_state
 
   $query = \Drupal::entityQuery('node')
   // Pour un festival en cours de création, les conditions suivantes suffisent.
+    ->accessCheck()
     ->condition('type', 'festival')
     ->condition('field_festival_name', $festival_name_value)
     ->condition('field_season', $season_value);
@@ -436,6 +437,7 @@ function ddo_utils_get_latest_festivals($ids_only=true, $year_number=2) {
   $season_condition = date('Y') - 2;
 
   $query = \Drupal::entityQuery('node')
+    ->accessCheck()
     ->condition('type', 'festival')
     ->condition('field_season', $season_condition, '>');
   $nids = $query->execute();
@@ -492,6 +494,7 @@ function ddo_utils_get_latest_festivals($ids_only=true, $year_number=2) {
 function ddo_utils_is_latest_festival($node) {
   // On récupère d'abord tous les festivals dont le nom est celui auquel est rattaché le node.
   $query = \Drupal::entityQuery('node')
+    ->accessCheck()
     ->condition('type', 'festival')
     ->condition('field_festival_name', $node->field_festival_name->value)
     // Le festival en cours de traitement ne doit pas être récupéré de la db pour éviter d'être comparé à lui-même.
@@ -577,7 +580,7 @@ function ddo_utils_node_delete(EntityInterface $node) {
     $is_latest = ddo_utils_is_latest_festival($node);
 
     if ($is_logger_on) {
-      dpm($is_latest);
+      \Drupal::logger('ddo_utils')->info('$is_latest = ' . $is_latest);
     }
 
     // Si le festival n'est pas le seul et qu'il est le plus récent ($is_latest = array), il faut modifier l'alias
@@ -590,9 +593,8 @@ function ddo_utils_node_delete(EntityInterface $node) {
 
       if ($is_logger_on) {
         \Drupal::logger('ddo_utils')->info("Le nid du festival à modifier est {$is_latest['nid']}");
-        dpm("Le nid du festival à modifier est {$is_latest['nid']}");
-        dpm($path_value);
-        dpm($alias_value);
+        \Drupal::logger('ddo_utils')->info('$path_value = ' . $path_value);
+        \Drupal::logger('ddo_utils')->info('$alias_value = ' . $alias_value);
       }
     }
     // Et si le festival n'est pas seul et qu'il n'est pas le plus récent ($is_latest = false),
@@ -601,7 +603,6 @@ function ddo_utils_node_delete(EntityInterface $node) {
     else {
       if ($is_logger_on) {
         \Drupal::logger('ddo_utils')->info("Il n'y a rien à faire");
-        dpm("Il n'y a rien à faire");
       }
     }
   }
@@ -620,7 +621,7 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
   $is_logger_on = false;
 
   if ($is_logger_on) {
-    dpm($is_latest);
+    \Drupal::logger('ddo_utils')->info('$is_latest = ' . $is_latest);
   }
 
   // $is_latest vaut :
@@ -633,7 +634,6 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
   if (!is_bool($is_latest)) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_utils')->info("Le festival n'est pas le seul et est le plus récent");
-      dpm("Le festival n'est pas le seul et est le plus récent");
     }
 
     // Modification de son alias
@@ -644,9 +644,8 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
 
     if ($is_logger_on) {
       \Drupal::logger('ddo_utils')->info("L'alias du festival est modifié");
-      dpm($path_value);
-      dpm($alias_value);
-      dpm("L'alias du festival est modifié");
+      \Drupal::logger('ddo_utils')->info('$path_value = ' . $path_value);
+      \Drupal::logger('ddo_utils')->info('$alias_value = ' . $alias_value);
     }
 
     // Modification de l'alias de la saison précédente
@@ -657,9 +656,8 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
 
     if ($is_logger_on) {
       \Drupal::logger('ddo_utils')->info("L'alias du festival précédent est modifié");
-      dpm($path_value);
-      dpm($alias_value);
-      dpm("L'alias du festival précédent est modifié");
+      \Drupal::logger('ddo_utils')->info('$path_value = ' . $path_value);
+      \Drupal::logger('ddo_utils')->info('$alias_value = ' . $alias_value);
     }
   }
   else {
@@ -670,8 +668,7 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
 
       if ($is_logger_on) {
         \Drupal::logger('ddo_utils')->info("Le festival n'est pas unique et n'est pas le plus récent");
-        dpm("Le festival n'est pas le seul et n'est pas le plus récent");
-        dpm($alias_value);
+        \Drupal::logger('ddo_utils')->info('$alias_value = ' . $alias_value);
       }
     }
     // Et s'il est seul, donc le plus récent ($is_latest = true),
@@ -681,14 +678,13 @@ function ddo_utils_festival_path_alias_update(EntityInterface $node) {
 
       if ($is_logger_on) {
         \Drupal::logger('ddo_utils')->info("Le festival est unique et donc le plus récent");
-        dpm("Le festival est le seul, donc le plus récent");
-        dpm($alias_value);
+        \Drupal::logger('ddo_utils')->info('$alias_value = ' . $alias_value);
       }
     }
     $path_value = "/node/{$node->id()}";
 
     if ($is_logger_on) {
-      dpm($path_value);
+      \Drupal::logger('ddo_utils')->info('$path_value = ' . $path_value);
     }
 
     // Modification de l'alias
@@ -705,7 +701,7 @@ function ddo_utils_update_path_alias($path_value, $alias_value) {
     $path_aliases = $alias_storage->loadByProperties(['path' => $path_value]);
 
     if ($is_logger_on) {
-      dpm($path_aliases);
+      \Drupal::logger('ddo_utils')->info('$path_aliases = ' . serialize($path_aliases));
     }
 
     // Si le tableau $path_aliases n'est pas vide, c'est qu'on est en modification ou suppression de festival.

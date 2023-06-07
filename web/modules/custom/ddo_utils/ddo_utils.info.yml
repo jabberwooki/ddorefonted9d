@@ -1,5 +1,5 @@
 name: DDO Utils
 type: module
 description: Fonctions utilitaires pour le site web du domaine d'O.
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: Domaine d'O

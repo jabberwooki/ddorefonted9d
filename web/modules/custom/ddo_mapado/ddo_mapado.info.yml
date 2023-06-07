@@ -1,5 +1,5 @@
 name: DDO Mapado
 type: module
 description: Synchronisation des données Spectacle avec le site de billetterie en ligne Mapado.
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: Domaine d'O
