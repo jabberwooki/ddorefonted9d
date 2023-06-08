@@ -23,3 +23,6 @@ function ddo_axeptio_preprocess_media_oembed_iframe(array &$variables) {
   }
 }
 
+function ddo_axeptio_preprocess_html(array &$variables) {
+  $variables['cookies_control'] = \Drupal::config('ddo_axeptio.settings')->get('cookies_control');
+}

@@ -40,13 +40,18 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
 
-    <!-- Gestion des cookies Axeptio.
+    <!--
+    Gestion des cookies Axeptio.
     On n'agit que si la gestion des cookies est activée
     Par défaut, le module ddo_axeptio est configuré avec la gestion des cookies activée.
     On peut la désactiver localement dans settings.local.php
     en passant la variable $config['ddo_axeptio.settings']['cookies_control'] à FALSE.
-    On détermine si la gestion est activée avec le code qui suit.  -->
-    {% set cookies_control = drupal_config('ddo_axeptio.settings', 'cookies_control') %}
+    On détermine si la gestion est activée dans le hook ddo_axeptio_preprocess_html (voir ddo_axeptio.module)
+    qui fournit la variable cookies_control.
+
+    Le script déclenchant l'affichage du widget Axeptio (dans le cas où cookies_control est égal à TRUE)
+    est située en bas de page.
+    -->
 
     <!-- Script Axeptio : gestion du consentement des cookies vidéo -->
     {% if cookies_control %}
