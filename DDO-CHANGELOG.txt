@@ -1,3 +1,8 @@
+Domaine d'O 1.9.1 - 2023-06-08
+------------------------------
+  * DDO Axeptio : réinstall du module et export de sa config, perdue pour une raison inconnue.
+  * Rétablissement du fonctionnement du widget Axeptio.
+
 Domaine d'O 1.9 - 2023-06-07
 ----------------------------
   * Préparation passage à Drupal 10 : désactivation du module contrib migrate_plus (action oubliée dans les désactivations précédentes des modules de migration ).
