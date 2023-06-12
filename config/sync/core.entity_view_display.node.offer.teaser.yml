@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
     - field.field.node.offer.field_media_image
-    - field.field.node.offer.field_offer_type
+    - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
   module:
@@ -29,7 +29,7 @@ content:
 hidden:
   body: true
   field_festival: true
-  field_offer_type: true
+  field_offer_kind: true
   field_ticketing_url: true
   langcode: true
   links: true

@@ -7,14 +7,13 @@ dependencies:
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
     - field.field.node.offer.field_media_image
-    - field.field.node.offer.field_offer_type
+    - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
   module:
     - blazy
     - ds
     - link
-    - taxonomy
     - text
     - user
 third_party_settings:
@@ -29,7 +28,6 @@ third_party_settings:
     regions:
       content:
         - node_title
-        - field_offer_type
         - field_festival
         - field_media_image
         - body
@@ -59,7 +57,7 @@ content:
     region: content
   field_festival:
     type: entity_reference_label
-    label: inline
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -101,13 +99,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_offer_type:
-    type: entity_reference_rss_category
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_ticketing_url:
     type: link
     label: above
@@ -121,6 +112,7 @@ content:
     weight: 5
     region: content
 hidden:
+  field_offer_kind: true
   langcode: true
   links: true
   sharethis: true

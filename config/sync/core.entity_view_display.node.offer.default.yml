@@ -6,11 +6,12 @@ dependencies:
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
     - field.field.node.offer.field_media_image
-    - field.field.node.offer.field_offer_type
+    - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
   module:
     - link
+    - options
     - text
     - user
 id: node.offer.default
@@ -42,13 +43,12 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_offer_type:
-    type: entity_reference_label
+  field_offer_kind:
+    type: list_default
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 106
     region: content
   field_ticketing_url:
     type: link
