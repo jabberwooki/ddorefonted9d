@@ -1,0 +1,8 @@
+uuid: 56c5d9e4-53f6-4eb9-a31e-e65ed53ac085
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Types d''offre'
+vid: offer_types
+description: ''
+weight: 0

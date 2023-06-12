@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{#{% for field in fields -%}#}
+{#    {{ field.content }}#}
+{#{%- endfor %}#}
+<div class="offer-fields-wrapper col-md-6 offset-md-3 border border-dark position-relative">
+  <div class="offer-infos position-absolute w-100 bottom-0 p-4 text-white fw-bold">
+{#    <div class="offer-infos-wrapper text-white bg-black p-4 bg-opacity-25">#}
+{#    <div class="offer-infos-wrapper ">#}
+      <h3 class="title fs-3 fw-bolder">
+        {{ fields.title.content }}
+      </h3>
+      <p class="description">
+        {{ fields.body.content }}
+      </p>
+      <p class="link mb-0 text-end">
+        {{ fields.field_ticketing_url.content }}
+      </p>
+{#    </div>#}
+  </div>
+
+{#  <div class="offer-link position-absolute bottom-0 end-0 p-4">#}
+
+{#  </div>#}
+
+  <div class="offer-image">
+    {{ fields.field_media_image.content }}
+  </div>
+
+
+</div>

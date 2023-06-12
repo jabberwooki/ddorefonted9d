@@ -48,6 +48,7 @@ content:
         - banner
         - banner_narrow
         - currently
+        - offer
         - slideshow
         - square_image
         - teaser

@@ -45,4 +45,26 @@ body.node--type-festival {
     }
   }
 
+  .offers {
+    //border: 1px solid green;
+    .view-display-id-subscriptions {
+      .offer-infos {
+        z-index: 10000;
+        background: linear-gradient(to bottom, transparent 0%, black 100%);
+        .link a {
+          @include button_book_show();
+          padding: 0.5rem;
+        }
+      }
+      .offer-image {
+        .field--name-field-media-image {
+          margin-right: 0;
+          img {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
+

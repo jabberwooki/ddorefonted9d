@@ -1,0 +1,26 @@
+uuid: 2c3aad52-5b28-49a8-b703-03641a74a180
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.offer
+  module:
+    - crop
+name: offer
+label: Offre
+effects:
+  8e88cd43-c4f9-45c5-ad10-6dce66778ea9:
+    uuid: 8e88cd43-c4f9-45c5-ad10-6dce66778ea9
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: offer
+      automatic_crop_provider: null
+  620c6833-56c5-4c2c-85f0-efb4cc819a35:
+    uuid: 620c6833-56c5-4c2c-85f0-efb4cc819a35
+    id: image_scale
+    weight: 2
+    data:
+      width: 650
+      height: null
+      upscale: false
