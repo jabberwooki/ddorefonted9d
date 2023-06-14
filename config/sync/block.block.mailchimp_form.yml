@@ -12,7 +12,7 @@ dependencies:
 id: mailchimp_form
 theme: ddo
 region: content
-weight: -14
+weight: -15
 provider: null
 plugin: 'simple_block:mailchimp_form'
 settings:

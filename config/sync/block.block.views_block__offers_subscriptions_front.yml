@@ -1,0 +1,25 @@
+uuid: ebb562aa-cafd-4832-a994-47f972f3c0a3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.offers
+  module:
+    - views
+  theme:
+    - ddo
+id: views_block__offers_subscriptions_front
+theme: ddo
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:offers-subscriptions_front'
+settings:
+  id: 'views_block:offers-subscriptions_front'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

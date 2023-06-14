@@ -12,7 +12,7 @@ dependencies:
 id: team_head
 theme: ddo
 region: content
-weight: -13
+weight: -14
 provider: null
 plugin: 'simple_block:team_head'
 settings:
