@@ -15,8 +15,8 @@ settings:
       value: abo
       label: Abonnement
     -
-      value: rem
-      label: Remise
+      value: grp
+      label: 'Offre groupée'
   allowed_values_function: ''
 module: options
 locked: false

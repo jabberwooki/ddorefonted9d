@@ -18,6 +18,7 @@ dependencies:
     - node.type.festival
     - node.type.news
     - node.type.newsletter
+    - node.type.offer
     - node.type.page
     - node.type.person
     - node.type.programmer
@@ -83,6 +84,7 @@ permissions:
   - 'create media'
   - 'create news content'
   - 'create newsletter content'
+  - 'create offer content'
   - 'create page content'
   - 'create person content'
   - 'create programmer content'
@@ -105,6 +107,7 @@ permissions:
   - 'delete any media'
   - 'delete any news content'
   - 'delete any newsletter content'
+  - 'delete any offer content'
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any programmer content'
@@ -120,6 +123,7 @@ permissions:
   - 'delete own festival content'
   - 'delete own gallery media'
   - 'delete own image media'
+  - 'delete own offer content'
   - 'delete own page content'
   - 'delete own programmer content'
   - 'delete own remote_audio media'
@@ -137,6 +141,7 @@ permissions:
   - 'edit any image media'
   - 'edit any news content'
   - 'edit any newsletter content'
+  - 'edit any offer content'
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any programmer content'
@@ -146,6 +151,7 @@ permissions:
   - 'edit any webform content'
   - 'edit own article content'
   - 'edit own festival content'
+  - 'edit own offer content'
   - 'edit own page content'
   - 'edit own programmer content'
   - 'edit own show content'

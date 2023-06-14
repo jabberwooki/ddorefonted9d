@@ -38,7 +38,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -420,7 +420,7 @@ display:
         - 'config:field.storage.node.field_ticketing_url'
   subscriptions:
     id: subscriptions
-    display_title: Abonnement
+    display_title: 'Abonnements festivals'
     display_plugin: block
     position: 1
     display_options:
