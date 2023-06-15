@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.offers
   module:
+    - system
     - views
   theme:
     - ddo
@@ -22,4 +23,8 @@ settings:
   context_mapping: {  }
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
