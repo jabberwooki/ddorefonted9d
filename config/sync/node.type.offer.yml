@@ -1,0 +1,17 @@
+uuid: 60d5a6b9-2154-4e8d-a5f7-0614bd15671e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Offre
+type: offer
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

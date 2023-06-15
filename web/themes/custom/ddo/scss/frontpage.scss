@@ -106,3 +106,20 @@
   }
 
 }
+
+/* Bloc abonnements */
+#block-views-block-offers-subscriptions-front {
+  .view-display-id-subscriptions_front {
+    .offer-wrapper {
+      border: 1px solid #aaaaaa;
+      background-color: #eeeeee;
+      .offer-title {
+        color: #555555;
+      }
+      .offer-link a {
+        @include button_book_show();
+        padding: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+uuid: c985c8e7-3d04-4ded-b9c0-6c1c335894bd
+langcode: fr
+status: true
+dependencies: {  }
+label: Offre
+id: offer
+description: ''
+aspect_ratio: '650:425'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

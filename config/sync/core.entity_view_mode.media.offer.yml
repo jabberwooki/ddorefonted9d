@@ -1,0 +1,10 @@
+uuid: ec531e97-e85e-4634-943f-83ee0bb3d58d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.offer
+label: Offre
+targetEntityType: media
+cache: true

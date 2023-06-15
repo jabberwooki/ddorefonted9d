@@ -1,0 +1,21 @@
+uuid: a49d241e-acc4-468e-aa37-07ed0272ba2c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offer_kind
+    - node.type.offer
+  module:
+    - options
+id: node.offer.field_offer_kind
+field_name: field_offer_kind
+entity_type: node
+bundle: offer
+label: 'Nature de l''offre'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

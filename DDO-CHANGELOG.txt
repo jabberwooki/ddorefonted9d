@@ -1,3 +1,12 @@
+Domaine d'O 1.10 - 2023-06-15
+------------------------------
+  * Modif thème : correction dans le template d'une page Spectacle pour que tous les lieux soient affichés lorsque plusieurs lieux de spectacles sont sélectionnés. Auparavant était affichée seulememt le premier lieu.
+  * Modif Offres : réglage paramétrage pour que le bloc Abonnemment de la page d'accueil n'apparaisse que sur... la page d'accueil.
+  * Offres : création d'un second bloc de vue pour la page d'accueil.
+  * Correctifs Offre après recette : ajout des permissions manquantes, suppression de l'affichage du titre dans le bloc Abonnements festivals, 'Remise' remplacé par 'Offre groupée' dans champ Nature de l'offre.
+  * Remplacement du champ Type d'offre (entityreference) par le champ Nature de l'offre (Liste) et modif du bloc de vue Abonnements en conséquence.
+  * Nouveau type de contenu Offre, vocabulaire Types d'offre, Vue Offres, bloc Abonnement.
+
 Domaine d'O 1.9.1 - 2023-06-08
 ------------------------------
   * DDO Axeptio : réinstall du module et export de sa config, perdue pour une raison inconnue.
