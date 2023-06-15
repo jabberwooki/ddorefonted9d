@@ -150,11 +150,35 @@
               <div class="wrapper-field d-flex align-items-start">
                 <div class="field__label">Lieu&nbsp;:&nbsp;</div>
                 <div class="d-flex flex-column">
+
                   {% if not field_location is empty %}
                     <div class="field__item">{{ field_generic_location.0 }}</div>
                   {% endif %}
+
                   {% if not field_location is empty %}
-                    <div class="field__item">{{ field_location.0 }}</div>
+                    {#
+                    On peut voir le contenu de field_location avec ceci :
+                    {{ dump(_context["field_location"]|keys) }}
+                    Ça donne par exemple, si deux lieux ont été cochés :
+                      array:20 [
+                        0 => '#theme'
+                        1 => '#title'
+                        2 => '#labe_display'
+                        ...
+                        14 => '#third_party_settings'
+                        15 => 0
+                        16 => 1
+                        17 => '#cache'
+                        ....
+                      ]
+                    Ce sont les clés 0 et 1 qui nous intéressent donc celles qui ne commencent pas par '#'
+                    Donc on fait ci-dessous une boucle sur field_location avec 'if key|first != '#'.
+                    #}
+                    {% for key, item in field_location if key|first != '#' %}
+{#                      {{ dump(item) }}#}
+                      <div class="field__item">{{ item }}</div>
+                    {% endfor %}
+
                   {% endif %}
                 </div>
               </div>
