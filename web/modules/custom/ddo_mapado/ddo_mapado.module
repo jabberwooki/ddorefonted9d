@@ -581,7 +581,10 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
     $is_on_sale = TRUE;
 
     // Recul de la date courante de 4 heures pour permettre aux internautes d'acheter alors que le spectacle est en cours.
-    $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+    // EDIT - 2023-08-25 - Recul de 6 heures à la demande de Marion/Alexandre pour pouvoir réserver le plus tard possible
+    // les spectacles du festival Les Nuits d'O.
+    // $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+    $today = date("Y-m-d\TH:i:sP", strtotime('-6 hours'));
 
     // On vérifie s'il y a au moins une date de spectacle dans le futur. On arrête la boucle dès qu'on en trouve une.
     $coming_date = false;
