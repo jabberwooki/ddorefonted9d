@@ -1,3 +1,15 @@
+Domaine d'O 1.10.1 - 2023-08-30
+-------------------------------
+  * Modif Festival : 'La Métropole fait son cirque' devient 'Ekilibr'.
+  * Bouton RÉSERVER : Disparition du bouton de la fiche Spectacle 6 heures après le début du spectacle au lieu de 4 heures après.
+  * Debug disparition des séances Mapado lors des modifs de date d'un spectacle.
+  * Modif Axeptio : correction du bug d'affichage des vidéos en double.
+  * Merge tag 'v1.10' into develop
+  * Modif Festival : 'La Métropole fait son cirque' devient 'Ekilibr'.
+  * Bouton RÉSERVER : Disparition du bouton de la fiche Spectacle 6 heures après le début du spectacle au lieu de 4 heures après.
+  * Debug disparition des séances Mapado lors des modifs de date d'un spectacle.
+  * Modif Axeptio : correction du bug d'affichage des vidéos en double.
+
 Domaine d'O 1.10 - 2023-06-15
 ------------------------------
   * Modif thème : correction dans le template d'une page Spectacle pour que tous les lieux soient affichés lorsque plusieurs lieux de spectacles sont sélectionnés. Auparavant était affichée seulememt le premier lieu.
