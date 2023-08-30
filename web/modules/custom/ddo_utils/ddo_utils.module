@@ -303,7 +303,8 @@ function ddo_utils_get_festivals() {
     'festival-hiver' => array('title' => 'Festival d\'hiver', 'weight' => 17, 'url' => 'spectacles/festival-dhiver'),
     'nuit-gitane' => array('title' => 'Nuit Gitane', 'weight' => 18, 'url' => 'spectacles/nuit-gitane'),
     'cine-metropole' => array('title' => 'Cinéma sous les étoiles', 'weight' => 19, 'url' => 'spectacles/cine-metropole'),
-    'cirque-metropole' => array('title' => 'Cirque Métropole', 'weight' => 20, 'url' => 'spectacles/cirque-metropole'),
+    // 'cirque-metropole' => array('title' => 'Cirque Métropole', 'weight' => 20, 'url' => 'spectacles/cirque-metropole'),
+    'cirque-metropole' => array('title' => 'Ekilibr', 'weight' => 20, 'url' => 'spectacles/cirque-metropole'),
     'danseplatforma' => array('title' => 'dansePlatForma', 'weight' => 21, 'url' => 'spectacles/danseplatforma'),
     'comedie-livre-jeunesse' => array('title' => 'La Comédie du Livre Jeunesse', 'weight' => 22, 'url' => 'spectacles/comedie-livre-jeunesse'),
     'montpellier-danse' => array('title' => 'Montpellier Danse', 'weight' => 22, 'url' => 'spectacles/montpellier-danse'),
@@ -747,7 +748,8 @@ function ddo_utils_get_festival_text($festival_name, $festival_season) {
   $texts = [
     'arabesques' => ' d\'Arabesques',
     'cine-metropole' => " du Cinéma sous les étoiles",
-    'cirque-metropole' => " de la Métropole fait son Cirque",
+    // 'cirque-metropole' => " de la Métropole fait son Cirque",
+    'cirque-metropole' => " de Ekilibr",
     'danseplatforma' => 'de dansePlatForma',
     'festival-hiver' => " de la Saison "
       . ($season_first_year = substr($festival_season, -2))

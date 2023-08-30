@@ -361,58 +361,149 @@ function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
       $entity->field_dates->getValue()
     );
 
-    // Mais on ne fait une mise à jour Mapado que si les dates ont changé.
-    // c'est-à-dire si des dates ont été ajoutées ou supprimées
-    // ou bien, avec un même nombre de dates, si certaines dates ont changé
-    if ((count($original_drupal_dates) <> count($drupal_dates)) || !empty(array_diff($original_drupal_dates, $drupal_dates))) {
-      if ($is_logger_on) {
-        \Drupal::logger('ddo_mapado')->info("Les dates ont changé.");
-      }
+    // Version 2 du 22/08/23 (voir version 1 ci-dessous).
 
-      // Le plus simple est de se débarrasser des dates dans Mapado
-      // ainsi que des identifiants de date Mapado dans Drupal.
-      $original_mapado_dates_ids = array_map(
-        function($element) { return $element['value'];},
-        $entity->original->field_mapado_dates_ids->getValue()
-      );
-      foreach ($original_mapado_dates_ids as $date) {
-        $url = 'https://ticketing.mapado.net' . $date . '?fields=@id';
-        $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'DELETE');
+    // Dans la version 1, s'il y avait modif sur au moins une des dates,
+    // on supprimait toutes les dates Drupal et toutes les dates Mapado
+    // pour tout recréer à partir de zéro.
+    // Mais ça mettait la grouille côté Mapado car ça supprimait toutes les séances
+    // créées à partir de la première série de dates.
+    // Bug signalé par Alexandre et Marion.
 
-        $query = \Drupal::database()->delete('node__field_mapado_dates_ids');
-        $query->condition('bundle', 'show');
-        $query->condition('entity_id', $entity->id());
-        $query->condition('field_mapado_dates_ids_value', $date);
-        $query->execute();
-      }
+    // Le nouvel algorithme est le suivant.
+    //
+    // ETAPE 1 - On passe en revue la liste des anciennes dates ($original_drupal_dates).
+    //
+    // Si une date n'existe plus dans la liste des nouvelles dates ($drupal_dates),
+    // on ne fait rien côté Mapado (c'est à l'admin DDO d'aller sur Mapado pour invalider la séance correspondante).
 
-      // Puis on s'occupe ensuite de re-créer les dates modifiées de ce spectacle dans Mapado.
-      // Pour chaque date du spectacle, on envoie une requete POST a l'API ticketing, au endpoint /v1/event_dates.
-      $url = 'https://ticketing.mapado.net/v1/event_dates?fields=@id,createdAt,startDate,endDate';
-      $counter = 0;
+    // En revanche, il faudrait supprimer côté Drupal l'identifiant de date Mapado correspondant.
+    // Ces identifiants de data Mapado sont stockés dans le champ "technique" field_mapado_dates_ids.
+    // En fait, ces identifiants de date ne serviront jamais dans cette version 2.
+    // En effet, il faudrait être capable de savoir quel identifiant Mapado correspond à quelle date Drupal.
+    // Au départ, c'est facile : l'ordre chrono des dates Drupal correspond à l'ordre d'enregistrement des dates Mapado.
+    // Mais si on modifie un spectacle, par exemple en intercalant une nouvelle date entre la première et la seconde date,
+    // alors il n'y a plus correspondance.
+    //
+    // Un exemple.
+    // Situtation initiale suivante :
+    //
+    //  Champ field_dates     Champ field_mapado_dates_ids
+    //  -----------------     ----------------------------
+    //  date1 (10/10/23)      date_id1
+    //  date2 (12/10/23)      date_id2
+    //  date3 (13/10/23)      date_id3
+    //
+    //  L'ajout de la date du 11/10/23 par exemple donnerait :
+    //
+    //  Champ field_dates     Champ field_mapado_dates_ids
+    //  -----------------     ----------------------------
+    //  date1 (10/10/23)      date_id1
+    //  > date4 (11/10/23)    date_id2
+    //  date2 (12/10/23)      date_id3
+    //  date3 (13/10/23)      > date_id4
+    //
+    // CONCLUSION : Pour l'instant, le mieux est de ne rien faire.
+    // On laisse les identifiants de date Mapado s'accumuler dans Drupal.
+    // On verra plus tard s'il est utile de faire quelque chose.
 
-      foreach ($drupal_dates as $date) {
+    foreach ($original_drupal_dates as $date) {
+      // if (!in_array($date, $drupal_dates)) {
+
+      // }
+    }
+
+    // ETAPE 2 - On passe en revue la liste des nouvelles dates ($drupal_dates).
+    //
+    // Si une date n'existait pas dans la liste des anciennes dates, on la créé dans Mapado.
+    // Et on récupère son identifiant Mapado pour le stocker dans Drupal.
+    // Si nécessaire, à voir plus tard, on arrêtera de faire ça.
+
+    foreach ($drupal_dates as $date) {
+      if (!in_array($date, $original_drupal_dates)) {
+        $url = 'https://ticketing.mapado.net/v1/event_dates?fields=@id,createdAt,startDate,endDate';
+
         $data = array(
           'ticketing' => $entity->field_mapado_ticketing->value,
           'startDate' => $date
         );
+
         $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'POST', $data);
         $result_data = get_object_vars(json_decode($request_result));
 
         if ($result_data) {
           \Drupal::logger('ddo_mapado')->info("Id de date récupéré = {$result_data['@id']}");
+
+          // Recherche de la plus grande valeur de la colonne 'delta' pour l'incrémenter.
+          $query = \Drupal::database()->select('node__field_mapado_dates_ids');
+          $query->addExpression('MAX(delta)');
+          $query->condition('entity_id', $entity->id());
+          $result = $query->execute()->fetchCol();
+          $max_delta = reset($result);
+          $current_delta = $max_delta + 1;
+
           $query = \Drupal::database()->insert('node__field_mapado_dates_ids');
           $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_dates_ids_value']);
-          $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', $counter++, $result_data['@id']]);
+          $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', $current_delta, $result_data['@id']]);
           $query->execute();
         }
       }
     }
-    else {
-      if ($is_logger_on) {
-        \Drupal::logger('ddo_mapado')->info("Les dates n'ont pas changé.");
-      }
-    }
+
+    // Version 1
+
+    // // Mais on ne fait une mise à jour Mapado que si les dates ont changé.
+    // // c'est-à-dire si des dates ont été ajoutées ou supprimées
+    // // ou bien, avec un même nombre de dates, si certaines dates ont changé
+    // if ((count($original_drupal_dates) <> count($drupal_dates)) || !empty(array_diff($original_drupal_dates, $drupal_dates))) {
+    //   if ($is_logger_on) {
+    //     \Drupal::logger('ddo_mapado')->info("Les dates ont changé.");
+    //   }
+
+    //   // Le plus simple est de se débarrasser des dates dans Mapado
+    //   // ainsi que des identifiants de date Mapado dans Drupal.
+    //   $original_mapado_dates_ids = array_map(
+    //     function($element) { return $element['value'];},
+    //     $entity->original->field_mapado_dates_ids->getValue()
+    //   );
+    //   foreach ($original_mapado_dates_ids as $date) {
+    //     $url = 'https://ticketing.mapado.net' . $date . '?fields=@id';
+    //     $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'DELETE');
+
+    //     $query = \Drupal::database()->delete('node__field_mapado_dates_ids');
+    //     $query->condition('bundle', 'show');
+    //     $query->condition('entity_id', $entity->id());
+    //     $query->condition('field_mapado_dates_ids_value', $date);
+    //     $query->execute();
+    //   }
+
+    //   // Puis on s'occupe ensuite de re-créer les dates modifiées de ce spectacle dans Mapado.
+    //   // Pour chaque date du spectacle, on envoie une requete POST a l'API ticketing, au endpoint /v1/event_dates.
+    //   $url = 'https://ticketing.mapado.net/v1/event_dates?fields=@id,createdAt,startDate,endDate';
+    //   $counter = 0;
+
+    //   foreach ($drupal_dates as $date) {
+    //     $data = array(
+    //       'ticketing' => $entity->field_mapado_ticketing->value,
+    //       'startDate' => $date
+    //     );
+    //     $request_result = ddo_mapado_send_event_date_request_to_mapado($url, 'POST', $data);
+    //     $result_data = get_object_vars(json_decode($request_result));
+
+    //     if ($result_data) {
+    //       \Drupal::logger('ddo_mapado')->info("Id de date récupéré = {$result_data['@id']}");
+    //       $query = \Drupal::database()->insert('node__field_mapado_dates_ids');
+    //       $query->fields(['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta', 'field_mapado_dates_ids_value']);
+    //       $query->values(['show', 0, $entity->id(), $entity->id(), 'fr', $counter++, $result_data['@id']]);
+    //       $query->execute();
+    //     }
+    //   }
+    // }
+    // else {
+    //   if ($is_logger_on) {
+    //     \Drupal::logger('ddo_mapado')->info("Les dates n'ont pas changé.");
+    //   }
+    // }
 
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Fin');
@@ -490,7 +581,10 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
     $is_on_sale = TRUE;
 
     // Recul de la date courante de 4 heures pour permettre aux internautes d'acheter alors que le spectacle est en cours.
-    $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+    // EDIT - 2023-08-25 - Recul de 6 heures à la demande de Marion/Alexandre pour pouvoir réserver le plus tard possible
+    // les spectacles du festival Les Nuits d'O.
+    // $today = date("Y-m-d\TH:i:sP", strtotime('-4 hours'));
+    $today = date("Y-m-d\TH:i:sP", strtotime('-6 hours'));
 
     // On vérifie s'il y a au moins une date de spectacle dans le futur. On arrête la boucle dès qu'on en trouve une.
     $coming_date = false;
