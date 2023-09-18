@@ -120,6 +120,7 @@
         "drupal/tvi": "^1.0@RC",
         "drupal/twig_tools": "^1.3",
         "drupal/twig_tweak": "^3.1",
+        "drupal/upgrade_status": "^4.0",
         "drupal/webform": "^6.0",
         "drupal/xmlsitemap": "^1.0",
         "drush/drush": "^10.5",
@@ -217,8 +218,5 @@
                 "How to integrate Color Dialog with Color Button module (plugin)": "https://www.drupal.org/files/issues/2019-11-26/colorbutton-color-dialog-integration-3033682-5.patch"
             }
         }
-    },
-    "require-dev": {
-        "drupal/upgrade_status": "4.x-dev"
     }
 }
