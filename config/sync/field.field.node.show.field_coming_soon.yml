@@ -12,7 +12,7 @@ field_name: field_coming_soon
 entity_type: node
 bundle: show
 label: 'Prochainement en vente'
-description: 'Texte à afficher lorsque le spectacle n''est pas encore en vente.'
+description: "Texte à afficher lorsque le spectacle n'est pas encore en vente."
 required: false
 translatable: false
 default_value: {  }

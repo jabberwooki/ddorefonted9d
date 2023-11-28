@@ -11,7 +11,7 @@ id: node.offer.field_offer_kind
 field_name: field_offer_kind
 entity_type: node
 bundle: offer
-label: 'Nature de l''offre'
+label: "Nature de l'offre"
 description: ''
 required: true
 translatable: false

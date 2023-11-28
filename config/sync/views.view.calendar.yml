@@ -18,7 +18,7 @@ dependencies:
 id: calendar
 label: Calendrier
 module: views
-description: 'A calendar view of the ''Date(s)'' field in the ''Content'' base table'
+description: "A calendar view of the 'Date(s)' field in the 'Content' base table"
 tag: ''
 base_table: node_field_data
 base_field: nid

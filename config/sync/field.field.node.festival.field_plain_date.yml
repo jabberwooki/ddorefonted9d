@@ -10,7 +10,7 @@ field_name: field_plain_date
 entity_type: node
 bundle: festival
 label: 'Date en clair'
-description: 'Date à écrire en suivant la forme de l''exemple suivant : "Du 12 au 13 mai 2018". Elle s''affichera sur l''image de présentation du festival. '
+description: "Date à écrire en suivant la forme de l'exemple suivant : \"Du 12 au 13 mai 2018\". Elle s'affichera sur l'image de présentation du festival. "
 required: false
 translatable: false
 default_value: {  }

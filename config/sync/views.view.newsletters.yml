@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 id: newsletters
-label: 'Lettres d''info'
+label: "Lettres d'info"
 module: views
 description: ''
 tag: ''
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Lettres d''info'
+      title: "Lettres d'info"
       fields:
         title:
           id: title
@@ -194,7 +194,7 @@ display:
       path: lettres-infos
       menu:
         type: normal
-        title: 'Lettre d''info'
+        title: "Lettre d'info"
         description: ''
         weight: 4
         expanded: false

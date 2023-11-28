@@ -29,9 +29,9 @@ dependencies:
 _core:
   default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
 id: frontpage
-label: 'Page d''accueil'
+label: "Page d'accueil"
 module: node
-description: 'Tout le contenu promu en page d''accueil.'
+description: "Tout le contenu promu en page d'accueil."
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -93,7 +93,7 @@ display:
           plugin_id: text_custom
           label: ''
           empty: true
-          content: 'Aucun contenu de page d''accueil n''a été créé pour l''instant. Suivre le <a href="https://www.drupal.org/fr/docs/user_guide/fr/index.html">Guide utilisateur</a> pour démarrer la construction de votre site.'
+          content: "Aucun contenu de page d'accueil n'a été créé pour l'instant. Suivre le <a href=\"https://www.drupal.org/fr/docs/user_guide/fr/index.html\">Guide utilisateur</a> pour démarrer la construction de votre site."
           tokenize: false
         node_listing_empty:
           id: node_listing_empty
@@ -852,7 +852,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'Plus d''infos'
+          text: "Plus d'infos"
           output_url_as_text: false
           absolute: false
       pager:
@@ -2087,7 +2087,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Domaine d''O'
+      title: "Domaine d'O"
       empty: {  }
       sorts: {  }
       filters:

@@ -88,7 +88,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Nom d''utilisateur'
+          label: "Nom d'utilisateur"
           exclude: false
           alter:
             alter_text: false
@@ -511,7 +511,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'Personne n''est disponible.'
+          content: "Personne n'est disponible."
           tokenize: false
       sorts:
         created:

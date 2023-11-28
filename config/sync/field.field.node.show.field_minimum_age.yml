@@ -10,7 +10,7 @@ field_name: field_minimum_age
 entity_type: node
 bundle: show
 label: 'A partir de '
-description: 'Par défaut, l''unité de l''âge est l''année. Pour indiquer que l''âge minimum est de 6 mois, renseignez 0.5, pour 3 mois renseignez 0.25 et 0.75 pour 9 mois.'
+description: "Par défaut, l'unité de l'âge est l'année. Pour indiquer que l'âge minimum est de 6 mois, renseignez 0.5, pour 3 mois renseignez 0.25 et 0.75 pour 9 mois."
 required: true
 translatable: false
 default_value: {  }

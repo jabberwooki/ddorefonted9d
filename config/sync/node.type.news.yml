@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Evénement
 type: news
-description: 'News pour le domaine d''o'
+description: "News pour le domaine d'o"
 help: ''
 new_revision: false
 preview_mode: 1

@@ -70,6 +70,7 @@ permissions:
   - 'delete media'
   - 'delete own audio media'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own gallery media'
   - 'delete own image media'
   - 'delete own news content'

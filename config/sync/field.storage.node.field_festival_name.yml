@@ -19,19 +19,19 @@ settings:
       label: 'Printemps des comédiens'
     -
       value: folies-do
-      label: 'Folies d''O'
+      label: "Folies d'O"
     -
       value: radio-france
       label: 'Radio France'
     -
       value: nuits-do
-      label: 'Nuits d''O'
+      label: "Nuits d'O"
     -
       value: arabesques
       label: Arabesques
     -
       value: festival-hiver
-      label: 'Festival d''hiver'
+      label: "Festival d'hiver"
     -
       value: nuit-gitane
       label: 'Nuit Gitane'
@@ -52,7 +52,7 @@ settings:
       label: 'Montpellier Danse'
     -
       value: o-millesimes
-      label: 'O''Millésimes'
+      label: "O'Millésimes"
   allowed_values_function: ''
 module: options
 locked: false
