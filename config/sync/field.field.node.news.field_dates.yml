@@ -11,7 +11,7 @@ id: node.news.field_dates
 field_name: field_dates
 entity_type: node
 bundle: news
-label: 'Date(s) de l''événement'
+label: "Date(s) de l'événement"
 description: ''
 required: false
 translatable: true

@@ -1,2 +1,2 @@
 label: 'Remote audio'
-description: 'A remotely hosted audio file from SoundCloud, Spotify, or iHeartRadio.'
+description: 'A remotely hosted audio file from various oEmbed audio providers.'

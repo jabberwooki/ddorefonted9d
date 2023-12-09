@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Lettre d''info'
+name: "Lettre d'info"
 type: newsletter
 description: ''
 help: ''

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - comment
+    - file
     - media
     - search
     - system
@@ -17,6 +18,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'change own username'
+  - 'delete own files'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

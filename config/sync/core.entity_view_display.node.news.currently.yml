@@ -68,7 +68,7 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
-          'link text': 'Plus d''infos'
+          'link text': "Plus d'infos"
           'link class': ''
           wrapper: ''
           class: ''

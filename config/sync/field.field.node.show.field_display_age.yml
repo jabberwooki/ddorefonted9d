@@ -9,7 +9,7 @@ id: node.show.field_display_age
 field_name: field_display_age
 entity_type: node
 bundle: show
-label: 'Afficher l''âge sur la fiche spectacle'
+label: "Afficher l'âge sur la fiche spectacle"
 description: ''
 required: false
 translatable: false

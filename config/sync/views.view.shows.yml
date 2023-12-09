@@ -204,7 +204,7 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Sélectionnez n''importe quel filtre et cliquez sur Appliquer pour voir les résultats'
+          text_input_required: "Sélectionnez n'importe quel filtre et cliquez sur Appliquer pour voir les résultats"
           text_input_required_format: full_html
           bef:
             general:
@@ -375,7 +375,7 @@ display:
           exposed: true
           expose:
             operator_id: field_festival_target_id_op
-            label: 'Tous les spectacles au domaine d''O'
+            label: "Tous les spectacles au domaine d'O"
             description: ''
             use_operator: false
             operator: field_festival_target_id_op

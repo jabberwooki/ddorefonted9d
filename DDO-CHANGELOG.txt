@@ -1,3 +1,8 @@
+  * Modification de la fonction  ddo_mapado_get_data_for_mapado() pour pouvoir faire des tests Mapado depuis la recette.
+  * Suppression des 3 modules contrib de migration.
+  * Mise à niveau de Drupal 9.5.10 à 10.1.6 et mise à jour de plusieurs modules contrib.
+  * Calendrier : désactivation du plugin de vue 'DDO Calendar' pour revenir au plugin standard 'Calendar'.
+  * Merge tag 'v1.11' into develop
 Domaine d'O 1.11 - 2023-09-18
 -----------------------------
   * Mise à jour des modules contrib blazy, slick et slick_lightbox.

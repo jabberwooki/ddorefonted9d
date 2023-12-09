@@ -15,7 +15,7 @@ required: false
 translatable: false
 default_value:
   -
-    value: 'Montpellier > domaine d''O'
+    value: "Montpellier > domaine d'O"
 default_value_callback: ''
 settings: {  }
 field_type: string

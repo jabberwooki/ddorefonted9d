@@ -12,7 +12,7 @@ field_name: field_reimbursement
 entity_type: node
 bundle: show
 label: Remboursement
-description: 'Texte d''explication des modalités de remboursement en cas d''annulation de spectacle.'
+description: "Texte d'explication des modalités de remboursement en cas d'annulation de spectacle."
 required: false
 translatable: false
 default_value: {  }

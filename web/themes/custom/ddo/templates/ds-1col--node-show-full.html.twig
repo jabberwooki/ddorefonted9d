@@ -171,12 +171,13 @@
                         17 => '#cache'
                         ....
                       ]
+                      
                     Ce sont les clés 0 et 1 qui nous intéressent donc celles qui ne commencent pas par '#'
-                    Donc on fait ci-dessous une boucle sur field_location avec 'if key|first != '#'.
                     #}
-                    {% for key, item in field_location if key|first != '#' %}
-{#                      {{ dump(item) }}#}
-                      <div class="field__item">{{ item }}</div>
+                    {% for key, item in field_location %}
+                      {% if key|first != '#' %}
+                        <div class="field__item">{{ item }}</div>
+                      {% endif %}  
                     {% endfor %}
 
                   {% endif %}

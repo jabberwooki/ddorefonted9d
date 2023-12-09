@@ -196,7 +196,7 @@ function ddo_mapado_get_data_for_mapado(NodeInterface $node) {
     // Si je teste depuis mon dev local, le serveur d'images Mapado ne pourra pas me voir.
     // Donc je change pour l'url du serveur de prod qui, lui, sera accessible par Mapado.
     $host = $_SERVER['HTTP_HOST'];
-    if (strpos($host, ".localhost") !== false) {
+    if (strpos($host, ".localhost") !== false || strpos($host, "rece.") !== false) {
       $image_url = str_replace($host, 'www.domainedo.fr', $image_url);
     }
     $show_data['imageUrl'] = $image_url;

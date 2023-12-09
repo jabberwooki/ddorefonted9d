@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: secondary
 label: 'Navigation secondaire'
-description: 'Liens vers pages d''info domaine d''O...'
+description: "Liens vers pages d'info domaine d'O..."
 locked: false

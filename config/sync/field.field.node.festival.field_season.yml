@@ -10,7 +10,7 @@ field_name: field_season
 entity_type: node
 bundle: festival
 label: Saison
-description: 'Saisir l''année du festival. Un festival d''hiver étant à cheval sur 2 années, ne saisir que la première année. Par exemple, pour le festival d''hiver 2013/2014, saisir "2013".'
+description: "Saisir l'année du festival. Un festival d'hiver étant à cheval sur 2 années, ne saisir que la première année. Par exemple, pour le festival d'hiver 2013/2014, saisir \"2013\"."
 required: true
 translatable: false
 default_value: {  }

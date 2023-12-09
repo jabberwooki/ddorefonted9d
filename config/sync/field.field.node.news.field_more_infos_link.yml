@@ -11,7 +11,7 @@ id: node.news.field_more_infos_link
 field_name: field_more_infos_link
 entity_type: node
 bundle: news
-label: 'Lien plus d''infos'
+label: "Lien plus d'infos"
 description: ''
 required: false
 translatable: true
