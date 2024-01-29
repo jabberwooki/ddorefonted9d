@@ -19,7 +19,6 @@ module:
   colordialog: 0
   comment: 0
   config: 0
-  config_filter: 0
   config_ignore: 0
   contact: 0
   contextual: 0
