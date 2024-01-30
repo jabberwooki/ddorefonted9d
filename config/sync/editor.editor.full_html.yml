@@ -1,100 +1,87 @@
-uuid: 480de49d-7600-4fe0-9e29-256077ab5826
+uuid: 38d142d5-7e8b-4dcc-8b91-c688aa17e1ca
 langcode: fr
 status: true
 dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+    - ckeditor5
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Source
-          items:
-            - Source
-        -
-          name: 'Text Handling'
-          items:
-            - Cut
-            - Copy
-            - Paste
-            - PasteText
-            - PasteFromWord
-        -
-          name: 'Tools 1'
-          items:
-            - Undo
-            - Redo
-            - SpecialChar
-            - RemoveFormat
-        -
-          name: Media
-          items:
-            - DrupalImage
-            - DrupalMediaLibrary
-            - Table
-            - HorizontalRule
-            - '-'
-      -
-        -
-          name: 'Text Formatting'
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - Strike
-            - Subscript
-            - Superscript
-        -
-          name: Align
-          items:
-            - JustifyCenter
-            - JustifyRight
-            - JustifyLeft
-            - JustifyBlock
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-            - Blockquote
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
-      -
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-            - Styles
-        -
-          name: Color
-          items:
-            - TextColor
-            - BGColor
-        -
-          name: 'Tools 2'
-          items:
-            - ShowBlocks
-            - Maximize
+    items:
+      - sourceEditing
+      - '|'
+      - undo
+      - redo
+      - specialCharacters
+      - removeFormat
+      - '|'
+      - drupalInsertImage
+      - drupalMedia
+      - insertTable
+      - horizontalLine
+      - '-'
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - subscript
+      - superscript
+      - '|'
+      - alignment
+      - '|'
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - '|'
+      - link
+      - '-'
+      - heading
+      - style
   plugins:
-    stylescombo:
-      styles: "p.txt-intro|Intro\r\np.txt-intro-grenadine|Intro grenadine\r\np.txt-normal|Normal\r\np.clear|Clear"
-    colorbutton:
-      colors: ''
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: Intro
+          element: '<p class="txt-intro">'
+        -
+          label: 'Intro grenadine'
+          element: '<p class="txt-intro-grenadine">'
+        -
+          label: Normal
+          element: '<p class="txt-normal">'
+        -
+          label: Clear
+          element: '<p class="clear">'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0
