@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb713f87f63a53850ea4b589dd91922d",
+    "content-hash": "902e9c73d4a1360bc0f0a10fd5b344fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1983,6 +1983,62 @@
             "homepage": "https://www.drupal.org/project/cer",
             "support": {
                 "source": "https://git.drupalcode.org/project/cer"
+            }
+        },
+        {
+            "name": "drupal/ckeditor5_font",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor5_font.git",
+                "reference": "0eb37885634c28a148a349f4b6e52e4ec669cf55"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "ext-json": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "1.1.2-beta1+1-dev",
+                    "datestamp": "1702143358",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "devicious",
+                    "homepage": "https://www.drupal.org/user/3603391",
+                    "email": "ivan.sollima@gmail.com",
+                    "role": "author"
+                },
+                {
+                    "name": "renatog",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                }
+            ],
+            "description": "Allows to control the text and background color directly inside the CKEditor 5 interface.",
+            "homepage": "https://ckeditor.com/docs/ckeditor5/latest/features/font.html",
+            "keywords": [
+                "background-color",
+                "ckeditor5",
+                "color",
+                "font",
+                "text-color"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor5_font",
+                "issues": "http://drupal.org/project/issues/ckeditor5_font"
             }
         },
         {
@@ -10577,6 +10633,7 @@
     "stability-flags": {
         "drupal/calendar": 10,
         "drupal/cer": 10,
+        "drupal/ckeditor5_font": 20,
         "drupal/tvi": 15,
         "drupal/webform": 10,
         "furf/jquery-ui-touch-punch": 20
