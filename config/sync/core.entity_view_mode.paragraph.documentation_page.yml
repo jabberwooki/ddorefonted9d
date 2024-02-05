@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.documentation_page
 label: 'Page Documentation'
+description: ''
 targetEntityType: paragraph
 cache: true

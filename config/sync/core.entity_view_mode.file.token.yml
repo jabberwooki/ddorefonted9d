@@ -6,5 +6,6 @@ dependencies:
     - file
 id: file.token
 label: 'Jeton (token)'
+description: ''
 targetEntityType: file
 cache: true

@@ -21,39 +21,6 @@ name: 'HTML complet'
 format: full_html
 weight: -10
 filters:
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: 8
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: 9
-    settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: true
-    weight: 11
-    settings: {  }
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: false
-    weight: -10
-    settings:
-      allowed_html: '<p class="txt-intro txt-intro-grenadine txt-normal clear">'
-      filter_html_help: true
-      filter_html_nofollow: false
   blazy_filter:
     id: blazy_filter
     provider: blazy
@@ -69,6 +36,65 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<p class="txt-intro txt-intro-grenadine txt-normal clear">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        body_embeded: body_embeded
+        currently: currently
+        media_library: media_library
+        original: original
+        small_150: small_150
+        teaser: teaser
+        zoom: zoom
+      allowed_media_types:
+        document: document
+        gallery: gallery
+        image: image
+        remote_video: remote_video
   slick_filter:
     id: slick_filter
     provider: slick
@@ -112,29 +138,3 @@ filters:
       override: false
       preserve_keys: false
       visible_items: null
-  media_embed:
-    id: media_embed
-    provider: media
-    status: true
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes:
-        body_embeded: body_embeded
-        currently: currently
-        media_library: media_library
-        original: original
-        small_150: small_150
-        teaser: teaser
-        zoom: zoom
-      allowed_media_types:
-        document: document
-        gallery: gallery
-        image: image
-        remote_video: remote_video
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: 12
-    settings: {  }

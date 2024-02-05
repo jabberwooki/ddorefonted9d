@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.teaser_secondary
 label: 'Accroche secondaire'
+description: ''
 targetEntityType: node
 cache: true

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.list_too
 label: 'Liste aussi'
+description: ''
 targetEntityType: node
 cache: true

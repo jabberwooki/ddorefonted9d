@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.currently
 label: 'En ce moment'
+description: ''
 targetEntityType: node
 cache: true

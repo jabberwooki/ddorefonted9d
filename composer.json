@@ -76,6 +76,7 @@
         "drupal/calendar": "^1.0@beta",
         "drupal/cer": "^5.0@beta",
         "drupal/ckeditor5_font": "1.x-dev@dev",
+        "drupal/colorbutton": "^1.5",
         "drupal/config_ignore": "^3.2",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10",

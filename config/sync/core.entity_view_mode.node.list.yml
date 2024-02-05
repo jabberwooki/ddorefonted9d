@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.list
 label: Liste
+description: ''
 targetEntityType: node
 cache: true

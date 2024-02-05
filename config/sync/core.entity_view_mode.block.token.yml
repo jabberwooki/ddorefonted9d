@@ -6,5 +6,6 @@ dependencies:
     - block
 id: block.token
 label: 'Jeton (token)'
+description: ''
 targetEntityType: block
 cache: true

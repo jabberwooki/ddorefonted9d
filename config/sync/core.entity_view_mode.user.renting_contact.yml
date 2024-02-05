@@ -6,5 +6,6 @@ dependencies:
     - user
 id: user.renting_contact
 label: 'Contact location'
+description: ''
 targetEntityType: user
 cache: true

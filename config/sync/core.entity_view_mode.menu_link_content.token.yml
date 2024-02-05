@@ -6,5 +6,6 @@ dependencies:
     - menu_link_content
 id: menu_link_content.token
 label: 'Jeton (token)'
+description: ''
 targetEntityType: menu_link_content
 cache: true
