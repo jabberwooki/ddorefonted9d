@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.front_block
 label: 'Bloc accueil'
+description: ''
 targetEntityType: node
 cache: true

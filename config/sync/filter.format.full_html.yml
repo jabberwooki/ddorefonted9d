@@ -21,39 +21,6 @@ name: 'HTML complet'
 format: full_html
 weight: -10
 filters:
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: 8
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: 9
-    settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: true
-    weight: 11
-    settings: {  }
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: false
-    weight: -10
-    settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption style class> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <pre> <div class> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <u> <span style> <br> <p class=" txt-intro txt-intro-grenadine txt-normal clear"> <h1> <h2>'
-      filter_html_help: true
-      filter_html_nofollow: false
   blazy_filter:
     id: blazy_filter
     provider: blazy
@@ -69,39 +36,45 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
-  slick_filter:
-    id: slick_filter
-    provider: slick
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
     status: false
-    weight: 4
+    weight: -10
     settings:
-      optionset: default
-      layout: ''
-      background: false
-      box_media_style: ''
-      loading: ''
-      preload: false
-      box_style: ''
-      image_style: ''
-      media_switch: ''
-      ratio: ''
-      thumbnail_style: ''
-      skin: ''
-      overridables:
-        arrows: '0'
-        autoplay: '0'
-        dots: '0'
-        draggable: '0'
-        infinite: '0'
-        mouseWheel: '0'
-        randomize: '0'
-        variableWidth: '0'
-      optionset_thumbnail: ''
-      skin_thumbnail: ''
-      thumbnail_caption: ''
-      thumbnail_effect: ''
-      thumbnail_position: ''
-      override: false
+      allowed_html: '<p class="txt-intro txt-intro-grenadine txt-normal clear">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }
   media_embed:
     id: media_embed
     provider: media
@@ -122,9 +95,46 @@ filters:
         gallery: gallery
         image: image
         remote_video: remote_video
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: 12
-    settings: {  }
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      optionset: default
+      layout: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+      skin: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+      preserve_keys: false
+      visible_items: null

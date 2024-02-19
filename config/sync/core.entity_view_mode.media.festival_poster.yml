@@ -6,5 +6,6 @@ dependencies:
     - media
 id: media.festival_poster
 label: 'Affiche festival'
+description: ''
 targetEntityType: media
 cache: true

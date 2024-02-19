@@ -14,12 +14,10 @@ module:
   calendar: 0
   calendar_datetime: 0
   cer: 0
-  ckeditor: 0
-  colorbutton: 0
-  colordialog: 0
+  ckeditor5: 0
+  ckeditor5_font: 0
   comment: 0
   config: 0
-  config_filter: 0
   config_ignore: 0
   contact: 0
   contextual: 0
@@ -73,7 +71,6 @@ module:
   node: 0
   options: 0
   page_cache: 0
-  panelbutton: 0
   path: 0
   path_alias: 0
   phpass: 0

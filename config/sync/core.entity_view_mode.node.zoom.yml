@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.zoom
 label: Zoom
+description: ''
 targetEntityType: node
 cache: true

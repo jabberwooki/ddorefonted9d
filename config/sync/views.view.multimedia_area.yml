@@ -9,17 +9,17 @@ dependencies:
     - system.menu.ddofooter1
     - taxonomy.vocabulary.scald_tags
   content:
-    - 'taxonomy_term:scald_tags:1258cb9d-c9af-44bd-a04d-0760d59ad7ec'
-    - 'taxonomy_term:scald_tags:1cf0fdb3-4f12-4630-9bc4-319d2135e098'
-    - 'taxonomy_term:scald_tags:5dc5081d-d30e-471a-98f3-a98de2440844'
-    - 'taxonomy_term:scald_tags:5f61018d-bf2f-431a-aad0-d1200a0cb631'
-    - 'taxonomy_term:scald_tags:70affaf2-d5b9-4677-b36c-2d066fe51467'
-    - 'taxonomy_term:scald_tags:b38f3400-f751-4dd9-b2f3-0be7056a611b'
-    - 'taxonomy_term:scald_tags:b3a45b38-115c-4833-94bb-2fa545a038fc'
-    - 'taxonomy_term:scald_tags:b614ef0e-71d6-4cd7-9383-6aa9076897e8'
-    - 'taxonomy_term:scald_tags:b6e31dac-eeb8-4262-940d-3e769e722ff4'
-    - 'taxonomy_term:scald_tags:dd8ff506-bffa-4c34-84a0-0aae3a261311'
-    - 'taxonomy_term:scald_tags:eb9852cf-02a0-4512-9553-9b6e1e30b67f'
+    - 'taxonomy_term:scald_tags:0d5775dc-4bb4-450c-a2f7-c67d003b7709'
+    - 'taxonomy_term:scald_tags:4e92ed37-45dd-481b-b924-30a1e03b1fca'
+    - 'taxonomy_term:scald_tags:51f4e08e-aa57-4a2d-af9e-6fb6eec19907'
+    - 'taxonomy_term:scald_tags:55e7c011-b0b8-4de9-be71-01151b4a1f31'
+    - 'taxonomy_term:scald_tags:638f168c-02c4-4c41-8d4b-4f64c8ad9241'
+    - 'taxonomy_term:scald_tags:6701c75d-fdda-4b87-849a-fcc53735c3cd'
+    - 'taxonomy_term:scald_tags:6d0654a4-31f9-47a2-b6f3-ca65ea2bf8a7'
+    - 'taxonomy_term:scald_tags:7137d6dd-bd83-4aae-afb1-a50b5f988726'
+    - 'taxonomy_term:scald_tags:b88f3e08-2073-4069-8af4-dfe5dbc1dd3f'
+    - 'taxonomy_term:scald_tags:c4c7b6da-976a-4670-8a0c-8d6e3b943e77'
+    - 'taxonomy_term:scald_tags:ebe47bce-26ea-4e8b-87e5-b2bb7741640b'
   module:
     - better_exposed_filters
     - draggableviews
@@ -327,7 +327,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - user.permissions
       tags: {  }
   galleries:
@@ -526,7 +525,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - user.permissions
       tags: {  }
   page_1:
@@ -868,6 +866,5 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user
         - user.permissions
       tags: {  }

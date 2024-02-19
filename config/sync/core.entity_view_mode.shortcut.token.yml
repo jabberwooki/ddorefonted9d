@@ -6,5 +6,6 @@ dependencies:
     - shortcut
 id: shortcut.token
 label: 'Jeton (token)'
+description: ''
 targetEntityType: shortcut
 cache: true

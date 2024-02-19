@@ -9,6 +9,7 @@ dependencies:
     - draggableviews
     - file
     - filter
+    - help
     - node
     - path
     - redirect
@@ -22,6 +23,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access draggableviews'
+  - 'access help pages'
   - 'access site in maintenance mode'
   - 'administer menu'
   - 'administer redirects'
