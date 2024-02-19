@@ -1,8 +1,19 @@
-  * Modification de la fonction  ddo_mapado_get_data_for_mapado() pour pouvoir faire des tests Mapado depuis la recette.
+
+
+  * Désinstallation de colorbutton (donc de panelbutton et de ckeditor (version4)).
+  * Export de la configuration.
+  * Install de ckeditor5_font (en remplacement de colorbutton).
+  * Mise à jour de sécurité noyau : 10.1.6 -> 10.2.2
+  * Mise à jour de config_ignore, passé de 2.4 à 3.2. Désactivation de config_filter qui n'est plus requis par config_ignore.
+
+Domaine d'O 2.0 - 2023-12-09
+----------------------------
+  * Mise à niveau vers Drupal 10
+  * Modification de la fonction ddo_mapado_get_data_for_mapado() pour pouvoir faire des tests Mapado depuis la recette.
   * Suppression des 3 modules contrib de migration.
   * Mise à niveau de Drupal 9.5.10 à 10.1.6 et mise à jour de plusieurs modules contrib.
   * Calendrier : désactivation du plugin de vue 'DDO Calendar' pour revenir au plugin standard 'Calendar'.
-  * Merge tag 'v1.11' into develop
+
 Domaine d'O 1.11 - 2023-09-18
 -----------------------------
   * Mise à jour des modules contrib blazy, slick et slick_lightbox.
