@@ -33,7 +33,7 @@ calendar:
     js/ddo_calendar.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
 technique:
   version: VERSION 1
