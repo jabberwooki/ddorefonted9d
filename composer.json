@@ -74,6 +74,7 @@
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/bootstrap_sass": "^5.0",
         "drupal/calendar": "^1.0@beta",
+        "drupal/calendar_view": "^2.1",
         "drupal/cer": "^5.0@beta",
         "drupal/ckeditor5_font": "1.x-dev@dev",
         "drupal/config_ignore": "^3.2",

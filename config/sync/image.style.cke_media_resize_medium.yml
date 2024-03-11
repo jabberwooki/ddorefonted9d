@@ -1,0 +1,17 @@
+uuid: a8a8745e-c1c2-452e-9364-e11b05464b1f
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zAFtD3OJrYvCinzueefJXCnM63N8QUmmosay-B5P45Q
+name: cke_media_resize_medium
+label: 'CKE Media Resize Medium (width 500)'
+effects:
+  ec672983-a4ee-48e5-9712-d4f97fadfa02:
+    uuid: ec672983-a4ee-48e5-9712-d4f97fadfa02
+    id: image_scale
+    weight: 1
+    data:
+      width: 500
+      height: null
+      upscale: true

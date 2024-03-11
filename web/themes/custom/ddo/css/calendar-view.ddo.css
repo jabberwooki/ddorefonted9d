@@ -1,0 +1,64 @@
+/* Pager */
+ul.calendar-view-pager {
+  margin-top: 2em;
+  margin-bottom: 0;
+
+  list-style: none;
+}
+ul.calendar-view-pager li.pager__item {
+  padding: 0;
+}
+ul.calendar-view-pager li.pager__item a {
+  font-size: 110%;
+  padding: 0;
+}
+ul.calendar-view-pager li.pager__item.pager__current div {
+  display: none;
+}
+
+/* Calendar */
+.calendar-view-table {
+  --calendar-view-columns: 7;
+  --calendar-view-color-white: #fff;
+  --calendar-view-color-light: #f4f4f4;
+  --calendar-view-color-grey: #ccc;
+  --calendar-view-color-gray: #555;
+  --calendar-view-color-evil: #666;
+  --calendar-view-color-dark: #333;
+}
+.calendar-view-table caption {
+  font-size: 150%;
+  padding: 0;
+  line-height: 2;
+}
+.calendar-view-table td {
+  border: 0;
+  border-bottom: 1px solid;
+}
+
+.calendar-view-table .calendar-view-day__number,
+.calendar-view-table .previous-month .calendar-view-day__number,
+.calendar-view-table .next-month .calendar-view-day__number {
+  background: none;
+  /* color: black; */
+  font-size: 140%;
+  padding: 0;
+  margin-bottom: 0;
+}
+.calendar-view-table .calendar-view-day__number {
+  color: black;
+  align-self: center;
+}
+.calendar-view-table .previous-month .calendar-view-day__number,
+.calendar-view-table .next-month .calendar-view-day__number {
+  color: gray;
+}
+.calendar-view-table .views-field-title {
+  font-size: 120%;
+}
+.calendar-view-table .views-field-field-dates {
+  font-size: 130%;
+}
+.calendar-view-table .today .calendar-view-day__number {
+  color: #f74e2d;
+}
