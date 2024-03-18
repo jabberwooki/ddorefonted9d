@@ -13,6 +13,7 @@ module:
   breakpoint: 0
   calendar: 0
   calendar_datetime: 0
+  calendar_view: 0
   cer: 0
   ckeditor5: 0
   ckeditor5_font: 0

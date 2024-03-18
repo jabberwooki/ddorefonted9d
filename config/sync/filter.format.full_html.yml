@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.body_embeded
-    - core.entity_view_mode.media.currently
     - core.entity_view_mode.media.media_library
     - core.entity_view_mode.media.original
+    - core.entity_view_mode.media.slideshow
     - core.entity_view_mode.media.small_150
     - core.entity_view_mode.media.teaser
     - core.entity_view_mode.media.zoom
@@ -84,9 +84,9 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         body_embeded: body_embeded
-        currently: currently
         media_library: media_library
         original: original
+        slideshow: slideshow
         small_150: small_150
         teaser: teaser
         zoom: zoom

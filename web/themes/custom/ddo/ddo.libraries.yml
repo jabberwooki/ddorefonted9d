@@ -33,8 +33,15 @@ calendar:
     js/ddo_calendar.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
+calendarview:
+  version: 1.0
+  css:
+    component:
+      # Weight not necessary but it makes sure this
+      # stylesheet is loaded after defaults.
+      css/calendar-view.ddo.css: { weight: 1 }
 technique:
   version: VERSION 1
   js:

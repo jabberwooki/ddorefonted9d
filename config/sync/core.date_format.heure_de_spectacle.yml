@@ -1,0 +1,8 @@
+uuid: 7103291b-e8c8-4926-948c-7927b80b9fcd
+langcode: fr
+status: true
+dependencies: {  }
+id: heure_de_spectacle
+label: 'Heure de spectacle'
+locked: false
+pattern: H\hi

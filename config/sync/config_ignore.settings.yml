@@ -4,3 +4,4 @@ langcode: fr
 mode: simple
 ignored_config_entities:
   - ddo_mapado.settings
+  - simple_block.simple_block.team_head.yml
