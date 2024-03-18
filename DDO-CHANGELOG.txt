@@ -1,5 +1,12 @@
+Domaine d'O 2.1 - 2024-03-18
+----------------------------
+  * Désactivation du calendrier d'origine (module Calendar). Remplacé par le calendrier alternatif (module Calendar View, version image rectangulaire).
+  * Création du calendrier alternatif en 3 versions (image carrée, bandeau, pas d'image).
+  * Correction du bug d'affichage du calendrier d'origine.
+  * Ajout du paramétrage du Simple Block 'Entête équipe' (team_head) à Config Ignore.
 
-
+Domaine d'O 2.1 - 2024-02-19
+----------------------------
   * Désinstallation de colorbutton (donc de panelbutton et de ckeditor (version4)).
   * Export de la configuration.
   * Install de ckeditor5_font (en remplacement de colorbutton).
