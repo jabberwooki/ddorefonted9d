@@ -3,3 +3,10 @@ mapado.sync.status:
   css:
     theme:
       css/mapado-sync.css: {}
+mapado.shows.handling:
+  version: 1.0
+  css:
+    theme:
+      css/mapado-shows-handling.css: {}
+  js:
+    js/mapado-shows-handling.js: {}
