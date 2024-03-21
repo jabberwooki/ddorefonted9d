@@ -248,7 +248,7 @@ function ddo_mapado_is_sync_enabled() {
 function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -323,7 +323,7 @@ function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -522,7 +522,7 @@ function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
     }
