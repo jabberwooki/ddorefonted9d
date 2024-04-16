@@ -1,4 +1,10 @@
-Domaine d'O 2.1 - 2024-03-18
+Domaine d'O 2.2.1 - 2024-04-16
+------------------------------
+  * Modification module Mapado : pas d'interaction avec Mapado si le spectacle créé, modifié ou supprimé est externalisé (field_reservation = 7).
+  * Modification module Mapado : pas d'interaction avec Mapado si le spectacle créé, modifié ou supprimé est externalisé (field_reservation = 7).
+  * Modification de l'entête de la page Equipe (T.Negrou -> D.Girard).
+  
+Domaine d'O 2.2 - 2024-03-18
 ----------------------------
   * Désactivation du calendrier d'origine (module Calendar). Remplacé par le calendrier alternatif (module Calendar View, version image rectangulaire).
   * Création du calendrier alternatif en 3 versions (image carrée, bandeau, pas d'image).

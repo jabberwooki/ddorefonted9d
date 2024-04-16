@@ -66,6 +66,15 @@ function ddo_mapado_form_alter(&$form, FormStateInterface $form_state, $form_id)
       $form['field_mapado_dates_ids']['#disabled'] = true;
       $form['field_mapado_ticketing']['#disabled'] = true;
     }
+
+    $msg = '<div id="reservation-warning-message">';
+    $msg .= '<p>';
+    $msg .= 'ATTENTION ! En sélectionant <i>externalisé</i>, le spectacle que vous êtes en train de créer sur le site web du domaine d\'O ';
+    $msg .= 'ne sera pas créé sur le site de la billetterie Mapado.</p>';
+    $msg .= '</div';
+
+    $form['field_reservation']['#suffix'] = $msg;
+    $form['#attached']['library'][] = 'ddo_mapado/mapado.shows.handling';
   }
 }
 
@@ -248,7 +257,7 @@ function ddo_mapado_is_sync_enabled() {
 function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -323,7 +332,7 @@ function ddo_mapado_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début');
     }
@@ -522,7 +531,7 @@ function ddo_mapado_node_update(Drupal\Core\Entity\EntityInterface $entity) {
 function ddo_mapado_node_delete(Drupal\Core\Entity\EntityInterface $entity) {
   $is_logger_on = false;
 
-  if (($bundle = $entity->bundle()) == 'show' && ddo_mapado_is_sync_enabled()) {
+  if (($bundle = $entity->bundle()) == 'show' && $entity->field_reservation->value != 7 && ddo_mapado_is_sync_enabled()) {
     if ($is_logger_on) {
       \Drupal::logger('ddo_mapado')->info("Fonction " . __FUNCTION__ . ' - Début' );
     }
