@@ -9,7 +9,7 @@
     justify-content: space-between;
     &:after {
       content: "" !important;
-      display: none!important;
+      display: none !important;
     }
     .btn-more-tech {
       margin: 0 !important;
@@ -25,7 +25,6 @@
         flex-basis: calc(100% / 3.1);
       }
     }
-
   }
 
   .technique-teaser {
@@ -67,7 +66,7 @@
         font-size: 1rem;
         padding-bottom: 12px;
         display: block;
-        color: #FFF;
+        color: #fff;
         padding: 50% 5px 10px 10px;
         margin: 0;
         text-decoration: none;
@@ -78,13 +77,10 @@
   .field--name-body {
     padding-top: 20px;
   }
-
-
 }
 
 /* Une page de lieu pour la technique */
 body.node--type-documentation {
-
   .div-image-style-banner {
     position: relative;
     display: block;
@@ -129,7 +125,7 @@ body.node--type-documentation {
       position: absolute;
       z-index: 2;
       bottom: 20px;
-      .field--name-title{
+      .field--name-title {
         font-size: 2.25rem;
         @include media-breakpoint-down(md) {
           font-size: 1.2rem;
@@ -141,14 +137,18 @@ body.node--type-documentation {
         font-style: normal;
         font-weight: 800;
       }
-
     }
   }
   .content-with-banner-img {
     padding-top: 20px;
   }
+
+  .paragraph--type--galleries {
+    margin-bottom: 2rem;
+  }
+
   .open-close {
-    background-color: #EFEFEF;
+    background-color: #efefef;
     margin-bottom: 5px;
     padding: 10px;
 
@@ -163,13 +163,15 @@ body.node--type-documentation {
           &:after {
             float: right;
             @extend %icon-fontello;
-            content: "\e836";
+            // content: "\e836";
+            content: "\e835";
             font-size: 1rem;
             color: black;
           }
           &.open {
             &:after {
-              content: "\e835";
+              // content: "\e835";
+              content: "\e836";
               color: map-get($theme-colors, "secondary");
             }
           }
@@ -177,6 +179,7 @@ body.node--type-documentation {
       }
     }
   }
+
   .field--name-field-references {
     > .field__label {
       font-size: 1em;
@@ -205,4 +208,3 @@ body.node--type-documentation {
     }
   }
 }
-
