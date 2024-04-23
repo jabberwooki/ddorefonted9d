@@ -1,3 +1,7 @@
+Domaine d'O 2.2.2 - 2024-04-23
+------------------------------
+  * Réparation de la mise en page des paragraphes documents dans la page d'un espace technique suite à disparition de jquery.once() en Drupal 10.
+
 Domaine d'O 2.2.1 - 2024-04-16
 ------------------------------
   * Modification module Mapado : pas d'interaction avec Mapado si le spectacle créé, modifié ou supprimé est externalisé (field_reservation = 7).
