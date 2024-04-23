@@ -7,17 +7,25 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.ddo_technique = {
     attach: function (context, settings) {
+      $(document, context).each(function () {
+        $(".paragraph--type--documents")
+          .parents(".custom-paragraph")
+          .addClass("open-close");
 
-      $(document, context).once('ddo_technique').each(function () {
-        console.log("dans technique.js");
-        console.log("Suppresion des paragraphes documents !");
-        $(".paragraph--type--documents").parents(".custom-paragraph").addClass("open-close");
         $(".open-close .field--name-field-document-sets").hide();
-        $(".open-close .layout--onecol .field--name-field-title").click(function() {
-          $(this).toggleClass("open");
-          $(this).next(".field--name-field-document-sets").slideToggle();
-        })
+
+        $(".open-close .layout--onecol .field--name-field-title").click(
+          function () {
+            $(this).toggleClass("open");
+
+            if ($(this).hasClass("open")) {
+              $(this).next(".field--name-field-document-sets").show();
+            } else {
+              $(this).next(".field--name-field-document-sets").hide();
+            }
+          }
+        );
       });
-    }
-  }
-}(jQuery, Drupal, drupalSettings));
+    },
+  };
+})(jQuery, Drupal, drupalSettings);
