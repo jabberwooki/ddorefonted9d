@@ -112,7 +112,6 @@
         "drupal/tvi": "^2.0@alpha",
         "drupal/twig_tools": "^2.0",
         "drupal/twig_tweak": "^3.1",
-        "drupal/upgrade_status": "^4.0",
         "drupal/webform": "^6.2@beta",
         "drupal/xmlsitemap": "^1.0",
         "drush/drush": "^12",
