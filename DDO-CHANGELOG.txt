@@ -1,3 +1,7 @@
+Domaine d'O 2.2.2 - 2024-05-21
+------------------------------
+  * Mise à jour de sécurité 2024-2.
+
 Domaine d'O 2.2.2 - 2024-04-23
 ------------------------------
   * Réparation de la mise en page des paragraphes documents dans la page d'un espace technique suite à disparition de jquery.once() en Drupal 10.
