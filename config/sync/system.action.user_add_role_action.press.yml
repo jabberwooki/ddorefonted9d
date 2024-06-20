@@ -1,0 +1,14 @@
+uuid: ef9438b6-f683-4472-bbb6-256ab38bad62
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.press
+  module:
+    - user
+id: user_add_role_action.press
+label: 'Ajouter le rôle Presse aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: press

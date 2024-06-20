@@ -1,0 +1,9 @@
+uuid: d8bf591d-ad48-416f-8e59-62a419d22be2
+langcode: fr
+status: true
+dependencies: {  }
+id: press
+label: presse
+weight: 6
+is_admin: null
+permissions: {  }
