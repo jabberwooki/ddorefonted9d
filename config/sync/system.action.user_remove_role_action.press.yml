@@ -1,0 +1,14 @@
+uuid: 175e7e1f-2967-48e0-ad80-6ceb239049f1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.press
+  module:
+    - user
+id: user_remove_role_action.press
+label: 'Enlever le rôle Presse des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: press

@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: XagQZizpnAiRDP6kTFGxwkMtEItIf5zudBEmfFbOVWE
+langcode: fr
+permission_mode: false
+require_all_terms_granted: false
+disable_node_access_records: false
+target_bundles:
+  - espace_pro
+show_terms_in_user_form: true
+only_parents: 0
