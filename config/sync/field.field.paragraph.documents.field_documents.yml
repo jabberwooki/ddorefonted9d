@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_documents
     - media.type.document
+    - media.type.image
     - paragraphs.paragraphs_type.documents
 id: paragraph.documents.field_documents
 field_name: field_documents
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       document: document
+      image: image
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: document
 field_type: entity_reference
