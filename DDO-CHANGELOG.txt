@@ -1,3 +1,8 @@
+Domaine d'O 2.4.1 - 2024-07-01
+------------------------------
+  * Modif mode d'affichage 'Page Documentation' : Le champ 'Médias document' n'affiche plus le média rendu mais seulement le titre cliquable du media.
+  * Modif du champ 'Media document' dans le bundle 'Groupe de documents' : les média autorisés sont Document et maintenant Image.
+
 Domaine d'O 2.4 - 2024-06-24
 ----------------------------
   * Mise en place du contrôle d'accès à l'espace Presse.
