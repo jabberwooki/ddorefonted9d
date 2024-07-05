@@ -116,3 +116,9 @@ function ddo_preprocess_views_view(&$variables) {
     }
   }
 }
+
+function ddo_preprocess_page__403(&$variables){
+  //$referer = $_SERVER('')
+  $request_uri = $_SERVER['REQUEST_URI'];
+  $variables['request_uri'] = $request_uri;
+}

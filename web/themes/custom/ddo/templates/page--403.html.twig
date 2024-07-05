@@ -99,7 +99,7 @@
             <main{{ content_attributes }}>
               <section class="section">
                 <a id="main-content" tabindex="-1"></a>
-
+                {% if request_uri == '/espace-pro/presse' %}
                 <div id="block-ddo-content" class="block block-system block-system-main-block">
                   <div class="content">
                     <div class="d-flex p-2 m-4 flex-column">
@@ -112,7 +112,9 @@
                     </div>
                   </div>
                 </div>
-                
+                {% else %}
+                  {{ page.content }}
+                {% endif %}
               </section>
             </main>
             {% if page.sidebar_first %}
