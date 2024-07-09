@@ -8,7 +8,7 @@
  * - sync_enabled : The boolean status enabled/disabled of the Mapado synchronization process.
  */
 #}
-{% if logged_in %}
+{% if logged_in and not is_press %}
   <div id="madado-sync-status" class="container {{ mapado_class }}">
     <div class="row">
       <div class="mapado-sync">La synchronisation Mapado <span class="sync-status">{{ sync_enabled ? "EST" : "N'EST PAS" }}</span> activée</div>

@@ -908,6 +908,7 @@ function ddo_mapado_theme($existing, $type, $theme, $path) {
         'block_title' => NULL,
         'sync_enabled' => NULL,
         'mapado_class' => NULL,
+        'is_press' => NULL,
       ],
     ],
   ];

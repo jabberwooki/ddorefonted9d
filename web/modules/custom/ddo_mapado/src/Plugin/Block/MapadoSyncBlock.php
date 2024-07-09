@@ -27,11 +27,18 @@ class MapadoSyncBlock extends BlockBase {
       $mapado_class = "disabled";
     }
 
+    $is_press = false;
+    $user_roles = \Drupal::currentUser()->getRoles();
+    if (in_array('press',$user_roles)) {
+      $is_press = true;
+    }
+
     return [
       '#theme' => 'ddo_mapado_block',
       '#block_title' => $block_title,
       '#sync_enabled' => $sync_enabled,
       '#mapado_class' => $mapado_class,
+      '#is_press' => $is_press,
       '#cache' => ['max-age' => 0],
       '#attached' => ['library' => ['ddo_mapado/mapado.sync.status']],
     ];
