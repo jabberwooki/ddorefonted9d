@@ -7,7 +7,7 @@ dependencies:
     - field.field.media.image.field_authors
     - field.field.media.image.field_media_image
     - field.field.media.image.field_tags
-    - image.style.3_2_image
+    - image.style.thumbnail
     - media.type.image
   module:
     - ds
@@ -33,8 +33,8 @@ content:
     type: image
     label: visually_hidden
     settings:
-      image_link: ''
-      image_style: 3_2_image
+      image_link: file
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }
