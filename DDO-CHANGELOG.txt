@@ -1,3 +1,11 @@
+Domaine d'O 2.4.2 - 2024-07-10
+------------------------------
+  * Améliorations de la connexion sous le compte Presse et du téléchargement des médias de l'espace Presse (cf demandes M.Brunel, email du 05/07/24 à 9h59).
+  * Espace Presse : le lien sur un média Document déclenche le téléchargement du fichier PDF au lien d'afficher la page du média.
+  * Redirection vers l'espace presse après connexion depuis l'espace presse.
+  * Modification du template page--403.html.twig pour n'afficher le message et le lien vers la page de login que lorsqu'on demande l'espace Presse.
+  * Installation du module userprotect pour interdire aux comptes avec rôle 'presse' d'accéder à la modification de leur compte.
+
 Domaine d'O 2.4.1 - 2024-07-01
 ------------------------------
   * Modif mode d'affichage 'Page Documentation' : Le champ 'Médias document' n'affiche plus le média rendu mais seulement le titre cliquable du media.
