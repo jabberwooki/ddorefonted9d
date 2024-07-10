@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.documents.field_title
     - paragraphs.paragraphs_type.documents
   module:
+    - ds
     - link
 id: paragraph.documents.default
 targetEntityType: paragraph
@@ -20,8 +21,10 @@ content:
     label: hidden
     settings:
       view_mode: default
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
     weight: 1
     region: content
   field_lien:

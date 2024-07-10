@@ -18,10 +18,11 @@ bundle: documents
 mode: documentation_page
 content:
   field_documents:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: documentation_page
+      link: false
     third_party_settings:
       ds:
         ds_limit: ''

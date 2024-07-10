@@ -29,6 +29,7 @@ dependencies:
     - path
     - system
     - toolbar
+    - userprotect
 id: redacteur
 label: redacteur
 weight: 4
@@ -101,6 +102,9 @@ permissions:
   - 'update any media'
   - 'update media'
   - 'use text format full_html'
+  - userprotect.account.edit
+  - userprotect.mail.edit
+  - userprotect.pass.edit
   - 'view all media revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

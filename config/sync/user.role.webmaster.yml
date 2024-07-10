@@ -48,6 +48,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - userprotect
 id: webmaster
 label: webmaster
 weight: 5
@@ -169,6 +170,9 @@ permissions:
   - 'update media'
   - 'use text format full_html'
   - 'use text format html_free'
+  - userprotect.account.edit
+  - userprotect.mail.edit
+  - userprotect.pass.edit
   - 'view all media revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
