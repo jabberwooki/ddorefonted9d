@@ -6,3 +6,4 @@ name: 'Scald tags'
 vid: scald_tags
 description: 'Scald tags vocabulary'
 weight: -5
+new_revision: false

@@ -6,3 +6,4 @@ name: Authors
 vid: scald_authors
 description: 'Scald authors vocabulary'
 weight: -5
+new_revision: false

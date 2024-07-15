@@ -1,6 +1,5 @@
 _core:
   default_config_hash: tUvxXUiLb13cpxShHqanK2DwUCio3KYGgJfOlt3vjEM
-langcode: fr
 bootstrap_barrio_library: production
 bootstrap_barrio_fluid_container: 0
 bootstrap_barrio_sidebar_position: both

@@ -255,6 +255,7 @@ display:
             previous: '‹ Previous'
             first: '« Début'
             last: 'Dernier »'
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:

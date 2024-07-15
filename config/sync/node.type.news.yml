@@ -11,7 +11,7 @@ third_party_settings:
 name: Evénement
 type: news
 description: "News pour le domaine d'o"
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false
