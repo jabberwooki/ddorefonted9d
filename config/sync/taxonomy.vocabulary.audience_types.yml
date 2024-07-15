@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Types de public'
 vid: audience_types
-description: ''
+description: null
 weight: 0
+new_revision: false

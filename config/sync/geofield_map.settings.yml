@@ -1,6 +1,5 @@
 _core:
   default_config_hash: 0cOpr1OyXWdffdvJFlXdoNQpPest7EYeepdwUe7U9pQ
-langcode: fr
 gmap_api_key: AIzaSyCRnn-IbnP1GT93oqYWzxG5z25idn0FUc4
 gmap_api_localization: default
 theming:

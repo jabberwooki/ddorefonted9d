@@ -6,3 +6,4 @@ name: 'Webpush topics'
 vid: webpush_topics
 description: 'Categorization topics for your push notifications.'
 weight: 0
+new_revision: false

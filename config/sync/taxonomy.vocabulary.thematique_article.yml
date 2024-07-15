@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Thématique article'
 vid: thematique_article
-description: ''
+description: null
 weight: 0
+new_revision: false
