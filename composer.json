@@ -210,7 +210,8 @@
                 "Add Views EntityReference filter to be available for all entity reference fields": "https://www.drupal.org/files/issues/2021-12-02/2429699-453-9.3.x.patch"
             },
             "drupal/ckeditor5_font": {
-                "'no config schema' Error": "https://www.drupal.org/files/issues/2024-01-11/ckeditor5_font-schema-fix-10.2.1-3368736-37.patch"
+                "'no config schema' Error": "https://www.drupal.org/files/issues/2024-01-11/ckeditor5_font-schema-fix-10.2.1-3368736-37.patch",
+                "The mapping definition is invalid - patch 47": "https://www.drupal.org/files/issues/2024-06-25/ckeditor5_font-schema-fix-10.3.x-3368736-47.patch"
             }
         }
     }
