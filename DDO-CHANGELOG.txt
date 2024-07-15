@@ -1,3 +1,9 @@
+Domaine d'O 2.5 - 2024-07-15
+----------------------------
+  * Mise à jour de sécurité 2024-3 : Mise à jour des modules better_exposed_filters, ctools, crop, ds, draggableviews, geofield, geofield_map, imce, rebuild_cache_access et webform. Mise à jour du module contrib bootstrap_barrio.
+  * Désactivation des modules calendar et calendar_datetime.
+  * Mise à jour de sécurité 2024-3 : mise à jour noyau 10.2.6 -> 10.3.1
+  * Amélioration de la connexion avec le rôle Presse.
 Domaine d'O 2.4.2 - 2024-07-10
 ------------------------------
   * Améliorations de la connexion sous le compte Presse et du téléchargement des médias de l'espace Presse (cf demandes M.Brunel, email du 05/07/24 à 9h59).
