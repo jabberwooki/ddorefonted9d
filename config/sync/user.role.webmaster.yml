@@ -44,6 +44,7 @@ dependencies:
     - path
     - rebuild_cache_access
     - redirect
+    - redis
     - sharethis
     - system
     - taxonomy
@@ -62,6 +63,7 @@ permissions:
   - 'access draggableviews'
   - 'access files overview'
   - 'access help pages'
+  - 'access redis report'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access toolbar'
