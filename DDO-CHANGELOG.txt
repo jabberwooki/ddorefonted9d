@@ -1,3 +1,10 @@
+Domaine d'O 2.6 - 2024-09-23
+****************************
+  * Export de configs oublié dans le commit précédent.
+  * Mise à jour de sécurité 2024-4 : Noyau 10.3.1 -> 10.3.5 ---  modules admin_toolbar, ds, entity_reference_revisions, field_group, geofield, geofield_map, imce, libraries, media_library_edit, media_remote_audio, paragraphs, pathauto, rebuild_cache_access, redirect, redis, simple_block, token, twig_tweak, views_templates, webform --- theme bootstrap_barrio.
+  * Nettoyage Git
+  * Passage du projet sous DDEV.
+  
 Domaine d'O 2.5 - 2024-07-15
 ----------------------------
   * Mise à jour de sécurité 2024-3 : Mise à jour des modules better_exposed_filters, ctools, crop, ds, draggableviews, geofield, geofield_map, imce, rebuild_cache_access et webform. Mise à jour du module contrib bootstrap_barrio.
