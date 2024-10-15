@@ -54,6 +54,7 @@ docker-compose.yml
 
 # Environment files
 .env*
+tags
 
 # Gulp dependencies and generated files
 /web/node_modules/
