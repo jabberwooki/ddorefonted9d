@@ -40,21 +40,6 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-{#  {{ title_prefix }}#}
-{#  {% if title %}#}
-{#    {{ title }}#}
-{#  {% endif %}#}
-{#  {{ title_suffix }}#}
-{#  {% if header %}#}
-{#    <div class="view-header">#}
-{#      {{ header }}#}
-{#    </div>#}
-{#  {% endif %}#}
-{#  {% if exposed %}#}
-{#    <div class="view-filters">#}
-{#      {{ exposed }}#}
-{#    </div>#}
-{#  {% endif %}#}
   {% if attachment_before %}
     <div class="attachment attachment-before">
       {{ attachment_before }}
@@ -62,7 +47,7 @@
   {% endif %}
 
   {% if rows %}
-    <div class="view-content row col-md-6 offset-md-3">
+    <div class="view-content row justify-content-center">
       {{ rows }}
     </div>
   {% elseif empty %}
@@ -71,9 +56,6 @@
     </div>
   {% endif %}
 
-{#  {% if pager %}#}
-{#    {{ pager }}#}
-{#  {% endif %}#}
   {% if attachment_after %}
     <div class="attachment attachment-after">
       {{ attachment_after }}
@@ -82,14 +64,4 @@
   {% if more %}
     {{ more }}
   {% endif %}
-{#  {% if footer %}#}
-{#    <div class="view-footer">#}
-{#      {{ footer }}#}
-{#    </div>#}
-{#  {% endif %}#}
-{#  {% if feed_icons %}#}
-{#    <div class="feed-icons">#}
-{#      {{ feed_icons }}#}
-{#    </div>#}
-{#  {% endif %}#}
 </div>
