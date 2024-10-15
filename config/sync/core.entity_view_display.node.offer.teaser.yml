@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
-    - field.field.node.offer.field_media_image
     - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
@@ -16,16 +15,7 @@ id: node.offer.teaser
 targetEntityType: node
 bundle: offer
 mode: teaser
-content:
-  field_media_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: small_150
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   body: true
   field_festival: true

@@ -5,14 +5,11 @@ dependencies:
   config:
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
-    - field.field.node.offer.field_media_image
     - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
   module:
     - link
-    - media_library
-    - media_library_edit
     - path
     - text
 id: node.offer.default
@@ -46,15 +43,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_media_image:
-    type: media_library_widget
-    weight: 4
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
   field_offer_kind:
     type: options_select
     weight: 2

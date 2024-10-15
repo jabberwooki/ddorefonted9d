@@ -6,12 +6,10 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.offer.body
     - field.field.node.offer.field_festival
-    - field.field.node.offer.field_media_image
     - field.field.node.offer.field_offer_kind
     - field.field.node.offer.field_ticketing_url
     - node.type.offer
   module:
-    - blazy
     - ds
     - link
     - text
@@ -62,42 +60,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_media_image:
-    type: blazy_media
-    label: hidden
-    settings:
-      caption: {  }
-      class: ''
-      id: ''
-      image: ''
-      link: ''
-      overlay: ''
-      title: ''
-      vanilla: false
-      layout: ''
-      view_mode: ''
-      cache: 0
-      skin: ''
-      lazy: ''
-      style: ''
-      background: false
-      box_caption: ''
-      box_caption_custom: ''
-      box_media_style: ''
-      loading: lazy
-      preload: false
-      responsive_image_style: ''
-      box_style: ''
-      image_style: ''
-      media_switch: ''
-      ratio: ''
-      thumbnail_style: ''
-      grid: ''
-      grid_medium: ''
-      grid_small: ''
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_ticketing_url:
     type: link
