@@ -307,6 +307,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_offer_kind_value:
+          id: field_offer_kind_value
+          table: node__field_offer_kind
+          field: field_offer_kind_value
+          relationship: none
+          group_type: group
+          admin_label: "Nature de l'offre"
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
