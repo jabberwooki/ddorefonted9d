@@ -212,10 +212,6 @@
           {# Liens de partage ################################################################### #}
           {% set facebook_url = ['http://www.facebook.com/sharer/sharer.php?u=https://www.domainedo.fr', path('entity.node.canonical', {'node': content['#node'].id()  })  ]|join %}
           <div class="share-social-buttons">
-            <a class="icon-twitter" target="_blank" title="Partager sur twitter"
-               href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdomainedo.fr{{ path('entity.node.canonical', {'node': content['#node'].id()  }) }}&amp;text=&amp;hashtags=spectacle,Montpellier">
-              <span class="visually-hidden-focusable">Twitter</span>
-            </a>
             <a class="icon-facebook" title="Partager sur facebook"
                href="{{ facebook_url }}&t={{ node.label|replace({' ': '_'}) }}" target="_blank" class="share-popup">
               <span class="visually-hidden-focusable">Facebook</span>
