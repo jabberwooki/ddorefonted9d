@@ -35,6 +35,9 @@ settings:
     -
       value: '8'
       label: Gratuit
+    -
+      value: '9'
+      label: 'url billetterie manuelle'
   allowed_values_function: ''
 module: options
 locked: false

@@ -62,7 +62,7 @@
                 </a>
               {% endif %}
 
-              {% if not mapado_url.1 is empty and node.field_reservation.0.value==2 %}
+              {% if not mapado_url.1 is empty and node.field_reservation.0.value in [2, 9] %}
                 <a class="link-book-teaser-show btn btn-secondary" href="{{ node.mapado_url.1.uri }}">
                   {{ node.mapado_url.1.title }}
                 </a>

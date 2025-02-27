@@ -589,6 +589,18 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
   if ($entity->getType() == 'show') {
     $is_on_sale = TRUE;
 
+    // Valeurs du champ Réservation :
+    // entrée libre = 0
+    // prochainement = 1
+    // url billetterie = 2
+    // complet = 3
+    // annulé = 4
+    // passé = 5
+    // externalisé = 7
+    // gratuit = 8
+    // url billetterie manuelle = 9
+    $reservation_value = $entity->field_reservation->value;
+
     // Recul de la date courante de 4 heures pour permettre aux internautes d'acheter alors que le spectacle est en cours.
     // EDIT - 2023-08-25 - Recul de 6 heures à la demande de Marion/Alexandre pour pouvoir réserver le plus tard possible
     // les spectacles du festival Les Nuits d'O.
@@ -643,23 +655,14 @@ function ddo_mapado_node_view(array &$build, EntityInterface $entity, EntityView
         }
       }
     }
-    else {
+    // Sinon, si statut de réservation autre que "url billetterie manuelle", le
+    // spectacle ne peut pas être mis en vente.
+    elseif ($reservation_value != 9) {
       $is_on_sale = false;
     }
 // A GARDER POUR TESTS
 //$is_on_sale = false;
 //$is_on_sale = true;
-
-    // Valuers du champ Réservation :
-    // entrée libre = 0
-    // prochainement = 1
-    // url billetterie = 2
-    // complet = 3
-    // annulé = 4
-    // passé = 5
-    // externalisé = 7
-    // gratuit = 8
-    $reservation_value = $entity->field_reservation->value;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Le bouton RESERVER doit pointer soit vers la billetterie soit vers la fiche Spectacle.
