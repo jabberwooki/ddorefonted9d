@@ -13,6 +13,15 @@ use Drupal\path_alias\Entity\PathAlias;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\views\ViewExecutable;
 
+/**
+ * Implements hook_views_data_alter().
+ */
+function ddo_utils_views_data_alter(&$data) {
+  // Use entity reference for the field 'field_festival'.
+  $field_name = 'field_festival';
+  $data['node__' . $field_name][$field_name . '_target_id']['filter']['id'] = 'entity_reference';
+}
+
 function ddo_utils_views_pre_render(ViewExecutable $view) {
 //  Exemple de code pour filter le contenu d'une vue avant affichage.
 //  -----------------------------------------------------------------

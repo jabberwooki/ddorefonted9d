@@ -29,7 +29,6 @@ module:
   ddo_utils: 0
   devel: 0
   devel_kint_extras: 0
-  devel_php: 0
   draggableviews: 0
   dynamic_page_cache: 0
   editor: 0
@@ -46,10 +45,6 @@ module:
   image: 0
   image_widget_crop: 0
   imce: 0
-  jquery_ui: 0
-  jquery_ui_datepicker: 0
-  jquery_ui_slider: 0
-  jquery_ui_touch_punch: 0
   language: 0
   layout_discovery: 0
   libraries: 0

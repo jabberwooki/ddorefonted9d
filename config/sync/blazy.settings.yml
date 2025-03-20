@@ -6,7 +6,6 @@ noscript: false
 one_pixel: true
 placeholder: ''
 unstyled_extensions: ''
-responsive_image: false
 blazy:
   loadInvisible: false
   offset: 100
@@ -19,3 +18,4 @@ io:
   threshold: '0'
   disconnect: false
 extras: {  }
+max_region_count: 0
