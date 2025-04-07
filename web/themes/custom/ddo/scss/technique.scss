@@ -19,8 +19,10 @@
   #row-technique-places {
     @include media-breakpoint-up(md) {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 30px;
+      row-gap: 30px;
       > div {
         flex-basis: calc(100% / 3.1);
       }
