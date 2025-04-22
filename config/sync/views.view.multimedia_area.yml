@@ -518,7 +518,7 @@ display:
         type: normal
         title: 'Espace multimedia'
         description: ''
-        weight: 2
+        weight: -47
         expanded: false
         menu_name: ddofooter1
         parent: ''

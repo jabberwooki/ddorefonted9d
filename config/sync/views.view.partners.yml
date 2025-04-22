@@ -180,7 +180,7 @@ display:
           exposed: false
           draggable_views_reference: 'partners:page_2'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       filters:
         status:
           id: status
@@ -301,7 +301,7 @@ display:
           exposed: false
           draggable_views_reference: 'partners:page_2'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       filters:
         status:
           id: status
@@ -394,7 +394,7 @@ display:
         type: normal
         title: Partenaires
         description: ''
-        weight: 10
+        weight: -45
         expanded: false
         menu_name: ddofooter1
         parent: ''
@@ -677,7 +677,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       style:
         type: table
         options:
