@@ -53,6 +53,9 @@ settings:
     -
       value: o-millesimes
       label: "O'Millésimes"
+    -
+      value: family-pride
+      label: 'Family Pride'
   allowed_values_function: ''
 module: options
 locked: false
