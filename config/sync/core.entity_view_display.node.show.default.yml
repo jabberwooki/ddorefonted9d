@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.show.field_mapado_ticketing
     - field.field.node.show.field_media_image
     - field.field.node.show.field_media_thumbnail
+    - field.field.node.show.field_metatags
     - field.field.node.show.field_minimum_age
     - field.field.node.show.field_offline
     - field.field.node.show.field_partnerships
@@ -50,6 +51,7 @@ dependencies:
     - datetime
     - ds
     - link
+    - metatag
     - options
     - text
     - user
@@ -274,6 +276,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 12
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 40
     region: content
   field_minimum_age:
     type: number_decimal

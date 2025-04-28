@@ -28,6 +28,7 @@ dependencies:
     - field.field.node.show.field_mapado_ticketing
     - field.field.node.show.field_media_image
     - field.field.node.show.field_media_thumbnail
+    - field.field.node.show.field_metatags
     - field.field.node.show.field_minimum_age
     - field.field.node.show.field_offline
     - field.field.node.show.field_partnerships
@@ -60,9 +61,9 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
-        label: ''
     regions:
       ds_content:
         - field_festival
@@ -138,6 +139,7 @@ hidden:
   field_mapado_dates_ids: true
   field_mapado_ticketing: true
   field_media_image: true
+  field_metatags: true
   field_minimum_age: true
   field_offline: true
   field_partnerships: true

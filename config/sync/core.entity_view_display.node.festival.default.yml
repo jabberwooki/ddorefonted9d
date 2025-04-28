@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.festival.field_files
     - field.field.node.festival.field_galeries
     - field.field.node.festival.field_logo
+    - field.field.node.festival.field_metatags
     - field.field.node.festival.field_no_result
     - field.field.node.festival.field_online_flipthrough
     - field.field.node.festival.field_pdf_programme
@@ -26,6 +27,7 @@ dependencies:
   module:
     - ds
     - link
+    - metatag
     - text
     - user
 third_party_settings:
@@ -125,6 +127,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 40
     region: content
   field_no_result:
     type: text_default

@@ -1,0 +1,21 @@
+uuid: 13bb12d4-29c2-4d5b-8176-848305dade20
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.festival
+  module:
+    - metatag
+id: node.festival.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: festival
+label: 'Balises meta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
