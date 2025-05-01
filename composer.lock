@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5adeb711fed15999054e1ac8ee4c5167",
+    "content-hash": "56f39b0b841a19986681e142c271539d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,64 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.2.0"
             },
             "time": "2023-11-14T13:51:46+00:00"
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "1.12.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "5e89585e0121e72ff47de177c5ef604f3089a53d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/5e89585e0121e72ff47de177c5ef604f3089a53d",
+                "reference": "5e89585e0121e72ff47de177c5ef604f3089a53d"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/slick-carousel",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kenwheeler/slick.git",
+                "reference": "e3fc23908d647bb2471c00c316ad57b15667975d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kenwheeler/slick/zipball/e3fc23908d647bb2471c00c316ad57b15667975d",
+                "reference": "e3fc23908d647bb2471c00c316ad57b15667975d"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/slick-lightbox",
+            "version": "v0.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mreq/slick-lightbox.git",
+                "reference": "30459914338d0a9ae6ab328c7e12166997da00a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mreq/slick-lightbox/zipball/30459914338d0a9ae6ab328c7e12166997da00a2",
+                "reference": "30459914338d0a9ae6ab328c7e12166997da00a2"
+            },
+            "require": {
+                "bower-asset/jquery": "~1",
+                "bower-asset/slick-carousel": "~1.4.1"
+            },
+            "type": "bower-asset"
         },
         {
             "name": "chi-teck/drupal-code-generator",
