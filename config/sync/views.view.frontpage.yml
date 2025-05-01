@@ -2088,7 +2088,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: "Domaine d'O"
+      title: "Cité européenne du théâtre Domaine d'O Montpellier"
       empty: {  }
       sorts: {  }
       filters:
