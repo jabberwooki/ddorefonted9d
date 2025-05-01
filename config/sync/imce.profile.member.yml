@@ -5,8 +5,8 @@ dependencies: {  }
 _core:
   default_config_hash: uLGxn83zQtCm36z5Tk6rnhKO2Bm0fafIrI8T9BAqVUs
 id: member
-label: 'Member profile'
-description: 'Configuration for site members'
+label: 'Profil membre'
+description: 'Configuration pour les membres'
 conf:
   extensions: 'jpg png gif'
   maxsize: 2.0

@@ -11,9 +11,9 @@ dependencies:
 _core:
   default_config_hash: YPgxGC8TmLtfCOLGCCHJcdH2llA7QksUkdi1abhB7Ro
 id: webform_submissions
-label: 'Webform submissions'
+label: 'Soumissions de webform'
 module: views
-description: 'Default webform submissions views.'
+description: 'Vue par défaut des soumissions de webform.'
 tag: ''
 base_table: webform_submission
 base_field: sid
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Webform submissions'
+      title: 'Soumissions de webform'
       fields:
         sid:
           id: sid
@@ -102,7 +102,7 @@ display:
           entity_type: webform_submission
           entity_field: in_draft
           plugin_id: field
-          label: Draft
+          label: Brouillon
           exclude: false
           alter:
             alter_text: false
@@ -401,7 +401,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No submissions available.'
+          content: "Aucune soumission n'est disponible."
           tokenize: false
       sorts: {  }
       arguments:
@@ -607,7 +607,7 @@ display:
       tags: {  }
   embed_administer:
     id: embed_administer
-    display_title: 'Embed: Administer'
+    display_title: 'Intégrer : Administrer'
     display_plugin: embed
     position: 2
     display_options:
@@ -741,7 +741,7 @@ display:
           entity_type: webform_submission
           entity_field: in_draft
           plugin_id: field
-          label: Draft
+          label: Brouillon
           exclude: false
           alter:
             alter_text: false
@@ -1222,7 +1222,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'Is draft'
+            label: 'Est un brouillon'
             description: ''
             use_operator: false
             operator: in_draft_op
@@ -1444,7 +1444,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
-      display_description: 'Administer submissions.'
+      display_description: 'Administrer les soumissions.'
       display_extenders: {  }
     cache_metadata:
       max-age: 0
@@ -1458,7 +1458,7 @@ display:
       tags: {  }
   embed_default:
     id: embed_default
-    display_title: 'Embed: Default'
+    display_title: 'Intégrer : Par défaut'
     display_plugin: embed
     position: 1
     display_options:
@@ -1530,7 +1530,7 @@ display:
         fields: true
         filters: true
         filter_groups: true
-      display_description: 'Display submissions.'
+      display_description: 'Afficher les soumissions.'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1543,7 +1543,7 @@ display:
       tags: {  }
   embed_manage:
     id: embed_manage
-    display_title: 'Embed: Manage'
+    display_title: 'Intégrer : Gérer'
     display_plugin: embed
     position: 3
     display_options:
@@ -1681,7 +1681,7 @@ display:
           entity_type: webform_submission
           entity_field: in_draft
           plugin_id: field
-          label: Draft
+          label: Brouillon
           exclude: false
           alter:
             alter_text: false
@@ -2216,7 +2216,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'Is draft'
+            label: 'Est un brouillon'
             description: ''
             use_operator: false
             operator: in_draft_op
@@ -2438,7 +2438,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
-      display_description: 'Manage submissions.'
+      display_description: 'Gérer les soumissions.'
       display_extenders: {  }
     cache_metadata:
       max-age: 0
@@ -2452,7 +2452,7 @@ display:
       tags: {  }
   embed_review:
     id: embed_review
-    display_title: 'Embed: Review'
+    display_title: 'Intégrer : Évaluer'
     display_plugin: embed
     position: 4
     display_options:
@@ -2533,7 +2533,7 @@ display:
           entity_type: webform_submission
           entity_field: in_draft
           plugin_id: field
-          label: Draft
+          label: Brouillon
           exclude: false
           alter:
             alter_text: false
@@ -3015,7 +3015,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'Is draft'
+            label: 'Est un brouillon'
             description: ''
             use_operator: false
             operator: in_draft_op
@@ -3237,7 +3237,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
-      display_description: 'Review submissions.'
+      display_description: 'Évaluer les soumissions.'
       display_extenders: {  }
     cache_metadata:
       max-age: -1

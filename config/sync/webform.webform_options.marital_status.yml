@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: cjVDbAE5BlopGrY-tfxsxMoyEibwBBNgdQwDdxOSkow
 id: marital_status
-label: 'Marital status'
+label: 'Statut marital'
 category: Démographique
 likert: false
 options: |

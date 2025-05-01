@@ -11,7 +11,7 @@ _core:
 id: redirect
 label: Rediriger
 module: views
-description: 'List of redirects'
+description: 'Liste des redirections'
 tag: ''
 base_table: redirect
 base_field: rid
@@ -271,7 +271,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'There is no redirect yet.'
+          content: "Il n'y a pas encore de redirection."
           tokenize: false
       sorts: {  }
       arguments: {  }

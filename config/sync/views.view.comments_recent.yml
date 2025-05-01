@@ -131,8 +131,8 @@ display:
           hide_alter_empty: true
           type: timestamp_ago
           settings:
-            future_format: '@interval hence'
-            past_format: '@interval ago'
+            future_format: 'Dans @interval'
+            past_format: 'Il y a @interval'
             granularity: 2
       pager:
         type: some

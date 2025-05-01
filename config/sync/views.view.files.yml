@@ -463,7 +463,7 @@ display:
           decimal: .
           separator: ','
           format_plural: true
-          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
+          format_plural_string: !!binary QGNvdW50IGxpZXUDQGNvdW50IGxpZXV4
           prefix: ''
           suffix: ''
       pager:

@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: QFezQ4TbnTzUO15iTk6-flc68pzr437FjP3nJ_qXM9M
 id: watchdog
-label: Surveillance
+label: Watchdog
 module: views
 description: 'Entrées récentes du journal'
 tag: ''

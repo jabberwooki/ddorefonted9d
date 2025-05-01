@@ -5,8 +5,8 @@ dependencies: {  }
 _core:
   default_config_hash: Yr2l9kFlT4Sa8875bhBZ0jy7QkYNxCKbx60FqGxELAg
 id: admin
-label: 'Admin profile'
-description: 'Configuration for site administrators'
+label: 'Profil Admin'
+description: 'Configuration pour les administrateurs du site'
 conf:
   extensions: '*'
   maxsize: 0.0

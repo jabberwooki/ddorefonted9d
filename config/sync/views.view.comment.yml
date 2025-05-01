@@ -906,7 +906,7 @@ display:
       cacheable: false
   page_unapproved:
     id: page_unapproved
-    display_title: 'Commentaires non aprouvés'
+    display_title: 'Commentaires non approuvés'
     display_plugin: page
     position: 2
     display_options:
@@ -1599,7 +1599,7 @@ display:
       path: admin/content/comment/approval
       menu:
         type: tab
-        title: 'Commentaires non aprouvés'
+        title: 'Commentaires non approuvés'
         description: 'Commentaires non-approuvés'
         weight: 1
         menu_name: admin
