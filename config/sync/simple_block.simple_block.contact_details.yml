@@ -7,5 +7,5 @@ dependencies:
 id: contact_details
 title: Coordonnées
 content:
-  value: "<p><strong>Domaine d'O</strong></p>\r\n\r\n<p>178, rue de la Carriérasse<br />\r\n34090 Montpellier</p>\r\n\r\n<p>Tél. : <strong>0800 200 165</strong><br />\r\nservice et appel <strong>gratuits</strong></p>\r\n"
+  value: '<p><strong>Cité européenne du théâtre et des arts associés Domaine d’O</strong></p><p>178, rue de la Carriérasse<br>34090 Montpellier</p><p>Tél. : <strong>0800 200 165</strong><br>service et appel <strong>gratuits</strong></p>'
   format: full_html

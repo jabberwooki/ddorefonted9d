@@ -2,7 +2,7 @@
   .container {
     border-top: 1px solid black;
     margin-top: 10px;
-    padding-top: 20px;
+    padding-top: 2.5rem;
     .menu-footer-first,
     .menu-footer-second {
       a {
@@ -17,7 +17,6 @@
     }
     .ddo-presentation {
       position: relative;
-      top: -8px;
     }
     .region-footer-third,
     .region-footer-fourth {
@@ -28,13 +27,7 @@
   }
   #block-contact-details {
     @include media-breakpoint-down(md) {
-      border-top: 1px solid black;
-      padding-top: 20px;
-    }
-  }
-  #block-ddo-text {
-    img {
-      max-width: 33%;
+      padding-top: 0.625rem;
     }
   }
 

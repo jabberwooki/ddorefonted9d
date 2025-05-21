@@ -3,53 +3,34 @@
     position: absolute;
     width: 100%;
   }
-}
-/* Boutons réseaux sociaux */
-.nav-social {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
-  margin-top: 3px;
 
-  a.icon-facebook {
-    @include social-icon("\e801", "black", 1.5rem);
-  }
-  a.icon-instagram {
-    @include social-icon("\f32d", "black", 1.5rem);
+  & > .container {
+    border-bottom: 1px solid black;
   }
 
-  a.icon-twitter {
-    @include social-icon("\e800", "black", 1.5rem);
+  // Bouton de recherche.
+  #custom-search-button {
+    @include media-breakpoint-down(md) {
+      margin-top: 5px;
+      z-index: 9;
+    }
+    &:before {
+      @extend %icon-fontello;
+      content: "\e84f";
+      font-size: 1.875rem;
+      color: black;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:before {
+        color: map-get($theme-colors, "secondary");
+      }
+    }
   }
 
-  a.icon-youtube {
-    @include social-icon("\e802", "black", 1.5rem);
-  }
-}
-
-/* Boutons d'abonnement et de notification*/
-#buttons-notification-subscribe {
-  @include media-breakpoint-down(md) {
-    display: none !important;
-  }
-  #link-subscription {
-    margin-top: 3px;
-    @include secondary-icon-link("\e840");
-  }
-
-  #webpush {
-    display: none !important;
-    margin-top: 3px;
-    margin-right: 10px;
-    @include secondary-icon-link("\e84a");
-  }
-}
-
-#over-menus {
-  @include media-breakpoint-down(md) {
-    min-height: 60px;
-  }
-  /* Bouton navigation principale */
+  // Bouton navigation principale.
   #custom-mega-menu-button {
     @include media-breakpoint-down(md) {
       left: -5px;
@@ -98,6 +79,63 @@
         color: black;
       }
     }
+  }
+}
+/* Boutons réseaux sociaux */
+.nav-social {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  margin-top: 3px;
+
+  ul#ul-social li a::before {
+      text-align: left;
+  }
+
+  a.icon-facebook {
+    @include social-icon("\e801", map-get($theme-colors, "secondary"), 1.5rem);
+
+    &::before {
+      margin-left: 0;
+    }
+  }
+  a.icon-instagram {
+    @include social-icon("\f32d", map-get($theme-colors, "secondary"), 1.5rem);
+  }
+
+  a.icon-twitter {
+    @include social-icon("\e800", map-get($theme-colors, "secondary"), 1.5rem);
+  }
+
+  a.icon-youtube {
+    @include social-icon("\e802", map-get($theme-colors, "secondary"), 1.5rem);
+  }
+}
+
+/* Boutons d'abonnement et de notification*/
+#buttons-notification-subscribe {
+  #link-subscription {
+    margin-right: 1.6rem;
+    @include secondary-icon-link("\e840");
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+    @include media-breakpoint-up(lg) {
+    margin-right: 5.4rem;
+    }
+  }
+
+  #webpush {
+    display: none !important;
+    margin-top: 3px;
+    margin-right: 10px;
+    @include secondary-icon-link("\e84a");
+  }
+}
+
+#over-menus {
+  @include media-breakpoint-down(md) {
+    min-height: 60px;
   }
 
   /* Navigation principale hors mega-menu */
@@ -206,28 +244,6 @@
   }
 
   /* Fin de la navigation principale */
-  /* Bouton de recherche */
-
-  #custom-search-button {
-    @include media-breakpoint-down(md) {
-      margin-top: 5px;
-      z-index: 9;
-    }
-    &:before {
-      @extend %icon-fontello;
-      content: "\e84f";
-      font-size: 1.875rem;
-      color: black;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      &:before {
-        color: map-get($theme-colors, "secondary");
-      }
-    }
-  }
 
   /* Formulaire de recherche */
   #search-block-form {
@@ -278,6 +294,7 @@
       }
     }
   }
+
 
 }
 
@@ -337,11 +354,27 @@
 }
 /* Menus bas ***********/
 footer {
-  .nav-item {
-    > a {
-      @include media-breakpoint-down(md) {
-        padding: 10px 0!important;
+  nav.menu--ddofooter2 {
+    ul.nav {
+      li.nav-item:first-child a {
+        padding-left: 0;
       }
+    }
+
+    @include media-breakpoint-down(lg) {
+      ul.nav {
+        flex-direction: column;
+
+        li.nav-item a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  nav.menu--ddofooter1 {
+    ul.nav {
+      flex-direction: column;
     }
   }
 }

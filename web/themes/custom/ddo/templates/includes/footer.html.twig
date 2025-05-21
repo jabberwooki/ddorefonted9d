@@ -5,9 +5,26 @@
         <div class="row">
           <div class="col-md-6">
             <div class="row">
-              <div class="col-6 col-md-4 menu-footer-first">{{ page.footer_first }}</div>
-              <div class="col-6 col-md-4 menu-footer-second">{{ page.footer_second }}</div>
-              <div class="col-md-4 contact-details">{{ page.footer_third }}</div>
+              <div class="col-6 col-md-6 menu-footer-first">
+                <nav class="nav-social">
+                  <ul id="ul-social" class="list-unstyled d-flex">
+                    <li><a class="icon-facebook" href="http://www.facebook.com/domaine.do"
+                           onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'facebook',1,true]);"
+                           target="_blank"><span class="visually-hidden visually-hidden-focusable">facebook</span></a>
+                    </li>
+                    <li><a class="icon-instagram"
+                           href="https://www.instagram.com/domainedo/"
+                           target="_blank"><span class="visually-hidden visually-hidden-focusable">instagram</span></a>
+                    </li>
+                    <li><a class="icon-youtube" href="https://www.youtube.com/user/domainedO"
+                           onclick="_gaq.push(['_trackEvent', 'socialmedia', 'click', 'youtube',1,true]);"
+                           target="_blank"><span class="visually-hidden visually-hidden-focusable">youtube</span></a>
+                    </li>
+                  </ul>
+                </nav>
+                {{ page.footer_first }}
+              </div>
+              <div class="col-6 col-md-6 menu-footer-second">{{ page.footer_second }}</div>
             </div>
           </div>
           <div class="col-md-6 ddo-presentation">

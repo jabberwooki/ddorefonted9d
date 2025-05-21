@@ -1,5 +1,5 @@
 /* Icônes sociales*/
-@mixin social-icon($charcode, $color: "black", $size: 1rem) {
+@mixin social-icon($charcode, $color: black, $size: 1rem) {
   text-decoration: none !important;
   &:before {
     @extend %icon-fontello;

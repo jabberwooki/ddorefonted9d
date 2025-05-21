@@ -10,8 +10,8 @@ dependencies:
     - ddo
 id: ddofooter1
 theme: ddo
-region: footer_first
-weight: 0
+region: footer_second
+weight: -16
 provider: null
 plugin: 'system_menu_block:ddofooter1'
 settings:

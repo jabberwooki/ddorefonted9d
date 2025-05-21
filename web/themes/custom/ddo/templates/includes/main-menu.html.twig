@@ -2,16 +2,10 @@
 <div id="over-menus">
   <div class="container">
     <div class="row">
-      <div class="col d-flex justify-content-between">
-        <div id="custom-mega-menu-button" class="open-menu-button">
-          <span>MENU</span>
-        </div>
+      <div class="col d-flex justify-content-center">
         {% if page.primary_menu %}
           {{ page.primary_menu }}
         {% endif %}
-        <div id="custom-search-button">
-          <span class="visually-hidden">Recherche</span>
-        </div>
       </div>
     </div>
     <div class="row visually-hidden-focusable" id="search-row">

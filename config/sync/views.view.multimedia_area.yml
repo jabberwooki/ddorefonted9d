@@ -516,9 +516,10 @@ display:
       path: espace-multimedia
       menu:
         type: normal
-        title: 'Espace multimedia'
-        description: ''
+        title: 'Espace multimédia'
+        description: null
         weight: -47
+        enabled: true
         expanded: false
         menu_name: ddofooter1
         parent: ''
