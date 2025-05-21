@@ -1,9 +1,4 @@
 #header {
-  @include media-breakpoint-down(md) {
-    position: absolute;
-    width: 100%;
-  }
-
   & > .container {
     border-bottom: 1px solid black;
   }
@@ -134,10 +129,6 @@
 }
 
 #over-menus {
-  @include media-breakpoint-down(md) {
-    min-height: 60px;
-  }
-
   /* Navigation principale hors mega-menu */
   #block-ddo-main-menu {
     @include media-breakpoint-down(md) {
