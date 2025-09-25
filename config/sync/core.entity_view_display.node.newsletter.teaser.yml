@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.newsletter.body
     - field.field.node.newsletter.field_mailchimp_url
     - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_pdf_export
     - field.field.node.newsletter.field_sending_date
     - node.type.newsletter
   module:
     - datetime
     - ds
+    - file
     - link
     - text
     - user
@@ -23,6 +25,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         classes:
           layout_class: {  }
         wrappers:
@@ -31,11 +34,11 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        label: ''
     regions:
       ds_content:
         - field_media_image
         - field_mailchimp_url
+        - field_pdf_export
         - body
         - field_sending_date
 id: node.newsletter.teaser
@@ -49,10 +52,10 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: ds_content
   field_mailchimp_url:
-    type: link
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
@@ -72,6 +75,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: ds_content
+  field_pdf_export:
+    type: file_url_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
   field_sending_date:
     type: datetime_custom
     label: hidden
@@ -79,7 +89,7 @@ content:
       timezone_override: ''
       date_format: d/m/Y
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: ds_content
 hidden:
   langcode: true

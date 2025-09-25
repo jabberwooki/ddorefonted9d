@@ -9,26 +9,34 @@
  * - ds_content: content region
  */
 #}
+
+{% if field_pdf_export[0]['#markup'] %}
+  {% set url = field_pdf_export[0]['#markup'] %}
+{% else %}
+  {% set url = field_mailchimp_url[0]['#url_title'] ?? '#' %}
+{% endif %}
+
+{% set title = field_mailchimp_url[0]['#title'] ?? '' %}
+
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
 <div class="newsletter-teaser">
   {{ field_media_image }}
   <div class="txt-over-newsletter-image">
     <div class="title-nl">
-      {{ field_mailchimp_url }}
+      <div class="newsletter-url">
+        <a href="{{ url }}" target="_blank">{{ title }}</a>
+      </div>
     </div>
     <div class="body-nl">
       {{ body }}
     </div>
     <div class="bottom-nl">
 
-      <div class="sending-date-nl"><span>Envoyée le : </span><span> {{ field_sending_date }}</span></div>
+      <div class="sending-date-nl"><span>Envoyée le&nbsp;:&nbsp;</span><span>{{ field_sending_date }}</span></div>
     </div>
 
   </div>
 </div>
-
-
-{# {{ ds_content }} #}
 
 </{{ ds_content_wrapper }}>

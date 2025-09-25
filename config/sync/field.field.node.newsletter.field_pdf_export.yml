@@ -1,0 +1,27 @@
+uuid: 70465ad3-7d0e-4f05-8e6d-c360b65e8ba0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_export
+    - node.type.newsletter
+  module:
+    - file
+id: node.newsletter.field_pdf_export
+field_name: field_pdf_export
+entity_type: node
+bundle: newsletter
+label: 'Export PDF'
+description: "Le fichier transféré supplantera l'URL du champ «\_URL Mailchimp\_»."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: newsletters/pdf
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

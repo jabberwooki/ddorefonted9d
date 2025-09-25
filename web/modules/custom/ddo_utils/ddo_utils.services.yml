@@ -1,0 +1,8 @@
+services:
+  logger.channel.ddo_utils:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['ddo_utils']
+  ddo_utils.mailchimp_migration:
+    class: Drupal\ddo_utils\Service\MailchimpMigration
+    arguments: ['@logger.channel.ddo_utils', '@file_system', '@entity_type.manager']

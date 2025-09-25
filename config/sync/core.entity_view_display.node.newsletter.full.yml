@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.newsletter.body
     - field.field.node.newsletter.field_mailchimp_url
     - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_pdf_export
     - field.field.node.newsletter.field_sending_date
     - node.type.newsletter
   module:
@@ -23,6 +24,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         classes:
           layout_class: {  }
         wrappers:
@@ -31,7 +33,6 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        label: ''
     regions:
       ds_content:
         - node_title
@@ -105,4 +106,5 @@ content:
     weight: 5
     region: ds_content
 hidden:
+  field_pdf_export: true
   langcode: true

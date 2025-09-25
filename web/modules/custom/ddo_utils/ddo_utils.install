@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Update and installation procedures.
+ */
+
+/**
+ * Attach newsletters PDF export files to corresponding nodes.
+ */
+function ddo_utils_update_10001() {
+  \Drupal::service('ddo_utils.mailchimp_migration')->migrate('public://newsletters');
+}

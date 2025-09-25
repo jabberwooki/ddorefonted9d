@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.newsletter.body
     - field.field.node.newsletter.field_mailchimp_url
     - field.field.node.newsletter.field_media_image
+    - field.field.node.newsletter.field_pdf_export
     - field.field.node.newsletter.field_sending_date
     - node.type.newsletter
   module:
     - datetime
+    - file
     - link
     - text
     - user
@@ -44,6 +46,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_pdf_export:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_sending_date:
     type: datetime_default
