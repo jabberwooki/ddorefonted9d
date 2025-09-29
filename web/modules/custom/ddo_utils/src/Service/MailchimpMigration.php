@@ -45,6 +45,7 @@ class MailchimpMigration {
       while (($line = fgetcsv($handle, NULL, ',')) !== FALSE) {
         // Actually the title is all the data we need.
         $title = $line[0] ?? '';
+        $old_id = $line[22] ?? '';
         if (empty($title)) {
           continue;
         }
@@ -57,12 +58,14 @@ class MailchimpMigration {
         [$id, $filename] = $index[$slug];
 
         // Look for corresponding node.
-        $node = $this->lookup($id);
+        $node = $this->lookup($id, $old_id);
         if (!$node) {
           continue;
         }
         // Attach file to this node.
-        $this->attachFile($node, $dir . '/pdf/' . $filename);
+        if ($node->field_pdf_export->isEmpty()) {
+          $this->attachFile($node, $dir . '/pdf/' . $filename);
+        }
       }
       fclose($handle);
     }
@@ -124,17 +127,24 @@ class MailchimpMigration {
    *
    * @param string $id
    *   Mailchimp numeric pseudo identifier.
+   * @param string $old_id
+   *   Mailchimp unique ID, used in a deprecated URL format.
    *
    * @return \Drupal\node\NodeInterface|null
    *   Node related to this identifier.
    */
-  protected function lookup(string $id) : ?NodeInterface {
+  protected function lookup(string $id, string $old_id) : ?NodeInterface {
     $node_storage = $this->entityTypeManager->getStorage('node');
 
-    $nids = $node_storage->getQuery()
-      ->accessCheck(FALSE)
-      ->condition('type', 'newsletter')
-      ->condition('field_mailchimp_url.uri', '%' . $id . '%', 'LIKE')
+    $query = $node_storage->getQuery()
+      ->accessCheck(FALSE);
+
+    $uri_condition = $query->orConditionGroup();
+    $uri_condition->condition('field_mailchimp_url.uri', '%' . $id . '%', 'LIKE');
+    $uri_condition->condition('field_mailchimp_url.uri', '%id=' . $old_id . '%', 'LIKE');
+
+    $nids = $query->condition('type', 'newsletter')
+      ->condition($uri_condition)
       ->execute();
 
     if (empty($nids)) {
