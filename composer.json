@@ -119,6 +119,7 @@
         "furf/jquery-ui-touch-punch": "dev-master",
         "kint-php/kint": "^3.3",
         "mglaman/composer-drupal-lenient": "^1.0",
+        "npm-asset/iframe-resizer--parent": "^5.5",
         "npm-asset/slick-carousel": "^1.8",
         "oomphinc/composer-installers-extender": "^2.0"
     },

@@ -7,4 +7,8 @@ festivalmodal:
     js/festival_modal.js: {}
   dependencies:
     - core/jquery
-#    - core/drupal.dialog.ajax
+iframe_resizer:
+  version: 1.0
+  js:
+    /libraries/iframe-resizer--parent/index.umd.js: {}
+    js/iframe-resizer.js: {}

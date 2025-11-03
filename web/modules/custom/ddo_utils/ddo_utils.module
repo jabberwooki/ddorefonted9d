@@ -125,6 +125,10 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
       }
     }
   }
+
+  if ($view->id() == 'newsletters' && $view->current_display == 'lettres_info') {
+    $view->element['#attached']['library'][] = 'ddo_utils/iframe_resizer';
+  }
 }
 
 function ddo_utils_exist_published_shows($show_ids=[]) {

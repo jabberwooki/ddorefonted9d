@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56f39b0b841a19986681e142c271539d",
+    "content-hash": "66eb800dddde7342826325b717f8c7a3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6076,6 +6076,49 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
             },
             "time": "2024-12-30T11:07:19+00:00"
+        },
+        {
+            "name": "npm-asset/auto-console-group",
+            "version": "1.2.10",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/auto-console-group/-/auto-console-group-1.2.10.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/iframe-resizer--core",
+            "version": "5.5.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@iframe-resizer/core/-/core-5.5.0.tgz"
+            },
+            "require": {
+                "npm-asset/auto-console-group": "1.2.10"
+            },
+            "type": "npm-asset",
+            "license": [
+                "GPL-3.0"
+            ]
+        },
+        {
+            "name": "npm-asset/iframe-resizer--parent",
+            "version": "5.5.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@iframe-resizer/parent/-/parent-5.5.0.tgz"
+            },
+            "require": {
+                "npm-asset/auto-console-group": "1.2.10",
+                "npm-asset/iframe-resizer--core": "5.5.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "GPL-3.0"
+            ]
         },
         {
             "name": "npm-asset/slick-carousel",
