@@ -29,7 +29,6 @@ dependencies:
   module:
     - block
     - block_content
-    - comment
     - contextual
     - ddo_mapado
     - draggableviews
@@ -70,7 +69,6 @@ permissions:
   - 'administer block content'
   - 'administer block types'
   - 'administer blocks'
-  - 'administer comments'
   - 'administer mapado'
   - 'administer menu'
   - 'administer meta tags'

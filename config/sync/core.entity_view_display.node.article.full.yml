@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_edition_date
     - field.field.node.article.field_galeries
@@ -31,6 +30,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         classes:
           layout_class: {  }
         wrappers:
@@ -39,7 +39,6 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        label: ''
     regions:
       ds_content:
         - sharethis
@@ -126,7 +125,6 @@ content:
     weight: 0
     region: ds_content
 hidden:
-  comment: true
   field_edition_date: true
   field_more_infos_link: true
   field_new_window: true

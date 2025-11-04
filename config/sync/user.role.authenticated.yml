@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.webform_default
   module:
-    - comment
     - file
     - filter
     - media
@@ -14,17 +13,14 @@ dependencies:
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
-label: 'authenticated user'
+label: 'Authenticated user'
 weight: 5
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'change own username'
   - 'delete own files'
-  - 'post comments'
   - 'search content'
-  - 'skip comment approval'
   - 'use advanced search'
   - 'use text format webform_default'
   - 'view media'
