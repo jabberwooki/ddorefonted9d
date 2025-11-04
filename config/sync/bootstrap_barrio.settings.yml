@@ -20,6 +20,7 @@ bootstrap_barrio_navbar_position: ''
 bootstrap_barrio_navbar_color: navbar-dark
 bootstrap_barrio_navbar_background: bg-primary
 bootstrap_barrio_messages_widget: toasts
+bootstrap_barrio_messages_widget_toast_delay: 10000
 bootstrap_barrio_bootstrap_icons: 1
 bootstrap_barrio_system_messages: messages_white
 bootstrap_barrio_table_style: table-striped
