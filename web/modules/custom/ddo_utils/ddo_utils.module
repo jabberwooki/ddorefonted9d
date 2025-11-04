@@ -919,7 +919,8 @@ function ddo_utils_node_view_alter(array &$build, EntityInterface $entity, Entit
       // il faut faire comme si le champ était sur "passé" (valeur = 5).
       if ($show->field_reservation->value == 2) {
         // Dernière date de spectacle.
-        $show_last_date_data = end($show->get('field_dates')->getValue());
+        $dates = $show->get('field_dates')->getValue();
+        $show_last_date_data = end($dates);
         $last_date_raw = $show_last_date_data['value'];
         $last_date = date("Y-m-d\TH:i:sP", strtotime($last_date_raw));
 
