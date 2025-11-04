@@ -12,6 +12,6 @@ name: Structure
 type: structure
 description: 'Une structure est une association de professionnels du spectacle. Cela peut être une compagnie, un groupe, un ensemble, un artiste seul.'
 help: null
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: false

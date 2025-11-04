@@ -12,6 +12,6 @@ name: Documentation
 type: documentation
 description: 'Groupe de documents à vocation technique, presse ou relations publiques.'
 help: null
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: false

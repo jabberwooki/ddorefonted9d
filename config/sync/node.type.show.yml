@@ -12,6 +12,6 @@ name: Spectacle
 type: show
 description: null
 help: '<h3 style="color:#FF2400, font-size:2em;" target="_blank">ATTENTION RÉFÉRENCEMENT : Merci de vous référer à la page <a href="https://www.domainedo.fr/optimisation-referencement">https://www.domainedo.fr/optimisation-referencement</a> pour mettre en valeur chaque spectacles sur les moteurs de recherche.  '
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: false
