@@ -1,5 +1,5 @@
 name: DDO Axeptio
 type: module
 description: Module utilitaire pour l'intégration d'Axeptio sur le site web du domaine d'O.
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^10 || ^11
 package: Domaine d'O

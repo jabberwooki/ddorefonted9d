@@ -22,7 +22,7 @@ options:
     centerMode: true
     centerPadding: ''
     lazyLoad: ondemand
-    slidesToShow: 1
+    slidesToShow: 1.0
     swipeToSlide: true
     waitForAnimate: false
   responsives:
