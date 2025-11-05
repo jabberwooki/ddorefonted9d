@@ -861,6 +861,13 @@ display:
         options:
           offset: 0
           items_per_page: 1
+      cache:
+        type: time
+        options:
+          results_lifespan: 3600
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
       empty: {  }
       sorts:
         weight:
@@ -1093,6 +1100,7 @@ display:
             delta_fields: {  }
       defaults:
         empty: false
+        cache: false
         title: false
         pager: false
         style: false
