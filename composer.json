@@ -184,9 +184,9 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/ckeditor5_font": {
-                "'no config schema' Error": "https://www.drupal.org/files/issues/2024-01-11/ckeditor5_font-schema-fix-10.2.1-3368736-37.patch",
-                "The mapping definition is invalid - patch 47": "https://www.drupal.org/files/issues/2024-06-25/ckeditor5_font-schema-fix-10.3.x-3368736-47.patch"
+            "drupal/better_exposed_filters": {
+                "3512039: once library not required":
+                "https://git.drupalcode.org/project/better_exposed_filters/-/merge_requests/157.diff?diff_id=1376455"
             }
         }
     }
