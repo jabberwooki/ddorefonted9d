@@ -1,0 +1,19 @@
+uuid: bcb143f3-db38-42e3-98ec-2427121cc041
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rsi_ident
+    - node.type.show
+id: node.show.field_rsi_ident
+field_name: field_rsi_ident
+entity_type: node
+bundle: show
+label: 'Identifiant Ressources SI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

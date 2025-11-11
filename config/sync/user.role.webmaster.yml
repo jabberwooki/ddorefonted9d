@@ -31,6 +31,7 @@ dependencies:
     - block_content
     - contextual
     - ddo_mapado
+    - ddo_rsi
     - draggableviews
     - file
     - filter
@@ -74,6 +75,7 @@ permissions:
   - 'administer meta tags'
   - 'administer nodes'
   - 'administer redirects'
+  - 'administer rsi'
   - 'administer sharethis'
   - 'administer taxonomy'
   - 'administer url aliases'

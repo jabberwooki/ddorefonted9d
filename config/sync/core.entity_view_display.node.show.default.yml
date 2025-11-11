@@ -37,6 +37,7 @@ dependencies:
     - field.field.node.show.field_reimbursement
     - field.field.node.show.field_reservation
     - field.field.node.show.field_restauration
+    - field.field.node.show.field_rsi_ident
     - field.field.node.show.field_show_type
     - field.field.node.show.field_shows
     - field.field.node.show.field_sounds
@@ -351,6 +352,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 23
+    region: content
+  field_rsi_ident:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 41
     region: content
   field_shows:
     type: entity_reference_entity_view

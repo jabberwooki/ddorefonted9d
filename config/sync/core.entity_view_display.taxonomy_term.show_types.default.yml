@@ -1,0 +1,24 @@
+uuid: 3b86eff5-95e8-469d-b9e2-6a9fd3583766
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.show_types.field_rsi_mapping
+    - taxonomy.vocabulary.show_types
+  module:
+    - text
+id: taxonomy_term.show_types.default
+targetEntityType: taxonomy_term
+bundle: show_types
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_rsi_mapping: true
+  langcode: true
