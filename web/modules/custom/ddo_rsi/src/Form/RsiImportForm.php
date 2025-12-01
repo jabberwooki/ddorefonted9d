@@ -71,15 +71,9 @@ final class RsiImportForm extends FormBase {
 
     $form['info'] = [
       '#type' => 'item',
-      '#markup' => $this->t('<p>Dernière importation le %date. Par défaut, le système importera les spectacles créés postérieurement à cette date dans Ressources SI, sauf si vous la modifiez ci-dessous. Les spectacles importés ne seront pas publiés automatiquement.</p>', [
+      '#markup' => $this->t('<p>Dernière importation le %date. Les spectacles importés ne seront pas publiés automatiquement.</p>', [
         '%date' => $this->dateFormatter->format($last_import, 'short'),
       ]),
-    ];
-
-    $form['date'] = [
-      '#type' => 'date',
-      '#title' => $this->t('Date'),
-      '#default_value' => date('Y-m-d', $last_import),
     ];
 
     $form['actions'] = ['#type' => 'actions'];
@@ -97,11 +91,7 @@ final class RsiImportForm extends FormBase {
    * First step submit.
    */
   public function submitForm1(array &$form, FormStateInterface $form_state) {
-    $date = $form_state->getValue('date');
-    // RSI uses the YYYYmmdd format. This is a cheap way of "converting".
-    $date = str_replace('-', '', $date);
-
-    $shows = $this->rsiImporter->getShows($date);
+    $shows = $this->rsiImporter->getShows();
 
     if (empty($shows)) {
       $this->messenger->addStatus($this->t('Pas de nouveau spectacle à importer.'));

@@ -33,7 +33,7 @@ class RsiConfigForm extends ConfigFormBase {
     $form['base_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('URL de base'),
-      '#description' => $this->t('URL de base avec barre oblique finale, par exemple <code>https://billeterie.domainedo.fr/</code>.'),
+      '#description' => $this->t('URL de base avec barre oblique finale, par exemple <code>https://billetterie.domainedo.fr/</code>.'),
       '#default_value' => $config->get('base_url'),
     ];
 

@@ -9,7 +9,7 @@ id: taxonomy_term.show_types.field_rsi_mapping
 field_name: field_rsi_mapping
 entity_type: taxonomy_term
 bundle: show_types
-label: 'Correspondance avec Ressource SI'
+label: 'Correspondance avec Ressources SI'
 description: "Valeurs fournies par Ressources SI correspondant à ce type, par exemple <code>THEATRE</code>, <code>THEATRE EQUESTRE</code> et <code>WARM UP-CHANTIER</code> pour <em>Théâtre</em>. Ces valeurs doivent idéalement être écrites en capitales et sans diacritiques. Il est inutile de renseigner ce champ pour le terme <em>Autre</em>, qui est la valeur choisie par défaut quand un type n'est pas connu."
 required: false
 translatable: false

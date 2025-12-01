@@ -47,14 +47,11 @@ final class RsiImporterService {
   /**
    * Retrieve shows added to RSI database after a given date.
    *
-   * @param string $date
-   *   Date, formatted as YYYYmmdd.
-   *
    * @return array
    *   Array of data returned by Ressources SI.
    */
-  public function getShows(string $date) : array {
-    $xml = $this->getXml($date);
+  public function getShows() : array {
+    $xml = $this->getXml();
 
     if (empty($xml)) {
       return [];
@@ -74,13 +71,10 @@ final class RsiImporterService {
   /**
    * Get XML data from RSI web services.
    *
-   * @param string $date
-   *   Date, formatted as YYYYmmdd.
-   *
    * @return string|null
    *   XML string, or NULL in case of error.
    */
-  private function getXml(string $date) : ?string {
+  private function getXml() : ?string {
     $base_url = $this->rsiSettings->get('base_url') . 'ws_cat_spectacle';
 
     try {
@@ -89,8 +83,6 @@ final class RsiImporterService {
           'x_rsi_ws_login' => $this->rsiSettings->get('login'),
           'x_rsi_ws_mdp' => $this->rsiSettings->get('password'),
           'x_rsi_client' => $this->rsiSettings->get('client'),
-          'filtre' => '1',
-          'date_modif' => $date,
         ],
       ]);
     }
@@ -185,7 +177,7 @@ final class RsiImporterService {
     $grilles[$libelle] = $this->minmax($prix_totaux);
 
     if (!empty($libelle_web)) {
-      $grilles[$libelle_web] = $grilles['libelle'];
+      $grilles[$libelle_web] = $grilles[$libelle];
     }
 
     return $grilles;
