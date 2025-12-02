@@ -255,7 +255,7 @@ final class RsiImporterService {
     return [
       'IDENT' => (string) $show_xml['IDENT'],
       'NOM' => (string) $show_xml['NOM'],
-      'TITRE_LIBRE1' => (string) $show_xml->TITRE_LIBRE1,
+      'CHAMP_LIBRE2' => (string) $show_xml->CHAMP_LIBRE2,
       'TITRE_LIBRE2' => (string) $show_xml->TITRE_LIBRE2,
       'TYPE' => (string) $show_xml->TYPE,
       'CHAMP_LIBRE1' => (string) $show_xml->CHAMP_LIBRE1,
@@ -340,7 +340,7 @@ final class RsiImporterService {
         'field_rsi_ident' => $show['IDENT'],
         'title' => $show['NOM'],
         'field_subtitle' => $show['TITRE_LIBRE2'],
-        'field_festival' => $festival_lookup[$show['TITRE_LIBRE1']] ?? NULL,
+        'field_festival' => $festival_lookup[$show['CHAMP_LIBRE2']] ?? NULL,
         'field_show_type' => $this->lookupShowType($show['TYPE'], $show_type_lookup),
         'field_entrance' => $show['CHAMP_LIBRE1'],
         'field_location' => $place_lookup[$show['SALLE']] ?? NULL,

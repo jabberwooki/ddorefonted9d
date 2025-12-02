@@ -125,7 +125,7 @@ final class RsiImportForm extends FormBase {
         $show['IDENT'],
         $show['NOM'],
         $this->dateFormatter->format(strtotime($show['TS_MODIF']), 'short'),
-        $show['TITRE_LIBRE1'],
+        $show['CHAMP_LIBRE2'],
         $show['DATES'][0] ?? 'N/A',
       ], $form_state->get('shows')),
     ];
