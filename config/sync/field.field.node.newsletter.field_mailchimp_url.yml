@@ -11,7 +11,7 @@ id: node.newsletter.field_mailchimp_url
 field_name: field_mailchimp_url
 entity_type: node
 bundle: newsletter
-label: 'URL Mailchimp'
+label: "URL de la lettre d'information"
 description: ''
 required: false
 translatable: false
