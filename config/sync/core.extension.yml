@@ -25,6 +25,7 @@ module:
   dblog: 0
   ddo_axeptio: 0
   ddo_mapado: 0
+  ddo_rsi: 0
   ddo_utils: 0
   draggableviews: 0
   dynamic_page_cache: 0

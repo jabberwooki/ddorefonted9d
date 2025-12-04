@@ -1,0 +1,15 @@
+ddo_rsi.settings:
+  path: '/admin/config/services/rsi'
+  defaults:
+    _form: '\Drupal\ddo_rsi\Form\RsiConfigForm'
+    _title: 'Paramétrage Ressources SI'
+  requirements:
+    _permission: 'administer rsi'
+
+ddo_rsi.import:
+  path: '/admin/content/rsi-import'
+  defaults:
+    _form: '\Drupal\ddo_rsi\Form\RsiImportForm'
+    _title: 'Importer des spectacles depuis Ressources SI'
+  requirements:
+    _permission: 'administer rsi'

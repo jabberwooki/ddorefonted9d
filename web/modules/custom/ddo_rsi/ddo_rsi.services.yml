@@ -1,0 +1,4 @@
+services:
+  ddo_rsi.importer:
+    class: 'Drupal\ddo_rsi\Service\RsiImporterService'
+    autowire: true

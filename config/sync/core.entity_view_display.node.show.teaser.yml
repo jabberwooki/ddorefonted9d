@@ -38,6 +38,7 @@ dependencies:
     - field.field.node.show.field_reimbursement
     - field.field.node.show.field_reservation
     - field.field.node.show.field_restauration
+    - field.field.node.show.field_rsi_ident
     - field.field.node.show.field_show_type
     - field.field.node.show.field_shows
     - field.field.node.show.field_sounds
@@ -220,6 +221,7 @@ hidden:
   field_reimbursement: true
   field_reservation: true
   field_restauration: true
+  field_rsi_ident: true
   field_show_type: true
   field_shows: true
   field_sounds: true

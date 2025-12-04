@@ -1,0 +1,8 @@
+name: DDO Ressources SI
+type: module
+description: Synchronisation des données spectacle avec la billetterie Ressources SI
+core_version_requirement: ^11
+package: Domaine d'O
+dependencies:
+  - datetime:datetime
+  - ddo_utils:ddo_utils

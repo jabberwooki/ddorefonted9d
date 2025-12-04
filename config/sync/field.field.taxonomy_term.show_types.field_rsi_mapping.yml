@@ -1,0 +1,19 @@
+uuid: 5244f2e9-0afb-4a35-ad6f-c87d094a49b0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rsi_mapping
+    - taxonomy.vocabulary.show_types
+id: taxonomy_term.show_types.field_rsi_mapping
+field_name: field_rsi_mapping
+entity_type: taxonomy_term
+bundle: show_types
+label: 'Correspondance avec Ressources SI'
+description: "Valeurs fournies par Ressources SI correspondant à ce type, par exemple <code>THEATRE</code>, <code>THEATRE EQUESTRE</code> et <code>WARM UP-CHANTIER</code> pour <em>Théâtre</em>. Ces valeurs doivent idéalement être écrites en capitales et sans diacritiques. Il est inutile de renseigner ce champ pour le terme <em>Autre</em>, qui est la valeur choisie par défaut quand un type n'est pas connu."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

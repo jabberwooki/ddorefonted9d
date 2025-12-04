@@ -1,0 +1,4 @@
+administer rsi:
+  title: 'Administrer le module Ressources SI'
+  description: 'Synchronisation des données spectacle avec la billetterie Ressources SI.'
+  restrict access: TRUE

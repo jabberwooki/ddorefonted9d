@@ -3,5 +3,6 @@ _core:
 mode: simple
 ignored_config_entities:
   - ddo_mapado.settings
+  - ddo_rsi.settings
   - simple_block.simple_block.team_head
   - 'tvi.taxonomy_term.*'

@@ -1,0 +1,12 @@
+rsi.settings:
+  title: 'Ressources SI'
+  route_name: 'ddo_rsi.settings'
+  description: 'Paramétrage du module Ressources SI'
+  parent: system.admin_config_services
+
+rsi.import:
+  title: 'Importer des spectacles'
+  route_name: 'ddo_rsi.import'
+  description: 'Importer des spectacles depuis Ressources SI'
+  parent: system.admin_content
+  weight: 1
