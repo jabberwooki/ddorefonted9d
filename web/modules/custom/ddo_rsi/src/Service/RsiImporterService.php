@@ -128,9 +128,19 @@ final class RsiImporterService {
    *   Array of show data, keyed by RSI ID.
    */
   private function parseShows(\XMLReader $reader) : array {
-    $grilles = $shows = [];
+    $rooms = $grilles = $shows = [];
 
     while ($reader->read()) {
+      // Retrieve parent room IDs.
+      if ($reader->nodeType === \XMLReader::ELEMENT && $reader->name === 'SALLE') {
+        $salle_xml = simplexml_load_string($reader->readOuterXml());
+        if ($salle_xml === FALSE) {
+          continue;
+        }
+
+        $rooms += $this->parseRoomElement($salle_xml);
+      }
+
       // Get min and max prices from each price list.
       if ($reader->nodeType === \XMLReader::ELEMENT && $reader->name === 'GRILLE') {
         $grille_xml = simplexml_load_string($reader->readOuterXml());
@@ -148,11 +158,28 @@ final class RsiImporterService {
           continue;
         }
 
-        $shows += $this->parseShowElement($show_xml, $grilles);
+        $shows += $this->parseShowElement($show_xml, $rooms, $grilles);
       }
     }
 
     return $shows;
+  }
+
+  /**
+   * Parse the SALLE XML element.
+   *
+   * @param \SimpleXMLElement $salle_xml
+   *   XML object of the SALLE element.
+   *
+   * @return array
+   *   An array containing one SALLE_MERE_ID, keyed by its corresponding
+   *   SALLE_ID.
+   */
+  private function parseRoomElement(\SimpleXMLElement $salle_xml) : array {
+    $salle_mere_id = (string) $salle_xml['SALLE_MERE_ID'];
+    $salle_id = (string) $salle_xml['SALLE_ID'];
+
+    return [$salle_id => $salle_mere_id];
   }
 
   /**
@@ -201,13 +228,15 @@ final class RsiImporterService {
    *
    * @param \SimpleXMLElement $show_xml
    *   XML object of the SPECTACLE element.
+   * @param array $rooms
+   *   Parent room IDs, keyed by room ID.
    * @param array $grilles
    *   An array of min and max for each price list.
    *
    * @return array
    *   An array containing one array of show values, keyed by RSI show ID.
    */
-  private function parseShowElement(\SimpleXMLElement $show_xml, array $grilles) {
+  private function parseShowElement(\SimpleXMLElement $show_xml, array $rooms, array $grilles) {
     $show = $this->initShow($show_xml);
     $mins = $maxs = [];
     // Iterate over representations of this show.
@@ -236,7 +265,8 @@ final class RsiImporterService {
 
     if (!empty($rep_xml)) {
       $show['DUREE'] = (string) $rep_xml['REP_DUREE'];
-      $show['SALLE'] = (string) $rep_xml['REP_SALLE'];
+      $salle_id = (string) $rep_xml['REP_SALLE'];
+      $show['SALLE'] = $rooms[$salle_id] ?? '';
     }
 
     return [$show['IDENT'] => $show];
