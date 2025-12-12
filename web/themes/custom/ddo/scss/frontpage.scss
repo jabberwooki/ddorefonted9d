@@ -111,6 +111,10 @@
 #block-views-block-offers-subscriptions-front {
   .view-display-id-subscriptions_front {
     .offer-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
       border: 1px solid #aaaaaa;
       background-color: #eeeeee;
       .offer-title {

@@ -67,7 +67,7 @@ function ddo_utils_views_pre_render(ViewExecutable $view) {
       //   festival est passé.
       // Lorsqu'on filtre sur un festival, l'ID de ce festival (target_id) est
       // dans l'URL.
-      if ($festival_nid = Drupal::request()->query->get('field_festival_target_id')) {
+      if (($festival_nid = Drupal::request()->query->get('field_festival_target_id')) && $festival_nid !== 'All') {
         // 1 - Données festival.
         $festival = \Drupal::service('entity_type.manager')->getStorage('node')->load($festival_nid);
         $festival_season = $festival->field_season->value;

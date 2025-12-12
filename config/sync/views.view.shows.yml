@@ -266,7 +266,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "Le festival n'a pas encore ou n'a plus de spectacles.\r\nLe véritable contenu de cette zone de texte est géré dans le fichier ddo_utils.module, fonction ddo_utils_views_pre_render()."
+            value: 'Aucun spectacle correspondant à ces critères.'
             format: html_free
           tokenize: false
       sorts:

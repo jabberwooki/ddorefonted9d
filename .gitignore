@@ -45,6 +45,7 @@ drush/contrib/
 /web/sites/*/development.services.yml
 
 # Ignore paths that contain user-generated content.
+/private
 /web/sites/*/files/
 /web/sites/*/private
 
