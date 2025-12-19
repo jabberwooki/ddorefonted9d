@@ -20,11 +20,10 @@
     @include media-breakpoint-up(md) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       margin-bottom: 30px;
-      row-gap: 30px;
+      gap: 30px 2%;
       > div {
-        flex-basis: calc(100% / 3.1);
+        flex-basis: calc(96% / 3);
       }
     }
   }
@@ -61,6 +60,7 @@
       flex-direction: column;
       justify-content: flex-end;
       background: linear-gradient(transparent, black);
+      overflow: hidden;
 
       .field--name-title {
         text-transform: uppercase;
@@ -72,6 +72,7 @@
         padding: 50% 5px 10px 10px;
         margin: 0;
         text-decoration: none;
+        word-wrap: break-word;
       }
     }
   }
