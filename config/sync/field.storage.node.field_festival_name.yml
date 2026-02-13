@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: opera-junior
+      label: 'Opéra Junior'
+    -
       value: saperlipopette
       label: Saperlipopette
     -
