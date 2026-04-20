@@ -184,10 +184,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/better_exposed_filters": {
-                "3512039: once library not required":
-                "https://git.drupalcode.org/project/better_exposed_filters/-/merge_requests/157.diff?diff_id=1376455"
-            }
         }
     }
 }
