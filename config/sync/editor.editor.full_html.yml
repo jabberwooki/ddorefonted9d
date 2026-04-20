@@ -71,6 +71,7 @@ settings:
       properties:
         reversed: true
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_alignment:
       enabled_alignments:

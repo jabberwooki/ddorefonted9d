@@ -1,6 +1,7 @@
 global-styling:
   version: VERSION
   js:
+    js/popper.js: { weight: -50 }
     js/bootstrap.min.js: { weight: -48 }
     js/barrio.js: {}
     js/custom.js: {}
@@ -12,7 +13,6 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
-    - core/popperjs
 home-slideshow:
   version: VERSION 1
   js:

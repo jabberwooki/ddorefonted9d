@@ -99,6 +99,7 @@ permissions:
   - 'edit own remote_audio media'
   - 'edit own remote_video media'
   - 'edit own video media'
+  - 'rebuild node access permissions'
   - 'update any media'
   - 'update media'
   - 'use text format full_html'

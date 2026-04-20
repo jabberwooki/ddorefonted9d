@@ -1,6 +1,6 @@
 uuid: 03fd7d2b-5f53-4f65-84b9-8bb47a03a3d2
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - ddo_mapado

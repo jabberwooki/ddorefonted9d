@@ -167,6 +167,7 @@ permissions:
   - 'edit own show content'
   - 'edit own structure content'
   - 'rebuild cache access'
+  - 'rebuild node access permissions'
   - 'translate interface'
   - 'update any media'
   - 'update media'
