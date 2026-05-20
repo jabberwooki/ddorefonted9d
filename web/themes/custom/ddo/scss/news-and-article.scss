@@ -71,6 +71,11 @@ body.node--type-article {
     }
 
   }
+  .field--name-field-sounds {
+    iframe {
+      width: 100%;
+    }
+  }
   .media--type-gallery {
     .field--name-media-name {
       @include not_visible();
