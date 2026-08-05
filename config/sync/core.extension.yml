@@ -72,6 +72,8 @@ module:
   redirect: 0
   redis: 0
   search: 0
+  search_help: 0
+  search_node: 0
   sharethis: 0
   shortcut: 0
   simple_block: 0
