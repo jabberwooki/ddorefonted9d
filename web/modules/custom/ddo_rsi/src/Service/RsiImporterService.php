@@ -528,12 +528,12 @@ final class RsiImporterService {
       [$day, $month, $year] = explode('/', $date);
       [$hour, $minute, $second] = explode(':', $times[$index] ?? '00:00:00');
       $date = DrupalDateTime::createFromArray([
-        'year' => $year,
-        'month' => $month,
-        'day' => $day,
-        'hour' => $hour,
-        'minute' => $minute,
-        'second' => $second,
+        'year' => (int) $year,
+        'month' => (int) $month,
+        'day' => (int) $day,
+        'hour' => (int) $hour,
+        'minute' => (int) $minute,
+        'second' => (int) $second,
       ]);
 
       $converted_dates[] = $date->setTimeZone($storage_timezone)->format($storage_format);
