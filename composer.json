@@ -89,6 +89,7 @@
         "drupal/image_widget_crop": "^3.0",
         "drupal/imce": "^3.0",
         "drupal/libraries": "^4.1",
+        "drupal/matomo": "^1.26",
         "drupal/media_entity_slideshow": "^2.4",
         "drupal/media_library_edit": "^3.0",
         "drupal/media_remote_audio": "^1.0",
